@@ -12,10 +12,55 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 
 ### Planned
 
-- CR-ES-AG-003 ;;; Agentic Value Stream (concept record).
-- CR-ES-AG-004 ;;; Agentic Workflow (concept record).
-- Identifier registry for concept IDs.
-- Concept YAML schema and harness (lands as part of CR-ES-AG-003 prep).
+- CR-ES-AG-005 ;;; Agentic Flow.
+- CR-ES-AG-006 ;;; Agentic Operations.
+- CR-ES-AG-007 ;;; Agentic Enterprise.
+- CR-ES-AG-008 ;;; Agentic Capability.
+- CR-ES-AG-009 ;;; AI Agent.
+- CR-ES-AG-010 ;;; Agentic Agent (after FND-ES-AG-006 scrutiny).
+- CR-ES-AG-011 ;;; Agentic Service, Agentic Product, Agentic AI.
+- CR-ES-AG-012 ;;; Profile conformance gate extension (cross-record checks).
+- CR-ES-AG-013 ;;; First semantic release tag.
+
+## [0.4.0] ; 2026-09-02 ; CR-ES-AG-004 Agentic Workflow concept record
+
+### Added
+
+- `concepts/workflow.concept.yaml` ;;; base Concept record (status=Established, v1.0.0). Specializes WSF Activity + references WSF Event.
+- `concepts/agentic-workflow.concept.yaml` ;;; profiled Concept record (status=Candidate, v0.1.0). Profile binding to `ES:PROFILE:agentic-execution`.
+
+### Conformance
+
+- `python3 conformance/check.py` ;;; `NO_DRIFT (1 Profile record(s) validated)`, exit 0.
+- `python3 conformance/check_concepts.py` ;;; `NO_DRIFT (4 Concept record(s) validated)`, exit 0.
+- `python3 conformance/tests/test_profile_schema.py` ;;; `5/5 cases passed`, exit 0.
+- `python3 conformance/tests/test_concept_schema.py` ;;; `5/5 cases passed`, exit 0.
+
+### Implemented by
+
+- CR-ES-AG-004 ;;; per ADR-ES-AG-001 §6 CR-ES-AG-004.
+- Authored by manny-es.
+- Grounded per FND-ES-AG-001-Grounding-Result.
+
+## [0.3.0] ; 2026-09-02 ; CR-ES-AG-003 Agentic Value Stream concept record
+
+### Added
+
+- `concepts/value-stream.concept.yaml` ;;; base Concept record (status=Established, v1.0.0). Specializes WSF Value.
+- `concepts/agentic-value-stream.concept.yaml` ;;; profiled Concept record (status=Candidate, v0.1.0). Profile binding to `ES:PROFILE:agentic-execution`.
+- `conformance/check_concepts.py` ;;; Concept conformance harness (validates against schema/concept.schema.json + enforces WSF grounding for Agentic concepts).
+- `conformance/tests/test_concept_schema.py` ;;; 5-case test suite.
+
+### Conformance
+
+- `python3 conformance/check_concepts.py` ;;; `NO_DRIFT (4 Concept record(s) validated)`, exit 0.
+- `python3 conformance/tests/test_concept_schema.py` ;;; `5/5 cases passed`, exit 0.
+
+### Implemented by
+
+- CR-ES-AG-003 ;;; per ADR-ES-AG-001 §6 CR-ES-AG-003.
+- Authored by manny-es.
+- Grounded per FND-ES-AG-001-Grounding-Result.
 
 ## [0.2.0] ; 2026-09-02 ; CR-ES-AG-002 agentic-execution profile_type + Profile record
 

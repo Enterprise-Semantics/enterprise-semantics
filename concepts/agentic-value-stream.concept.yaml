@@ -1,0 +1,88 @@
+id: ES:CONCEPT:agentic-value-stream
+canonical_name: Agentic Value Stream
+definition: |
+  An Agentic Value Stream is a Value Stream whose realization is characterized
+  by goal-directed execution under bounded autonomy, AI-augmented decision-
+  making, adaptive value-realization, and human governance rather than human
+  execution. The Value Stream retains its identity ;;; the agentic-execution
+  Profile applies the four governed characteristics. Per FND-ES-AG-002 ;;;
+  ADR-ES-AG-001 §3.3.
+status: Candidate
+version: 0.1.0
+concept_type: agentic-value-stream
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Value
+    relationship: references
+    note: |
+      Agentic Value Stream inherits the WSF Value grounding via its
+      profiled Value Stream. The Profile does not introduce a new
+      semantic kind ;;; per FND-ES-AG-001-Grounding-Result.
+profile_bindings:
+  - profile_id: ES:PROFILE:agentic-execution
+    profile_type: agentic-execution
+    active: true
+relationships:
+  - subject: ES:CONCEPT:agentic-value-stream
+    predicate: profile-of
+    object: ES:CONCEPT:value-stream
+    qualification: agentic-execution-profile
+    status: proposed
+    provenance: FND-ES-AG-002 ;;; ADR-ES-AG-001 §3
+    rationale: |
+      The Profile hypothesis ;;; Agentic Value Stream is a Profile of Value
+      Stream under agent-augmented execution conditions.
+  - subject: ES:CONCEPT:agentic-value-stream
+    predicate: realizes
+    object: external:outcome:Value-Outcome
+    qualification: per-stage-value-realization
+    status: provisional
+    provenance: FND-ES-AG-002 ;;; FND-ES-000 §15
+    rationale: |
+      Inherited from Value Stream via Profile binding. Agentic Value Stream
+      realizes Value Outcome just as Value Stream does.
+  - subject: ES:CONCEPT:agentic-value-stream
+    predicate: enabled-by
+    object: external:concept:capability
+    qualification: capability-substrate
+    status: provisional
+    provenance: FND-ES-AG-002 ;;; FND-ES-000 §15
+    rationale: |
+      Agentic Value Stream is enabled by Capabilities ;;; per WSF Capability
+      grounding.
+  - subject: ES:CONCEPT:agentic-value-stream
+    predicate: supported-by
+    object: external:concept:process
+    qualification: structural-substrate
+    status: provisional
+    provenance: FND-ES-AG-002 ;;; FND-ES-000 §15
+    rationale: |
+      Inherited from Value Stream. Process is the structural substrate.
+  - subject: ES:CONCEPT:agentic-value-stream
+    predicate: executes-through
+    object: ES:CONCEPT:agentic-workflow
+    qualification: value-realization-via-agentic-execution
+    status: provisional
+    provenance: FND-ES-AG-002 ;;; ADR-ES-002 §22
+    rationale: |
+      Per ADR-ES-002 §22 ;;; executes-through (not contains) preserves the
+      architectural distinction between Value Stream (semantics) and Workflow
+      (mechanism).
+governance: enterprise-semantics
+provenance:
+  - source: FND-ES-AG-002
+    note: Working conclusion ;;; Agentic Value Stream is a Profile of Value Stream.
+  - source: ADR-ES-AG-001
+    note: Profile pattern generalized to the entire Agentic family.
+  - source: docs/finding/0001-agentic-semantic-grounding-grounding-result.md
+    note: WSF live baseline alignment ;;; WSF Value grounding cited explicitly.
+  - source: https://github.com/World-Semantic-Foundation
+    note: |
+      WSF provides the foundational Value grounding that Agentic Value Stream
+      inherits via its Profile binding. ES specializes, not duplicates.
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Value
+    relationship: references
+    note: Inherits Value grounding via Profile binding to Value Stream.
+created: 2026-09-02
+updated: 2026-09-02

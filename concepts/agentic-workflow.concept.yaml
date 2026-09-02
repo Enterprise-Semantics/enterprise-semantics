@@ -1,0 +1,64 @@
+id: ES:CONCEPT:agentic-workflow
+canonical_name: Agentic Workflow
+definition: |
+  An Agentic Workflow is a Workflow whose execution is characterized by
+  goal-directed progression under bounded autonomy, AI-augmented decision-
+  making at decision points, adaptive step reconfiguration, and human
+  governance rather than human execution. The Workflow retains its identity ;;
+  the agentic-execution Profile applies the four governed characteristics.
+  Per FND-ES-AG-003 ;;; ADR-ES-AG-001 §3.3.
+status: Candidate
+version: 0.1.0
+concept_type: agentic-workflow
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Activity
+    relationship: references
+    note: |
+      Agentic Workflow inherits the WSF Activity grounding via its profiled
+      Workflow. The Profile does not introduce a new semantic kind ;;; per
+      FND-ES-AG-001-Grounding-Result.
+  - wsf_concept_id: external:wsf:Event
+    relationship: references
+    note: |
+      Agentic Workflow steps produce Events. Inherited via Workflow.
+profile_bindings:
+  - profile_id: ES:PROFILE:agentic-execution
+    profile_type: agentic-execution
+    active: true
+relationships:
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: profile-of
+    object: ES:CONCEPT:workflow
+    qualification: agentic-execution-profile
+    status: proposed
+    provenance: FND-ES-AG-003 ;;; ADR-ES-AG-001 §3
+    rationale: |
+      The Profile hypothesis ;;; Agentic Workflow is a Profile of Workflow
+      under agent-augmented execution conditions.
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: orchestrates
+    object: external:concept:agentic-flow
+    qualification: choreographic-sequencing
+    status: provisional
+    provenance: FND-ES-AG-003 ;;; FND-ES-000 §15
+    rationale: |
+      Agentic Workflow orchestrates Agentic Flow ;;; choreographic vs
+      unit-of-execution. Per ADR-ES-002 §22 ;;; not contains.
+governance: enterprise-semantics
+provenance:
+  - source: FND-ES-AG-003
+    note: Working conclusion ;;; Agentic Workflow is a Profile of Workflow.
+  - source: ADR-ES-AG-001
+    note: Profile pattern generalized.
+  - source: docs/finding/0001-agentic-semantic-grounding-grounding-result.md
+    note: WSF live baseline alignment.
+  - source: https://github.com/World-Semantic-Foundation
+    note: |
+      WSF Activity grounding inherited via Workflow binding.
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Activity
+    relationship: references
+    note: Inherits Activity grounding via Workflow.
+created: 2026-09-02
+updated: 2026-09-02

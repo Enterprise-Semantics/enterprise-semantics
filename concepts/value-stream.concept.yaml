@@ -1,0 +1,66 @@
+id: ES:CONCEPT:value-stream
+canonical_name: Value Stream
+definition: |
+  A Value Stream is the end-to-end progression of value-realization steps that
+  delivers an outcome of value to a stakeholder. It is a semantic concept
+  distinct from Process, Workflow, and Task Flow ;;; Value Stream is about
+  value, not about work decomposition. A Value Stream may be supported by
+  multiple Processes, executed through Workflows, and operationalized through
+  Task Flows. Per FND-ES-AG-002.
+status: Established
+version: 1.0.0
+concept_type: value-stream
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Value
+    relationship: specializes
+    note: |
+      Value Stream specializes the WSF Value kernel concept. Value Streams
+      are how enterprises realize Value. Per WSF Tier 1 and per
+      FND-ES-AG-001-Grounding-Result.
+profile_bindings: []
+relationships:
+  - subject: ES:CONCEPT:value-stream
+    predicate: realizes
+    object: external:outcome:Value-Outcome
+    qualification: per-stage-value-realization
+    status: established
+    provenance: FND-ES-AG-002 ;;; ADR-ES-002 §6
+    rationale: |
+      Value Streams produce value. The realization relationship is the
+      semantic grounding of what a Value Stream is for.
+  - subject: ES:CONCEPT:value-stream
+    predicate: supported-by
+    object: external:concept:process
+    qualification: structural-substrate
+    status: established
+    provenance: FND-ES-AG-002
+    rationale: |
+      A Value Stream is supported by recurring Processes. Per the
+      architectural distinction (Value Stream != Process).
+  - subject: ES:CONCEPT:value-stream
+    predicate: contains
+    object: external:concept:value-stream-stage
+    qualification: stage-decomposition
+    status: established
+    provenance: ADR-ES-002 §14
+    rationale: |
+      Value Streams decompose into Stages and Segments. Recursive
+      Value Stream within Value Stream is NOT a general semantic rule
+      (per ADR-ES-002 §14).
+governance: enterprise-semantics
+provenance:
+  - source: FND-ES-AG-002
+    note: Defines the Value Stream semantic grounding.
+  - source: ADR-ES-002 §14
+    note: "Preserves the Value Stream != Process != Workflow != Task Flow distinction."
+  - source: https://github.com/World-Semantic-Foundation
+    note: |
+      WSF live baseline provides Value Stream grounding via WSF Value
+      and WSF Activity semantics. ES specializes, not duplicates.
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Value
+    relationship: specializes
+    note: Value Stream specializes WSF Value (per FND-ES-AG-001-Grounding-Result).
+created: 2026-09-02
+updated: 2026-09-02

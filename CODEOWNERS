@@ -1,1 +1,13 @@
+# Human owner ;;; sole sign-off authority for all changes.
 * @emmanuel-a-otchere
+
+# Agent ;;; manny-es is the dedicated sub-agent that proposes and prepares
+# changes for this repository. Every commit is co-authored by manny-es;
+# review and merge are gated by @emmanuel-a-otchere.
+#
+# manny-es is a Hermes cronjob (job id: c0b35d4938af) running on the
+# coder profile. To trigger an immediate check-in, fire it via:
+#   cronjob action=run job_id=c0b35d4938af
+#
+# See .github/profile/README.md (the org profile) for the full ownership
+# statement and the cooperation contract with es-plan-keeper.

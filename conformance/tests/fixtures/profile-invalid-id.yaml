@@ -1,0 +1,17 @@
+id: Profile:test-invalid-id
+canonical_name: Test Invalid ID Profile
+definition: |
+  Test profile with an invalid id (does not match regex).
+status: Candidate
+version: 0.1.0
+profile_type: agentic-execution
+characteristics:
+  - id: ES:CHAR:test-char-1
+    canonical_name: Test Characteristic 1
+    description: First test characteristic.
+governance: enterprise-semantics
+provenance:
+  - source: conformance/tests/fixtures/profile-invalid-id.yaml
+    note: Test fixture ;;; should fail.
+mappings: []
+created: 2026-09-02

@@ -1,0 +1,15 @@
+id: ES:PROFILE:test-missing-provenance
+canonical_name: Test Missing Provenance Profile
+definition: |
+  Test profile with empty provenance ;;; should fail conformance.
+status: Candidate
+version: 0.1.0
+profile_type: agentic-execution
+characteristics:
+  - id: ES:CHAR:test-char-1
+    canonical_name: Test Characteristic 1
+    description: First test characteristic.
+governance: enterprise-semantics
+provenance: []
+mappings: []
+created: 2026-09-02

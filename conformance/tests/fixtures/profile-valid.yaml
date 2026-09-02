@@ -1,0 +1,20 @@
+id: ES:PROFILE:test-valid
+canonical_name: Test Valid Profile
+definition: |
+  Test profile that should pass all conformance checks.
+status: Candidate
+version: 0.1.0
+profile_type: agentic-execution
+characteristics:
+  - id: ES:CHAR:test-char-1
+    canonical_name: Test Characteristic 1
+    description: First test characteristic.
+  - id: ES:CHAR:test-char-2
+    canonical_name: Test Characteristic 2
+    description: Second test characteristic.
+governance: enterprise-semantics
+provenance:
+  - source: conformance/tests/fixtures/profile-valid.yaml
+    note: Test fixture.
+mappings: []
+created: 2026-09-02

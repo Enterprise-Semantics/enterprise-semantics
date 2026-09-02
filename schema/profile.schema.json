@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Enterprise-Semantics/enterprise-semantics/schema/profile.schema.json",
+  "title": "Enterprise-Semantics Profile",
+  "description": "Profile semantic construct per ADR-ES-AG-001 §3. A Profile is a governed configuration overlay on a base concept (e.g. Workflow, Value Stream). Profiles do not introduce new semantic kinds; the base concept retains its identity.",
+  "type": "object",
+  "required": [
+    "id",
+    "canonical_name",
+    "definition",
+    "status",
+    "version",
+    "profile_type",
+    "characteristics",
+    "governance",
+    "provenance"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ES:PROFILE:[a-z][a-z0-9-]*$",
+      "description": "Stable semantic identity per ADR-ES-002 §11. Format: ES:PROFILE:<kebab-case-name>."
+    },
+    "canonical_name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Canonical display name for the Profile."
+    },
+    "definition": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Governed semantic definition."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Candidate",
+        "Investigating",
+        "Proposed",
+        "Established",
+        "Canonical",
+        "Mapped",
+        "Deprecated",
+        "Retired"
+      ],
+      "description": "Lifecycle status per ADR-ES-002 §13."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(-[a-z0-9.-]+)?$",
+      "description": "Semantic version per semver."
+    },
+    "profile_type": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "description": "Profile type family (e.g. agentic-execution, autonomous-operation). Must be registered in registry/profile-types.yaml."
+    },
+    "characteristics": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Governed set of properties that apply when the profile is active.",
+      "items": {
+        "type": "object",
+        "required": ["id", "canonical_name", "description"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ES:CHAR:[a-z][a-z0-9-]*$",
+            "description": "Stable semantic identity for the characteristic."
+          },
+          "canonical_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "governance": {
+      "type": "string",
+      "enum": ["enterprise-semantics", "wsf", "opendea"],
+      "description": "Authority that governs this Profile."
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Evidence and source references for the Profile.",
+      "items": {
+        "type": "object",
+        "required": ["source"],
+        "additionalProperties": false,
+        "properties": {
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "mappings": {
+      "type": "array",
+      "description": "Bi-directional mappings to WSF, OpenDEA, or catalogs.",
+      "items": {
+        "type": "object",
+        "required": ["authority", "target_id", "relationship"],
+        "additionalProperties": false,
+        "properties": {
+          "authority": {
+            "type": "string",
+            "enum": ["wsf", "opendea", "dea-catalog"]
+          },
+          "target_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relationship": {
+            "type": "string",
+            "minLength": 1
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "created": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+id: ES:CONCEPT:agentic-operations
+canonical_name: Agentic Operations
+definition: |
+  An Agentic Operations is an Operations whose execution is characterized by
+  goal-directed operating progression under bounded autonomy, AI-augmented
+  operating decisions, adaptive operating configuration, and human governance
+  rather than human execution ;;; all anchored in the Operating Model of an
+  Enterprise. Per FND-ES-AG-004 ;;; ADR-ES-AG-001 §3.3.
+status: Candidate
+version: 0.1.0
+concept_type: agentic-operations
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Activity
+    relationship: references
+    note: |
+      Agentic Operations inherits the WSF Activity grounding via its profiled
+      Operations. The Profile does not introduce a new semantic kind.
+profile_bindings:
+  - profile_id: ES:PROFILE:agentic-execution
+    profile_type: agentic-execution
+    active: true
+relationships:
+  - subject: ES:CONCEPT:agentic-operations
+    predicate: profile-of
+    object: ES:CONCEPT:operations
+    qualification: agentic-execution-profile
+    status: proposed
+    provenance: FND-ES-AG-004 ;;; ADR-ES-AG-001 §3
+    rationale: Agentic Operations is a Profile of Operations under agent-augmented execution conditions.
+  - subject: ES:CONCEPT:agentic-operations
+    predicate: anchored-in
+    object: external:concept:operating-model
+    qualification: operating-model-anchor
+    status: provisional
+    provenance: FND-ES-AG-004 ;;; FND-ES-AG-001-Grounding-Result §7
+    rationale: Agentic Operations anchored in Operating Model.
+  - subject: ES:CONCEPT:agentic-operations
+    predicate: enables
+    object: ES:CONCEPT:agentic-value-stream
+    qualification: enabler-of-agentic-execution
+    status: provisional
+    provenance: FND-ES-AG-001 §7 ;;; FND-ES-000 §15
+    rationale: Agentic Operations enables Agentic Value Stream execution.
+governance: enterprise-semantics
+provenance:
+  - source: FND-ES-AG-004
+    note: Profile of Operations (with Operating Model anchoring).
+  - source: ADR-ES-AG-001
+    note: Profile pattern generalized.
+  - source: docs/finding/0001-agentic-semantic-grounding-grounding-result.md
+    note: WSF live baseline alignment ;;; identified as one of the four strongest candidates.
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Activity grounding inherited via Operations.
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Activity
+    relationship: references
+    note: Inherits Activity grounding via Operations.
+created: 2026-09-02
+updated: 2026-09-02

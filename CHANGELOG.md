@@ -13,14 +13,46 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 ### Planned
 
 - CR-ES-AG-005 ;;; Agentic Flow.
-- CR-ES-AG-006 ;;; Agentic Operations.
-- CR-ES-AG-007 ;;; Agentic Enterprise.
 - CR-ES-AG-008 ;;; Agentic Capability.
-- CR-ES-AG-009 ;;; AI Agent.
-- CR-ES-AG-010 ;;; Agentic Agent (after FND-ES-AG-006 scrutiny).
+- CR-ES-AG-009 ;;; AI Agent (must precede CR-ES-AG-010 per FND-ES-AG-006).
+- CR-ES-AG-010 ;;; Agentic Agent (conditional, gated on FND-ES-AG-006 + FND-ES-AG-009).
 - CR-ES-AG-011 ;;; Agentic Service, Agentic Product, Agentic AI.
 - CR-ES-AG-012 ;;; Profile conformance gate extension (cross-record checks).
 - CR-ES-AG-013 ;;; First semantic release tag.
+
+## [0.6.0] ; 2026-09-02 ; CR-ES-AG-007 Agentic Enterprise concept record
+
+### Added
+
+- `concepts/enterprise.concept.yaml` ;;; base Concept record (Established, v1.0.0). Specializes WSF Entity.
+- `concepts/agentic-enterprise.concept.yaml` ;;; profiled Concept record (Candidate, v0.1.0). Profile binding to ES:PROFILE:agentic-execution. Profile characteristics applied across the eight enterprise areas.
+
+### Conformance
+
+- `python3 conformance/check_concepts.py` ;;; NO_DRIFT (8 Concept record(s) validated), exit 0.
+
+### Implemented by
+
+- CR-ES-AG-007 ;;; per ADR-ES-AG-001 §6.
+- Authored by manny-es.
+- Grounded per FND-ES-AG-001-Grounding-Result ;;; FND-ES-AG-005.
+
+## [0.5.0] ; 2026-09-02 ; CR-ES-AG-006 Agentic Operations concept record
+
+### Added
+
+- `concepts/operations.concept.yaml` ;;; base Concept record (Established, v1.0.0). Specializes WSF Activity + references WSF Event.
+- `concepts/agentic-operations.concept.yaml` ;;; profiled Concept record (Candidate, v0.1.0). Profile binding to ES:PROFILE:agentic-execution.
+
+### Conformance
+
+- `python3 conformance/check_concepts.py` ;;; NO_DRIFT (6 Concept record(s) validated), exit 0.
+
+### Implemented by
+
+- CR-ES-AG-006 ;;; per ADR-ES-AG-001 §6.
+- Authored by manny-es.
+- Grounded per FND-ES-AG-001-Grounding-Result ;;; FND-ES-AG-004.
 
 ## [0.4.0] ; 2026-09-02 ; CR-ES-AG-004 Agentic Workflow concept record
 

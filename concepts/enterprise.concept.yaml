@@ -1,0 +1,37 @@
+id: ES:CONCEPT:enterprise
+canonical_name: Enterprise
+definition: |
+  An Enterprise is a complex Entity that operates to realize value. It spans
+  Strategy, Governance, Capability, Value Creation, Operations, Decision,
+  Work, and Culture. Per FND-ES-AG-005.
+status: Established
+version: 1.0.0
+concept_type: enterprise
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Entity
+    relationship: specializes
+    note: Enterprise specializes WSF Entity (Tier 1).
+profile_bindings: []
+relationships:
+  - subject: ES:CONCEPT:enterprise
+    predicate: exhibits
+    object: external:concept:operating-model
+    qualification: enterprise-characteristic
+    status: established
+    provenance: FND-ES-AG-005 ;;; FND-ES-AG-001-Grounding-Result §8
+    rationale: Enterprise exhibits an Operating Model.
+governance: enterprise-semantics
+provenance:
+  - source: FND-ES-AG-005
+    note: Enterprise semantic grounding.
+  - source: FND-ES-AG-001-Grounding-Result §8
+    note: WSF Entity grounding.
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Tier 1 Entity grounding inherited.
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Entity
+    relationship: specializes
+    note: Enterprise specializes WSF Entity.
+created: 2026-09-02
+updated: 2026-09-02

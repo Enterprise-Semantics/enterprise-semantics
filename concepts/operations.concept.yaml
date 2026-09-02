@@ -1,0 +1,48 @@
+id: ES:CONCEPT:operations
+canonical_name: Operations
+definition: |
+  Operations is the recurring execution substrate that supports the
+  realization of value across an Enterprise. It is an enterprise-level
+  phenomenon that anchors activities, decisions, and events in the
+  Operating Model. Per FND-ES-AG-004.
+status: Established
+version: 1.0.0
+concept_type: operations
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Activity
+    relationship: specializes
+    note: Operations specializes WSF Activity (recurring execution substrate).
+  - wsf_concept_id: external:wsf:Event
+    relationship: references
+    note: Operations produce operational events.
+profile_bindings: []
+relationships:
+  - subject: ES:CONCEPT:operations
+    predicate: anchored-in
+    object: external:concept:operating-model
+    qualification: operating-model-anchor
+    status: established
+    provenance: FND-ES-AG-004 ;;; FND-ES-AG-001-Grounding-Result §7
+    rationale: Operations are anchored in the Operating Model.
+  - subject: ES:CONCEPT:operations
+    predicate: distinct-from
+    object: external:concept:operating-model
+    qualification: semantic-kind-distinction
+    status: established
+    provenance: FND-ES-AG-004
+    rationale: "Operations != Operating Model. Operations is the execution substrate ;;; Operating Model is the operating characteristics."
+governance: enterprise-semantics
+provenance:
+  - source: FND-ES-AG-004
+    note: Operations semantic grounding.
+  - source: FND-ES-AG-001-Grounding-Result §7
+    note: "Operations anchored in Operating Model."
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Activity + Event grounding inherited.
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Activity
+    relationship: specializes
+    note: Operations specializes WSF Activity.
+created: 2026-09-02
+updated: 2026-09-02

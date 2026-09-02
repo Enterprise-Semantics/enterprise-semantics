@@ -1,0 +1,61 @@
+id: ES:CONCEPT:agentic-enterprise
+canonical_name: Agentic Enterprise
+definition: |
+  An Agentic Enterprise is an Enterprise whose operating model systematically
+  incorporates agent-augmented decision-making, adaptive operating configuration,
+  goal-directed execution under bounded autonomy, and human governance rather
+  than human execution ;;; across its Strategy, Governance, Capability, Value
+  Creation, Operations, Decision, Work, and Culture. Per FND-ES-AG-005 ;;;
+  ADR-ES-AG-001 §3.3.
+status: Candidate
+version: 0.1.0
+concept_type: agentic-enterprise
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Entity
+    relationship: references
+    note: |
+      Agentic Enterprise inherits the WSF Entity grounding via its profiled
+      Enterprise. The Profile does not introduce a new semantic kind.
+profile_bindings:
+  - profile_id: ES:PROFILE:agentic-execution
+    profile_type: agentic-execution
+    active: true
+relationships:
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: profile-of
+    object: ES:CONCEPT:enterprise
+    qualification: agentic-execution-profile
+    status: proposed
+    provenance: FND-ES-AG-005 ;;; ADR-ES-AG-001 §3
+    rationale: Agentic Enterprise is a Profile of Enterprise under agent-augmented operating-model conditions.
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: operates-through
+    object: ES:CONCEPT:agentic-operations
+    qualification: operating-model-anchored
+    status: provisional
+    provenance: FND-ES-000 §15 ;;; FND-ES-AG-004
+    rationale: Agentic Enterprise operates through Agentic Operations.
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: realizes
+    object: ES:CONCEPT:agentic-value-stream
+    qualification: enterprise-realization
+    status: provisional
+    provenance: FND-ES-000 §15 ;;; FND-ES-AG-002
+    rationale: Agentic Enterprise realizes Agentic Value Streams.
+governance: enterprise-semantics
+provenance:
+  - source: FND-ES-AG-005
+    note: Profile of Enterprise across eight enterprise areas.
+  - source: ADR-ES-AG-001
+    note: Profile pattern generalized.
+  - source: docs/finding/0001-agentic-semantic-grounding-grounding-result.md
+    note: WSF live baseline alignment ;;; identified as one of the four strongest candidates.
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Entity grounding inherited via Enterprise.
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Entity
+    relationship: references
+    note: Inherits Entity grounding via Enterprise.
+created: 2026-09-02
+updated: 2026-09-02

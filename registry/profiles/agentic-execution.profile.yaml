@@ -1,0 +1,56 @@
+id: ES:PROFILE:agentic-execution
+canonical_name: Agentic Execution Profile
+definition: |
+  A Profile that applies the four governed Agentic characteristics to a base
+  concept (e.g. Value Stream, Workflow, Operations, Enterprise). The base
+  concept retains its identity ;;; the Profile adds a governed configuration
+  overlay. Per ADR-ES-AG-001 §3.
+status: Established
+version: 1.0.0
+profile_type: agentic-execution
+applies_to:
+  - value-stream
+  - workflow
+  - operations
+  - enterprise
+  - capability
+characteristics:
+  - id: ES:CHAR:goal-directed-execution-under-bounded-autonomy
+    canonical_name: Goal-directed execution under bounded autonomy
+    description: |
+      The entity progresses toward stated outcomes without requiring continuous
+      human routing, within bounds set by governance.
+  - id: ES:CHAR:ai-augmented-decision-making
+    canonical_name: AI-augmented decision-making
+    description: |
+      Decisions about progression, exception handling, and routing are made by
+      AI agents under governed policy.
+  - id: ES:CHAR:adaptive-behavior
+    canonical_name: Adaptive behavior
+    description: |
+      The entity reconfigures its structure or execution in response to
+      feedback and outcome signals.
+  - id: ES:CHAR:human-governance-not-human-execution
+    canonical_name: Human governance, not human execution
+    description: |
+      Humans set intent, policy, and outcome criteria. AI agents execute
+      within those bounds.
+governance: enterprise-semantics
+provenance:
+  - source: docs/adr/0003-agentic-semantic-decision.md
+    note: "ADR-ES-AG-001 §3.3 defines the four characteristics."
+  - source: https://github.com/World-Semantic-Foundation
+    note: |
+      WSF live baseline provides the foundational grounding. Agentic concepts
+      specialize WSF concepts (e.g. Value Stream, Workflow) rather than
+      redefining them. Per FND-ES-AG-001-Grounding-Result.
+  - source: docs/finding/0001-agentic-semantic-grounding-canonical.md
+    note: |
+      FND-ES-AG-001 (user-revised canonical) establishes the grounding matrix.
+  - source: docs/finding/0001-agentic-semantic-grounding-grounding-result.md
+    note: |
+      Grounding Result establishes WSF live baseline alignment and the strong-
+      candidates list.
+mappings: []
+created: 2026-09-02
+updated: 2026-09-02

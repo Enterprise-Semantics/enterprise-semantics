@@ -149,6 +149,19 @@ def validate_profile_file(
             f"{path.relative_to(REPO_ROOT)}: provenance must be non-empty"
         )
 
+    # applies_to (optional): each entry must match kebab-case if present.
+    applies_to = record.get("applies_to") or []
+    if not isinstance(applies_to, list):
+        errors.append(
+            f"{path.relative_to(REPO_ROOT)}: applies_to must be a list"
+        )
+    else:
+        for i, at in enumerate(applies_to):
+            if not isinstance(at, str):
+                errors.append(
+                    f"{path.relative_to(REPO_ROOT)}: applies_to[{i}] must be a string"
+                )
+
     return errors
 
 

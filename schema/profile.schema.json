@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Enterprise-Semantics/enterprise-semantics/schema/profile.schema.json",
   "title": "Enterprise-Semantics Profile",
-  "description": "Profile semantic construct per ADR-ES-AG-001 §3. A Profile is a governed configuration overlay on a base concept (e.g. Workflow, Value Stream). Profiles do not introduce new semantic kinds; the base concept retains its identity.",
+  "description": "Profile semantic construct per ADR-ES-AG-001 \u00a73. A Profile is a governed configuration overlay on a base concept (e.g. Workflow, Value Stream). Profiles do not introduce new semantic kinds; the base concept retains its identity.",
   "type": "object",
   "required": [
     "id",
@@ -20,7 +20,7 @@
     "id": {
       "type": "string",
       "pattern": "^ES:PROFILE:[a-z][a-z0-9-]*$",
-      "description": "Stable semantic identity per ADR-ES-002 §11. Format: ES:PROFILE:<kebab-case-name>."
+      "description": "Stable semantic identity per ADR-ES-002 \u00a711. Format: ES:PROFILE:<kebab-case-name>."
     },
     "canonical_name": {
       "type": "string",
@@ -44,7 +44,7 @@
         "Deprecated",
         "Retired"
       ],
-      "description": "Lifecycle status per ADR-ES-002 §13."
+      "description": "Lifecycle status per ADR-ES-002 \u00a713."
     },
     "version": {
       "type": "string",
@@ -62,7 +62,11 @@
       "description": "Governed set of properties that apply when the profile is active.",
       "items": {
         "type": "object",
-        "required": ["id", "canonical_name", "description"],
+        "required": [
+          "id",
+          "canonical_name",
+          "description"
+        ],
         "additionalProperties": false,
         "properties": {
           "id": {
@@ -83,7 +87,11 @@
     },
     "governance": {
       "type": "string",
-      "enum": ["enterprise-semantics", "wsf", "opendea"],
+      "enum": [
+        "enterprise-semantics",
+        "wsf",
+        "opendea"
+      ],
       "description": "Authority that governs this Profile."
     },
     "provenance": {
@@ -92,7 +100,9 @@
       "description": "Evidence and source references for the Profile.",
       "items": {
         "type": "object",
-        "required": ["source"],
+        "required": [
+          "source"
+        ],
         "additionalProperties": false,
         "properties": {
           "source": {
@@ -110,12 +120,20 @@
       "description": "Bi-directional mappings to WSF, OpenDEA, or catalogs.",
       "items": {
         "type": "object",
-        "required": ["authority", "target_id", "relationship"],
+        "required": [
+          "authority",
+          "target_id",
+          "relationship"
+        ],
         "additionalProperties": false,
         "properties": {
           "authority": {
             "type": "string",
-            "enum": ["wsf", "opendea", "dea-catalog"]
+            "enum": [
+              "wsf",
+              "opendea",
+              "dea-catalog"
+            ]
           },
           "target_id": {
             "type": "string",
@@ -138,6 +156,15 @@
     "updated": {
       "type": "string",
       "format": "date"
+    },
+    "applies_to": {
+      "type": "array",
+      "description": "Base concept kinds that this Profile can apply to. Each entry must be a Concept kind (e.g. 'value-stream', 'workflow'). Empty list means the Profile is generic and can apply to any base concept.",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      },
+      "default": []
     }
   }
 }

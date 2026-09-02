@@ -12,11 +12,30 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 
 ### Planned
 
-- CR-ES-AG-002 ;;; register `agentic-execution` profile_type and land the corresponding Profile records (per ADR-ES-AG-001 §6).
-- CR-ES-AG-003 ;;; Agentic Value Stream Candidate-status YAML record.
-- CR-ES-AG-004 ;;; Agentic Workflow Candidate-status YAML record.
+- CR-ES-AG-003 ;;; Agentic Value Stream (concept record).
+- CR-ES-AG-004 ;;; Agentic Workflow (concept record).
 - Identifier registry for concept IDs.
-- Concept YAML schema for concept records.
+- Concept YAML schema and harness (lands as part of CR-ES-AG-003 prep).
+
+## [0.2.0] ; 2026-09-02 ; CR-ES-AG-002 agentic-execution profile_type + Profile record
+
+### Added
+
+- `registry/profiles/agentic-execution.profile.yaml` ;;; First governed Profile record (Established status, version 1.0.0, profile_type=agentic-execution). Carries the four governed characteristics from ADR-ES-AG-001 §3.3 (goal-directed execution under bounded autonomy, AI-augmented decision-making, adaptive behavior, human governance not human execution). Provenance cites WSF live baseline, ADR-ES-AG-001, FND-ES-AG-001 canonical, and FND-ES-AG-001-Grounding-Result.
+- `schema/profile.schema.json` ;;; added `applies_to` field (optional list of base concept kinds the Profile can apply to).
+- `schema/concept.schema.json` ;;; new concept schema with WSF grounding (mandatory for Agentic concepts per FND-ES-AG-001-Grounding-Result), profile_bindings, governed relationships, lifecycle status, mappings.
+- `conformance/check.py` ;;; extended with applies_to validation.
+
+### Conformance
+
+- `python3 conformance/check.py` ;;; `NO_DRIFT (1 Profile record(s) validated)`, exit 0.
+- `python3 conformance/tests/test_profile_schema.py` ;;; `5/5 cases passed`, exit 0.
+
+### Implemented by
+
+- CR-ES-AG-002 ;;; per ADR-ES-AG-001 §6 CR-ES-AG-002.
+- Authored by manny-es (the dedicated Enterprise-Semantics sub-agent).
+- Grounded per FND-ES-AG-001-Grounding-Result ;;; WSF live baseline cited explicitly in provenance.
 
 ## [0.1.0] ; 2026-09-02 ; CR-ES-AG-001 Profile semantic construct
 

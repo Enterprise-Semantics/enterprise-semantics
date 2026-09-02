@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Enterprise-Semantics/enterprise-semantics/schema/concept.schema.json",
+  "title": "Enterprise-Semantics Concept",
+  "description": "Concept record per ADR-ES-002 \u00a77. A Concept is the semantic identity ;;; a Concept record declares its canonical name, definition, WSF grounding, Profile bindings, and governed relationships.",
+  "type": "object",
+  "required": [
+    "id",
+    "canonical_name",
+    "definition",
+    "status",
+    "version",
+    "concept_type",
+    "governance",
+    "provenance"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ES:CONCEPT:[a-z][a-z0-9-]*$",
+      "description": "Stable semantic identity per ADR-ES-002 \u00a711. Format: ES:CONCEPT:<kebab-case-name>."
+    },
+    "canonical_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "definition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Candidate",
+        "Investigating",
+        "Proposed",
+        "Established",
+        "Canonical",
+        "Mapped",
+        "Deprecated",
+        "Retired"
+      ],
+      "description": "Lifecycle status per ADR-ES-002 \u00a713."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(-[a-z0-9.-]+)?$",
+      "description": "Semantic version per semver."
+    },
+    "concept_type": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "description": "Kind of concept (e.g. 'value-stream', 'workflow', 'ai-agent')."
+    },
+    "wsf_grounding": {
+      "type": "array",
+      "description": "WSF concepts that this concept specializes or profiles. Per FND-ES-AG-001-Grounding-Result ;;; ES must specialize WSF, not duplicate.",
+      "items": {
+        "type": "object",
+        "required": [
+          "wsf_concept_id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "wsf_concept_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "specializes",
+              "profiles",
+              "references",
+              "extends"
+            ],
+            "description": "How this concept relates to the WSF concept."
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "profile_bindings": {
+      "type": "array",
+      "description": "Profiles that this Concept carries. Per ADR-ES-AG-001 \u00a73 ;;; a Profile adds a governed configuration overlay.",
+      "items": {
+        "type": "object",
+        "required": [
+          "profile_id",
+          "profile_type"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "profile_id": {
+            "type": "string",
+            "pattern": "^ES:PROFILE:[a-z][a-z0-9-]*$"
+          },
+          "profile_type": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether whether the Profile is currently active for this Concept."
+          }
+        }
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "description": "Governed relationships to other Concepts. Per ADR-ES-002 \u00a79.",
+      "items": {
+        "type": "object",
+        "required": [
+          "subject",
+          "predicate",
+          "object",
+          "status"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "subject": {
+            "type": "string",
+            "description": "Source Concept id."
+          },
+          "predicate": {
+            "type": "string"
+          },
+          "object": {
+            "type": "string",
+            "description": "Target Concept id."
+          },
+          "qualification": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "provisional",
+              "proposed",
+              "established",
+              "rejected"
+            ]
+          },
+          "provenance": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "governance": {
+      "type": "string",
+      "enum": [
+        "enterprise-semantics",
+        "wsf",
+        "opendea"
+      ]
+    },
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "authority",
+          "target_id",
+          "relationship"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "authority": {
+            "type": "string",
+            "enum": [
+              "wsf",
+              "opendea",
+              "dea-catalog"
+            ]
+          },
+          "target_id": {
+            "type": "string"
+          },
+          "relationship": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "created": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

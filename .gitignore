@@ -1,0 +1,34 @@
+# Credentials / secrets
+.env
+.env.*
+*.pem
+*.key
+*.token
+*.secret
+credentials/
+.gh-token
+
+# AI model artifacts
+*.gguf
+*.safetensors
+checkpoints/
+models/
+
+# Workspace noise
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Generated artifacts (regenerable from source)
+/generated/
+/dist/

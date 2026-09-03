@@ -1,0 +1,53 @@
+id: ES:CONCEPT:capability
+canonical_name: Capability
+definition: |
+  A Capability is an enterprise's ability to realize outcomes through
+  coordinated resources, processes, and competencies. Capabilities are
+  bearer-agnostic ;; they may be realized by human agents, AI agents,
+  software systems, or composites. Per FND-ES-AG-001-Grounding-Result §7 ;;
+  WSF Capability (Tier 2).
+status: Candidate
+version: 0.1.0
+concept_type: capability
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Capability
+    relationship: specializes
+    note: Capability specializes WSF Capability (Tier 2).
+profile_bindings: []
+relationships:
+  - subject: ES:CONCEPT:capability
+    predicate: bearer-agnostic
+    object: external:concept:capability-bearer
+    qualification: bearer-agnosticism
+    status: proposed
+    provenance: FND-ES-AG-001-Grounding-Result §7
+    rationale: Capabilities may be realized by human agents, AI agents, software, or composites.
+  - subject: ES:CONCEPT:capability
+    predicate: realizes
+    object: external:concept:outcome
+    qualification: outcome-realization
+    status: proposed
+    provenance: FND-ES-AG-001-Grounding-Result §7
+    rationale: Capabilities realize outcomes.
+  - subject: ES:CONCEPT:capability
+    predicate: substrate-of
+    object: ES:CONCEPT:value-stream
+    qualification: capability-substrate
+    status: proposed
+    provenance: FND-ES-AG-001-Grounding-Result §7 ;; agentic-value-stream.concept.yaml cross-ref
+    rationale: Value Streams are enabled by Capabilities.
+governance: enterprise-semantics
+provenance:
+  - source: FND-ES-AG-001-Grounding-Result §7
+    note: Capability identified as an enterprise substrate.
+  - source: WSF Capability (Tier 2)
+    note: WSF Capability grounding inherited.
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Capability grounding.
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Capability
+    relationship: specializes
+    note: Capability specializes WSF Capability.
+created: 2026-09-03
+updated: 2026-09-03

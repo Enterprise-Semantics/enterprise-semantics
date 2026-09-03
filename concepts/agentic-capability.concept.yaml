@@ -1,0 +1,77 @@
+id: ES:CONCEPT:agentic-capability
+canonical_name: Agentic Capability
+definition: |
+  An Agentic Capability is a Capability whose outcome-realization is
+  characterized by goal-directed progression under bounded autonomy,
+  AI-augmented decision-making, adaptive reconfiguration, and human
+  governance rather than human execution. Per FND-ES-AG-001-Grounding-Result
+  §7 ;; ADR-ES-AG-001 §3.3.
+status: Candidate
+version: 0.1.0
+concept_type: agentic-capability
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Capability
+    relationship: references
+    note: |
+      Agentic Capability inherits the WSF Capability grounding via its
+      profiled Capability. The Profile does not introduce a new semantic
+      kind.
+profile_bindings:
+  - profile_id: ES:PROFILE:agentic-execution
+    profile_type: agentic-execution
+    active: true
+relationships:
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: profile-of
+    object: ES:CONCEPT:capability
+    qualification: agentic-execution-profile
+    status: proposed
+    provenance: FND-ES-AG-001-Grounding-Result §7
+    rationale: Agentic Capability is a Profile of Capability under agent-augmented execution conditions.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: distinct-from
+    object: ES:CONCEPT:ai-agent
+    qualification: what-vs-who
+    status: proposed
+    provenance: CR-ES-AG-008 §2
+    rationale: |
+      Agentic Capability is the *what* (outcome-realization under agent-augmented
+      execution). AI Agent is the *who* (the bearer). The two are distinct
+      semantic kinds, related via the bearer relationship.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: bears
+    object: ES:CONCEPT:ai-agent
+    qualification: typical-bearer
+    status: proposed
+    provenance: CR-ES-AG-008 §2 ;; FND-ES-AG-007 §3.6
+    rationale: |
+      Agentic Capabilities are typically borne by AI Agents (but may also be
+      borne by composite human+AI teams). The bearer relationship is
+      identified but not exclusive.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: enables
+    object: ES:CONCEPT:agentic-value-stream
+    qualification: value-stream-enabler
+    status: proposed
+    provenance: agentic-value-stream.concept.yaml cross-ref
+    rationale: |
+      Agentic Capabilities enable Agentic Value Streams ;; the value stream
+      cross-reference to external:concept:capability now resolves via the
+      Profile chain (Agentic Value Stream -> Capability -> Agentic Capability).
+governance: enterprise-semantics
+provenance:
+  - source: FND-ES-AG-001-Grounding-Result §7
+    note: Capability + Agentic Capability identified.
+  - source: ADR-ES-AG-001
+    note: Profile pattern applied (ES:PROFILE:agentic-execution).
+  - source: FND-ES-AG-007
+    note: AI Agent is the typical bearer (but not exclusive).
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Capability grounding inherited via Capability.
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Capability
+    relationship: references
+    note: Inherits Capability grounding via Capability.
+created: 2026-09-03
+updated: 2026-09-03

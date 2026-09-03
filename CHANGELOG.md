@@ -12,11 +12,37 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 
 ### Planned
 
-- CR-ES-AG-008 ;;; Agentic Capability.
 - CR-ES-AG-010 ;;; Agentic Agent (conditional, gated on FND-ES-AG-006 + FND-ES-AG-007).
 - CR-ES-AG-011 ;;; Agentic Service, Agentic Product, Agentic AI.
 - CR-ES-AG-012 ;;; Profile conformance gate extension (cross-record checks).
 - CR-ES-AG-013 ;;; First semantic release tag.
+
+## [0.9.0] ; 2026-09-03 ; CR-ES-AG-008 Agentic Capability concept record
+
+### Added
+
+- `concepts/capability.concept.yaml` ;;; base Concept record (Candidate, v0.1.0). Bearer-agnostic outcome-realization ability. Specializes WSF Capability (Tier 2).
+- `concepts/agentic-capability.concept.yaml` ;;; profiled Concept record (Candidate, v0.1.0). Profile of Capability, binds `ES:PROFILE:agentic-execution`.
+- `docs/cr/0008-agentic-capability-concept.md` ;;; CR document in governance.
+
+### Profile-of-Profile reasoning
+
+The Profile characteristics (bounded autonomy, AI-augmented decision-making, adaptive behavior, human governance) apply to **Capability's outcome-realization aspect**, not to a specific bearer. This distinguishes `Agentic Capability` (the *what*) from `AI Agent` (the *who*). The two are distinct semantic kinds, related via the bearer relationship.
+
+### Conformance
+
+- `python3 conformance/check.py` ;;; NO_DRIFT (1 Profile record(s) validated), exit 0.
+- `python3 conformance/check_concepts.py` ;;; NO_DRIFT (14 Concept record(s) validated), exit 0.
+
+### Cross-references resolved
+
+- `agentic-value-stream.concept.yaml` previously referenced `external:concept:capability`. The reference is now resolvable via the Profile chain (Agentic Value Stream -> Capability -> Agentic Capability).
+
+### Implemented by
+
+- CR-ES-AG-008 ;;; per ADR-ES-AG-001 §6.
+- Authored by manny-es.
+- Grounded per FND-ES-AG-001-Grounding-Result §7.
 
 ## [0.8.0] ; 2026-09-03 ; CR-ES-AG-005 Agentic Flow concept record
 

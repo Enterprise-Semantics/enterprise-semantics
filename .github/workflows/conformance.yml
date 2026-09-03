@@ -1,0 +1,49 @@
+# Enterprise-Semantics CI Gate
+#
+# Phase 5 (PLAN §Phase 5.1-5.2): the conformance harness from
+# enterprise-semantics-test-probe is the CI gate for this authority repo
+# and for enterprise-semantics-mappings. On every push and PR to main,
+# the harness must report NO_DRIFT.
+#
+# The harness sources authority-repo conformance scripts (no duplication).
+name: conformance
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  conformance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout enterprise-semantics (this repo)
+        uses: actions/checkout@v4
+        with:
+          path: enterprise-semantics
+          fetch-depth: 1
+
+      - name: Checkout enterprise-semantics-test-probe
+        uses: actions/checkout@v4
+        with:
+          repository: Enterprise-Semantics/enterprise-semantics-test-probe
+          path: enterprise-semantics-test-probe
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run conformance gate
+        run: |
+          python3 enterprise-semantics-test-probe/tools/validate.py \
+            --mode all \
+            --source "$(pwd)/enterprise-semantics"
+
+      - name: Run pytest smoke
+        run: |
+          python3 -m pip install --quiet pytest
+          cd enterprise-semantics-test-probe
+          python3 -m pytest tests/ -v

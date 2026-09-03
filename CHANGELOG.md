@@ -12,12 +12,34 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 
 ### Planned
 
-- CR-ES-AG-005 ;;; Agentic Flow.
 - CR-ES-AG-008 ;;; Agentic Capability.
-- CR-ES-AG-010 ;;; Agentic Agent (conditional, gated on FND-ES-AG-006 + FND-ES-AG-009 / FND-ES-AG-007).
+- CR-ES-AG-010 ;;; Agentic Agent (conditional, gated on FND-ES-AG-006 + FND-ES-AG-007).
 - CR-ES-AG-011 ;;; Agentic Service, Agentic Product, Agentic AI.
 - CR-ES-AG-012 ;;; Profile conformance gate extension (cross-record checks).
 - CR-ES-AG-013 ;;; First semantic release tag.
+
+## [0.8.0] ; 2026-09-03 ; CR-ES-AG-005 Agentic Flow concept record
+
+### Added
+
+- `concepts/flow.concept.yaml` ;;; base Concept record (Candidate, v0.1.0). Choreographic substrate for Workflow. Specializes WSF Process.
+- `concepts/agentic-flow.concept.yaml` ;;; profiled Concept record (Candidate, v0.1.0). Profile of Flow, binds `ES:PROFILE:agentic-execution`.
+- `docs/cr/0005-agentic-flow-concept.md` ;;; CR document in governance.
+
+### Conformance
+
+- `python3 conformance/check.py` ;;; NO_DRIFT (1 Profile record(s) validated), exit 0.
+- `python3 conformance/check_concepts.py` ;;; NO_DRIFT (12 Concept record(s) validated), exit 0.
+
+### Cross-references resolved
+
+- `agentic-workflow.concept.yaml` previously referenced `external:concept:agentic-flow` (the choreographic substrate). The reference is now resolvable to a real Concept id (`ES:CONCEPT:agentic-flow`).
+
+### Implemented by
+
+- CR-ES-AG-005 ;;; per ADR-ES-AG-001 §6.
+- Authored by manny-es.
+- Grounded per FND-ES-AG-001-Grounding-Result §7.
 
 ## [0.7.0] ; 2026-09-03 ; CR-ES-AG-009 AI Agent concept record
 

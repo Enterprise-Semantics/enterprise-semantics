@@ -1,0 +1,55 @@
+id: ES:CONCEPT:flow
+canonical_name: Flow
+definition: |
+  Flow is the directional movement of value, work, information, or events
+  through an enterprise. Flow is the choreographic substrate for Workflow ;;
+  Workflow sequences activities, but Flow defines the direction and rate of
+  movement through the sequence. Per FND-ES-AG-001-Grounding-Result §7.
+status: Candidate
+version: 0.1.0
+concept_type: flow
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Process
+    relationship: specializes
+    note: Flow specializes WSF Process (the directional aspect of process).
+  - wsf_concept_id: external:wsf:Event
+    relationship: references
+    note: Flow references Events ;; events mark the boundaries of Flow segments.
+profile_bindings: []
+relationships:
+  - subject: ES:CONCEPT:flow
+    predicate: distinct-from
+    object: ES:CONCEPT:workflow
+    qualification: directional-vs-sequencing
+    status: proposed
+    provenance: FND-ES-AG-001-Grounding-Result §7
+    rationale: Flow is directional movement ;; Workflow is a sequence of activities.
+  - subject: ES:CONCEPT:flow
+    predicate: realized-by
+    object: ES:CONCEPT:value-stream
+    qualification: realization-substrate
+    status: proposed
+    provenance: FND-ES-AG-001-Grounding-Result §7
+    rationale: Value Streams are realized as Flows.
+  - subject: ES:CONCEPT:flow
+    predicate: generated-by
+    object: ES:CONCEPT:workflow
+    qualification: workflow-output
+    status: proposed
+    provenance: FND-ES-AG-001-Grounding-Result §7
+    rationale: Workflows generate Flows.
+governance: enterprise-semantics
+provenance:
+  - source: FND-ES-AG-001-Grounding-Result §7
+    note: Flow identified as the choreographic substrate for Workflow.
+  - source: FND-ES-AG-001 §7
+    note: Flow is part of the agentic body of work.
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Process grounding inherited.
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Process
+    relationship: specializes
+    note: Flow specializes WSF Process.
+created: 2026-09-03
+updated: 2026-09-03

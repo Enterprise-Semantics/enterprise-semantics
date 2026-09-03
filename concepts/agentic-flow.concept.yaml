@@ -1,0 +1,60 @@
+id: ES:CONCEPT:agentic-flow
+canonical_name: Agentic Flow
+definition: |
+  An Agentic Flow is a Flow whose directional movement is characterized by
+  goal-directed progression under bounded autonomy, AI-augmented routing
+  decisions, adaptive rate adjustment, and human governance rather than human
+  routing ;; all within an enterprise semantic context. Per FND-ES-AG-001-
+  Grounding-Result §7 ;; ADR-ES-AG-001 §3.3.
+status: Candidate
+version: 0.1.0
+concept_type: agentic-flow
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Process
+    relationship: references
+    note: |
+      Agentic Flow inherits the WSF Process grounding via its profiled Flow.
+      The Profile does not introduce a new semantic kind.
+profile_bindings:
+  - profile_id: ES:PROFILE:agentic-execution
+    profile_type: agentic-execution
+    active: true
+relationships:
+  - subject: ES:CONCEPT:agentic-flow
+    predicate: profile-of
+    object: ES:CONCEPT:flow
+    qualification: agentic-execution-profile
+    status: proposed
+    provenance: FND-ES-AG-001-Grounding-Result §7
+    rationale: Agentic Flow is a Profile of Flow under agent-augmented execution conditions.
+  - subject: ES:CONCEPT:agentic-flow
+    predicate: choreographs
+    object: ES:CONCEPT:agentic-workflow
+    qualification: choreographic-substrate
+    status: proposed
+    provenance: agentic-workflow.concept.yaml cross-ref
+    rationale: |
+      Agentic Workflow references Agentic Flow as its choreographic substrate.
+      This relationship makes the cross-reference resolvable to a real Concept.
+  - subject: ES:CONCEPT:agentic-flow
+    predicate: realized-by
+    object: ES:CONCEPT:agentic-value-stream
+    qualification: value-stream-realization
+    status: proposed
+    provenance: FND-ES-AG-001-Grounding-Result §7
+    rationale: Agentic Value Streams are realized as Agentic Flows.
+governance: enterprise-semantics
+provenance:
+  - source: FND-ES-AG-001-Grounding-Result §7
+    note: Flow + Agentic Flow identified as the choreographic substrate.
+  - source: ADR-ES-AG-001
+    note: Profile pattern applied (ES:PROFILE:agentic-execution).
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Process grounding inherited via Flow.
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Process
+    relationship: references
+    note: Inherits Process grounding via Flow.
+created: 2026-09-03
+updated: 2026-09-03

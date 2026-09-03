@@ -1,0 +1,56 @@
+id: ES:CONCEPT:agent
+canonical_name: Agent
+definition: |
+  An Agent is an Entity that acts on behalf of another Entity to pursue
+  stated outcomes. Agents may be human, software, AI-bearing, or composite.
+  Agents exhibit goal-directed behavior and bear capabilities that can be
+  invoked, observed, and governed. The generic Agent concept is intentionally
+  bearer-agnostic ;; it does NOT require AI grounding. Per FND-ES-AG-007 §3.1.
+status: Candidate
+version: 0.1.0
+concept_type: agent
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Entity
+    relationship: specializes
+    note: Agent specializes WSF Entity (Tier 1).
+  - wsf_concept_id: external:wsf:Capability
+    relationship: references
+    note: Agent bears Capabilities (per FND-ES-AG-007 §3.2).
+profile_bindings: []
+relationships:
+  - subject: ES:CONCEPT:agent
+    predicate: bears
+    object: external:wsf:Capability
+    qualification: capability-bearer
+    status: proposed
+    provenance: FND-ES-AG-007 §3.2
+    rationale: Agent is a Capability bearer.
+  - subject: ES:CONCEPT:agent
+    predicate: distinct-from
+    object: ES:CONCEPT:ai-agent
+    qualification: bearer-agnostic-vs-ai-bearing
+    status: proposed
+    provenance: FND-ES-AG-007 §3.5
+    rationale: Agent is bearer-agnostic ;; AI Agent is AI-bearing.
+  - subject: ES:CONCEPT:agent
+    predicate: distinct-from
+    object: external:concept:human-agent
+    qualification: semantic-kind-distinction
+    status: proposed
+    provenance: FND-ES-AG-007 §3.7
+    rationale: Agent is the generic kind ;; Human Agent is a specialization.
+governance: enterprise-semantics
+provenance:
+  - source: FND-ES-AG-007
+    note: AI Agent grounding establishes Agent as the generic kind.
+  - source: FND-ES-AG-001-Grounding-Result §3
+    note: One of three plausible models treats Agent as a base for AI Agent.
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Entity grounding inherited.
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Entity
+    relationship: specializes
+    note: Agent specializes WSF Entity.
+created: 2026-09-03
+updated: 2026-09-03

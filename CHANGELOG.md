@@ -14,11 +14,31 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 
 - CR-ES-AG-005 ;;; Agentic Flow.
 - CR-ES-AG-008 ;;; Agentic Capability.
-- CR-ES-AG-009 ;;; AI Agent (must precede CR-ES-AG-010 per FND-ES-AG-006).
-- CR-ES-AG-010 ;;; Agentic Agent (conditional, gated on FND-ES-AG-006 + FND-ES-AG-009).
+- CR-ES-AG-010 ;;; Agentic Agent (conditional, gated on FND-ES-AG-006 + FND-ES-AG-009 / FND-ES-AG-007).
 - CR-ES-AG-011 ;;; Agentic Service, Agentic Product, Agentic AI.
 - CR-ES-AG-012 ;;; Profile conformance gate extension (cross-record checks).
 - CR-ES-AG-013 ;;; First semantic release tag.
+
+## [0.7.0] ; 2026-09-03 ; CR-ES-AG-009 AI Agent concept record
+
+### Added
+
+- `concepts/agent.concept.yaml` ;;; base Concept record (Candidate, v0.1.0). Bearer-agnostic Agent ;; specializes WSF Entity + bears WSF Capability. Distinct from AI Agent and Human Agent.
+- `concepts/ai-agent.concept.yaml` ;;; AI Agent concept record (Candidate, v0.1.0). **Distinct kind, NOT a Profile.** Grounds via WSF Entity + WSF Capability. Gating prerequisite for FND-ES-AG-006 (Agentic Agent scrutiny).
+- `docs/cr/0009-ai-agent-concept.md` ;;; CR document in governance.
+- `docs/finding/0007-ai-agent-semantic-grounding.md` ;;; FND-ES-AG-007 in governance.
+
+### Conformance
+
+- `python3 conformance/check.py` ;;; NO_DRIFT (1 Profile record(s) validated), exit 0.
+- `python3 conformance/check_concepts.py` ;;; NO_DRIFT (10 Concept record(s) validated), exit 0.
+
+### Implemented by
+
+- CR-ES-AG-009 ;;; per ADR-ES-AG-001 §6.
+- Authored by manny-es.
+- Grounded per FND-ES-AG-007.
+- Gating prerequisite for CR-ES-AG-010 (Agentic Agent ;;; conditional, per FND-ES-AG-006 scrutiny).
 
 ## [0.6.0] ; 2026-09-02 ; CR-ES-AG-007 Agentic Enterprise concept record
 

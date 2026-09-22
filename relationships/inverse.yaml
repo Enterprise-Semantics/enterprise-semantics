@@ -1,0 +1,27 @@
+<!--
+Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
+Filing: CR-ES-001 §3-§7 (scaffold scaffolding only ;;; no concept mutation, no schema mutation)
+-->
+
+# inverse predicate map ;;; initial governed inverse relationships
+#
+# Per CR-ES-001 §8 and ADR-ES-001 §13, every predicate that has an inverse
+# must declare it explicitly here. This file is deliberately empty at v0.0.1
+# until the first governed predicates are introduced.
+
+inverse:
+  version: 0.0.1
+  status: scaffold
+  governed_inverses: []
+
+governance:
+  adr: ADR-ES-001
+  cr: CR-ES-001
+  finding: null
+
+provenance:
+  source: ES
+  research: null
+  decision: ADR-ES-001 §13
+  implementation: CR-ES-001 §8
+  mapping: null

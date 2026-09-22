@@ -1,0 +1,30 @@
+<!--
+Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
+Filing: CR-ES-001 §3-§7 (scaffold scaffolding only ;;; no concept mutation, no schema mutation)
+-->
+
+# provenance/findings.yaml ;;; FINDING provenance registry
+#
+# Per CR-ES-001 §9 and ADR-ES-001 §14. Links each ES concept back to the
+# Finding (in enterprise-semantics-governance/docs/finding/) that established
+# its evidentiary basis.
+#
+# Empty at v0.0.1 ;;; first entries will be added by concept-specific ADRs
+# that introduce substantive concepts.
+
+findings:
+  version: 0.0.1
+  status: scaffold
+  governed_findings: []
+
+governance:
+  adr: ADR-ES-001
+  cr: CR-ES-001
+  finding: null
+
+provenance:
+  source: ES
+  research: null
+  decision: ADR-ES-001 §14
+  implementation: CR-ES-001 §9
+  mapping: null

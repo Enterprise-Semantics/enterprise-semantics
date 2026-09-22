@@ -1,0 +1,66 @@
+<!--
+Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
+Filing: CR-ES-001 §3-§7 (scaffold scaffolding only ;;; no concept mutation, no schema mutation)
+-->
+
+# versions/v0.0.1.yaml ;;; initial released version pointer
+#
+# Per CR-ES-001 §23, the initial repository/program state is v0.0.1.
+# This version represents the architectural skeleton and governance
+# foundation, not a mature semantic release.
+#
+# This version does NOT imply that all planned semantic concepts are
+# canonical. It establishes the scaffolding required for subsequent
+# ADR/CR pairs to introduce substantive semantic content.
+
+version:
+  id: v0.0.1
+  release_date: 2026-09-22
+  status: scaffold ;;; not mature
+  includes:
+    - semantic_authority_structure
+    - governance_templates
+    - registry_skeleton
+    - relationship_vocabulary_skeleton
+    - provenance_skeleton
+  excludes:
+    - substantive_enterprise_concepts
+    - agentic_concept_canonicalisation
+    - autonomous_concept_canonicalisation
+    - value_realization_canonicalisation
+    - hvs_canonicalisation
+    - kci_kei_kbi_canonicalisation
+
+governance:
+  adr: ADR-ES-001
+  cr: CR-ES-001
+  finding: null
+
+provenance:
+  source: ES
+  research: null
+  decision: ADR-ES-001 §25
+  implementation: CR-ES-001 §23
+  mapping: null
+
+release_notes: |
+  Initial scaffolding release. Establishes the architectural skeleton and
+  governance foundation for Enterprise-Semantics. No substantive enterprise
+  concepts are promoted to canonical status by this release. Subsequent
+  ADR/CR pairs will introduce Capability, Value Stream, Agentic, and other
+  concepts through governed change.
+
+  Per CR-ES-001 §26, the following remain PROPOSED until their individual
+  ADRs establish their semantics:
+
+  - Capability
+  - Value Stream
+  - Agentic
+  - Agentic Enterprise
+  - Agentic Operations
+  - Agentic Value Stream
+  - Agentic Workflow
+  - Autonomous Operations
+  - Autonomous Enterprise
+  - Autonomous Value Stream
+  - Value Realization concepts

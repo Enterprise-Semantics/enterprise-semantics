@@ -17,6 +17,36 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - CR-ES-AG-012 ;;; Profile conformance gate extension (cross-record checks).
 - CR-ES-AG-013 ;;; First semantic release tag.
 
+## [0.10.0] ; 2026-09-22 ; CR-ES-001 scaffolding landing (relationships, provenance, versions)
+
+### Added
+
+- `relationships/vocabulary.yaml` ;;; initial governed predicate vocabulary (empty at v0.0.1 ;;; no predicates invented outside ADR/CR authority).
+- `relationships/inverse.yaml` ;;; initial governed inverse-predicate map (empty at v0.0.1).
+- `relationships/README.md` ;;; relationship governance policy.
+- `provenance/sources.yaml` ;;; SOURCE provenance registry (empty at v0.0.1).
+- `provenance/findings.yaml` ;;; FINDING provenance registry (empty at v0.0.1).
+- `provenance/decisions.yaml` ;;; DECISION provenance registry (empty at v0.0.1).
+- `provenance/README.md` ;;; provenance model policy.
+- `versions/v0.0.1.yaml` ;;; initial released version pointer (scaffold ;;; not mature).
+
+### Scope
+
+This release implements CR-ES-001 §3-§7 scaffolding only. No concept YAML mutations. No schema mutations. No template changes. No mapping file changes. No lifecycle state migration. Subsequent CRs will populate governed predicates, provenance records, and additional version pointers.
+
+### Governance
+
+- ADR-ES-001 (Proposed) ;;; ADR-ES-001 establishes the authority and publication architecture.
+- CR-ES-001 (Proposed) ;;; CR-ES-001 establishes the minimum executable architecture.
+- FND-ES-AG-008 (Proposed Finding) ;;; per-concept WSF-grounding classification framework.
+
+### Cardinal rules applied
+
+- Author: Emmanuel A. Otchere (cardinal author rule, 2026-09-22).
+- No en-dash (U+2013) or em-dash (U+2014) in any new file (D-004 dash rule).
+- No TM Forum material in any new file (cardinal embargo, 2026-09-22).
+- ES is sourced from SDO-neutral standardisation only (ISO/IEC, ITU-T, ETSI, NIST).
+
 ## [0.9.0] ; 2026-09-03 ; CR-ES-AG-008 Agentic Capability concept record
 
 ### Added

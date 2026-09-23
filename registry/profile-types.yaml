@@ -40,3 +40,13 @@ profile_types:
     governance: enterprise-semantics
     status: Reserved
     created: 2026-09-02
+
+  - id: agentic-value-realization
+    canonical_name: Agentic Value Realization
+    definition: |
+      A profile_type family for Profiles that group Agentic Value Stream
+      specialisations for discoverability. Per CR-ES-005 §14 + ADR-ES-005 §6.
+      Provides semantic overlay ;; not an inheritance hierarchy.
+    governance: enterprise-semantics
+    status: Established
+    created: 2026-09-23

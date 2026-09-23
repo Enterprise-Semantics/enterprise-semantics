@@ -19,6 +19,52 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - VS-C ;;; WSF + OpenDEA + DEA Catalog mapping records (CR-ES-003 §21-§23).
 - VS-D ;;; documentation + examples + conformance rules + tests + PlantUML (CR-ES-003 §27-§35).
 
+## [0.12.0] ; 2026-09-23 ; CR-ES-002 Capability Semantic Grounding landing (recovered from v3.1.7 orphan stash)
+
+### Added
+
+- `concepts/capability.concept.yaml` ;;; extended per CR-ES-002 §4 + §6 + ADR-ES-002 §1.1. 12 relationships (9 new governed predicates + 3 preserved from prior scaffold). Tier 2 Specialisation per FND-ES-AG-008 §1.3.
+- `relationships/vocabulary.yaml` ;;; v0.3.0, 22 governed predicates (13 Value Stream predicates from VS-B + 9 Capability predicates from CR-ES-002 §5). Two predicates namespaced for cross-CR subject-type disambiguation: `capability-realized-through` (Capability subject) vs `realized-through` (Value Stream subject), `capability-contributes-to` (Capability subject) vs `contributes-to` (Value Stream + Value Stage subjects).
+- `relationships/inverse.yaml` ;;; v0.3.0, 22 inverse pairs matching the 22 predicates.
+- `versions/v0.1.0.yaml` ;;; Capability semantic establishment version pointer per CR-ES-002 §24 + ADR-ES-002 §8.
+- `versions/v0.0.1.yaml` ;;; HTML-comment header replaced with YAML-comment header (D-004 conformance fix).
+- `provenance/decisions.yaml` + `provenance/findings.yaml` + `provenance/sources.yaml` ;;; HTML-comment headers replaced with YAML-comment headers (D-004 conformance fix).
+
+### Refactored
+
+- The two namespaced predicates (`capability-realized-through`, `capability-contributes-to`) follow the same namespace pattern as `stage-realized-through` from VS-B ;;; the prefix identifies the subject_type.
+
+### Scope
+
+This release implements CR-ES-002 §3-§25 (Capability Semantic Grounding). The implementation was stashed during the v3.1.7 chain execution (because VS-A was the higher-priority slice) and recovered via `git stash pop` into a fresh branch `docs/cr-es-002-capability-implementation-v2` cut from current main. The stashed work predates VS-A + VS-B ;;; the conflict resolution strategy was to keep main's VS-A + VS-B content and add the Capability predicates as additional entries, with namespacing for the 2 collision cases. No concept YAML mutation for Value Stream or Value Stage (already on main after VS-A PR #2).
+
+### Governance
+
+- ADR-ES-002 (Proposed, governance slot 0004) ;;; ratifies the foundational Capability decision.
+- CR-ES-002 (Proposed, governance slot 0010) ;;; carries the Capability predicate table + per-predicate definitions.
+- FND-ES-AG-008 (Established 2026-09-22) ;;; establishes the Tier 2 Specialisation classification for Capability per §1.3.
+
+### Cardinal rules applied
+
+- Author: Emmanuel A. Otchere (cardinal author rule, 2026-09-23) ;;; present on all modified/new files.
+- No en-dash (U+2013) or em-dash (U+2014) in any new/edited file (D-004 dash rule). Section dividers use `;;;` boundary lines per existing convention.
+- No vendor-specific material from embargoed sources in any new/edited file (cardinal embargo, 2026-09-22).
+- ES is sourced from SDO-neutral standardisation only (ISO/IEC, ITU-T, ETSI, NIST).
+
+### Verification (local)
+
+- `python3 -c "import yaml; yaml.safe_load(open('relationships/vocabulary.yaml').read())"` ;;; parses cleanly, 22 predicate entries.
+- `python3 -c "import yaml; yaml.safe_load(open('relationships/inverse.yaml').read())"` ;;; parses cleanly, 22 inverse entries.
+- `python3 -c "import yaml; yaml.safe_load(open('versions/v0.1.0.yaml').read())"` ;;; parses cleanly.
+
+### Out of scope (held for subsequent CRs)
+
+- No conformance rule additions (CAP-CON-001..012 held for separate CR).
+- No WSF + OpenDEA + DEA Catalog mapping records for Capability (held for separate CR ;;; VS-C for Value Stream is now done, Capability mappings are a parallel workstream).
+- No documentation + examples + tests + PlantUML for Capability (held for separate CR ;;; parallel to the CR-ES-003 VS-D tranche already landed).
+- No ADR-ES-002 promotion to Accepted (gated on CR-ES-002 implementation completion ;;; this slice is the prerequisite).
+- No release tag (per v3.1.4 user directive).
+
 ## [0.11.0] ; 2026-09-23 ; VS-B Value Stream relationship vocabulary
 
 ### Added

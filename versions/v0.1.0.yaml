@@ -1,0 +1,90 @@
+# versions/v0.1.0.yaml ;;; Capability semantic establishment
+#
+# Per CR-ES-002 §24 + ADR-ES-002 §8.
+# This version indicates semantic establishment of the foundational
+# Capability concept ;;; not maturity of the wider Enterprise-Semantics
+# program. Per CR-ES-002 §24, the version signals Capability establishment.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
+
+version:
+  id: v0.1.0
+  release_date: 2026-09-22
+  status: candidate ;;; awaiting ADR-ES-002 acceptance
+  includes:
+    - capability_canonical_definition
+    - capability_semantic_boundaries
+    - capability_core_relationships ;;; 9 predicates in vocabulary.yaml
+    - capability_identity_rules
+    - capability_schema_representation
+    - capability_lifecycle ;;; still Candidate
+    - capability_provenance
+    - capability_wsf_grounding ;;; Tier 2 Specialisation, provisional Business-Capability equivalent
+    - capability_opendea_correspondence
+    - capability_dea_catalog_boundary
+    - capability_validation_rules ;;; CAP-001..012
+    - capability_conformance_tests ;;; 7 test groups
+    - capability_documentation
+    - capability_worked_example ;;; OTCHERE Inc
+  excludes:
+    - agentic_capability ;;; per CR-ES-002 §25
+    - autonomous_capability ;;; per CR-ES-002 §25
+    - business_capability_c
+    - operational_capability_c
+    - technical_capability_c
+    - organisational_capability_c
+    - digital_capability_c
+    - capability_maturity_models ;;; per CR-ES-002 §25
+    - capability_scoring
+    - capability_heatmaps
+    - capability_decomposition_methodology
+    - wsf_modification
+    - opendea_metamodel_modification
+    - function_role_resource_service_system_metamodel_changes
+
+governance:
+  adr: ADR-ES-002
+  cr: CR-ES-002
+  finding: FND-ES-AG-008
+
+provenance:
+  source: ES
+  research: FND-ES-AG-008
+  decision: ADR-ES-002
+  implementation: CR-ES-002 §24
+  mapping: null
+
+release_notes: |
+  Establishes the foundational Capability semantic concept in
+  Enterprise-Semantics. Per CR-ES-002 §2.1, Capability is "an enduring
+  ability of an Entity to achieve or enable an Outcome." Per FND-ES-AG-008
+  §1.3, ES capability is classified as Tier 2 Specialisation under the
+  WSF pre-declared Capability specialisation pattern ;;; provisional
+  Business-Capability equivalent.
+
+  This version introduces:
+
+  - canonical Capability definition
+  - 8 exclusion boundaries (Process, Function, Role, Service, etc.)
+  - 9 governed relationship predicates (possesses, enables,
+    realized-through, exercised-by, supported-by, delivered-through,
+    implemented-by, contributes-to, supports)
+  - 9 inverse predicate mappings
+  - 3 mapping records (wsf, opendea, dea-catalogs)
+  - 12 CAP-001..012 validation rules
+  - 7 test groups (identity, schema, relationships, boundaries,
+    provenance, grounding, specialization)
+  - 3 documentation files (canonical, boundary, relationships)
+  - 1 OTCHERE Inc worked example
+  - Capability status: Candidate, v0.2.0
+
+  This version does NOT establish Agentic Capability, Autonomous
+  Capability, Business Capability, Operational Capability, Technical
+  Capability, Organisational Capability, Digital Capability, or any
+  other Capability specialisation as a foundational concept.
+
+cardinal_rules:
+  author: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
+  dash_rule: D-004 (no en-dash, no em-dash)
+  sourcing: SDO-neutral (ISO/IEC, ITU-T, ETSI, NIST)
+  embargo: no material from embargoed vendor-specific sources

@@ -3,7 +3,7 @@
 #         vocabulary with 13 governed predicates from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Relationship vocabulary ;;; v0.2.0 ;;; 13 governed predicates for Value Stream
+# Relationship vocabulary ;;; v0.3.0 ;;; 13 Value Stream governed predicates + 9 Capability governed predicates + 2 namespaced predicates (capability-realized-through, capability-contributes-to) for cross-CR subject-type disambiguation
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, relationships are first-class semantic
 # content with governed predicates. The vocabulary file is the authoritative
@@ -18,8 +18,8 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.2.0
-  status: candidate ;;; awaiting ADR-ES-003 acceptance
+  version: 0.3.0
+  status: candidate ;;; awaiting ADR-ES-003 acceptance + ADR-ES-002 acceptance
   governed_predicates:
 
     # ===== Value Stream ;;; Subject predicates (CR-ES-003 §9 + §10.1-§10.7) =====
@@ -120,6 +120,124 @@ vocabulary:
         lists two `uses` rows (Service and Resource).
       lifecycle_status: established
       provenance: CR-ES-003 §9 (relationship table) + ADR-ES-003 §20
+
+    # ===== Capability ;;; Subject predicates (CR-ES-002 §4 + §5.2-§5.8 + ADR-ES-002 §1.4) =====
+
+    - id: ES:REL:enables
+      canonical_name: enables
+      inverse: enabled-by
+      subject_type: ES:CONCEPT:capability
+      object_type: external:concept:outcome
+      definition: |
+        A Capability enables an Outcome when possession or exercise of
+        the Capability makes the Outcome achievable. The relationship
+        does not assert that the Capability alone produces the Outcome.
+      lifecycle_status: established
+      provenance: CR-ES-002 §4 + §5.2 + ADR-ES-002 §1.4
+
+    - id: ES:REL:capability-realized-through
+      canonical_name: realized-through
+      inverse: realizes
+      subject_type: ES:CONCEPT:capability
+      object_type: external:concept:process
+      definition: |
+        A Capability is realized-through a Process when execution of the
+        Process exercises or manifests the Capability. This relationship
+        establishes the critical Capability-Process boundary ;;; the
+        predicate is namespaced (capability-realized-through) to
+        disambiguate from the Value Stream subject variant
+        (subject_type: ES:CONCEPT:value-stream) in CR-ES-003 §10.4.
+      lifecycle_status: established
+      provenance: CR-ES-002 §4 + §5.3 + ADR-ES-002 §1.4
+
+    - id: ES:REL:exercised-by
+      canonical_name: exercised-by
+      inverse: exercises
+      subject_type: ES:CONCEPT:capability
+      object_type: external:concept:role
+      definition: |
+        A Role exercises a Capability when the Role is responsible for
+        applying or performing the ability represented by the Capability
+        within a defined context.
+      lifecycle_status: established
+      provenance: CR-ES-002 §4 + §5.4 + ADR-ES-002 §1.4
+
+    - id: ES:REL:supported-by
+      canonical_name: supported-by
+      inverse: supports
+      subject_type: ES:CONCEPT:capability
+      object_type: external:concept:resource
+      definition: |
+        A Resource supports a Capability when the Resource provides
+        something required for the Capability to be exercised or sustained.
+      lifecycle_status: established
+      provenance: CR-ES-002 §4 + §5.5 + ADR-ES-002 §1.4
+
+    - id: ES:REL:delivered-through
+      canonical_name: delivered-through
+      inverse: delivers
+      subject_type: ES:CONCEPT:capability
+      object_type: external:concept:service
+      definition: |
+        A Service exposes or delivers a Capability to a consumer. The
+        relationship shall not imply that Capability and Service are
+        synonymous.
+      lifecycle_status: established
+      provenance: CR-ES-002 §4 + §5.6 + ADR-ES-002 §1.4
+
+    - id: ES:REL:implemented-by
+      canonical_name: implemented-by
+      inverse: implements
+      subject_type: ES:CONCEPT:capability
+      object_type: external:concept:system
+      definition: |
+        A System provides the mechanisms required for the Capability to
+        exist or operate within a defined context. This relationship is
+        intentionally broader than software implementation.
+      lifecycle_status: established
+      provenance: CR-ES-002 §4 + §5.7 + ADR-ES-002 §1.4
+
+    - id: ES:REL:capability-contributes-to
+      canonical_name: contributes-to
+      inverse: contributed-to-by
+      subject_type: ES:CONCEPT:capability
+      object_type: external:concept:value
+      definition: |
+        A Capability provides a causal or enabling contribution to value
+        realisation. contributes-to does not imply direct, exclusive, or
+        quantifiable causation. The predicate is namespaced
+        (capability-contributes-to) to disambiguate from the Value Stream
+        subject variant (subject_type: ES:CONCEPT:value-stream) and the
+        Value Stage subject variant (subject_type: ES:CONCEPT:value-stage)
+        in CR-ES-003 §9 table.
+      lifecycle_status: established
+      provenance: CR-ES-002 §4 + §5.8 + ADR-ES-002 §1.4
+
+    - id: ES:REL:supports
+      canonical_name: supports
+      inverse: supported-by
+      subject_type: ES:CONCEPT:role
+      object_type: ES:CONCEPT:capability
+      definition: |
+        A Role supports a Capability when the Role provides enabling
+        support to the Capability (e.g., governance, oversight, funding,
+        resourcing). This is distinct from "exercised-by" which marks
+        direct exercise of the Capability.
+      lifecycle_status: established
+      provenance: CR-ES-002 §4 + §5.9 + ADR-ES-002 §1.4
+
+    - id: ES:REL:possesses
+      canonical_name: possesses
+      inverse: possessed-by
+      subject_type: ES:CONCEPT:entity
+      object_type: ES:CONCEPT:capability
+      definition: |
+        An Entity possesses a Capability when the Capability is associated
+        with the Entity (per CR-ES-002 §5.1 + ADR-ES-002 §1.1). The
+        relationship does not assert exercise ;;; only possession or
+        association.
+      lifecycle_status: established
+      provenance: CR-ES-002 §4 + §5.1 + ADR-ES-002 §1.1
 
     # ===== Value Stage ;;; Stage-level predicates (CR-ES-003 §9 + §10.8-§10.11) =====
 

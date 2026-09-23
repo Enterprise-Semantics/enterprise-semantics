@@ -3,7 +3,7 @@
 #         vocabulary with 13 governed predicates from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Vocabulary predicate map ;;; v0.6.0 ;;; 13 Value Stream predicates + 9 Capability predicates + 11 Agentic predicates + 3 Agentic Value Stream predicates + 2 Agentic Workflow predicates + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced predicate (process-realized-through) for Process->Workflow disambiguation
+# Vocabulary predicate map ;;; v0.7.0 ;;; 13 Value Stream predicates + 9 Capability predicates + 11 Agentic predicates + 3 Agentic Value Stream predicates + 2 Agentic Workflow predicates + 2 Agentic Operations predicates + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced predicate (process-realized-through) for Process->Workflow disambiguation
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, relationships are first-class semantic
 # content with governed predicates. The vocabulary file is the authoritative
@@ -18,7 +18,7 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.6.0
+  version: 0.7.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
@@ -537,6 +537,36 @@ vocabulary:
         value-stream-realized-through and capability-realized-through.
       lifecycle_status: established
       provenance: ADR-ES-006 §6 + CR-ES-006 §9
+
+
+    # ===== Agentic Operations ;;; Subject predicates (CR-ES-007 §21 + ADR-ES-007 §21) =====
+
+    - id: ES:REL:responds-to
+      canonical_name: responds-to
+      inverse: evokes-response-from
+      subject_type: ES:CONCEPT:agentic-operations
+      object_type: external:concept:operational-context
+      definition: |
+        An Agentic Operations responds-to Operational Context when
+        the operational sensing ;; interpretation ;; and decision
+        process engages with operational conditions ;; events ;;;
+        signals ;; or state changes. Per ADR-ES-007 §6.1 + §6.2 +
+        §16 + §21 + CR-ES-007 §8.3 + §17 (Operational Control Loop).
+      lifecycle_status: established
+      provenance: ADR-ES-007 §21 + CR-ES-007 §8.3
+
+    - id: ES:REL:governed-by
+      canonical_name: governed-by
+      inverse: governs
+      subject_type: ES:CONCEPT:agentic-operations
+      object_type: external:concept:policy
+      definition: |
+        An Agentic Operations is governed-by Policy when the
+        operational behavior is constrained by applicable policies ;;;
+        rules ;; or equivalent operational constraints. Per ADR-ES-007
+        §6.7 + §21 + CR-ES-007 §8.5 + §15.
+      lifecycle_status: established
+      provenance: ADR-ES-007 §21 + CR-ES-007 §8.5
 
 governance:
   adr: ADR-ES-003

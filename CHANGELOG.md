@@ -52,6 +52,22 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - Naming: lowercase kebab-case per ADR-ES-002 §11
 - Conformance: local python3 conformance/check_concepts.py ;;; NO_DRIFT (19 Concept records)
 
+## [0.20.0] ; 2026-09-23 ; VS-B ;;; 2 Agentic Operations governed predicates + 2 inverse pairs + v0.6.0 version pointer per CR-ES-007 §21 + §30 + ADR-ES-007 §21 + §30
+
+### Added
+
+- relationships/vocabulary.yaml ;;; v0.6.0 -> v0.7.0 ;;; 38 -> 40 governed predicates ;; 2 new: ES:REL:responds-to (agentic-operations -> operational-context) + ES:REL:governed-by (agentic-operations -> policy)
+- relationships/inverse.yaml ;;; 38 -> 40 inverse pairs
+- versions/v0.6.0.yaml ;;; new ;;; Agentic Operations semantic establishment version pointer
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
+- Conformance: local python3 conformance/check_concepts.py ;;; NO_DRIFT (19 Concept records)
+
 ## [0.17.0] ; 2026-09-23 ; VS-A ;;; Agentic Workflow concept record rewritten per CR-ES-006 §5 + ADR-ES-006 §2
 
 ### Changed

@@ -118,6 +118,22 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - Conformance: local python3 conformance/check_concepts.py ;;; NO_DRIFT (21 Concept records)
 - No prior Phase 1 record existed ;;; no architectural conflict to resolve
 
+## [0.24.0] ; 2026-09-23 ; VS-B ;;; 1 Autonomous Value Stream governed predicate + 1 inverse pair + v0.8.0 version pointer per CR-ES-009 §8 + §32 + ADR-ES-009 §18 + §25
+
+### Added
+
+- relationships/vocabulary.yaml ;;; v0.8.0 -> v0.9.0 ;;; 41 -> 42 governed predicates ;; 1 new: ES:REL:contains (autonomous-value-stream -> value-stage)
+- relationships/inverse.yaml ;;; 41 -> 42 inverse pairs
+- versions/v0.8.0.yaml ;;; new ;;; Autonomous Value Stream semantic establishment version pointer
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
+- Conformance: local python3 conformance/check_concepts.py ;;; NO_DRIFT (21 Concept records)
+
 ## [0.17.0] ; 2026-09-23 ; VS-A ;;; Agentic Workflow concept record rewritten per CR-ES-006 §5 + ADR-ES-006 §2
 
 ### Changed

@@ -1,0 +1,129 @@
+# versions/v0.8.0.yaml ;;; Autonomous Value Stream semantic establishment
+#
+# Per CR-ES-009 §32 + ADR-ES-009 §25.
+# This version indicates semantic establishment of the Autonomous
+# Value Stream ;; a specialisation of Value Stream. Per CR-ES-009 §35
+# the release adds:
+#
+#   * CR-ES-009 introduces the autonomous-value-realization Autonomous Value
+#     Stream specialisation ;; the value-realization counterpart to
+#     Autonomous Operations (CR-ES-008)
+#   * autonomy becomes an orthogonal semantic dimension at the value-
+#     realization layer ;; not just at the operations layer
+#   * partial and distributed autonomy allowed ;; not every stage must
+#     be autonomous
+#   * stakeholder-value anchor preserved
+
+id: ES:VERSION:v0.8.0
+canonical_name: v0.8.0
+status: Candidate
+date: 2026-09-23
+
+# Release summary
+
+release_summary: |
+  Semantic establishment of the Autonomous Value Stream concept ;; a
+  specialisation of Value Stream ;; with 12 canonical relationships ;;;
+  15 properties ;;; 11 characteristics ;;; 11 invariants ;;; and 2
+  mappings to WSF + OpenDEA. The release adds:
+    - 1 concept record (ES:CONCEPT:autonomous-value-stream)
+    - 1 governed predicate (contains)
+    - 1 inverse pair
+    - 1 ES:PROFILE:autonomous-value-realization (per CR-ES-009 §19)
+    - 1 profile_type registration (autonomous-value-realization)
+    - 2 mapping records (WSF + OpenDEA)
+    - 19 conformance rules (AVS-AUTO-CON-001..019)
+    - 12 negative tests
+    - 6-field autonomy integrity test
+    - documentation + PlantUML visuals + OTCHERE Inc example
+
+# Tranche boundaries
+
+tranche_boundaries:
+  - CR-ES-001 ;;; Profile Semantic Construct (scaffolding)
+  - CR-ES-002 ;;; Capability Semantic Grounding (v0.1.0)
+  - CR-ES-003 ;;; Value Stream Semantic Grounding (v0.2.0)
+  - CR-ES-004 ;;; Agentic Semantic Grounding (v0.3.0 vocabulary ;; v0.4.0 vocabulary)
+  - CR-ES-005 ;;; Agentic Value Stream Semantic Grounding (v0.4.0 version ;; v0.5.0 vocabulary)
+  - CR-ES-006 ;;; Agentic Workflow Semantic Grounding (v0.5.0 version ;; v0.6.0 vocabulary)
+  - CR-ES-007 ;;; Agentic Operations Semantic Grounding (v0.6.0 version ;; v0.7.0 vocabulary)
+  - CR-ES-008 ;;; Autonomous Operations Semantic Grounding (v0.7.0 version ;; v0.8.0 vocabulary)
+  - CR-ES-009 ;;; Autonomous Value Stream Semantic Grounding (v0.8.0 version ;; v0.9.0 vocabulary) ;; THIS RELEASE
+
+# Architectural position
+
+architectural_position: |
+  Per ADR-ES-009 §22 + §25 ;;; the canonical semantic architecture:
+    STAKEHOLDER VALUE
+      Value Stream
+        \\-- Agentic Value Stream (CR-ES-005)
+        \\-- Autonomous Value Stream (CR-ES-009 ;; THIS RELEASE)
+      Value Stage
+      OPERATIONAL REALIZATION
+      Process
+      Workflow / Agentic Workflow
+        Agentic Operations (CR-ES-007)
+        Autonomous Operations (CR-ES-008) ;; orthogonal to Agentic
+      IMPLEMENTATION
+      Agent / Human / System / Service
+
+  The diagram expresses possible relationships ;; not mandatory
+  containment.
+
+# Core semantic distinction
+
+core_semantic_distinction: |
+  Per ADR-ES-009 §3 + §23 ;;; the architecture distinguishes:
+    Value Stream = end-to-end value-realization journey
+    Agentic Value Stream = agentic mode of value realization
+    Autonomous Value Stream = independent mode of value realization
+
+  These are related but independent semantic dimensions.
+
+  Permitted combinations:
+    Agentic but not Autonomous (e.g. Agentic + human approval)
+    Autonomous but not Agentic (e.g. Autonomous rule/control system)
+    Both Agentic and Autonomous (e.g. Agentic autonomous value realization)
+    Neither Agentic nor Autonomous (e.g. Human-led conventional value stream)
+
+# Grounding
+
+grounding:
+  foundation: WSF
+  semantic_authority: Enterprise-Semantics
+  classification: Tier 2 Specialisation + ES-canonical novelty
+  ws_foundation_reference: external:wsf:Value Stream (via Value Stream)
+  notes: |
+    Per FND-ES-AG-008 §1.3 ;;; Value Stream is a WSF Tier 1
+    specialisation. Autonomous Value Stream is a Tier 2
+    Specialisation ;;; it inherits the Value Stream grounding and
+    adds ES-canonical novelty (the 11 characteristics ;;; 15
+    properties ;;; 12 canonical relationships ;;; 11 invariants ;; 2
+    mapping records).
+
+# Cardinal rules
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 forbidden glyphs
+  - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
+  - naming: lowercase kebab-case per ADR-ES-002 §11
+  - technology_neutral: no AI vendor ;; no specific framework ;; no LLM ;; per ADR-ES-009 §16
+  - orthogonality: Autonomous Value Stream is orthogonal to Agentic Value Stream ;; NOT a specialisation ;; per ADR-ES-009 §8 + §23
+  - no_autonomous_value_stage: per ADR-ES-009 §11 + §20 ;;; existing Value Stage semantics remain authoritative
+  - stakeholder_anchor: per ADR-ES-009 §13 ;;; stakeholder value remains the defining semantic anchor
+
+# Provenance
+
+provenance:
+  - source: CR-ES-009 §32 + §35
+    note: Version increment rationale.
+  - source: ADR-ES-009 §25
+    note: |
+      Implementation authorization ;; target release v0.8.0.
+  - source: ADR-ES-008 §24 + §34
+    note: "Future Decision Candidates ;;; ADR-ES-009 chosen as natural follow-on."
+  - source: FND-ES-AG-008 §1.3
+    note: "Tier 1 / Tier 2 grounding classification."
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Activity grounding inherited via Value Stream.

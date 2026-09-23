@@ -33,6 +33,20 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - D-004 clean ;; 0 forbidden glyphs
 - No vendor-specific material from embargoed sources
 
+## [0.17.0] ; 2026-09-23 ; VS-A ;;; Agentic Workflow concept record rewritten per CR-ES-006 §5 + ADR-ES-006 §2
+
+### Changed
+
+- concepts/agentic-workflow.concept.yaml ;;; rewritten to align with CR-ES-006 specialisation hypothesis ;; supersedes the prior FND-ES-AG-003 Profile hypothesis ;; canonical identity ES:CONCEPT:agentic-workflow preserved ;; 8 canonical relationships + 8 properties + 8 characteristics + 8 invariants + 2 mappings
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11 ;; canonical_name stays un-prefixed
+- Conformance: local python3 conformance/check_concepts.py ;;; NO_DRIFT (19 Concept records)
+
 ## [0.15.0] ; 2026-09-23 ; CR-ES-005 VS-A ;; Agentic Value Stream concept record (supersedes FND-ES-AG-002 hypothesis) + Agentic Value Realization Profile
 
 ### Added

@@ -1,88 +1,280 @@
+# concepts/agentic-value-stream.concept.yaml ;; Agentic Value Stream (ES:CONCEPT:agentic-value-stream) ;; per CR-ES-005 §5 + ADR-ES-005 §7
+#
+# Per CR-ES-005 §4 + §5 + ADR-ES-005 §2 + §4:
+#   An Agentic Value Stream is a Value Stream in which one or more
+#   stages are materially realized through agentic behavior, enabling
+#   delegated interpretation, action selection, coordination,
+#   adaptation, or execution toward stakeholder value realization.
+#
+# Specialisation of Value Stream (not replacement ;; not parallel
+# construct). Per CR-ES-005 §8, the Agentic Value Stream schema shall
+# preserve the mandatory Value Stream semantics.
+#
+# This record SUPERSEDES the prior FND-ES-AG-002 hypothesis (Profile of
+# Value Stream under agentic-execution Profile). Per the governance
+# rule on canonicalisation sequence, CR-ES-005 is the authoritative
+# semantic decision ;; the prior hypothesis is preserved in 00_inbox/
+# for traceability but no longer drives the on-main canonical record.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
 id: ES:CONCEPT:agentic-value-stream
 canonical_name: Agentic Value Stream
 definition: |
-  An Agentic Value Stream is a Value Stream whose realization is characterized
-  by goal-directed execution under bounded autonomy, AI-augmented decision-
-  making, adaptive value-realization, and human governance rather than human
-  execution. The Value Stream retains its identity ;;; the agentic-execution
-  Profile applies the four governed characteristics. Per FND-ES-AG-002 ;;;
-  ADR-ES-AG-001 §3.3.
+  A Value Stream in which one or more stages are materially realized
+  through agentic behavior, enabling delegated interpretation, action
+  selection, coordination, adaptation, or execution toward stakeholder
+  value realization. Per CR-ES-005 §4 + ADR-ES-005 §2.
 status: Candidate
-version: 0.1.0
+version: 0.4.0
 concept_type: agentic-value-stream
+specializes: ES:CONCEPT:value-stream
+
+properties:
+  - name: agentic_scope
+    type: reference_set
+    required: true
+    description: |
+      Identifies the stages, decisions, or execution areas in which
+      agentic behavior materially participates. Per CR-ES-005 §9.
+    provenance: CR-ES-005 §5 + §9
+
+  - name: delegated_intent
+    type: reference
+    required: true
+    description: |
+      Identifies the intent that guides agentic participation. Per
+      CR-ES-005 §10 + ADR-ES-005 §4.1.
+    provenance: CR-ES-005 §5 + §10
+
+  - name: authority_context
+    type: reference
+    required: true
+    description: |
+      Identifies the authority within which agentic participation
+      occurs. Per CR-ES-005 §10 + ADR-ES-005 §4.6.
+    provenance: CR-ES-005 §5 + §10
+
+  - name: decision_boundary
+    type: reference_set
+    required: false
+    description: |
+      Identifies decisions that may be interpreted or selected through
+      agentic behavior. Per ADR-ES-005 §8.
+    provenance: ADR-ES-005 §8
+
+  - name: intervention_model
+    type: enumeration
+    required: false
+    values:
+      - human-in-loop
+      - human-on-loop
+      - human-over-loop
+      - mixed
+      - none-specified
+    description: |
+      Defines human or external intervention points. Per CR-ES-005 §5
+      + ADR-ES-005 §4.7.
+    provenance: CR-ES-005 §5 + ADR-ES-005 §4.7
+
+  - name: adaptation_scope
+    type: reference_set
+    required: false
+    description: |
+      Identifies where contextual adaptation is permitted. Per
+      ADR-ES-005 §4.5 + §8.
+    provenance: ADR-ES-005 §4.5 + §8
+
+  - name: realization_mode
+    type: enumeration
+    required: false
+    values:
+      - mixed
+      - predominantly-agentic
+      - agentic-partial
+      - agentic-coordinated
+    description: |
+      Describes the mixture of conventional, automated, human, and
+      agentic realization. Per CR-ES-005 §5 + ADR-ES-005 §5.
+    provenance: CR-ES-005 §5 + ADR-ES-005 §5
+
+relationships:
+  - subject: ES:CONCEPT:agentic-value-stream
+    predicate: specializes
+    object: ES:CONCEPT:value-stream
+    qualification: type-specialisation
+    status: canonical
+    provenance: CR-ES-005 §5 + §7 + ADR-ES-005 §2 + §7
+    rationale: |
+      Agentic Value Stream is a specialisation of Value Stream ;; not a
+      replacement ;; not a parallel construct. Per CR-ES-005 §8.
+
+  - subject: ES:CONCEPT:agentic-value-stream
+    predicate: realizes
+    object: external:concept:stakeholder-value
+    qualification: end-to-end-value-realization
+    status: canonical
+    provenance: CR-ES-005 §7 + ADR-ES-005 §7
+    rationale: |
+      Agentic Value Stream realises Stakeholder Value. Inherited from
+      Value Stream.
+
+  - subject: ES:CONCEPT:agentic-value-stream
+    predicate: contains
+    object: ES:CONCEPT:value-stage
+    qualification: stage-structure
+    status: canonical
+    provenance: CR-ES-005 §7 + ADR-ES-005 §7
+    rationale: |
+      Agentic Value Stream contains Value Stages. The Value Stage
+      concept is preserved ;; no Agentic Value Stage concept is
+      introduced (per ADR-ES-005 §6 rejected alternative 18.6).
+
+  - subject: ES:CONCEPT:agentic-value-stream
+    predicate: engages
+    object: ES:CONCEPT:agent
+    qualification: agentic-participation
+    status: canonical
+    provenance: CR-ES-005 §7 + ADR-ES-005 §7 + §14
+    rationale: |
+      Agentic Value Stream engages Agents. The Agent semantics are
+      inherited from CR-ES-004 §5.
+
+  - subject: ES:CONCEPT:agentic-value-stream
+    predicate: agent-realizes
+    object: ES:CONCEPT:value-stage
+    qualification: agentic-stage-realization
+    status: canonical
+    provenance: ADR-ES-005 §6 + §7
+    rationale: |
+      A Value Stage may be realized agentically. Per ADR-ES-005 §6 ;;
+      ;; a new Agentic Value Stage concept is NOT established.
+
+architectural_invariants:
+  - AVS-INV-001 ;; Agentic Value Stream is a Value Stream ;; not a replacement
+  - AVS-INV-002 ;; Agentic participation may be localised ;; mixed realisation is valid (per CR-ES-005 §11 + ADR-ES-005 §5)
+  - AVS-INV-003 ;; Agentic Value Stream does not imply Autonomous Value Stream (per ADR-ES-005 §13)
+  - AVS-INV-004 ;; Agentic Value Stream does not require AI (per ADR-ES-005 §11)
+  - AVS-INV-005 ;; Agentic Value Stream does not imply Automation (per ADR-ES-005 §12)
+  - AVS-INV-006 ;; Agentic Value Stream does not redefine Process, Activity, Task, Workflow (per ADR-ES-005 §10)
+  - AVS-INV-007 ;; Agentic Value Stream does not establish Agentic Workflow or Agentic Operations (per ADR-ES-005 §14 ;; held for separate ADRs)
+
+characteristics:
+  - id: AG-VS-CHAR:delegated-intent
+    name: Delegated Intent
+    description: |
+      The value realization is influenced by an established or
+      delegated intent that guides agentic behavior. Per ADR-ES-005 §4.1.
+  - id: AG-VS-CHAR:contextual-interpretation
+    name: Contextual Interpretation
+    description: |
+      Relevant context can be interpreted during value realization
+      rather than being entirely predetermined. Per ADR-ES-005 §4.2.
+  - id: AG-VS-CHAR:dynamic-action-selection
+    name: Dynamic Action Selection
+    description: |
+      Actions or execution paths may be selected according to the
+      interpreted context, intent, authority, constraints, and
+      expected outcome. Per ADR-ES-005 §4.3.
+  - id: AG-VS-CHAR:agentic-coordination
+    name: Agentic Coordination
+    description: |
+      An Agent may coordinate actions, participants, services,
+      processes, or other agents within its authority. Per ADR-ES-005 §4.4.
+  - id: AG-VS-CHAR:adaptive-progression
+    name: Adaptive Progression
+    description: |
+      The progression through stages may change in response to new
+      information, events, outcomes, or context. Per ADR-ES-005 §4.5.
+  - id: AG-VS-CHAR:bounded-authority
+    name: Bounded Authority
+    description: |
+      Agentic behavior operates within explicitly defined authority
+      and policy boundaries. Per ADR-ES-005 §4.6.
+  - id: AG-VS-CHAR:intervention
+    name: Intervention
+    description: |
+      Human intervention, escalation, approval, or oversight may remain
+      part of the value stream. Per ADR-ES-005 §4.7.
+  - id: AG-VS-CHAR:outcome-orientation
+    name: Outcome Orientation
+    description: |
+      Agentic behavior remains directed toward intended stakeholder
+      and value outcomes rather than merely executing predetermined
+      tasks. Per ADR-ES-005 §4.8.
+
 wsf_grounding:
+  - wsf_concept_id: external:wsf:Value-Stream
+    relationship: specialises
+    note: |
+      Agentic Value Stream is an Enterprise-Semantics specialisation
+      of the WSF Value Stream construct. Per CR-ES-005 §12 + FND-ES-AG-008
+      §1.3. WSF is not modified.
   - wsf_concept_id: external:wsf:Value
     relationship: references
     note: |
-      Agentic Value Stream inherits the WSF Value grounding via its
-      profiled Value Stream. The Profile does not introduce a new
-      semantic kind ;;; per FND-ES-AG-001-Grounding-Result.
+      Agentic Value Stream inherits the WSF Value grounding via the
+      Value Stream parent. No new WSF construct is introduced. Per
+      CR-ES-005 §3 + ADR-ES-005 §16.
+
 profile_bindings:
-  - profile_id: ES:PROFILE:agentic-execution
-    profile_type: agentic-execution
+  - profile_id: ES:PROFILE:agentic-value-realization
+    profile_type: semantic-property-overlay
     active: true
-relationships:
-  - subject: ES:CONCEPT:agentic-value-stream
-    predicate: profile-of
-    object: ES:CONCEPT:value-stream
-    qualification: agentic-execution-profile
-    status: proposed
-    provenance: FND-ES-AG-002 ;;; ADR-ES-AG-001 §3
-    rationale: |
-      The Profile hypothesis ;;; Agentic Value Stream is a Profile of Value
-      Stream under agent-augmented execution conditions.
-  - subject: ES:CONCEPT:agentic-value-stream
-    predicate: realizes
-    object: external:outcome:Value-Outcome
-    qualification: per-stage-value-realization
-    status: provisional
-    provenance: FND-ES-AG-002 ;;; FND-ES-000 §15
-    rationale: |
-      Inherited from Value Stream via Profile binding. Agentic Value Stream
-      realizes Value Outcome just as Value Stream does.
-  - subject: ES:CONCEPT:agentic-value-stream
-    predicate: enabled-by
-    object: external:concept:capability
-    qualification: capability-substrate
-    status: provisional
-    provenance: FND-ES-AG-002 ;;; FND-ES-000 §15
-    rationale: |
-      Agentic Value Stream is enabled by Capabilities ;;; per WSF Capability
-      grounding.
-  - subject: ES:CONCEPT:agentic-value-stream
-    predicate: supported-by
-    object: external:concept:process
-    qualification: structural-substrate
-    status: provisional
-    provenance: FND-ES-AG-002 ;;; FND-ES-000 §15
-    rationale: |
-      Inherited from Value Stream. Process is the structural substrate.
-  - subject: ES:CONCEPT:agentic-value-stream
-    predicate: executes-through
-    object: ES:CONCEPT:agentic-workflow
-    qualification: value-realization-via-agentic-execution
-    status: provisional
-    provenance: FND-ES-AG-002 ;;; ADR-ES-002 §22
-    rationale: |
-      Per ADR-ES-002 §22 ;;; executes-through (not contains) preserves the
-      architectural distinction between Value Stream (semantics) and Workflow
-      (mechanism).
-governance: enterprise-semantics
-provenance:
-  - source: FND-ES-AG-002
-    note: Working conclusion ;;; Agentic Value Stream is a Profile of Value Stream.
-  - source: ADR-ES-AG-001
-    note: Profile pattern generalized to the entire Agentic family.
-  - source: docs/finding/0001-agentic-semantic-grounding-grounding-result.md
-    note: WSF live baseline alignment ;;; WSF Value grounding cited explicitly.
-  - source: https://github.com/World-Semantic-Foundation
     note: |
-      WSF provides the foundational Value grounding that Agentic Value Stream
-      inherits via its Profile binding. ES specializes, not duplicates.
+      Per CR-ES-005 §14. Provides discoverability and grouping only ;;
+      ;; does not imply that all listed concepts belong to one
+      ;; inheritance hierarchy.
+
 mappings:
   - authority: wsf
-    target_id: external:wsf:Value
-    relationship: references
-    note: Inherits Value grounding via Profile binding to Value Stream.
-created: 2026-09-02
-updated: 2026-09-02
+    target_id: external:wsf:Value-Stream
+    mapping_type: specialisation
+    relationship: specialises
+    note: |
+      Agentic Value Stream is an ES specialisation of WSF Value Stream.
+      Per CR-ES-005 §12. WSF is not modified.
+  - authority: opendea
+    target_id: external:opendea:Value-Stream
+    mapping_type: specialisation
+    relationship: specialises
+    note: |
+      Agentic Value Stream is an ES specialisation of OpenDEA Value
+      Stream. Per CR-ES-005 §13 + ADR-ES-005 §16. OpenDEA metamodel is
+      not modified.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-005 §4 + §5 + §7 + §8
+    note: Establishes the Agentic Value Stream concept definition, properties, and canonical relationships.
+  - source: ADR-ES-005 §2 + §7 + §8 + §16
+    note: |
+      Establishes the specialisation principle ;; the 8 characteristics ;;
+      ;; the 7 additional properties ;; the architectural hierarchy
+      ;; (WSF Value Stream -> ES Agentic Value Stream -> OpenDEA
+      ;; specialisation).
+  - source: FND-ES-AG-008 §1.3
+    note: WSF Tier 1 / Tier 2 grounding boundary ;; Agentic Value Stream is Tier 2 Specialisation.
+  - source: ADR-ES-004 §5 + §6 + §7 + §16
+    note: Agent semantics inherited from CR-ES-004 ;; agentic is a semantic-property overlay ;; human participation patterns preserved.
+  - source: "superseded: FND-ES-AG-002 + ADR-ES-AG-001 §3.3 (Profile hypothesis)"
+    note: |
+      Prior hypothesis (Profile of Value Stream under agentic-execution
+      Profile) is superseded by CR-ES-005 specialisation hypothesis.
+      The Profile binding to ES:PROFILE:agentic-execution is removed ;;
+      ;; the active profile binding is now ES:PROFILE:agentic-value-realization
+      ;; per CR-ES-005 §14 (canonical form per ADR-ES-002 §11: ES:PROFILE:<kebab-case-name>).
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash (U+2013), 0 em-dash (U+2014), 0 horizontal-ellipsis divider (U+2E3B), 0 arrow glyph ;; semicolon boundary lines"
+  - vendor_specific_embargo: "0 references ;; no vendor-specific material from embargoed sources"
+  - naming: "ES:CONCEPT:agentic-value-stream preserved ;; lowercase kebab-case per ADR-ES-002 §11"
+  - status: "Candidate (per the candidate-then-established lifecycle per ADR-ES-002 §11)"
+
+held_non_actions:
+  - "Agentic Workflow not established (per CR-ES-005 §3 ;;; ADR-ES-006 future)"
+  - "Agentic Operations not established (per CR-ES-005 §3 ;;; ADR-ES-007 future)"
+  - "Autonomous Value Stream not established (per CR-ES-005 §3 ;;; ADR-ES-009 future)"
+  - "Agentic Value Stage not established (per ADR-ES-005 §18.6 rejected alternative ;;; existing Value Stage construct preserved)"
+  - "Release tag v0.4.0 not cut (held per v3.1.4 user directive)"

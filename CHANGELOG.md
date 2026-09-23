@@ -19,6 +19,28 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - VS-C ;;; WSF + OpenDEA + DEA Catalog mapping records (CR-ES-003 §21-§23).
 - VS-D ;;; documentation + examples + conformance rules + tests + PlantUML (CR-ES-003 §27-§35).
 
+## [0.15.0] ; 2026-09-23 ; CR-ES-005 VS-A ;; Agentic Value Stream concept record (supersedes FND-ES-AG-002 hypothesis) + Agentic Value Realization Profile
+
+### Added
+
+- registry/profiles/agentic-value-realization.profile.yaml ;; new ;; ES:PROFILE:agentic-value-realization per CR-ES-005 §14 ;; 8-element scope (Agent + Agentic + Intent + Authority + Action + Value Stream + Value Stage + Agentic Value Stream) ;; 7 characteristics (delegated intent + bounded authority + scope localisation + mixed realization + human intervention + outcome orientation + boundary isolation)
+
+### Changed
+
+- concepts/agentic-value-stream.concept.yaml ;; rewritten to align with CR-ES-005 §5 + ADR-ES-005 §2 + §7 ;; specialisation hypothesis (not Profile hypothesis) ;; 5 relationships (specializes -> value-stream ;; realizes -> external:concept:stakeholder-value ;; contains -> value-stage ;; engages -> agent ;; agent-realizes -> value-stage) ;; 7 properties ;; 8 characteristics ;; 7 architectural invariants ;; FND-ES-AG-002 + ADR-ES-AG-001 §3.3 hypothesis preserved in provenance for traceability
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere on both files
+- D-004 clean ;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- ES:CONCEPT:agentic-value-stream preserved (lowercase kebab-case per ADR-ES-002 §11)
+- ES:PROFILE:agentic-value-realization canonicalised (lowercase kebab-case per ADR-ES-002 §11 ;; CR-ES-005 §14 verbatim used UPPERCASE which is not the canonical form)
+
+### Conformance
+
+- Local python3 conformance/check_concepts.py ;; NO_DRIFT (19 Concept records validated)
+
 ## [0.14.0] ; 2026-09-23 ; CR-ES-004 §22 ;;; Agentic Profile (ES:PROFILE:AGENTIC) landed
 
 ### Added

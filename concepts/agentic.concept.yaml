@@ -1,0 +1,140 @@
+# Agentic concept record ;;; per CR-ES-004 §6 + ADR-ES-004 §6
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+# Status: Candidate (per scope decision ;;; promotion to Established held for a separate governed action)
+# Per ADR-ES-004 §6 ;;; Agentic is modeled primarily as a semantic property or mode of operation,
+# rather than automatically as a universal Entity subtype. The semantic_type is therefore
+# SemanticProperty ;;; not Entity.
+
+id: ES:CONCEPT:agentic
+canonical_name: Agentic
+definition: |
+  Agentic is a mode of operation in which an Agent interprets a
+  delegated objective or intent, determines or selects actions within
+  defined authority, and acts or coordinates actions toward an
+  intended outcome.
+
+  Per CR-ES-004 §6 and ADR-ES-004 §4.1 + §6.
+
+  Agentic behavior therefore contains, at minimum, a meaningful
+  degree of:
+  1. delegated intent or objective ;
+  2. contextual interpretation ;
+  3. action selection or planning ;
+  4. delegated authority ;
+  5. execution or coordination ;
+  6. orientation toward an intended outcome.
+
+  Not every implementation must exhibit the same degree of each
+  characteristic. Per ADR-ES-004 §4.1.
+
+  Agentic shall NOT be defined as synonymous with:
+  - Artificial Intelligence (AI != Agentic ;;; per ADR-ES-004 §10)
+  - AI Agent (AI Agent ⊂ possible Agents, not all Agents are AI Agents ;;; per ADR-ES-004 §10)
+  - Automation (Automation != Agentic ;;; per ADR-ES-004 §8)
+  - Autonomous operation (Agentic != Autonomous ;;; per ADR-ES-004 §9)
+  - Machine Learning, Generative AI, Workflow Automation ;;; per ADR-ES-004 §1
+
+status: Candidate
+version: 0.1.0
+concept_type: semantic-property
+semantic_type: SemanticProperty
+
+# Agentic is a semantic property, not an Entity subtype. It does not have
+# its own relationships ;;; instead, it is applied as a mode/qualifier
+# to other concepts (e.g., "Agent operates agentically", "Workflow has
+# agentic execution characteristics"). Per ADR-ES-004 §6.
+
+characteristics:
+  - id: delegated-intent
+    description: |
+      There is an objective, intent, goal, or desired outcome delegated
+      to the Agent. Per ADR-ES-004 §7.1.
+  - id: contextual-interpretation
+    description: |
+      The Agent interprets relevant context rather than merely executing
+      an unconditional predefined sequence. Per ADR-ES-004 §7.2.
+  - id: action-selection
+    description: |
+      The Agent can select, sequence, or coordinate actions within its
+      authority. Per ADR-ES-004 §7.3.
+  - id: bounded-authority
+    description: |
+      The Agent operates within explicit or implicit authority
+      boundaries. Per ADR-ES-004 §7.4 + §15.
+  - id: outcome-orientation
+    description: |
+      Actions are directed toward an intended outcome rather than
+      merely completion of a fixed instruction. Per ADR-ES-004 §7.5.
+  - id: contextual-adaptation
+    description: |
+      The Agent may alter its execution path in response to changing
+      conditions. Adaptation is characteristic of agentic operation but
+      is not by itself sufficient to establish agentic semantics.
+      Per ADR-ES-004 §7.6.
+
+# Boundary tests per ADR-ES-004 §8-§10 + §14
+boundary_tests:
+  - id: agentic-vs-automation
+    description: Automation != Agentic. Automation executes predefined logic without contextual action selection by an agent.
+    satisfies: AG-INV-002
+  - id: agentic-vs-autonomy
+    description: Agentic != Autonomous. Autonomy additionally emphasizes self-direction, self-management, self-adaptation, reduced external intervention, sustained independent operation.
+    satisfies: AG-INV-003
+  - id: agentic-vs-ai
+    description: AI != Agentic. An agentic implementation may use AI but AI is not a necessary condition for agentic action.
+    satisfies: AG-INV-001
+  - id: agent-vs-ai-agent
+    description: Agent != AI Agent. Human and non-AI agents may satisfy the foundational semantic definition.
+    satisfies: AG-INV-004
+
+# Human participation does not invalidate agentic semantics per ADR-ES-004 §16
+human_participation_patterns:
+  - human-in-the-loop ;;; human defined intent, human approved actions
+  - human-on-the-loop ;;; human supervised, human can intervene
+  - human-over-the-loop ;;; human governance, human revoke authority
+
+# Architectural invariants per ADR-ES-004 §20
+architectural_invariants:
+  - AG-INV-001 ;;; Agentic != AI
+  - AG-INV-002 ;;; Agentic != Automation
+  - AG-INV-003 ;;; Agentic != Autonomous
+  - AG-INV-004 ;;; Agent != AI Agent
+  - AG-INV-005 ;;; Agentic operation requires delegated intent or objective
+  - AG-INV-006 ;;; Agentic operation occurs within defined authority
+  - AG-INV-007 ;;; Agentic operation is outcome-oriented
+  - AG-INV-008 ;;; Human participation does not invalidate Agentic semantics
+  - AG-INV-009 ;;; Agentic Value Stream is a specialization of Value Stream, not a replacement for Value Stream (held for ADR-ES-005)
+  - AG-INV-010 ;;; Autonomy requires separate semantic grounding (ADR-ES-007)
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-004 §6 + ADR-ES-004 §4.1 + §6
+    note: Foundational Agentic semantic property definition. Agentic is a mode of operation ;;; not a universal Entity subtype. The semantic_type is SemanticProperty.
+  - source: ADR-ES-004 §7.1-§7.6
+    note: Establishes the 6 Agentic characteristics (delegated intent, contextual interpretation, action selection, bounded authority, outcome orientation, adaptation).
+  - source: ADR-ES-004 §8-§10 + §14
+    note: Establishes the 4 critical boundary distinctions (Agentic != Automation, Agentic != Autonomous, Agentic != AI, Agent != AI Agent) ;;; 10 architectural invariants AG-INV-001..010.
+  - source: https://github.com/Enterprise-Semantics/enterprise-semantics-governance
+    note: Governance traceable via docs/adr/0006-agentic-semantic-grounding.md (Proposed) and docs/cr/0012-agentic-semantic-grounding.md (Proposed).
+
+mappings:
+  wsf: pending ;;; no WSF Agentic construct ;;; ES-canonical novelty
+  opendea: pending ;;; architectural correspondence to be recorded in mappings/opendea/agentic.yaml per CR-ES-004 §20
+  dea_catalog: held ;;; instantiation is downstream per CR-ES-004 §18
+
+lifecycle:
+  status: candidate
+  candidate_since: 2026-09-23
+
+validation_rules:
+  - id: AG-CON-002
+    description: Agentic must have a definition.
+  - id: AG-CON-003
+    description: Agentic must identify its semantic characteristics.
+  - id: AG-CON-004
+    description: Agentic must not be defined as AI.
+  - id: AG-CON-005
+    description: Agentic must not be defined as Automation.
+  - id: AG-CON-006
+    description: Agentic must not be defined as Autonomous.

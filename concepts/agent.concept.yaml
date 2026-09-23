@@ -1,56 +1,173 @@
+# Agent concept record ;;; per CR-ES-004 §5 + ADR-ES-004 §5
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+# Status: Candidate (per scope decision ;;; promotion to Established held for a separate governed action)
+# WSF Grounding: ES-canonical (Agent is a foundational ES construct ;;; WSF does not define an Agent concept at Tier 1 or Tier 2)
+# Identity: ES:CONCEPT:agent ;;; namespace divergence with CR-ES-004 §5 schema field (where the id field is empty in the body) documented below
+
 id: ES:CONCEPT:agent
 canonical_name: Agent
 definition: |
-  An Agent is an Entity that acts on behalf of another Entity to pursue
-  stated outcomes. Agents may be human, software, AI-bearing, or composite.
-  Agents exhibit goal-directed behavior and bear capabilities that can be
-  invoked, observed, and governed. The generic Agent concept is intentionally
-  bearer-agnostic ;; it does NOT require AI grounding. Per FND-ES-AG-007 §3.1.
+  An Agent is an Entity capable of interpreting delegated intent,
+  selecting or coordinating actions, and acting within defined
+  authority toward an intended outcome.
+
+  Per CR-ES-004 §5 and ADR-ES-004 §5.
+
+  An Agent may be:
+  - human ;
+  - software-based ;
+  - computational ;
+  - organizational ;
+  - socio-technical ;
+
+  provided that the relevant semantic characteristics are present (per
+  ADR-ES-004 §7.1-§7.6).
+
+  The concept "AI Agent" shall therefore be treated as a possible
+  specialization or implementation of Agent rather than as the
+  definition of Agent itself. Per ADR-ES-004 §10 ;;; Agent != AI Agent
+  ;;; AI is not a necessary condition for Agentic action.
+
 status: Candidate
 version: 0.1.0
 concept_type: agent
 wsf_grounding:
-  - wsf_concept_id: external:wsf:Entity
-    relationship: specializes
-    note: Agent specializes WSF Entity (Tier 1).
-  - wsf_concept_id: external:wsf:Capability
-    relationship: references
-    note: Agent bears Capabilities (per FND-ES-AG-007 §3.2).
+  - wsf_concept_id: null
+    relationship: null
+    note: |
+      Agent is ES-canonical ;;; no WSF Tier 1 or Tier 2 equivalent at
+      the time of CR-ES-004 implementation. Per ADR-ES-004 §5 ;;; the
+      semantic classification is "Entity capable of interpreting
+      delegated intent" ;;; WSF does not define this construct directly.
+      Future WSF integration is governed by separate ADR/CR.
+
 profile_bindings: []
 relationships:
   - subject: ES:CONCEPT:agent
-    predicate: bears
-    object: external:wsf:Capability
-    qualification: capability-bearer
-    status: proposed
-    provenance: FND-ES-AG-007 §3.2
-    rationale: Agent is a Capability bearer.
+    predicate: interprets
+    object: ES:CONCEPT:intent
+    qualification: intent-interpretation
+    status: established
+    provenance: CR-ES-004 §10 + ADR-ES-004 §14
+    rationale: |
+      The primary Agent relationship. An Agent interprets a delegated
+      Intent when the Agent determines the meaning, direction, or
+      purpose of the Intent in the context of the Agent's bounded
+      authority.
+
   - subject: ES:CONCEPT:agent
-    predicate: distinct-from
-    object: ES:CONCEPT:ai-agent
-    qualification: bearer-agnostic-vs-ai-bearing
-    status: proposed
-    provenance: FND-ES-AG-007 §3.5
-    rationale: Agent is bearer-agnostic ;; AI Agent is AI-bearing.
+    predicate: pursues
+    object: external:concept:goal
+    qualification: goal-pursuit
+    status: established
+    provenance: CR-ES-004 §10 + ADR-ES-004 §14
+    rationale: |
+      An Agent pursues a Goal when the Agent's actions are directed
+      toward the achievement of a specific Goal within bounded authority.
+
   - subject: ES:CONCEPT:agent
-    predicate: distinct-from
-    object: external:concept:human-agent
-    qualification: semantic-kind-distinction
-    status: proposed
-    provenance: FND-ES-AG-007 §3.7
-    rationale: Agent is the generic kind ;; Human Agent is a specialization.
+    predicate: acts-within
+    object: ES:CONCEPT:authority
+    qualification: authority-bounded-action
+    status: established
+    provenance: CR-ES-004 §10 + ADR-ES-004 §14 + §15
+    rationale: |
+      An Agent acts-within Authority when the Agent's actions are
+      constrained by a defined scope of permitted action, decision
+      boundaries, resource limits, and escalation conditions.
+
+  - subject: ES:CONCEPT:agent
+    predicate: selects
+    object: ES:CONCEPT:action
+    qualification: action-selection
+    status: established
+    provenance: CR-ES-004 §10 + ADR-ES-004 §14
+    rationale: |
+      An Agent selects an Action when the Agent chooses among possible
+      actions within its bounded authority. The selection is
+      context-sensitive.
+
+  - subject: ES:CONCEPT:agent
+    predicate: coordinates
+    object: ES:CONCEPT:action
+    qualification: action-coordination
+    status: established
+    provenance: CR-ES-004 §10 + ADR-ES-004 §14
+    rationale: |
+      An Agent coordinates an Action when the Agent sequences, orders,
+      or otherwise composes multiple Actions into a coherent execution
+      pattern within bounded authority.
+
+  - subject: ES:CONCEPT:agent
+    predicate: produces
+    object: external:concept:outcome
+    qualification: outcome-production
+    status: established
+    provenance: CR-ES-004 §10 + ADR-ES-004 §14
+    rationale: |
+      An Agent produces an Outcome when the Agent's actions result in
+      the intended or achieved state. The Outcome may or may not be
+      the original Intent's target ;;; Action Selection may produce
+      emergent Outcomes.
+
+  - subject: ES:CONCEPT:agent
+    predicate: adapts-to
+    object: external:concept:context
+    qualification: contextual-adaptation
+    status: established
+    provenance: CR-ES-004 §10 + ADR-ES-004 §7.6
+    rationale: |
+      An Agent adapts-to Context when the Agent alters its execution
+      path in response to changing conditions, observations, or
+      intermediate outcomes. Adaptation is characteristic of agentic
+      operation but is not by itself sufficient to establish agentic
+      semantics (per ADR-ES-004 §7.6).
+
+  - subject: ES:CONCEPT:agent
+    predicate: receives
+    object: ES:CONCEPT:intent
+    qualification: intent-receipt
+    status: established
+    provenance: CR-ES-004 §10 + ADR-ES-004 §14
+    rationale: |
+      An Agent receives an Intent when the Intent is delegated to the
+      Agent. The receipt establishes the Agent's interpretive
+      obligation but not the Outcome obligation ;;; Action Selection
+      and Outcome production are separate predicates.
+
+exclusions:
+  - AI Agent ;;; per ADR-ES-004 §10 ;;; AI Agent is a possible specialization of Agent, not the definition
+  - Autonomous Agent ;;; per ADR-ES-004 §14 ;;; autonomy requires separate semantic grounding (ADR-ES-007)
+  - Process ;;; per ADR-ES-004 §13 ;;; Agent is distinct from Process
+  - Activity ;;; per ADR-ES-004 §9 ;;; Action is the semantic unit required for agentic action selection ;;; Activity is execution-level
+  - System ;;; per ADR-ES-004 §5 ;;; System may support or implement an Agent but is not itself an Agent
+  - Role ;;; per CR-ES-004 §5 ;;; Role identifies responsibility, Agent identifies the entity with the ability to act
+
 governance: enterprise-semantics
 provenance:
-  - source: FND-ES-AG-007
-    note: AI Agent grounding establishes Agent as the generic kind.
-  - source: FND-ES-AG-001-Grounding-Result §3
-    note: One of three plausible models treats Agent as a base for AI Agent.
-  - source: https://github.com/World-Semantic-Foundation
-    note: WSF Entity grounding inherited.
+  - source: CR-ES-004 §5 + ADR-ES-004 §5
+    note: Foundational Agent concept definition. An Entity capable of interpreting delegated intent, selecting or coordinating actions, and acting within defined authority toward an intended outcome.
+  - source: ADR-ES-004 §10
+    note: Establishes the Agent != AI Agent architectural invariant (AG-INV-004) ;;; AI Agent is a possible specialization of Agent, not the definition.
+  - source: CR-ES-004 §10 + ADR-ES-004 §14
+    note: Authorises the 7 governed Agent subject-level predicates (interprets, pursues, acts-within, selects, coordinates, produces, adapts-to, receives).
+  - source: https://github.com/Enterprise-Semantics/enterprise-semantics-governance
+    note: Governance traceable via docs/adr/0006-agentic-semantic-grounding.md (Proposed) and docs/cr/0012-agentic-semantic-grounding.md (Proposed).
+
 mappings:
-  - authority: wsf
-    target_id: external:wsf:Entity
-    relationship: specializes
-    note: Agent specializes WSF Entity.
-created: 2026-09-03
-updated: 2026-09-03
+  wsf: pending ;;; ES-canonical ;;; no WSF mapping required for foundational establishment
+  opendea: pending ;;; architectural correspondence to be recorded in mappings/opendea/agentic.yaml per CR-ES-004 §20
+  dea_catalog: held ;;; instantiation is downstream per CR-ES-004 §18 ;;; no catalog instantiation at this scope
+
+lifecycle:
+  status: candidate
+  candidate_since: 2026-09-23
+  promoted_to_established: null
+  promoted_to_canonical: null
+
+validation_rules:
+  - id: AG-CON-001
+    description: Agent must have a definition.
+  - id: AG-CON-007
+    description: Agent must have an authority relationship when modeled as acting agentically.

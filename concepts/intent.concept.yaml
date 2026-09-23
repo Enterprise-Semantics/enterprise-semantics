@@ -1,0 +1,86 @@
+# Intent concept record ;;; per CR-ES-004 §7 + ADR-ES-004 §15
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+# Status: Candidate (per scope decision ;;; promotion to Established held for a separate governed action)
+# WSF Grounding: ES-canonical (Intent is a foundational ES construct ;;; WSF does not define an Intent concept at Tier 1 or Tier 2)
+
+id: ES:CONCEPT:intent
+canonical_name: Intent
+definition: |
+  Intent is a communicated or established desired direction, purpose,
+  or intended result that guides action.
+
+  Per CR-ES-004 §7 and ADR-ES-004 §15.
+
+  Intent shall remain distinct from:
+  - Goal ;;; per CR-ES-004 §7. Intent is broader ;;; may include
+    communicated direction without being a quantified target.
+  - Requirement ;;; per CR-ES-004 §7. Requirement is a necessary
+    condition ;;; Intent is a desired direction.
+  - Instruction ;;; per CR-ES-004 §7 + ADR-ES-004 §17. Instruction is
+    a prescribed action or procedure ;;; Intent is a communicated
+    desired direction.
+  - Policy ;;; per CR-ES-004 §7. Policy is a constraint or rule ;
+    Intent is a desired direction.
+  - Action ;;; per CR-ES-004 §7. Action is performed or initiated ;
+    Intent guides action.
+
+  The exact semantic relationship among these concepts may be refined
+  by subsequent governance. Per CR-ES-004 §7.
+
+status: Candidate
+version: 0.1.0
+concept_type: intent
+wsf_grounding:
+  - wsf_concept_id: null
+    relationship: null
+    note: |
+      Intent is ES-canonical ;;; no WSF Tier 1 or Tier 2 equivalent
+      at the time of CR-ES-004 implementation. Per ADR-ES-004 §15 ;
+      Intent is the delegated objective that an Agent interprets. WSF
+      does not define this construct at Tier 1 (kernel) or Tier 2
+      (specialisation). Future WSF integration is governed by
+      separate ADR/CR.
+
+profile_bindings: []
+relationships:
+  - subject: ES:CONCEPT:intent
+    predicate: guides
+    object: ES:CONCEPT:action
+    qualification: action-guidance
+    status: established
+    provenance: CR-ES-004 §10 + ADR-ES-004 §14
+    rationale: |
+      Intent guides Action when the Action is directed toward the
+      Intent's communicated desired direction or purpose. Guidance
+      is distinct from prescription (an Instruction prescribes an
+      Action ;;; Intent may inform multiple Actions).
+
+exclusions:
+  - Goal ;;; broader / narrower distinction
+  - Requirement ;;; necessity vs desire distinction
+  - Instruction ;;; prescription vs direction distinction
+  - Policy ;;; constraint vs desire distinction
+  - Action ;;; performance vs direction distinction
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-004 §7 + ADR-ES-004 §15
+    note: Foundational Intent concept definition. Intent is a communicated or established desired direction, purpose, or intended result that guides action.
+  - source: CR-ES-004 §7
+    note: Establishes the 5-distinction pattern (Intent != Goal != Requirement != Instruction != Policy != Action). The exact semantic relationship may be refined by subsequent governance.
+  - source: https://github.com/Enterprise-Semantics/enterprise-semantics-governance
+    note: Governance traceable via docs/adr/0006-agentic-semantic-grounding.md (Proposed) and docs/cr/0012-agentic-semantic-grounding.md (Proposed).
+
+mappings:
+  wsf: pending ;;; ES-canonical ;;; no WSF mapping required for foundational establishment
+  opendea: pending ;;; architectural correspondence to be recorded in mappings/opendea/agentic.yaml per CR-ES-004 §20
+  dea_catalog: held ;;; instantiation is downstream per CR-ES-004 §18
+
+lifecycle:
+  status: candidate
+  candidate_since: 2026-09-23
+
+validation_rules:
+  - id: AG-CON-008
+    description: Agentic execution must have an intent or objective.

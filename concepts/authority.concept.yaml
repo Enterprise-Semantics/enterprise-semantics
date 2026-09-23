@@ -1,0 +1,92 @@
+# Authority concept record ;;; per CR-ES-004 §8 + ADR-ES-004 §15
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+# Status: Candidate (per scope decision ;;; promotion to Established held for a separate governed action)
+# WSF Grounding: ES-canonical (Authority is a foundational ES construct ;;; WSF does not define an Authority concept at Tier 1 or Tier 2)
+
+id: ES:CONCEPT:authority
+canonical_name: Authority
+definition: |
+  Authority is a defined scope of permitted action or decision
+  assigned to an Entity within a specified context.
+
+  Per CR-ES-004 §8 and ADR-ES-004 §15.
+
+  Authority may include:
+  - action permissions ;;; what actions are permitted
+  - decision boundaries ;;; what decisions are within scope
+  - resource boundaries ;;; what resources may be used
+  - escalation conditions ;;; when human approval or higher authority is required
+  - constraints ;;; policies, regulations, or operational limits
+
+  Authority is required for agentic operation per ADR-ES-004 §7.4 +
+  §15 ;;; Agentic semantics without authority boundaries would be
+  insufficiently defined for enterprise use.
+
+status: Candidate
+version: 0.1.0
+concept_type: authority
+wsf_grounding:
+  - wsf_concept_id: null
+    relationship: null
+    note: |
+      Authority is ES-canonical ;;; no WSF Tier 1 or Tier 2 equivalent
+      at the time of CR-ES-004 implementation. Per ADR-ES-004 §15 ;
+      Authority is the bounded scope that constrains Agent action.
+      WSF does not define this construct at Tier 1 or Tier 2.
+
+profile_bindings: []
+relationships:
+  - subject: ES:CONCEPT:authority
+    predicate: constrains
+    object: ES:CONCEPT:action
+    qualification: action-constraint
+    status: established
+    provenance: CR-ES-004 §10 + ADR-ES-004 §14 + §15
+    rationale: |
+      Authority constrains Action when the Action is limited by the
+      defined scope of permitted action, decision boundaries,
+      resource boundaries, escalation conditions, or constraints. Per
+      ADR-ES-004 §15 ;;; Authority may include permitted actions,
+      prohibited actions, resource limits, decision thresholds,
+      escalation requirements, policy constraints, human approval
+      requirements.
+
+boundary_dimensions:
+  - id: action-permissions
+    description: What actions are permitted within the Authority scope.
+  - id: decision-boundaries
+    description: What decisions are within scope and which require escalation.
+  - id: resource-boundaries
+    description: What resources may be used by the Agent.
+  - id: escalation-conditions
+    description: When human approval or higher Authority is required.
+  - id: policy-constraints
+    description: Constraints from policies, regulations, or operational limits.
+
+exclusions:
+  - Permission ;;; per ADR-ES-004 §8 ;;; Authority is broader than Permission (includes decision boundaries, resource limits, escalation)
+  - Role ;;; per ADR-ES-004 §5 ;;; Role identifies responsibility ;;; Authority identifies scope of action
+  - Capability ;;; per CR-ES-002 ;;; Capability is an enduring ability ;;; Authority is a bounded scope
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-004 §8 + ADR-ES-004 §15
+    note: Foundational Authority concept definition. Authority is a defined scope of permitted action or decision assigned to an Entity within a specified context.
+  - source: ADR-ES-004 §7.4 + §15
+    note: Establishes Authority as a required component for agentic operation (AG-INV-006) ;;; Agentic semantics without authority boundaries would be insufficiently defined for enterprise use.
+  - source: https://github.com/Enterprise-Semantics/enterprise-semantics-governance
+    note: Governance traceable via docs/adr/0006-agentic-semantic-grounding.md (Proposed) and docs/cr/0012-agentic-semantic-grounding.md (Proposed).
+
+mappings:
+  wsf: pending ;;; ES-canonical
+  opendea: pending ;;; architectural correspondence per CR-ES-004 §20
+  dea_catalog: held ;;; instantiation is downstream per CR-ES-004 §18
+
+lifecycle:
+  status: candidate
+  candidate_since: 2026-09-23
+
+validation_rules:
+  - id: AG-CON-007
+    description: Agent must have an authority relationship when modeled as acting agentically.

@@ -3,7 +3,7 @@
 #         vocabulary with 13 governed predicates from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Vocabulary predicate map ;;; v0.8.0 ;;; 13 Value Stream predicates + 9 Capability predicates + 11 Agentic predicates + 3 Agentic Value Stream predicates + 2 Agentic Workflow predicates + 2 Agentic Operations predicates + 1 Autonomous Operations predicate + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced predicate (process-realized-through) for Process->Workflow disambiguation
+# Vocabulary predicate map ;;; v0.9.0 ;;; 13 Value Stream predicates + 9 Capability predicates + 11 Agentic predicates + 3 Agentic Value Stream predicates + 2 Agentic Workflow predicates + 2 Agentic Operations predicates + 1 Autonomous Operations predicate + 1 Autonomous Value Stream predicate + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced predicate (process-realized-through) for Process->Workflow disambiguation
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, relationships are first-class semantic
 # content with governed predicates. The vocabulary file is the authoritative
@@ -18,7 +18,7 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.8.0
+  version: 0.9.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
@@ -585,6 +585,22 @@ vocabulary:
         (Autonomous Operational Loop).
       lifecycle_status: established
       provenance: ADR-ES-008 §17 + CR-ES-008 §9.7
+
+
+    # ===== Autonomous Value Stream ;;; Subject predicate (CR-ES-009 §8 + ADR-ES-009 §18) =====
+
+    - id: ES:REL:contains
+      canonical_name: contains
+      inverse: is-contained-in
+      subject_type: ES:CONCEPT:autonomous-value-stream
+      object_type: ES:CONCEPT:value-stage
+      definition: |
+        An Autonomous Value Stream contains Value Stages. Per ADR-ES-009
+        §4 + §11 + §18 + CR-ES-009 §5 + §8 + §9 (Value Stage Integrity)
+        + AVS-AUTO-INV-005. The Autonomous Value Stream does NOT
+        introduce Autonomous Value Stage ;; per ADR-ES-009 §11 + §20.
+      lifecycle_status: established
+      provenance: ADR-ES-009 §18 + CR-ES-009 §8
 
 governance:
   adr: ADR-ES-003

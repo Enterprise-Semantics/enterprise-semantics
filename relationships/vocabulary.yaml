@@ -3,7 +3,7 @@
 #         vocabulary with 13 governed predicates from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Relationship vocabulary ;;; v0.3.0 ;;; 13 Value Stream governed predicates + 9 Capability governed predicates + 2 namespaced predicates (capability-realized-through, capability-contributes-to) for cross-CR subject-type disambiguation
+# Relationship vocabulary ;;; v0.4.0 ;;; 13 Value Stream governed predicates + 9 Capability governed predicates + 11 Agentic governed predicates + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) for cross-CR subject-type disambiguation
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, relationships are first-class semantic
 # content with governed predicates. The vocabulary file is the authoritative
@@ -18,8 +18,8 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.3.0
-  status: candidate ;;; awaiting ADR-ES-003 acceptance + ADR-ES-002 acceptance
+  version: 0.4.0
+  status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
     # ===== Value Stream ;;; Subject predicates (CR-ES-003 §9 + §10.1-§10.7) =====
@@ -238,6 +238,165 @@ vocabulary:
         association.
       lifecycle_status: established
       provenance: CR-ES-002 §4 + §5.1 + ADR-ES-002 §1.1
+
+    # ===== Agent ;;; Subject predicates (CR-ES-004 §10 + ADR-ES-004 §14) =====
+
+    - id: ES:REL:interprets
+      canonical_name: interprets
+      inverse: interpreted-by
+      subject_type: ES:CONCEPT:agent
+      object_type: ES:CONCEPT:intent
+      definition: |
+          An Agent interprets an Intent when the Agent determines the
+          meaning, direction, or purpose of the Intent in the context
+          of the Agent's bounded authority. Per ADR-ES-004 §14 ;
+          the primary Agent relationship.
+      lifecycle_status: established
+      provenance: CR-ES-004 §10 + ADR-ES-004 §14
+
+    - id: ES:REL:pursues
+      canonical_name: pursues
+      inverse: pursued-by
+      subject_type: ES:CONCEPT:agent
+      object_type: external:concept:goal
+      definition: |
+          An Agent pursues a Goal when the Agent's actions are directed
+          toward the achievement of a specific Goal within bounded
+          authority.
+      lifecycle_status: established
+      provenance: CR-ES-004 §10 + ADR-ES-004 §14
+
+    - id: ES:REL:acts-within
+      canonical_name: acts-within
+      inverse: governs
+      subject_type: ES:CONCEPT:agent
+      object_type: ES:CONCEPT:authority
+      definition: |
+          An Agent acts-within Authority when the Agent's actions are
+          constrained by a defined scope of permitted action, decision
+          boundaries, resource limits, and escalation conditions. Per
+          ADR-ES-004 §15 ;;; Authority is required for agentic
+          operation.
+      lifecycle_status: established
+      provenance: CR-ES-004 §10 + ADR-ES-004 §14 + §15
+
+    - id: ES:REL:selects
+      canonical_name: selects
+      inverse: selected-by
+      subject_type: ES:CONCEPT:agent
+      object_type: ES:CONCEPT:action
+      definition: |
+          An Agent selects an Action when the Agent chooses among
+          possible actions within its bounded authority. The selection
+          is context-sensitive ;;; per ADR-ES-004 §17 this is the
+          agentic-decision pattern (distinct from Instruction).
+      lifecycle_status: established
+      provenance: CR-ES-004 §10 + ADR-ES-004 §14 + §17
+
+    - id: ES:REL:coordinates
+      canonical_name: coordinates
+      inverse: coordinated-by
+      subject_type: ES:CONCEPT:agent
+      object_type: ES:CONCEPT:action
+      definition: |
+          An Agent coordinates an Action when the Agent sequences,
+          orders, or otherwise composes multiple Actions into a
+          coherent execution pattern within bounded authority.
+      lifecycle_status: established
+      provenance: CR-ES-004 §10 + ADR-ES-004 §14
+
+    - id: ES:REL:agent-produces
+      canonical_name: produces
+      inverse: produced-by
+      subject_type: ES:CONCEPT:agent
+      object_type: external:concept:outcome
+      definition: |
+          An Agent produces an Outcome when the Agent's actions result
+          in the intended or achieved state. The predicate is namespaced
+          (agent-produces) to disambiguate from the Value Stream subject
+          variant (subject_type: ES:CONCEPT:value-stream per CR-ES-003
+          §10.5) and the Action subject variant (subject_type:
+          ES:CONCEPT:action per CR-ES-004 §10).
+      lifecycle_status: established
+      provenance: CR-ES-004 §10 + ADR-ES-004 §14
+
+    - id: ES:REL:adapts-to
+      canonical_name: adapts-to
+      inverse: adapted-by
+      subject_type: ES:CONCEPT:agent
+      object_type: external:concept:context
+      definition: |
+          An Agent adapts-to Context when the Agent alters its execution
+          path in response to changing conditions, observations, or
+          intermediate outcomes. Adaptation is characteristic of agentic
+          operation but is not by itself sufficient to establish
+          agentic semantics (per ADR-ES-004 §7.6).
+      lifecycle_status: established
+      provenance: CR-ES-004 §10 + ADR-ES-004 §7.6
+
+    - id: ES:REL:receives
+      canonical_name: receives
+      inverse: received-by
+      subject_type: ES:CONCEPT:agent
+      object_type: ES:CONCEPT:intent
+      definition: |
+          An Agent receives an Intent when the Intent is delegated to
+          the Agent. The receipt establishes the Agent's interpretive
+          obligation but not the Outcome obligation ;;; Action Selection
+          and Outcome production are separate predicates.
+      lifecycle_status: established
+      provenance: CR-ES-004 §10 + ADR-ES-004 §14
+
+    # ===== Intent ;;; Subject predicate (CR-ES-004 §10 + ADR-ES-004 §14) =====
+
+    - id: ES:REL:guides
+      canonical_name: guides
+      inverse: guided-by
+      subject_type: ES:CONCEPT:intent
+      object_type: ES:CONCEPT:action
+      definition: |
+          Intent guides Action when the Action is directed toward the
+          Intent's communicated desired direction or purpose. Guidance
+          is distinct from prescription (an Instruction prescribes an
+          Action ;;; Intent may inform multiple Actions).
+      lifecycle_status: established
+      provenance: CR-ES-004 §10 + ADR-ES-004 §14
+
+    # ===== Authority ;;; Subject predicate (CR-ES-004 §10 + ADR-ES-004 §14 + §15) =====
+
+    - id: ES:REL:constrains
+      canonical_name: constrains
+      inverse: constrained-by
+      subject_type: ES:CONCEPT:authority
+      object_type: ES:CONCEPT:action
+      definition: |
+          Authority constrains Action when the Action is limited by the
+          defined scope of permitted action, decision boundaries,
+          resource boundaries, escalation conditions, or constraints.
+          Per ADR-ES-004 §15 ;;; Authority may include permitted
+          actions, prohibited actions, resource limits, decision
+          thresholds, escalation requirements, policy constraints, human
+          approval requirements.
+      lifecycle_status: established
+      provenance: CR-ES-004 §10 + ADR-ES-004 §14 + §15
+
+    # ===== Action ;;; Subject predicate (CR-ES-004 §10 + ADR-ES-004 §14) =====
+
+    - id: ES:REL:action-produces
+      canonical_name: produces
+      inverse: produced-by
+      subject_type: ES:CONCEPT:action
+      object_type: external:concept:outcome
+      definition: |
+          Action produces an Outcome when the Action results in the
+          intended or achieved state. Per CR-ES-004 §9 ;;; Action is
+          performed toward an intended result. The predicate is
+          namespaced (action-produces) to disambiguate from the Agent
+          subject variant (subject_type: ES:CONCEPT:agent per CR-ES-004
+          §10) and the Value Stream subject variant (subject_type:
+          ES:CONCEPT:value-stream per CR-ES-003 §10.5).
+      lifecycle_status: established
+      provenance: CR-ES-004 §10 + ADR-ES-004 §14
 
     # ===== Value Stage ;;; Stage-level predicates (CR-ES-003 §9 + §10.8-§10.11) =====
 

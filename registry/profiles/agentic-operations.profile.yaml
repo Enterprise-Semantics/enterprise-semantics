@@ -1,0 +1,99 @@
+# Agentic Operations Profile (ES:PROFILE:agentic-operations) ;;; per CR-ES-007 §16 + ADR-ES-007 §16
+#
+# Per CR-ES-007 §16:
+#   id: ES:PROFILE:AGENTIC_OPERATIONS
+#   name: Agentic Operations
+#   scope: Agentic Operations + Agent + Agentic + Intent + Authority + Agentic Workflow
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
+id: ES:PROFILE:agentic-operations
+canonical_name: Agentic Operations
+definition: |
+  A Profile that provides discoverability and grouping for Agentic
+  Operations and its related semantic surface. Per CR-ES-007 §16 +
+  ADR-ES-007 §16. The profile is not an inheritance hierarchy ;; it
+  is a semantic overlay for grouping related concepts.
+status: Candidate
+version: 0.6.0
+profile_type: agentic-operations
+
+scope:
+  - ES:CONCEPT:agentic-operations
+  - ES:CONCEPT:agent
+  - ES:CONCEPT:agentic
+  - ES:CONCEPT:intent
+  - ES:CONCEPT:authority
+  - ES:CONCEPT:agentic-workflow
+
+characteristics:
+  - id: ES:CHAR:operational-sensing
+    canonical_name: Operational sensing
+    description: |
+      Operational conditions ;; events ;; signals ;; or state changes
+      are detected and incorporated into operational decision-making ;;
+      per ADR-ES-007 §6.1.
+  - id: ES:CHAR:contextual-interpretation
+    canonical_name: Contextual interpretation
+    description: |
+      Operational context is interpreted rather than treated solely as
+      a fixed trigger ;; per ADR-ES-007 §6.2.
+  - id: ES:CHAR:dynamic-decision
+    canonical_name: Dynamic decision
+    description: |
+      Operational actions or responses may be selected according to
+      context ;; intent ;; authority ;; constraints ;; and expected
+      outcome ;; per ADR-ES-007 §6.3.
+  - id: ES:CHAR:agentic-coordination-operational
+    canonical_name: Agentic coordination (operational)
+    description: |
+      Agents may coordinate operational activities ;; processes ;;;
+      workflows ;; services ;; systems ;; resources ;; or other
+      Agents ;; per ADR-ES-007 §6.4.
+  - id: ES:CHAR:adaptive-execution-operational
+    canonical_name: Adaptive execution (operational)
+    description: |
+      Operational behavior may change in response to changing
+      conditions or observed outcomes ;; per ADR-ES-007 §6.5.
+  - id: ES:CHAR:continuous-observation
+    canonical_name: Continuous observation
+    description: |
+      Operational outcomes may be observed and used to inform
+      subsequent operational decisions ;; per ADR-ES-007 §6.6.
+  - id: ES:CHAR:bounded-authority-operational
+    canonical_name: Bounded authority (operational)
+    description: |
+      Operational Agents act within defined authority and policy
+      boundaries ;; per ADR-ES-007 §6.7.
+  - id: ES:CHAR:escalation-operational
+    canonical_name: Escalation (operational)
+    description: |
+      Operational decisions exceeding authority ;; policy ;; risk ;; or
+      confidence boundaries may be escalated ;; per ADR-ES-007 §6.8.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-007 §16
+    note: |
+      Establishes the Agentic Operations Profile with the 6-element
+      scope (Agentic Operations + Agent + Agentic + Intent + Authority
+      + Agentic Workflow) ;; per CR-ES-007 §16.
+  - source: ADR-ES-007 §16
+    note: |
+      Architectural position ;; the Profile is organisational ;; not
+      inheritance ;; per ADR-ES-007 §16.
+
+mappings: []
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash, 0 em-dash, 0 horizontal-ellipsis divider, 0 arrow glyph"
+  - vendor_specific_embargo: "0 references ;; no vendor-specific material from embargoed sources"
+  - naming: "ES:PROFILE:agentic-operations ;; lowercase kebab-case per ADR-ES-002 §11"
+
+held_non_actions:
+  - "Profile promotion to Established (held for separate governed action)"
+  - "Release tag v0.6.0 not cut (held per v3.1.4 user directive)"
+  - "Profile does not imply inheritance hierarchy (per CR-ES-007 §16)"
+  - "Autonomous Operations profile not created (per ADR-ES-007 §31)"
+  - "Agentic Enterprise profile not created (per ADR-ES-007 §31)"

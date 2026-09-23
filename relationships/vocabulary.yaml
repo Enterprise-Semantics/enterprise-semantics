@@ -3,7 +3,7 @@
 #         vocabulary with 13 governed predicates from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Vocabulary predicate map ;;; v0.5.0 ;;; 13 Value Stream predicates + 9 Capability predicates + 11 Agentic predicates + 3 Agentic Value Stream predicates + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) for cross-CR subject-type disambiguation
+# Vocabulary predicate map ;;; v0.6.0 ;;; 13 Value Stream predicates + 9 Capability predicates + 11 Agentic predicates + 3 Agentic Value Stream predicates + 2 Agentic Workflow predicates + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced predicate (process-realized-through) for Process->Workflow disambiguation
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, relationships are first-class semantic
 # content with governed predicates. The vocabulary file is the authoritative
@@ -18,7 +18,7 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.5.0
+  version: 0.6.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
@@ -504,6 +504,39 @@ vocabulary:
         cross-CR subject-type collision.
       lifecycle_status: established
       provenance: ADR-ES-005 §6 + §7 + CR-ES-005 §6
+
+
+    # ===== Agentic Workflow ;;; Subject predicates (CR-ES-006 §5 + §18 + ADR-ES-006 §18) =====
+
+    - id: ES:REL:operates-within
+      canonical_name: operates-within
+      inverse: governs
+      subject_type: ES:CONCEPT:agentic-workflow
+      object_type: ES:CONCEPT:authority
+      definition: |
+        An Agentic Workflow operates within Authority when its dynamic
+        decisions ;;; action selections ;;; routing choices ;;; and
+        escalation requests are constrained by a defined authority. Per
+        ADR-ES-006 §4.6 (Bounded Decision Authority) + §11 (Authority
+        Boundary) ;;; and CR-ES-006 §13 (Authority Integration).
+      lifecycle_status: established
+      provenance: ADR-ES-006 §18 + CR-ES-006 §5 + §13
+
+    - id: ES:REL:process-realized-through
+      canonical_name: realized-through
+      inverse: realizes-process
+      subject_type: external:concept:process
+      object_type: ES:CONCEPT:workflow ;;; may resolve to agentic-workflow via subtyping
+      definition: |
+        A Process is realized through a Workflow when workflow execution
+        produces the process outcomes. Per ADR-ES-006 §6 (Relationship to
+        Process) ;;; CR-ES-006 §9 (Process Integration). When the Workflow
+        is an Agentic Workflow ;; the process is realized through an
+        agentic execution. The predicate is namespaced
+        (process-realized-through) to disambiguate from
+        value-stream-realized-through and capability-realized-through.
+      lifecycle_status: established
+      provenance: ADR-ES-006 §6 + CR-ES-006 §9
 
 governance:
   adr: ADR-ES-003

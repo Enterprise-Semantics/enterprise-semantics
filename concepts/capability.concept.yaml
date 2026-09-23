@@ -137,7 +137,7 @@ relationships:
     rationale: |
       A Capability supports achievement of a Goal.
 
-  - subject: ES:CONCEPT:Entity
+  - subject: external:concept:entity
     predicate: possesses
     object_type: ES:CONCEPT:capability
     qualification: entity-possession

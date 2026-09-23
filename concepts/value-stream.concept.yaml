@@ -1,12 +1,17 @@
 id: ES:CONCEPT:value-stream
 canonical_name: Value Stream
 definition: |
-  A Value Stream is the end-to-end progression of value-realization steps that
-  delivers an outcome of value to a stakeholder. It is a semantic concept
-  distinct from Process, Workflow, and Task Flow ;;; Value Stream is about
-  value, not about work decomposition. A Value Stream may be supported by
-  multiple Processes, executed through Workflows, and operationalized through
-  Task Flows. Per FND-ES-AG-002.
+  A Value Stream is an end-to-end sequence of value-creating stages through
+  which a stakeholder value proposition is realized, from an initiating
+  need, demand, or trigger to a resulting stakeholder outcome or value
+  realization.
+
+  Per CR-ES-003 §4.1 and ADR-ES-003 §4.1.
+
+  Value Stream is a semantic concept distinct from Process, Workflow,
+  Function, Capability, Service, Organization, Product, Activity, and Task.
+  It describes the progression of stakeholder value realization, not the
+  execution of work.
 status: Established
 version: 1.0.0
 concept_type: value-stream
@@ -14,53 +19,152 @@ wsf_grounding:
   - wsf_concept_id: external:wsf:Value
     relationship: specializes
     note: |
-      Value Stream specializes the WSF Value kernel concept. Value Streams
-      are how enterprises realize Value. Per WSF Tier 1 and per
-      FND-ES-AG-001-Grounding-Result.
+      Value Stream specializes the WSF Value kernel concept (Tier 1 Kernel
+      Reference). Per FND-ES-AG-008 §1.3, the working classification is
+      Tier 1 Kernel Reference + ES-canonical novelty: WSF grounds the
+      kernel Value ;;; ES adds the Stream construct that WSF does not
+      define. Per ADR-ES-003 §26 + CR-ES-003 §21.
 profile_bindings: []
 relationships:
   - subject: ES:CONCEPT:value-stream
     predicate: realizes
-    object: external:outcome:Value-Outcome
-    qualification: per-stage-value-realization
+    object: external:concept:stakeholder-value
+    qualification: end-to-end-value-realization
     status: established
-    provenance: FND-ES-AG-002 ;;; ADR-ES-002 §6
+    provenance: CR-ES-003 §10.1 + ADR-ES-003 §10
     rationale: |
-      Value Streams produce value. The realization relationship is the
-      semantic grounding of what a Value Stream is for.
-  - subject: ES:CONCEPT:value-stream
-    predicate: supported-by
-    object: external:concept:process
-    qualification: structural-substrate
-    status: established
-    provenance: FND-ES-AG-002
-    rationale: |
-      A Value Stream is supported by recurring Processes. Per the
-      architectural distinction (Value Stream != Process).
+      The primary Value Stream relationship. A Value Stream realizes
+      Stakeholder Value when progression through the Value Stream results
+      in the intended stakeholder value being achieved or made available.
+
   - subject: ES:CONCEPT:value-stream
     predicate: contains
-    object: external:concept:value-stream-stage
-    qualification: stage-decomposition
+    object: ES:CONCEPT:value-stage
+    qualification: stage-containment
     status: established
-    provenance: ADR-ES-002 §14
+    provenance: CR-ES-003 §10.2 + ADR-ES-003 §20
     rationale: |
-      Value Streams decompose into Stages and Segments. Recursive
-      Value Stream within Value Stream is NOT a general semantic rule
-      (per ADR-ES-002 §14).
+      A Value Stream contains a Value Stage when that stage forms part of
+      the defined progression of value realization.
+
+  - subject: ES:CONCEPT:value-stream
+    predicate: enabled-by
+    object: ES:CONCEPT:capability
+    qualification: capability-enablement
+    status: established
+    provenance: CR-ES-003 §10.3 + ADR-ES-003 §9
+    rationale: |
+      A Value Stream is enabled by a Capability when that Capability
+      provides an ability required for one or more stages of the Value
+      Stream to be realized.
+
+  - subject: ES:CONCEPT:value-stream
+    predicate: realized-through
+    object: ES:CONCEPT:process
+    qualification: process-realization
+    status: established
+    provenance: CR-ES-003 §10.4 + ADR-ES-003 §8 + §16
+    rationale: |
+      A Value Stream is realized through a Process when Process execution
+      contributes to the realization of one or more stages of the Value
+      Stream. This relationship must NOT imply Value Stream = Process.
+      The architectural boundary is preserved.
+
+  - subject: ES:CONCEPT:value-stream
+    predicate: produces
+    object: ES:CONCEPT:outcome
+    qualification: outcome-production
+    status: established
+    provenance: CR-ES-003 §10.5 + ADR-ES-003 §11
+    rationale: |
+      A Value Stream produces an Outcome when progression through the
+      Value Stream results in the specified outcome.
+
+  - subject: ES:CONCEPT:value-stream
+    predicate: uses
+    object: ES:CONCEPT:service
+    qualification: service-utilisation
+    status: established
+    provenance: CR-ES-003 §10.6 + ADR-ES-003 §17
+    rationale: |
+      A Value Stream uses a Service when the Service provides
+      functionality, interaction, or value-enabling means required by the
+      Value Stream. Value Stream != Service.
+
+  - subject: ES:CONCEPT:value-stream
+    predicate: involves
+    object: ES:CONCEPT:organization
+    qualification: organization-participation
+    status: established
+    provenance: CR-ES-003 §10.7 + ADR-ES-003 §19
+    rationale: |
+      A Value Stream involves an Organization when the Organization
+      participates in, enables, or contributes to one or more stages of
+      the Value Stream. The Organization boundary is a participation
+      boundary, not a Value Stream boundary.
+
+  - subject: ES:CONCEPT:value-stream
+    predicate: uses
+    object: ES:CONCEPT:resource
+    qualification: resource-utilisation
+    status: established
+    provenance: CR-ES-003 §10 (relationship table) + ADR-ES-003 §20
+    rationale: |
+      A Value Stream uses a Resource when the Resource provides means
+      required by the Value Stream.
 governance: enterprise-semantics
 provenance:
-  - source: FND-ES-AG-002
-    note: Defines the Value Stream semantic grounding.
-  - source: ADR-ES-002 §14
-    note: "Preserves the Value Stream != Process != Workflow != Task Flow distinction."
+  - source: CR-ES-003 §4.1 + ADR-ES-003 §4.1
+    note: Foundational Value Stream canonical definition (supersedes the
+      CR-ES-AG-003 / FND-ES-AG-002 framing as the authoritative basis for
+      the definition itself ;;; the Agentic specialisation is now governed
+      by the prospective CR-ES-005).
+  - source: FND-ES-AG-008 §1.3
+    note: Establishes the Tier 1 Kernel Reference + ES-canonical novelty
+      classification for Value Stream.
+  - source: FND-ES-AG-002 + ADR-ES-002 §14 (superseded as authoritative basis)
+    note: |
+      Historical grounding via Agentic-era ADR. Preserved for provenance
+      but not the authoritative basis for the Value Stream definition
+      going forward. The Agentic Value Stream specialisation remains
+      governed by the existing CR-ES-AG-003 / CR-ES-AG-005 lineage.
+  - source: ADR-ES-002 (Enterprise Semantic Model) §22
+    note: Establishes the semantic-kind decision authority (Finding/ADR
+      process) that this concept honours.
   - source: https://github.com/World-Semantic-Foundation
     note: |
-      WSF live baseline provides Value Stream grounding via WSF Value
-      and WSF Activity semantics. ES specializes, not duplicates.
+      WSF live baseline provides Value Stream grounding via the WSF Value
+      kernel (Tier 1) ;;; ES specialises, does not duplicate.
 mappings:
   - authority: wsf
     target_id: external:wsf:Value
     relationship: specializes
-    note: Value Stream specializes WSF Value (per FND-ES-AG-001-Grounding-Result).
+    note: |
+      Value Stream specializes WSF Value (Tier 1 Kernel Reference, per
+      FND-ES-AG-008 §1.3). The Stream construct itself is ES-canonical
+      novelty ;;; WSF does not define Stream. Full mapping to be recorded
+      in enterprise-semantics-mappings/wsf/value-stream.yaml (CR-ES-003
+      §21 ;;; implementation held for VS-C slice).
+change_history:
+  - date: 2026-09-02
+    by: FND-ES-AG-002 + CR-ES-AG-003
+    change: |
+      Initial concept record landed under the Agentic semantic grounding
+      wave. Status: Established, version: 1.0.0.
+  - date: 2026-09-23
+    by: CR-ES-003 + ADR-ES-003
+    change: |
+      Foundational rebase per CR-ES-003 + ADR-ES-003. Definition updated
+      to the canonical end-to-end-sequence form. WSF grounding expanded
+      to declare the Tier 1 Kernel Reference + ES-canonical novelty
+      classification explicitly. Relationship block expanded from 3
+      predicates (realizes, supported-by, contains) to 8 predicates
+      matching CR-ES-003 §9 + §10. Provenance updated to cite the
+      foundational artefacts (CR-ES-003 + ADR-ES-003) as the
+      authoritative basis, with the Agentic-era provenance preserved
+      as historical. Status remains Established (no status regression).
+      Version unchanged at 1.0.0 (this is a provenance/relationship
+      amendment, not a substantive definition change ;;; the prior
+      definition was consistent with the foundational form).
 created: 2026-09-02
-updated: 2026-09-02
+updated: 2026-09-23

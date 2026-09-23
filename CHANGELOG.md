@@ -19,6 +19,71 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - VS-C ;;; WSF + OpenDEA + DEA Catalog mapping records (CR-ES-003 §21-§23).
 - VS-D ;;; documentation + examples + conformance rules + tests + PlantUML (CR-ES-003 §27-§35).
 
+## [0.13.0] ; 2026-09-23 ; CR-ES-004 VS-B Agentic relationship vocabulary
+
+### Added
+
+- `relationships/vocabulary.yaml` ;;; v0.3.0 ;; v0.4.0 ;;; 22 ;; 33 governed predicates (added 11 Agentic predicates from CR-ES-004 §10). Two predicates namespaced for cross-CR subject-type disambiguation: `agent-produces` (Agent subject) vs `produces` (Value Stream subject per VS-B), `action-produces` (Action subject) vs `produces` (Value Stream subject).
+- `relationships/inverse.yaml` ;;; v0.3.0 ;; v0.4.0 ;;; 22 ;; 33 inverse pairs.
+- `versions/v0.3.0.yaml` ;;; new ;;; Agentic semantic establishment version pointer per CR-ES-004 §29 + ADR-ES-004 §21.
+
+### 11 Agentic predicates per CR-ES-004 §10
+
+| # | Subject | Predicate | Object | Provenance |
+|---|---|---|---|---|
+| 1 | agent | interprets | intent | CR-ES-004 §10 + ADR-ES-004 §14 |
+| 2 | agent | pursues | external:concept:goal | CR-ES-004 §10 + ADR-ES-004 §14 |
+| 3 | agent | acts-within | authority | CR-ES-004 §10 + ADR-ES-004 §14 + §15 |
+| 4 | agent | selects | action | CR-ES-004 §10 + ADR-ES-004 §14 + §17 |
+| 5 | agent | coordinates | action | CR-ES-004 §10 + ADR-ES-004 §14 |
+| 6 | agent | agent-produces | external:concept:outcome | CR-ES-004 §10 + ADR-ES-004 §14 (namespaced) |
+| 7 | agent | adapts-to | external:concept:context | CR-ES-004 §10 + ADR-ES-004 §7.6 |
+| 8 | agent | receives | intent | CR-ES-004 §10 + ADR-ES-004 §14 |
+| 9 | intent | guides | action | CR-ES-004 §10 + ADR-ES-004 §14 |
+| 10 | authority | constrains | action | CR-ES-004 §10 + ADR-ES-004 §14 + §15 |
+| 11 | action | action-produces | external:concept:outcome | CR-ES-004 §10 + ADR-ES-004 §14 (namespaced) |
+
+### Namespacing pattern (4 namespaced predicates total)
+
+The pattern is: when a predicate has the same canonical_name but different subject_type across multiple CRs, prefix the predicate id with the subject_type name (kebab-case). Existing examples follow this pattern:
+
+- `realized-through` ;; Value Stream subject (VS-B) vs `stage-realized-through` ;; Value Stage subject (VS-B) vs `capability-realized-through` ;; Capability subject (Capability tranche)
+- `contributes-to` ;; Value Stream subject + Value Stage subject (VS-B) vs `capability-contributes-to` ;; Capability subject (Capability tranche)
+- `produces` ;; Value Stream subject (VS-B) vs `agent-produces` ;; Agent subject (VS-B Agentic tranche) vs `action-produces` ;; Action subject (VS-B Agentic tranche)
+
+### Scope
+
+This release implements VS-B of CR-ES-004 ;;; the Agentic relationship vocabulary, inverse map, and v0.3.0 version pointer. It builds on VS-A (PR #7, the 5 concept records) and the Capability tranche (PR #6). No new concept records, no schema mutation, no validation rule addition, no conformance harness change. The 11 predicates are pure registry additions pending the conformance gate extension that will exercise them (held for VS-D).
+
+### Governance
+
+- ADR-ES-004 (Proposed, governance slot 0006) ;;; ratifies the foundational Agentic decision ;;; 10 architectural invariants AG-INV-001..010.
+- CR-ES-004 (Proposed, governance slot 0012) ;;; carries the 11-predicate table + per-predicate definitions + concept records + boundary tests.
+- FND-ES-AG-008 (Established 2026-09-22) ;;; establishes the per-concept WSF-grounding classification framework.
+
+### Cardinal rules applied
+
+- Author: Emmanuel A. Otchere (cardinal author rule, 2026-09-23).
+- No en-dash (U+2013) or em-dash (U+2014) in any new/edited file (D-004 dash rule). Section dividers use `;;;` boundary lines per existing convention.
+- No vendor-specific material from embargoed sources in any new/edited file (cardinal embargo, 2026-09-22).
+- ES is sourced from SDO-neutral standardisation only (ISO/IEC, ITU-T, ETSI, NIST).
+
+### Verification (local)
+
+- `python3 -c "import yaml; yaml.safe_load(open('relationships/vocabulary.yaml').read())"` ;;; parses cleanly, 33 predicate entries.
+- `python3 -c "import yaml; yaml.safe_load(open('relationships/inverse.yaml').read())"` ;;; parses cleanly, 33 inverse entries.
+- `python3 -c "import yaml; yaml.safe_load(open('versions/v0.3.0.yaml').read())"` ;;; parses cleanly.
+- Cardinal rules: D-004 clean across all 3 files.
+- GitHub Actions conformance gate will run on PR open ;;; expected PASS (no concept mutations in this slice, no schema changes).
+
+### Held non-actions
+
+- No conformance rule additions (AG-CON-001..013 held for VS-D test-probe slice).
+- No WSF + OpenDEA mapping records (held for VS-C).
+- No documentation + examples + tests + PlantUML (held for VS-D).
+- No ADR-ES-004 promotion to Accepted (gated on CR-ES-004 implementation completion).
+- No release tag (per v3.1.4 user directive).
+
 ## [0.12.0] ; 2026-09-23 ; CR-ES-002 Capability Semantic Grounding landing (recovered from v3.1.7 orphan stash)
 
 ### Added

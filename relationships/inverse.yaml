@@ -4,7 +4,7 @@
 #         from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Inverse predicate map ;;; v0.3.0 ;;; 13 Value Stream inverse pairs + 9 Capability inverse pairs + 2 namespaced inverses (capability-realized-through, capability-contributes-to) for cross-CR subject-type disambiguation
+# Inverse predicate map ;;; v0.4.0 ;;; 13 Value Stream inverse pairs + 9 Capability inverse pairs + 11 Agentic inverse pairs + 4 namespaced inverses (capability-realized-through, capability-contributes-to, agent-produces, action-produces) for cross-CR subject-type disambiguation
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, every predicate that has an inverse
 # must declare it explicitly here. This file is populated by VS-B with the
@@ -12,8 +12,8 @@
 # relationships/vocabulary.yaml v0.2.0.
 
 inverse:
-  version: 0.3.0
-  status: candidate ;;; awaiting ADR-ES-003 acceptance + ADR-ES-002 acceptance
+  version: 0.4.0
+  status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_inverses:
 
     # ===== Value Stream subject-level inverses =====
@@ -138,6 +138,85 @@ inverse:
       subject_type: ES:CONCEPT:entity
       object_type: ES:CONCEPT:capability
       inverse_object_type: ES:CONCEPT:entity
+
+    # ===== Agentic ;;; Subject inverses (CR-ES-004 §10 + ADR-ES-004 §14 + §15) =====
+
+    - forward: ES:REL:interprets
+      forward_canonical: interprets
+      inverse: interpreted-by
+      subject_type: ES:CONCEPT:agent
+      object_type: ES:CONCEPT:intent
+      inverse_object_type: ES:CONCEPT:agent
+
+    - forward: ES:REL:pursues
+      forward_canonical: pursues
+      inverse: pursued-by
+      subject_type: ES:CONCEPT:agent
+      object_type: external:concept:goal
+      inverse_object_type: ES:CONCEPT:agent
+
+    - forward: ES:REL:acts-within
+      forward_canonical: acts-within
+      inverse: governs
+      subject_type: ES:CONCEPT:agent
+      object_type: ES:CONCEPT:authority
+      inverse_object_type: ES:CONCEPT:authority
+
+    - forward: ES:REL:selects
+      forward_canonical: selects
+      inverse: selected-by
+      subject_type: ES:CONCEPT:agent
+      object_type: ES:CONCEPT:action
+      inverse_object_type: ES:CONCEPT:agent
+
+    - forward: ES:REL:coordinates
+      forward_canonical: coordinates
+      inverse: coordinated-by
+      subject_type: ES:CONCEPT:agent
+      object_type: ES:CONCEPT:action
+      inverse_object_type: ES:CONCEPT:agent
+
+    - forward: ES:REL:agent-produces
+      forward_canonical: produces
+      inverse: produced-by
+      subject_type: ES:CONCEPT:agent
+      object_type: external:concept:outcome
+      inverse_object_type: ES:CONCEPT:agent
+
+    - forward: ES:REL:adapts-to
+      forward_canonical: adapts-to
+      inverse: adapted-by
+      subject_type: ES:CONCEPT:agent
+      object_type: external:concept:context
+      inverse_object_type: ES:CONCEPT:agent
+
+    - forward: ES:REL:receives
+      forward_canonical: receives
+      inverse: received-by
+      subject_type: ES:CONCEPT:agent
+      object_type: ES:CONCEPT:intent
+      inverse_object_type: ES:CONCEPT:agent
+
+    - forward: ES:REL:guides
+      forward_canonical: guides
+      inverse: guided-by
+      subject_type: ES:CONCEPT:intent
+      object_type: ES:CONCEPT:action
+      inverse_object_type: ES:CONCEPT:intent
+
+    - forward: ES:REL:constrains
+      forward_canonical: constrains
+      inverse: constrained-by
+      subject_type: ES:CONCEPT:authority
+      object_type: ES:CONCEPT:action
+      inverse_object_type: ES:CONCEPT:authority
+
+    - forward: ES:REL:action-produces
+      forward_canonical: produces
+      inverse: produced-by
+      subject_type: ES:CONCEPT:action
+      object_type: external:concept:outcome
+      inverse_object_type: ES:CONCEPT:action
 
     # ===== Value Stage stage-level inverses =====
 

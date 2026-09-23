@@ -1,64 +1,273 @@
+# concepts/agentic-workflow.concept.yaml ;; Agentic Workflow (ES:CONCEPT:agentic-workflow) ;; per CR-ES-006 §5 + ADR-ES-006 §2
+#
+# Per CR-ES-006 §4 + §5 + ADR-ES-006 §2 + §4:
+#   An Agentic Workflow is a Workflow in which one or more
+#   work-coordination or execution decisions are materially
+#   performed through agentic behavior, enabling contextual
+#   interpretation, dynamic action selection, coordination,
+#   adaptation, or escalation within defined authority.
+#
+# This record supersedes the prior Profile hypothesis (FND-ES-AG-003 +
+# ADR-ES-AG-001 §3.3) with the specialisation hypothesis established by
+# CR-ES-006 + ADR-ES-006. The canonical identity ES:CONCEPT:agentic-workflow
+# is preserved ;; the hypothesis is updated.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
 id: ES:CONCEPT:agentic-workflow
 canonical_name: Agentic Workflow
-definition: |
-  An Agentic Workflow is a Workflow whose execution is characterized by
-  goal-directed progression under bounded autonomy, AI-augmented decision-
-  making at decision points, adaptive step reconfiguration, and human
-  governance rather than human execution. The Workflow retains its identity ;;
-  the agentic-execution Profile applies the four governed characteristics.
-  Per FND-ES-AG-003 ;;; ADR-ES-AG-001 §3.3.
 status: Candidate
-version: 0.1.0
+version: 0.5.0
 concept_type: agentic-workflow
-wsf_grounding:
-  - wsf_concept_id: external:wsf:Activity
-    relationship: references
-    note: |
-      Agentic Workflow inherits the WSF Activity grounding via its profiled
-      Workflow. The Profile does not introduce a new semantic kind ;;; per
-      FND-ES-AG-001-Grounding-Result.
-  - wsf_concept_id: external:wsf:Event
-    relationship: references
-    note: |
-      Agentic Workflow steps produce Events. Inherited via Workflow.
-profile_bindings:
-  - profile_id: ES:PROFILE:agentic-execution
-    profile_type: agentic-execution
-    active: true
+
+definition: |
+  An Agentic Workflow is a Workflow in which one or more work-coordination
+  or execution decisions are materially performed through agentic
+  behavior, enabling contextual interpretation, dynamic action
+  selection, coordination, adaptation, or escalation within defined
+  authority.
+
+# Per CR-ES-006 §5 + ADR-ES-006 §2:
+#   Agentic Workflow specializes Workflow.
+specializes:
+  - ES:CONCEPT:workflow
+
+# Per ADR-ES-006 §18 + CR-ES-006 §5 + §11 + §12 + §13 + §18:
+#   7 canonical relationships inherited / canonicalised.
+
 relationships:
   - subject: ES:CONCEPT:agentic-workflow
-    predicate: profile-of
+    predicate: specializes
     object: ES:CONCEPT:workflow
-    qualification: agentic-execution-profile
-    status: proposed
-    provenance: FND-ES-AG-003 ;;; ADR-ES-AG-001 §3
+    qualification: direct-specialisation
+    status: established
+    provenance: CR-ES-006 §5 + ADR-ES-006 §2 + §18
     rationale: |
-      The Profile hypothesis ;;; Agentic Workflow is a Profile of Workflow
-      under agent-augmented execution conditions.
+      Agentic Workflow is a direct specialisation of Workflow ;; per the
+      canonical relationship established by CR-ES-006 §5 + ADR-ES-006 §2.
+      The specialisation is the foundational architectural decision ;;; no
+      intermediate indirection through a Profile is required.
+
   - subject: ES:CONCEPT:agentic-workflow
-    predicate: orchestrates
-    object: external:concept:agentic-flow
-    qualification: choreographic-sequencing
-    status: provisional
-    provenance: FND-ES-AG-003 ;;; FND-ES-000 §15
+    predicate: engages
+    object: ES:CONCEPT:agent
+    qualification: agent-engagement
+    status: established
+    provenance: ADR-ES-006 §18 + CR-ES-006 §11
     rationale: |
-      Agentic Workflow orchestrates Agentic Flow ;;; choreographic vs
-      unit-of-execution. Per ADR-ES-002 §22 ;;; not contains.
+      Agentic Workflow may engage one or more Agents. Agent semantics
+      are inherited from CR-ES-004 + ADR-ES-004. The Agent remains
+      governed by ADR-ES-004 ;; this relationship does not redefine
+      Agent.
+
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: interprets
+    object: ES:CONCEPT:intent
+    qualification: workflow-intent-interpretation
+    status: established
+    provenance: ADR-ES-006 §18 + CR-ES-006 §12
+    rationale: |
+      Agentic Workflow has an associated workflow_intent ;; per
+      ADR-ES-006 §4.1 (Delegated Workflow Intent). The Agent within
+      the workflow interprets this intent ;; per ADR-ES-004 Agent
+      semantics ;; and the workflow supports this interpretation.
+
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: operates-within
+    object: ES:CONCEPT:authority
+    qualification: bounded-authority
+    status: established
+    provenance: ADR-ES-006 §18 + CR-ES-006 §13 + §11
+    rationale: |
+      Agentic Workflow operates within defined Authority. Per
+      ADR-ES-006 §4.6 (Bounded Decision Authority) + §11 (Authority
+      Boundary). Dynamic workflow decisions occur within defined
+      authority ;; policies ;; constraints ;; and escalation boundaries.
+
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: coordinates
+    object: external:concept:activity
+    qualification: activity-coordination
+    status: established
+    provenance: ADR-ES-006 §18 + CR-ES-006 §10
+    rationale: |
+      Agentic Workflow may coordinate the execution of Activities ;;
+      per ADR-ES-006 §7 (Relationship to Activity and Task) + CR-ES-006
+      §10 (Activity and Task Integration).
+
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: coordinates
+    object: external:concept:task
+    qualification: task-coordination
+    status: established
+    provenance: ADR-ES-006 §18 + CR-ES-006 §10
+    rationale: |
+      Agentic Workflow may coordinate the execution of Tasks ;; per
+      ADR-ES-006 §7 + CR-ES-006 §10. Task is a governed concept
+      (forward-reference to non-canonical Task ;; referenced via
+      external:).
+
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: produces
+    object: external:concept:outcome
+    qualification: outcome-production
+    status: established
+    provenance: ADR-ES-006 §18 + CR-ES-006 §21
+    rationale: |
+      Agentic Workflow produces the workflow outcome. Per ADR-ES-006
+      §21 (Example) ;; the Process remains Fulfill Customer Order ;;
+      the Workflow produces the delivery outcome. Outcome is a
+      forward-reference to non-canonical Outcome ;; referenced via
+      external:.
+
+  - subject: external:concept:process
+    predicate: realized-through
+    object: ES:CONCEPT:agentic-workflow
+    qualification: process-realises-through-agentic-workflow
+    status: established
+    provenance: ADR-ES-006 §6 + CR-ES-006 §9
+    rationale: |
+      A Process may be realized-through an Agentic Workflow. Per
+      ADR-ES-006 §6 (Relationship to Process) + CR-ES-006 §9
+      (Process Integration). This relationship is permitted because
+      Agentic Workflow specializes Workflow. No new Process
+      specialisation is introduced.
+
+# Per ADR-ES-006 §19 + CR-ES-006 §5:
+#   8 properties supplementing inherited Workflow semantics.
+
+properties:
+  - name: workflow_intent
+    type: reference
+    required: true
+    description: |
+      Intent guiding dynamic execution. Per ADR-ES-006 §19 + CR-ES-006
+      §12. The Agent within the workflow interprets this intent ;; per
+      ADR-ES-004 Agent semantics.
+
+  - name: agentic_scope
+    type: reference_set
+    required: true
+    description: |
+      Workflow decisions or execution areas subject to agentic
+      behavior. Per ADR-ES-006 §19 + CR-ES-006 §5 + §18. Distinguishes
+      Agentic Workflow from mere Workflows containing an Agent ;;
+      per ADR-ES-006 §10 (Agentic Participation Threshold).
+
+  - name: authority_context
+    type: reference
+    required: true
+    description: |
+      Authority governing agentic decisions. Per ADR-ES-006 §19 +
+      CR-ES-006 §13. Inherits Authority semantics from ADR-ES-004 +
+      CR-ES-004.
+
+  - name: decision_boundary
+    type: reference_set
+    required: false
+    description: |
+      Decisions that may be dynamically selected. Per ADR-ES-006 §19
+      + CR-ES-006 §14. Identifies where agentic behavior can select
+      next task ;; next activity ;; execution path ;; service ;;
+      resource ;; escalation route ;; recovery strategy.
+
+  - name: adaptation_scope
+    type: reference_set
+    required: false
+    description: |
+      Areas in which runtime adaptation is permitted. Per ADR-ES-006
+      §19 + CR-ES-006 §15. Distinguishes runtime adaptation from
+      permanent modification of the canonical workflow definition ;;
+      per ADR-ES-006 §12 (Adaptation Boundary).
+
+  - name: intervention_model
+    type: enumeration
+    required: false
+    values:
+      - human-in-loop
+      - human-on-loop
+      - human-over-loop
+      - mixed
+      - none-specified
+    description: |
+      Human approval ;; oversight ;; escalation ;; or intervention ;; per
+      ADR-ES-006 §19 + CR-ES-006 §16. Ensures Agentic Workflow does
+      not semantically imply removal of human participation.
+
+  - name: escalation_boundary
+    type: reference_set
+    required: false
+    description: |
+      Conditions requiring intervention ;; per ADR-ES-006 §19 + CR-ES-006
+      §17. Examples: authority exceeded ;; policy conflict ;;
+      insufficient information ;; risk threshold exceeded ;; required
+      human approval.
+
+  - name: execution_context
+    type: reference_set
+    required: false
+    description: |
+      Context used in workflow interpretation. Per ADR-ES-006 §19.
+      Inherited from the Workflow semantic ;;; Agentic Workflow may
+      explicitly represent it for runtime adaptation.
+
+# Per ADR-ES-006 §4 + CR-ES-006 §18:
+#   8 characteristics that establish the agentic workflow condition.
+
+characteristics:
+  - delegated_workflow_intent ;; per ADR-ES-006 §4.1
+  - contextual_interpretation ;; per ADR-ES-006 §4.2
+  - dynamic_routing ;; per ADR-ES-006 §4.3
+  - agentic_coordination ;; per ADR-ES-006 §4.4
+  - adaptive_execution ;; per ADR-ES-006 §4.5
+  - bounded_decision_authority ;; per ADR-ES-006 §4.6
+  - exception_interpretation ;; per ADR-ES-006 §4.7
+  - human_intervention ;; per ADR-ES-006 §4.8
+
+# Per CR-ES-006 §18 + ADR-ES-006 §10:
+#   The material-participation criterion.
+
+invariants:
+  - AVS-INV-AWF-001 ;; Agentic Workflow != Workflow merely containing an Agent ;; per ADR-ES-006 §10 + §24.5. Material-participation criterion: Agent interprets context > Agent selects permitted path > Workflow adapts.
+  - AVS-INV-AWF-002 ;; Agentic Workflow != Process ;; per ADR-ES-006 §6 + §24.4.
+  - AVS-INV-AWF-003 ;; Agentic Workflow != Value Stream ;; per ADR-ES-006 §15 + §24.6.
+  - AVS-INV-AWF-004 ;; Agentic Workflow != Agent ;; per ADR-ES-006 §8 + AWF-CON-013.
+  - AVS-INV-AWF-005 ;; Agentic Workflow does not require AI ;; per ADR-ES-006 §14 + AWF-CON-009.
+  - AVS-INV-AWF-006 ;; Agentic Workflow does not imply Autonomous Workflow ;; per ADR-ES-006 §17 + AWF-CON-010.
+  - AVS-INV-AWF-007 ;; Agentic Workflow does not conflate Automation with agency ;; per ADR-ES-006 §13 + §24.2.
+  - AVS-INV-AWF-008 ;; Agentic Workflow does not establish Agentic Operations ;; per ADR-ES-006 §16 + CR-ES-006 §3.
+
+# Per CR-ES-006 §19 + §20 + ADR-ES-006 §16:
+#   Tier 2 Specialisation; ES-canonical novelty (per FND-ES-AG-008 §1.3)
+
+grounding:
+  foundation: WSF
+  semantic_authority: Enterprise-Semantics
+  classification: Tier 2 Specialisation + ES-canonical novelty
+  ws_foundation_reference: external:wsf:Activity (via Workflow)
+  notes: |
+    Per FND-ES-AG-008 §1.3 ;;; Workflow is a WSF Tier 1 specialisation
+    (WSF Activity grounding). Agentic Workflow is a Tier 2
+    Specialisation ;;; it inherits the Workflow grounding and adds
+    ES-canonical novelty (the 8 characteristics ;;; 8 properties ;;;
+    8 canonical relationships).
+
 governance: enterprise-semantics
 provenance:
+  - source: CR-ES-006 §5
+    note: Canonical schema; this record is the canonical implementation.
+  - source: ADR-ES-006 §2 + §18
+    note: Architectural decision; canonical relationships.
   - source: FND-ES-AG-003
-    note: Working conclusion ;;; Agentic Workflow is a Profile of Workflow.
-  - source: ADR-ES-AG-001
-    note: Profile pattern generalized.
-  - source: docs/finding/0001-agentic-semantic-grounding-grounding-result.md
-    note: WSF live baseline alignment.
-  - source: https://github.com/World-Semantic-Foundation
     note: |
-      WSF Activity grounding inherited via Workflow binding.
-mappings:
-  - authority: wsf
-    target_id: external:wsf:Activity
-    relationship: references
-    note: Inherits Activity grounding via Workflow.
-created: 2026-09-02
-updated: 2026-09-02
+      Original Profile hypothesis ;; superseded by this CR-ES-006 record.
+      The canonical identity ES:CONCEPT:agentic-workflow is preserved ;;
+      the hypothesis is updated to specialisation.
+  - source: ADR-ES-AG-001
+    note: Profile pattern generalised ;; superseded by ADR-ES-006.
+  - source: ADR-ES-005 §21
+    note: "Next Decision Candidates ;;; ADR-ES-006 (Agentic Workflow) chosen as next tranche."
+  - source: FND-ES-AG-008 §1.3
+    note: "Tier 1 / Tier 2 grounding classification ;;; Agentic Workflow is Tier 2 Specialisation."
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Activity grounding inherited via Workflow binding.

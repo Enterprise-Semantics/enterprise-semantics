@@ -47,6 +47,22 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - Naming: lowercase kebab-case per ADR-ES-002 §11 ;; canonical_name stays un-prefixed
 - Conformance: local python3 conformance/check_concepts.py ;;; NO_DRIFT (19 Concept records)
 
+## [0.18.0] ; 2026-09-23 ; VS-B ;;; 2 Agentic Workflow governed predicates + 2 inverse pairs + v0.5.0 version pointer per CR-ES-006 §5 + §32 + ADR-ES-006 §18 + §26
+
+### Added
+
+- relationships/vocabulary.yaml ;;; v0.5.0 -> v0.6.0 ;;; 36 -> 38 governed predicates ;; 2 new: ES:REL:operates-within (agentic-workflow -> authority) + ES:REL:process-realized-through (process -> workflow / agentic-workflow)
+- relationships/inverse.yaml ;;; 36 -> 38 inverse pairs
+- versions/v0.5.0.yaml ;;; new ;;; Agentic Workflow semantic establishment version pointer
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
+- Conformance: local python3 conformance/check_concepts.py ;;; NO_DRIFT (19 Concept records)
+
 ## [0.15.0] ; 2026-09-23 ; CR-ES-005 VS-A ;; Agentic Value Stream concept record (supersedes FND-ES-AG-002 hypothesis) + Agentic Value Realization Profile
 
 ### Added

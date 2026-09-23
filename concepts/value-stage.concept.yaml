@@ -1,0 +1,161 @@
+# Value Stage concept record ;;; per CR-ES-003 §5 + §8 + §13 + ADR-ES-003 §13 + §14
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+# Status: Candidate (per scope decision ;;; promotion to Established held for a separate governed action)
+# WSF Grounding: ES-canonical novelty ;;; Value Stage is an ES construct (WSF has no equivalent)
+# Identity: ES:CONCEPT:value-stage ;;; namespace divergence with CR-ES-003 §8 ES:VALUE-STAGE:... form documented in ADR-ES-002 §2.5 (4-segment uppercase form permitted for foundational concept records).
+# Provenance: CR-ES-003 §5 + §13 + §14 ;;; ADR-ES-003 §13 + §14 ;;; FND-ES-AG-008 §1.3
+
+id: ES:CONCEPT:value-stage
+canonical_name: Value Stage
+status: Candidate
+version: 0.1.0
+concept_type: value-stage
+
+definition: |
+  A Value Stage is a meaningful transition in the progression of stakeholder
+  value within a Value Stream.
+
+  A Value Stage represents a value-relevant state transition rather than
+  merely an executable unit of work.
+
+  A Value Stage may be realized through:
+    - one Process
+    - multiple Processes
+    - Activities
+    - Tasks
+    - Services
+    - Systems
+    - human participation
+    - automated execution
+
+  Therefore:
+    Value Stage != Process
+    Value Stage != Activity
+    Value Stage != Task
+
+  Per CR-ES-003 §5 and ADR-ES-003 §13.
+
+semantic_type: value-stage
+domain: enterprise
+
+exclusions:
+  - Process
+  - Activity
+  - Task
+  - Function
+  - Workflow
+  - Organizational-Unit
+
+wsf_grounding:
+  - wsf_concept_id: null
+    relationship: es-canonical
+    note: |
+      Value Stage is ES-canonical novelty. WSF has no equivalent construct
+      at Tier 1 or Tier 2. Per FND-ES-AG-008 §1.3, the working
+      classification for Value Stage is ES-canonical (no foundational WSF
+      semantics to reference). A Value Stage realises through Process
+      (which IS grounded via wsf:Activity Tier 2 Specialisation, per
+      CR-ES-002's Process treatment), but the Stage construct itself is
+      not WSF-grounded.
+
+profile_bindings: []
+
+relationships:
+  - subject: ES:CONCEPT:value-stage
+    predicate: belongs-to
+    object: ES:CONCEPT:value-stream
+    qualification: stream-membership
+    status: established
+    provenance: CR-ES-003 §5 + ADR-ES-003 §13
+    rationale: |
+      A Value Stage belongs to a Value Stream when it forms part of the
+      defined progression of value realization. Per VS-INV-007 (Value
+      Stream contains Value Stages).
+
+  - subject: ES:CONCEPT:value-stage
+    predicate: precedes
+    object: ES:CONCEPT:value-stage
+    qualification: stage-ordering
+    status: established
+    provenance: CR-ES-003 §10.8 + ADR-ES-003 §20
+    rationale: |
+      A Value Stage precedes another Value Stage when it occurs earlier
+      in the defined progression of value realization. The relationship
+      supports explicit ordering without requiring an implementation-
+      specific workflow.
+
+  - subject: ES:CONCEPT:value-stage
+    predicate: realized-through
+    object: external:concept:process
+    qualification: process-realization
+    status: established
+    provenance: CR-ES-003 §10.9 + ADR-ES-003 §8
+    rationale: |
+      A Value Stage is realized through a Process when execution of the
+      Process contributes to the transition represented by the Value
+      Stage. Per VS-INV-008 (Value Stage is not inherently a Process).
+
+  - subject: ES:CONCEPT:value-stage
+    predicate: requires
+    object: ES:CONCEPT:capability
+    qualification: capability-requirement
+    status: established
+    provenance: CR-ES-003 §10.10 + ADR-ES-003 §9
+    rationale: |
+      A Value Stage requires a Capability when the Capability provides
+      an ability necessary for the stage to be realized.
+
+  - subject: ES:CONCEPT:value-stage
+    predicate: produces
+    object: external:concept:outcome
+    qualification: outcome-production
+    status: established
+    provenance: CR-ES-003 §10.11 + ADR-ES-003 §11
+    rationale: |
+      A Value Stage produces an Outcome when completion of the stage
+      results in the specified outcome.
+
+  - subject: ES:CONCEPT:value-stage
+    predicate: contributes-to
+    object: external:concept:stakeholder-value
+    qualification: value-contribution
+    status: established
+    provenance: CR-ES-003 §9 (relationship table) + ADR-ES-003 §20
+    rationale: |
+      A Value Stage contributes to Stakeholder Value when the stage's
+      outcome contributes to the overall stakeholder value realized by
+      the parent Value Stream.
+
+governance: enterprise-semantics
+
+provenance:
+  - source: CR-ES-003 §5 + §13 + §14
+    note: Canonical Value Stage definition ;;; semantic boundaries ;;; stage-level relationships.
+  - source: ADR-ES-003 §13 + §14
+    note: Foundational semantic decision ;;; Stage semantics ratified as governed.
+  - source: FND-ES-AG-008 §1.3
+    note: Establishes ES-canonical classification for Value Stage.
+  - source: ADR-ES-002 (Enterprise Semantic Model) §22
+    note: Establishes the semantic-kind decision authority (Finding/ADR
+      process) that this concept honours.
+
+mappings:
+  # No WSF mapping ;;; Value Stage is ES-canonical. (CR-ES-003 §21 mapping
+  # record is for Value Stream only ;;; Value Stage mapping to be added if
+  # a WSF Tier 2 Specialisation pattern emerges that anticipates Stage.)
+  - authority: none
+    target_id: null
+    relationship: es-canonical
+    note: Value Stage is ES-canonical. No WSF mapping exists or is required.
+
+change_history:
+  - date: 2026-09-23
+    by: CR-ES-003 + ADR-ES-003
+    change: |
+      Initial concept record landed under the foundational Value Stream
+      semantic grounding wave (VS-A slice). Status: Candidate, awaiting
+      ADR-ES-003 acceptance.
+
+created: 2026-09-23
+updated: 2026-09-23

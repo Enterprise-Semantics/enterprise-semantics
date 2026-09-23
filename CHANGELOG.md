@@ -19,6 +19,20 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - VS-C ;;; WSF + OpenDEA + DEA Catalog mapping records (CR-ES-003 §21-§23).
 - VS-D ;;; documentation + examples + conformance rules + tests + PlantUML (CR-ES-003 §27-§35).
 
+## [0.16.0] ; 2026-09-23 ; CR-ES-005 VS-B ;; 3 Agentic Value Stream governed predicates + 3 inverse pairs + v0.4.0 version pointer
+
+### Added
+
+- relationships/vocabulary.yaml ;;; v0.4.0 -> v0.5.0 ;; 33 -> 36 governed predicates ;;; 3 new: ES:REL:specializes (subject: agentic-value-stream, object: value-stream) ;; ES:REL:engages (subject: agentic-value-stream, object: agent) ;; ES:REL:agent-realizes (subject: agentic-value-stream, object: value-stage)
+- relationships/inverse.yaml ;;; v0.4.0 -> v0.5.0 ;; 33 -> 36 inverse pairs matching
+- versions/v0.4.0.yaml ;;; new ;; Agentic Value Stream semantic establishment version pointer per CR-ES-005 §26 + ADR-ES-005 §26 ;; documents the 7 properties + 8 characteristics + 3 relationships + 7 architectural invariants + 12 conformance rules + 10 negative tests + 7 held non-actions
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere on the new version file
+- D-004 clean ;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+
 ## [0.15.0] ; 2026-09-23 ; CR-ES-005 VS-A ;; Agentic Value Stream concept record (supersedes FND-ES-AG-002 hypothesis) + Agentic Value Realization Profile
 
 ### Added

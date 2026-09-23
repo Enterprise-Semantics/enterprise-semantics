@@ -4,7 +4,7 @@
 #         from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Inverse predicate map ;;; v0.4.0 ;;; 13 Value Stream inverse pairs + 9 Capability inverse pairs + 11 Agentic inverse pairs + 4 namespaced inverses (capability-realized-through, capability-contributes-to, agent-produces, action-produces) for cross-CR subject-type disambiguation
+# Inverse predicate map ;;; v0.5.0 ;;; 13 Value Stream inverse pairs + 9 Capability inverse pairs + 11 Agentic inverse pairs + 3 Agentic Value Stream inverse pairs + 4 namespaced inverses (capability-realized-through, capability-contributes-to, agent-produces, action-produces) for cross-CR subject-type disambiguation
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, every predicate that has an inverse
 # must declare it explicitly here. This file is populated by VS-B with the
@@ -12,7 +12,7 @@
 # relationships/vocabulary.yaml v0.2.0.
 
 inverse:
-  version: 0.4.0
+  version: 0.5.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_inverses:
 
@@ -254,6 +254,29 @@ inverse:
       subject_type: ES:CONCEPT:value-stage
       object_type: external:concept:stakeholder-value
       provenance: CR-ES-003 §9 (relationship table) + ADR-ES-003 §20
+
+    # ;;; CR-ES-005 §7 ;; Agentic Value Stream inverse pairs ;; VS-B tranche
+
+    - forward: ES:REL:specializes
+      forward_canonical: specialises
+      inverse: generalised-by
+      subject_type: ES:CONCEPT:agentic-value-stream
+      object_type: ES:CONCEPT:value-stream
+      provenance: CR-ES-005 §7 + ADR-ES-005 §7
+
+    - forward: ES:REL:engages
+      forward_canonical: engages
+      inverse: engaged-by
+      subject_type: ES:CONCEPT:agentic-value-stream
+      object_type: ES:CONCEPT:agent
+      provenance: CR-ES-005 §7 + ADR-ES-005 §7 + §14
+
+    - forward: ES:REL:agent-realizes
+      forward_canonical: agent-realises-stage
+      inverse: stage-agent-realised-by
+      subject_type: ES:CONCEPT:agentic-value-stream
+      object_type: ES:CONCEPT:value-stage
+      provenance: ADR-ES-005 §6 + §7 + CR-ES-005 §6
 
 governance:
   adr: ADR-ES-003

@@ -10,6 +10,15 @@
 #   3. Profile records can then declare this profile_type.
 
 profile_types:
+  - id: autonomous-value-realization
+    canonical_name: Autonomous Value Realization
+    definition: |
+      A profile_type family for the Autonomous Value Realization Profile
+      per CR-ES-009 §19 + ADR-ES-009 §16. Aggregates Autonomous Value
+      Stream ;; Value Stream ;; Value Stage ;; Authority ;; Autonomous
+      Operations ;; Agentic Operations ;; Agentic Workflow for
+      discoverability and grouping. Does not imply inheritance.
+    governance: enterprise-semantics
   - id: autonomous-operations
     canonical_name: Autonomous Operations
     definition: |

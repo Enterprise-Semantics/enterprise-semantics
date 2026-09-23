@@ -101,6 +101,23 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - Naming: lowercase kebab-case per ADR-ES-002 §11
 - Conformance: local python3 conformance/check_concepts.py ;;; NO_DRIFT (20 Concept records)
 
+## [0.23.0] ; 2026-09-23 ; VS-A ;;; Autonomous Value Stream concept record created per CR-ES-009 §4 + ADR-ES-009 §2
+
+### Added
+
+- concepts/autonomous-value-stream.concept.yaml ;;; new ;;; Autonomous Value Stream canonical concept ;; 12 canonical relationships + 15 properties + 11 characteristics + 11 invariants + 2 mappings
+- registry/profiles/autonomous-value-realization.profile.yaml ;;; new ;; 7-element scope per CR-ES-009 §19
+- registry/profile-types.yaml ;;; registered profile_type: autonomous-value-realization
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere on both YAML files
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
+- Conformance: local python3 conformance/check_concepts.py ;;; NO_DRIFT (21 Concept records)
+- No prior Phase 1 record existed ;;; no architectural conflict to resolve
+
 ## [0.17.0] ; 2026-09-23 ; VS-A ;;; Agentic Workflow concept record rewritten per CR-ES-006 §5 + ADR-ES-006 §2
 
 ### Changed

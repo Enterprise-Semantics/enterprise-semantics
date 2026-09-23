@@ -1,0 +1,141 @@
+# Autonomous Value Realization Profile (ES:PROFILE:autonomous-value-realization) ;;; per CR-ES-009 §19 + ADR-ES-009 §16
+#
+# Per CR-ES-009 §19:
+#   id: ES:PROFILE:AUTONOMOUS_VALUE_REALIZATION
+#   name: Autonomous Value Realization
+#   scope (10 concepts):
+#     - Autonomous Value Stream
+#     - Value Stream
+#     - Value Stage
+#     - Stakeholder Value
+#     - Authority
+#     - Policy
+#     - Constraint
+#     - Autonomous Operations
+#     - Agentic Operations
+#     - Agentic Workflow
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
+id: ES:PROFILE:autonomous-value-realization
+canonical_name: Autonomous Value Realization Profile
+definition: |
+  A Profile that provides discoverability and grouping for Autonomous
+  Value Stream and its related semantic surface. Per CR-ES-009 §19 +
+  ADR-ES-009 §16. The profile is not an inheritance hierarchy ;; it
+  is a semantic overlay for grouping related concepts.
+status: Candidate
+version: 0.8.0
+profile_type: autonomous-value-realization
+
+# Per CR-ES-009 §19: scope includes Autonomous Value Stream + 9 related concepts
+
+scope:
+  - ES:CONCEPT:autonomous-value-stream
+  - ES:CONCEPT:value-stream
+  - ES:CONCEPT:value-stage
+  - ES:CONCEPT:authority
+  - ES:CONCEPT:autonomous-operations
+  - ES:CONCEPT:agentic-operations
+  - ES:CONCEPT:agentic-workflow
+
+characteristics:
+  - id: ES:CHAR:stakeholder-value-realization-autonomous
+    canonical_name: Stakeholder value realization (autonomous)
+    description: |
+      The value stream progresses toward stakeholder value realisation
+      through defined stages without requiring human intervention
+      for every value-realization decision or action ;; per ADR-ES-009
+      §2 + §13 + AVS-AUTO-CON-002.
+
+  - id: ES:CHAR:autonomous-stage-progression
+    canonical_name: Autonomous stage progression
+    description: |
+      The value stream may progress autonomously through stages ;;
+      per ADR-ES-009 §6 + AVS-AUTO-INV-004.
+
+  - id: ES:CHAR:autonomous-value-decision
+    canonical_name: Autonomous value decision
+    description: |
+      The value stream may make independent value-realization
+      decisions ;; per ADR-ES-009 §6 + AVS-AUTO-CON-007.
+
+  - id: ES:CHAR:autonomous-coordination-between-stages
+    canonical_name: Autonomous coordination between stages
+    description: |
+      The value stream may coordinate autonomous activities between
+      stages ;; per ADR-ES-009 §6.
+
+  - id: ES:CHAR:autonomous-response-to-conditions
+    canonical_name: Autonomous response to conditions
+    description: |
+      The value stream may respond autonomously to changing
+      stakeholder or operational conditions ;; per ADR-ES-009 §6.
+
+  - id: ES:CHAR:autonomous-exception-handling-autonomous-vs
+    canonical_name: Autonomous exception handling (autonomous value stream)
+    description: |
+      The value stream may handle exceptions autonomously within
+      authority ;; per ADR-ES-009 §6.
+
+  - id: ES:CHAR:autonomous-adaptation-autonomous-vs
+    canonical_name: Autonomous adaptation (autonomous value stream)
+    description: |
+      The value stream may adapt autonomously in response to changing
+      conditions within authority ;; per ADR-ES-009 §6 + §7 +
+      AVS-AUTO-CON-011.
+
+  - id: ES:CHAR:value-stage-preservation-autonomous-vs
+    canonical_name: Value stage preservation (autonomous value stream)
+    description: |
+      Existing Value Stage semantics remain authoritative ;; per
+      ADR-ES-009 §11 + AVS-AUTO-INV-005. The Autonomous Value Stream
+      does not introduce Autonomous Value Stage.
+
+  - id: ES:CHAR:stakeholder-orientation-autonomous-vs
+    canonical_name: Stakeholder orientation (autonomous value stream)
+    description: |
+      The value stream retains stakeholder-value orientation ;; per
+      ADR-ES-009 §13 + AVS-AUTO-INV-002.
+
+  - id: ES:CHAR:bounded-autonomy-autonomous-vs
+    canonical_name: Bounded autonomy (autonomous value stream)
+    description: |
+      Autonomy remains bounded by authority ;; policy ;; and
+      constraints ;; per ADR-ES-009 §12 + AVS-AUTO-INV-011.
+
+  - id: ES:CHAR:human-participation-compatibility-autonomous-vs
+    canonical_name: Human participation compatibility (autonomous value stream)
+    description: |
+      Human governance ;; intervention ;; and escalation remain
+      compatible ;; per ADR-ES-009 §17 + AVS-AUTO-INV-007 +
+      AVS-AUTO-CON-012.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-009 §19
+    note: |
+      Establishes the Autonomous Value Realization Profile with the
+      10-element scope per CR-ES-009 §19.
+  - source: ADR-ES-009 §16
+    note: |
+      Architectural position ;; the Profile is organisational ;; not
+      inheritance ;; per ADR-ES-009 §16.
+
+mappings: []
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash, 0 em-dash, 0 horizontal-ellipsis divider, 0 arrow glyph"
+  - vendor_specific_embargo: "0 references ;; no vendor-specific material from embargoed sources"
+  - naming: "ES:PROFILE:autonomous-value-realization ;; lowercase kebab-case per ADR-ES-002 §11"
+
+held_non_actions:
+  - "Profile promotion to Established (held for separate governed action)"
+  - "Release tag v0.8.0 not cut (held per v3.1.4 user directive)"
+  - "Profile does not imply inheritance hierarchy (per CR-ES-009 §19)"
+  - "Autonomous Enterprise profile not created (per ADR-ES-009 §21)"
+  - "Autonomous Network profile not created (per ADR-ES-009 §21)"
+  - "Autonomous Ecosystem profile not created (per ADR-ES-009 §21)"
+  - "Autonomous Workflow profile not created (per ADR-ES-009 §21)"
+  - "Autonomous Value Stage profile not created (per ADR-ES-009 §11 + §20)"

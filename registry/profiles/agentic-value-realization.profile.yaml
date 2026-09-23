@@ -1,0 +1,114 @@
+# Agentic Value Realization Profile (ES:PROFILE:agentic-value-realization) ;;; per CR-ES-005 §14 + ADR-ES-005 §6 + §16
+#
+# Per CR-ES-005 §14:
+#   id: ES:PROFILE:AGENTIC_VALUE_REALIZATION
+#   name: Agentic Value Realization
+#   scope: Agent, Agentic, Intent, Authority, Action, Value Stream, Value Stage, Agentic Value Stream
+#
+# This profile provides discoverability and grouping only. It shall NOT
+# imply that all listed concepts belong to one inheritance hierarchy.
+# Per CR-ES-005 §14.
+#
+# Per ADR-ES-005 §6 ;; a new Agentic Value Stage concept is not
+# established by this ADR ;; the existing Value Stage construct can
+# represent the value transition independently of its realization mode.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
+id: ES:PROFILE:agentic-value-realization
+canonical_name: Agentic Value Realization
+definition: |
+  A Profile that provides discoverability and grouping for Agentic Value
+  Stream specialisations. Per CR-ES-005 §14 + ADR-ES-005 §6. The profile
+  is not an inheritance hierarchy ;;; it is a semantic overlay for
+  grouping related concepts.
+status: Candidate
+version: 0.1.0
+profile_type: agentic-value-realization
+
+scope:
+  - ES:CONCEPT:agent
+  - ES:CONCEPT:agentic
+  - ES:CONCEPT:intent
+  - ES:CONCEPT:authority
+  - ES:CONCEPT:action
+  - ES:CONCEPT:value-stream
+  - ES:CONCEPT:value-stage
+  - ES:CONCEPT:agentic-value-stream
+
+characteristics:
+  - id: ES:CHAR:delegated-intent-vs-value-stream
+    canonical_name: Delegated Intent in Value Realization
+    description: |
+      Agentic Value Streams identify a delegated Intent that guides
+      agentic participation. Per CR-ES-005 §10 + ADR-ES-005 §4.1.
+
+  - id: ES:CHAR:authority-bounded-value-realization
+    canonical_name: Authority-bounded Value Realization
+    description: |
+      Agentic Value Streams identify the Authority within which
+      agentic participation occurs. Per CR-ES-005 §10 + ADR-ES-005 §4.6.
+
+  - id: ES:CHAR:agentic-scope-localisation
+    canonical_name: Agentic Scope Localisation
+    description: |
+      Agentic participation may apply to selected stages, decisions,
+      or execution areas ;; not necessarily the entire value stream.
+      Per CR-ES-005 §11 + ADR-ES-005 §5.
+
+  - id: ES:CHAR:mixed-realization
+    canonical_name: Mixed Realization
+    description: |
+      Agentic Value Streams explicitly permit mixed conventional,
+      automated, human, and agentic realization. Per CR-ES-005 §11
+      + ADR-ES-005 §5.
+
+  - id: ES:CHAR:human-intervention-preserved
+    canonical_name: Human Intervention Preserved
+    description: |
+      Human participation patterns (human-in/on/over-the-loop) are
+      first-class ;; not exclusions. Per CR-ES-005 §11 + ADR-ES-005 §4.7.
+
+  - id: ES:CHAR:outcome-orientation-preserved
+    canonical_name: Outcome Orientation Preserved
+    description: |
+      Agentic Value Streams remain directed toward intended stakeholder
+      and value outcomes ;; not merely completion of predetermined
+      tasks. Per ADR-ES-005 §4.8.
+
+  - id: ES:CHAR:boundary-isolation
+    canonical_name: Boundary Isolation
+    description: |
+      Agentic Value Stream is semantically distinct from AI Value
+      Stream, Automated Value Stream, Autonomous Value Stream,
+      Agentic Workflow, Agentic Operations, Process, and Workflow.
+      Per ADR-ES-005 §11 + §12 + §13 + §14 + §10.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-005 §14
+    note: |
+      Establishes the Agentic Value Realization Profile with the
+      8-element scope (Agent + Agentic + Intent + Authority + Action
+      + Value Stream + Value Stage + Agentic Value Stream).
+  - source: ADR-ES-005 §6 + §16
+    note: |
+      Establishes the architectural hierarchy ;;
+      ;; (WSF Value Stream -> ES Agentic Value Stream -> OpenDEA
+      ;; specialisation) ;; the Profile does not introduce a new
+      ;; Agentic Value Stage concept.
+  - source: FND-ES-AG-008 §1.3
+    note: WSF Tier 1 / Tier 2 grounding boundary ;; Agentic Value Stream is Tier 2 Specialisation.
+
+mappings: []
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash, 0 em-dash, 0 horizontal-ellipsis divider, 0 arrow glyph"
+  - vendor_specific_embargo: "0 references ;; no vendor-specific material from embargoed sources"
+  - naming: "ES:PROFILE:agentic-value-realization ;; lowercase kebab-case per ADR-ES-002 §11"
+
+held_non_actions:
+  - "Profile promotion to Established (held for separate governed action)"
+  - "Release tag v0.4.0 not cut (held per v3.1.4 user directive)"
+  - "Profile does not imply inheritance hierarchy (per CR-ES-005 §14)"

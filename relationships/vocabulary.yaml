@@ -1,0 +1,40 @@
+<!--
+Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
+Filing: CR-ES-001 §3-§7 (scaffold scaffolding only ;;; no concept mutation, no schema mutation)
+-->
+
+# relationship vocabulary ;;; initial governed predicate list
+#
+# Per CR-ES-001 §8 and ADR-ES-001 §13, relationships are first-class semantic
+# content with governed predicates. The vocabulary file is the authoritative
+# registry of predicates that may appear in concept YAMLs.
+#
+# No predicate shall be invented outside an approved ADR/CR or explicitly
+# authorised seed activity. This file is therefore deliberately empty at
+# v0.0.1; the first governed predicates will be introduced by ADR-ES-002 or
+# subsequent concept-specific ADRs.
+
+vocabulary:
+  version: 0.0.1
+  status: scaffold
+  governed_predicates: []
+
+governance:
+  adr: ADR-ES-001
+  cr: CR-ES-001
+  finding: null
+  lifecycle_states:
+    - PROPOSED
+    - CANDIDATE
+    - ESTABLISHED
+    - CANONICAL
+    - REJECTED
+    - SUPERSEDED
+    - DEPRECATED
+
+provenance:
+  source: ES
+  research: null
+  decision: ADR-ES-001 §13
+  implementation: CR-ES-001 §8
+  mapping: null

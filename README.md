@@ -12,6 +12,19 @@ The semantic source is intentionally technology-neutral: YAML or JSON records th
 
 **Skeleton (v0.0.1).** The semantic seed and the identifier registry land in Phase 4 per the [program plan](https://github.com/Enterprise-Semantics/enterprise-semantics-governance/blob/main/docs/plan/PLAN.md).
 
+As of 2026-09-22 (CR-ES-001 scaffolding landing), the following directories exist:
+
+| Directory | Purpose | Status |
+|-----------|---------|--------|
+| `concepts/` | Structured semantic concept records (YAML) | 14 records, Candidate + Established mix |
+| `registry/profile-types.yaml` + `registry/profiles/` | Governed profile types and profile records | 1 profile type established (`agentic-execution`); 1 reserved (`autonomous-operation`) |
+| `schema/concept.schema.json` + `schema/profile.schema.json` | JSON Schemas for concept + profile validation | Implemented |
+| `conformance/` | Conformance harness sources (check.py, check_concepts.py, tests/) | Implemented; 5/5 schema tests passing |
+| `relationships/vocabulary.yaml` + `relationships/inverse.yaml` | Governed predicate vocabulary and inverse map | Scaffold, empty (per CR-ES-001 §8) |
+| `provenance/sources.yaml` + `provenance/findings.yaml` + `provenance/decisions.yaml` | Provenance registries (SOURCE, FINDING, DECISION) | Scaffold, empty (per CR-ES-001 §9) |
+| `versions/v0.0.1.yaml` | Initial released version pointer | Scaffold, not mature (per CR-ES-001 §23) |
+| `docs/profile.md` | Human-readable Profile pattern documentation | Implemented |
+
 ## Relationship to other repositories
 
 | Repository | Relationship |

@@ -3,7 +3,7 @@
 #         vocabulary with 13 governed predicates from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Vocabulary predicate map ;;; v0.7.0 ;;; 13 Value Stream predicates + 9 Capability predicates + 11 Agentic predicates + 3 Agentic Value Stream predicates + 2 Agentic Workflow predicates + 2 Agentic Operations predicates + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced predicate (process-realized-through) for Process->Workflow disambiguation
+# Vocabulary predicate map ;;; v0.8.0 ;;; 13 Value Stream predicates + 9 Capability predicates + 11 Agentic predicates + 3 Agentic Value Stream predicates + 2 Agentic Workflow predicates + 2 Agentic Operations predicates + 1 Autonomous Operations predicate + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced predicate (process-realized-through) for Process->Workflow disambiguation
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, relationships are first-class semantic
 # content with governed predicates. The vocabulary file is the authoritative
@@ -18,7 +18,7 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.7.0
+  version: 0.8.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
@@ -567,6 +567,24 @@ vocabulary:
         §6.7 + §21 + CR-ES-007 §8.5 + §15.
       lifecycle_status: established
       provenance: ADR-ES-007 §21 + CR-ES-007 §8.5
+
+
+    # ===== Autonomous Operations ;;; Subject predicate (CR-ES-008 §9.7 + ADR-ES-008 §17) =====
+
+    - id: ES:REL:escalates-to
+      canonical_name: escalates-to
+      inverse: receives-escalation-from
+      subject_type: ES:CONCEPT:autonomous-operations
+      object_type: external:concept:human-authority
+      definition: |
+        An Autonomous Operations escalates-to Human / Authority when
+        operational decisions exceed delegated authority ;; policy
+        boundaries ;; risk thresholds ;; or capability limits. Per
+        ADR-ES-008 §7.8 (Escalation characteristic) + §8 (Human
+        Governance Boundary) + §17 + CR-ES-008 §9.7 + §15
+        (Autonomous Operational Loop).
+      lifecycle_status: established
+      provenance: ADR-ES-008 §17 + CR-ES-008 §9.7
 
 governance:
   adr: ADR-ES-003

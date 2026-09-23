@@ -1,0 +1,121 @@
+# versions/v0.4.0.yaml ; Agentic Value Stream semantic establishment
+#
+# Per CR-ES-005 §26 + ADR-ES-005 §26.
+# This version indicates semantic establishment of the Agentic Value
+# Stream ; a specialisation of Value Stream that adds explicit
+# representation of agentic participation in value realisation.
+#
+# The version indicates semantic establishment of the foundational
+# Agentic Value Stream concept ; not maturity ; not full coverage.
+#
+# Specialisation rule (per CR-ES-005 §5 + §8):
+#   - Agentic Value Stream inherits from Value Stream ; not a
+#     replacement ; not a parallel construct
+#   - Agentic Value Stream retains the mandatory Value Stream
+#     semantics established by CR-ES-003
+#   - Agentic Value Stream adds 7 semantic properties + 8
+#     characteristics + 7 architectural invariants
+#
+# Out of scope (per CR-ES-005 §3):
+#   - Agentic Workflow ; Agentic Operations ; Agentic Flow
+#   - Autonomous Value Stream ; Autonomous Agent ; Autonomous
+#     Enterprise ; Autonomous Operations
+#   - AI-specific semantics ; vendor-specific agent frameworks
+#
+# Cardinal author rule:
+#   - Author: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+#
+# Cardinal rules:
+
+governance: enterprise-semantics
+version: "0.4.0"
+status: "candidate (awaiting CR-ES-005 + ADR-ES-005 acceptance)"
+target_release: Enterprise-Semantics v0.4.0
+cr: CR-ES-005
+adr: ADR-ES-005
+
+semantic_establishment:
+  primary_concept: ES:CONCEPT:agentic-value-stream
+  parent_concept: ES:CONCEPT:value-stream
+  specialisation_type: type-specialisation
+  profile_binding: ES:PROFILE:agentic-value-realization
+
+properties_added:
+  - "agentic_scope"
+  - "delegated_intent"
+  - "authority_context"
+  - "decision_boundary"
+  - "intervention_model"
+  - "adaptation_scope"
+  - "realization_mode"
+
+characteristics_added:
+  - "AG-VS-CHAR:delegated-intent"
+  - "AG-VS-CHAR:contextual-interpretation"
+  - "AG-VS-CHAR:dynamic-action-selection"
+  - "AG-VS-CHAR:agentic-coordination"
+  - "AG-VS-CHAR:adaptive-progression"
+  - "AG-VS-CHAR:bounded-authority"
+  - "AG-VS-CHAR:intervention"
+  - "AG-VS-CHAR:outcome-orientation"
+
+relationships_added:
+  - "ES:REL:specializes ; subject: agentic-value-stream ; object: value-stream"
+  - "ES:REL:engages ; subject: agentic-value-stream ; object: agent"
+  - "ES:REL:agent-realizes ; subject: agentic-value-stream ; object: value-stage"
+
+architectural_invariants_added:
+  - "AVS-INV-001 ; Agentic Value Stream is a Value Stream ; not a replacement"
+  - "AVS-INV-002 ; Agentic participation may be localised ; mixed realisation is valid"
+  - "AVS-INV-003 ; Agentic Value Stream does not imply Autonomous Value Stream"
+  - "AVS-INV-004 ; Agentic Value Stream does not require AI"
+  - "AVS-INV-005 ; Agentic Value Stream does not imply Automation"
+  - "AVS-INV-006 ; Agentic Value Stream does not redefine Process, Activity, Task, Workflow"
+  - "AVS-INV-007 ; Agentic Value Stream does not establish Agentic Workflow or Agentic Operations"
+
+out_of_scope:
+  - "Agentic Workflow ; held for ADR-ES-006"
+  - "Agentic Operations ; held for ADR-ES-007"
+  - "Agentic Flow ; not separately grounded"
+  - "Autonomous Value Stream ; held for ADR-ES-009"
+  - "Autonomous Agent ; held for ADR-ES-008"
+  - "Autonomous Enterprise ; held for ADR-ES-008"
+  - "Autonomous Operations ; held for ADR-ES-008"
+  - "AI-specific semantics ; vendor-specific agent frameworks ; explicitly excluded per CR-ES-005 §3"
+
+conformance:
+  rules:
+    - "AVS-CON-001 ; Agentic Value Stream specialises Value Stream"
+    - "AVS-CON-002 ; Agentic Value Stream retains stakeholder-value realisation semantics"
+    - "AVS-CON-003 ; Agentic Value Stream retains initiating-condition semantics"
+    - "AVS-CON-004 ; Agentic Value Stream retains realisation-boundary semantics"
+    - "AVS-CON-005 ; An Agentic Value Stream identifies at least one material agentic characteristic"
+    - "AVS-CON-006 ; Agentic participation is associated with delegated intent and bounded authority"
+    - "AVS-CON-007 ; Agentic participation may apply to one or more stages ; complete-stream agency not required"
+    - "AVS-CON-008 ; Agentic Value Stream does not imply Autonomous Value Stream"
+    - "AVS-CON-009 ; Agentic Value Stream does not require AI"
+    - "AVS-CON-010 ; Agentic Value Stream does not redefine Process, Activity, Task, Workflow"
+    - "AVS-CON-011 ; Agentic Value Stream preserves stakeholder value realisation as primary semantic purpose"
+    - "AVS-CON-012 ; Agentic Value Stream instances carry appropriate grounding and provenance"
+  negative_tests:
+    - "AI is-a Agentic Value Stream"
+    - "Agentic Value Stream is-a AI System"
+    - "Agentic Value Stream is-a Autonomous Value Stream"
+    - "Agentic Value Stream requires AI"
+    - "Agentic Value Stream requires full autonomy"
+    - "Agentic Value Stream replaces Value Stream"
+    - "Agentic Value Stream is-a Process"
+    - "Agentic Value Stream is-a Workflow"
+    - "Agentic Value Stream establishes Agentic Workflow"
+    - "Agentic Value Stream establishes Agentic Operations"
+
+provenance:
+  source: CR-ES-005 §26 + ADR-ES-005 §26
+  superseded_by: null
+  supersedes: null
+
+cardinal_rules:
+  - "author: Emmanuel A. Otchere"
+  - "d004_dash_rule: 0 en-dash (U+2013), 0 em-dash (U+2014), 0 horizontal-ellipsis divider (U+2E3B), 0 arrow glyph"
+  - "vendor_specific_embargo: 0 references ; no vendor-specific material from embargoed sources"
+  - "naming: ES:CONCEPT:agentic-value-stream preserved ; lowercase kebab-case per ADR-ES-002 §11"

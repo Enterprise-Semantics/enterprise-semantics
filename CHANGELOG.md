@@ -19,6 +19,20 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - VS-C ;;; WSF + OpenDEA + DEA Catalog mapping records (CR-ES-003 §21-§23).
 - VS-D ;;; documentation + examples + conformance rules + tests + PlantUML (CR-ES-003 §27-§35).
 
+## [0.14.0] ; 2026-09-23 ; CR-ES-004 §22 ;;; Agentic Profile (ES:PROFILE:AGENTIC) landed
+
+### Added
+
+- profiles/agentic/agentic.profile.yaml ;;; new ;;; Agentic Profile per CR-ES-004 §22 ;;; ES:PROFILE:AGENTIC ;;; 5 concept scope (Agent + Agentic + Intent + Authority + Action) ;;; 6 characteristics ;;; 4 boundary distinctions ;;; 10 architectural invariants ;;; 3 human participation patterns ;;; related profile linkage to ES:PROFILE:agentic-execution
+
+- profiles/agentic/STATUS.md ;;; updated to reflect Profile record landing ;;; Candidate ;;; promotion held until CR-ES-004 promotion ritual
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere on both files
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+
 ## [0.13.0] ; 2026-09-23 ; CR-ES-004 VS-B Agentic relationship vocabulary
 
 ### Added

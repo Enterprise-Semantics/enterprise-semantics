@@ -1,34 +1,32 @@
 <!--
-Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
-Filing: CR-ES-001 §10 + §11-§13 (governance scaffolding ;;; no destructive replaces)
+Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+Filing: CR-ES-004 §22 ;;; Agentic Profile (ES:PROFILE:AGENTIC) landed
 -->
 
-# Agentic Profile Subdir (Reserved)
+# Agentic Profile Subdir
 
-**Status:** Reserved at v0.0.1 ;;; no profile records landed yet.
-**Profile family:** `agentic` ;;; Profile family per ADR-ES-AG-001 §3
+**Status:** Profile record landed at v0.1.0 ;;; Candidate ;;; promotion to Established held for separate governed action (gated on CR-ES-004 promotion to Accepted).
+**Profile family:** `agentic` ;;; Per CR-ES-004 §22 ;;; semantic-property overlay for Agent + Agentic + Intent + Authority + Action constructs.
 **Authored by:** Emmanuel A. Otchere
-**Date:** 2026-09-22
-**Provenance:** CR-ES-001 §18 + ADR-ES-001 §16
+**Date:** 2026-09-23
+**Provenance:** CR-ES-004 §22 + ADR-ES-004 §6 + §16 + §20
 
-## Scope
+## Scope (per CR-ES-004 §22)
 
-This directory holds Agentic-family profile records per CR-ES-001 §18. Profiles provide semantic organisation rather than independent authorities.
+- Agent
+- Agentic
+- Intent
+- Authority
+- Action
 
 ## Status of contents
 
-Empty at v0.0.1. Profile records will be introduced by:
+Profile record `agentic.profile.yaml` landed at v0.1.0.
 
-- Concept-specific ADRs (ADR-ES-002 onwards) ;;; for domain profiles.
-- Profile-pattern ADRs ;;; for cross-domain profiles.
-
-The existing `registry/profiles/agentic-execution.profile.yaml` is the canonical implementation of the `agentic-execution` Profile type. It lives under `registry/profiles/` per the existing repo structure ;;; this `profiles/agentic/` subdir is reserved for future domain-specific profiles.
-
-## Out of scope
-
-- Substantive concept promotion (lands in concept-specific CRs).
-- Registry migration (held for housekeeping CR).
-- Profile record content (lands in concept-specific CRs).
+- 6 characteristics (AG-CHAR:delegated-intent, contextual-interpretation, action-selection, bounded-authority, outcome-orientation, contextual-adaptation)
+- 4 boundary distinctions (AG-BND:agentic-vs-ai, agentic-vs-automation, agentic-vs-autonomous, agent-vs-ai-agent)
+- 10 architectural invariants (AG-INV-001..010)
+- 3 human participation patterns (AG-HUMAN:human-in-the-loop, human-on-the-loop, human-over-the-loop)
 
 ## Cardinal rules
 

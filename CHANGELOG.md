@@ -85,6 +85,22 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - Conformance: local python3 conformance/check_concepts.py ;;; NO_DRIFT (20 Concept records)
 - No prior Phase 1 record existed ;;; no architectural conflict to resolve
 
+## [0.22.0] ; 2026-09-23 ; VS-B ;;; 1 Autonomous Operations governed predicate + 1 inverse pair + v0.7.0 version pointer per CR-ES-008 §9 + §32 + ADR-ES-008 §17 + §28
+
+### Added
+
+- relationships/vocabulary.yaml ;;; v0.7.0 -> v0.8.0 ;;; 40 -> 41 governed predicates ;; 1 new: ES:REL:escalates-to (autonomous-operations -> human-authority)
+- relationships/inverse.yaml ;;; 40 -> 41 inverse pairs
+- versions/v0.7.0.yaml ;;; new ;;; Autonomous Operations semantic establishment version pointer
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
+- Conformance: local python3 conformance/check_concepts.py ;;; NO_DRIFT (20 Concept records)
+
 ## [0.17.0] ; 2026-09-23 ; VS-A ;;; Agentic Workflow concept record rewritten per CR-ES-006 §5 + ADR-ES-006 §2
 
 ### Changed

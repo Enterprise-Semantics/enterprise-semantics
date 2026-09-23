@@ -16,6 +16,54 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - CR-ES-AG-011 ;;; Agentic Service, Agentic Product, Agentic AI.
 - CR-ES-AG-012 ;;; Profile conformance gate extension (cross-record checks).
 - CR-ES-AG-013 ;;; First semantic release tag.
+- VS-C ;;; WSF + OpenDEA + DEA Catalog mapping records (CR-ES-003 §21-§23).
+- VS-D ;;; documentation + examples + conformance rules + tests + PlantUML (CR-ES-003 §27-§35).
+
+## [0.11.0] ; 2026-09-23 ; VS-B Value Stream relationship vocabulary
+
+### Added
+
+- `relationships/vocabulary.yaml` ;;; v0.2.0, 13 governed predicates for Value Stream (8 subject predicates + 5 stage-level predicates) per CR-ES-003 §9 + §10.
+- `relationships/inverse.yaml` ;;; v0.2.0, 13 inverse pairs matching the 13 predicates.
+- `versions/v0.2.0.yaml` ;;; Value Stream semantic establishment version pointer.
+
+### Refactored (carryover from VS-A, PR #2)
+
+- `concepts/value-stream.concept.yaml` ;;; foundational rebase per CR-ES-003 §4.1 + ADR-ES-003 §4.1. WSF grounding expanded to declare Tier 1 Kernel Reference + ES-canonical novelty classification explicitly per FND-ES-AG-008 §1.3. Relationship block expanded from 3 to 8 predicates matching CR-ES-003 §9 + §10.
+- `concepts/value-stage.concept.yaml` ;;; new foundational concept record per CR-ES-003 §5 + §13. ES-canonical novelty classification (no WSF mapping). 6 stage-level predicates.
+
+### Scope
+
+This release implements VS-B of CR-ES-003 ;;; the Value Stream relationship vocabulary, inverse map, and v0.2.0 version pointer. It builds on VS-A (PR #2, the 2 concept records) and the scaffolding merge (PR #4). No new concept records, no schema mutation, no validation rule addition, no conformance harness change. The 13 predicates are pure registry additions pending the conformance gate extension that will exercise them (held for VS-D).
+
+### Governance
+
+- ADR-ES-003 (Proposed, governance slot 0005) ;;; ratifies the foundational Value Stream decision.
+- CR-ES-003 (Proposed, governance slot 0011) ;;; carries the 13-predicate table + per-predicate definitions.
+- FND-ES-AG-008 (Established 2026-09-22) ;;; establishes the Tier 1 Kernel Reference + ES-canonical novelty classification for Value Stream.
+
+### Cardinal rules applied
+
+- Author: Emmanuel A. Otchere (cardinal author rule, 2026-09-23).
+- No en-dash (U+2013) or em-dash (U+2014) in any new/edited file (D-004 dash rule). Section dividers use `;;;` boundary lines per existing convention.
+- No vendor-specific material from embargoed sources in any new/edited file (cardinal embargo, 2026-09-22).
+- ES is sourced from SDO-neutral standardisation only (ISO/IEC, ITU-T, ETSI, NIST).
+
+### Verification (local)
+
+- `python3 -c "import yaml; yaml.safe_load(open('relationships/vocabulary.yaml').read())"` ;;; parses cleanly, 8797 bytes, 13 predicate entries.
+- `python3 -c "import yaml; yaml.safe_load(open('relationships/inverse.yaml').read())"` ;;; parses cleanly, 4763 bytes, 13 inverse entries.
+- `python3 -c "import yaml; yaml.safe_load(open('versions/v0.2.0.yaml').read())"` ;;; parses cleanly, 5590 bytes.
+- Cardinal rules: D-004 clean across all 3 files (verified by character count: 0 en-dash, 0 em-dash, 0 horizontal-ellipsis divider).
+- GitHub Actions conformance gate will run on PR open ;;; expected PASS (no concept mutations in this slice, no schema changes).
+
+### Held non-actions
+
+- No conformance rule additions (VS-CON-001..017 held for VS-D).
+- No WSF + OpenDEA + DEA Catalog mapping records (held for VS-C).
+- No documentation + examples + tests + PlantUML (held for VS-D).
+- No ADR-ES-003 promotion to Accepted (gated on CR-ES-003 implementation completion).
+- No release tag (per v3.1.4 user directive).
 
 ## [0.10.0] ; 2026-09-22 ; CR-ES-001 scaffolding landing (relationships, provenance, versions)
 

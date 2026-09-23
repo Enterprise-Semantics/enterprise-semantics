@@ -1,27 +1,137 @@
-<!--
-Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
-Filing: CR-ES-001 §3-§7 (scaffold scaffolding only ;;; no concept mutation, no schema mutation)
--->
-
-# inverse predicate map ;;; initial governed inverse relationships
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+# Filing: VS-B of CR-ES-003 ;;; Value Stream Semantic Grounding ;;; populates the
+#         inverse map with 13 inverse pairs matching the 13 governed predicates
+#         from CR-ES-003 §9 + §10.
+#         Backed by ADR-ES-003 (Proposed, slot 0005).
+#
+# Inverse predicate map ;;; v0.2.0 ;;; 13 inverse pairs for Value Stream
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, every predicate that has an inverse
-# must declare it explicitly here. This file is deliberately empty at v0.0.1
-# until the first governed predicates are introduced.
+# must declare it explicitly here. This file is populated by VS-B with the
+# inverse pairs for the 13 Value Stream predicates introduced in
+# relationships/vocabulary.yaml v0.2.0.
 
 inverse:
-  version: 0.0.1
-  status: scaffold
-  governed_inverses: []
+  version: 0.2.0
+  status: candidate ;;; awaiting ADR-ES-003 acceptance
+  governed_inverses:
+
+    # ===== Value Stream subject-level inverses =====
+
+    - forward: ES:REL:realizes
+      forward_canonical: realizes
+      inverse: realized-by
+      subject_type: ES:CONCEPT:value-stream
+      object_type: external:concept:stakeholder-value
+      provenance: CR-ES-003 §10.1 + ADR-ES-003 §10
+
+    - forward: ES:REL:contains
+      forward_canonical: contains
+      inverse: belongs-to
+      subject_type: ES:CONCEPT:value-stream
+      object_type: ES:CONCEPT:value-stage
+      provenance: CR-ES-003 §10.2 + ADR-ES-003 §20
+
+    - forward: ES:REL:enabled-by
+      forward_canonical: enabled-by
+      inverse: enables
+      subject_type: ES:CONCEPT:value-stream
+      object_type: ES:CONCEPT:capability
+      provenance: CR-ES-003 §10.3 + ADR-ES-003 §9
+
+    - forward: ES:REL:realized-through
+      forward_canonical: realized-through
+      inverse: realizes
+      subject_type: ES:CONCEPT:value-stream
+      object_type: external:concept:process
+      provenance: CR-ES-003 §10.4 + ADR-ES-003 §8 + §16
+
+    - forward: ES:REL:produces
+      forward_canonical: produces
+      inverse: produced-by
+      subject_type: ES:CONCEPT:value-stream
+      object_type: external:concept:outcome
+      provenance: CR-ES-003 §10.5 + ADR-ES-003 §11
+
+    - forward: ES:REL:uses
+      forward_canonical: uses
+      inverse: used-by
+      subject_type: ES:CONCEPT:value-stream
+      object_type: external:concept:service
+      provenance: CR-ES-003 §10.6 + ADR-ES-003 §17
+
+    - forward: ES:REL:involves
+      forward_canonical: involves
+      inverse: involved-in
+      subject_type: ES:CONCEPT:value-stream
+      object_type: external:concept:organization
+      provenance: CR-ES-003 §10.7 + ADR-ES-003 §19
+
+    - forward: ES:REL:uses-resource
+      forward_canonical: uses-resource
+      inverse: used-by-resource
+      subject_type: ES:CONCEPT:value-stream
+      object_type: external:concept:resource
+      provenance: CR-ES-003 §9 (relationship table) + ADR-ES-003 §20
+
+    # ===== Value Stage stage-level inverses =====
+
+    - forward: ES:REL:precedes
+      forward_canonical: precedes
+      inverse: follows
+      subject_type: ES:CONCEPT:value-stage
+      object_type: ES:CONCEPT:value-stage
+      provenance: CR-ES-003 §10.8 + ADR-ES-003 §20
+
+    - forward: ES:REL:stage-realized-through
+      forward_canonical: stage-realized-through
+      inverse: stage-realizes
+      subject_type: ES:CONCEPT:value-stage
+      object_type: external:concept:process
+      provenance: CR-ES-003 §10.9 + ADR-ES-003 §8
+
+    - forward: ES:REL:requires
+      forward_canonical: requires
+      inverse: required-by
+      subject_type: ES:CONCEPT:value-stage
+      object_type: ES:CONCEPT:capability
+      provenance: CR-ES-003 §10.10 + ADR-ES-003 §9
+
+    - forward: ES:REL:stage-produces
+      forward_canonical: stage-produces
+      inverse: stage-produced-by
+      subject_type: ES:CONCEPT:value-stage
+      object_type: external:concept:outcome
+      provenance: CR-ES-003 §10.11 + ADR-ES-003 §11
+
+    - forward: ES:REL:contributes-to
+      forward_canonical: contributes-to
+      inverse: receives-contribution-from
+      subject_type: ES:CONCEPT:value-stage
+      object_type: external:concept:stakeholder-value
+      provenance: CR-ES-003 §9 (relationship table) + ADR-ES-003 §20
 
 governance:
-  adr: ADR-ES-001
-  cr: CR-ES-001
-  finding: null
+  adr: ADR-ES-003
+  cr: CR-ES-003
+  finding: FND-ES-AG-008
 
 provenance:
   source: ES
-  research: null
-  decision: ADR-ES-001 §13
-  implementation: CR-ES-001 §8
+  research: FND-ES-AG-001-Grounding-Result
+  decision: ADR-ES-003 section 20
+  implementation: CR-ES-003 section 9 + section 10
   mapping: null
+
+change_history:
+  - date: 2026-09-22
+    by: CR-ES-001 section 3-7 (scaffolding only)
+    change: |
+      Inverse map scaffold landed at v0.0.1 with empty governed_inverses
+      list.
+  - date: 2026-09-23
+    by: CR-ES-003 + ADR-ES-003 + FND-ES-AG-008
+    change: |
+      13 inverse pairs introduced matching the 13 Value Stream predicates
+      in relationships/vocabulary.yaml v0.2.0. Version bumped to v0.2.0.
+      Status: candidate (awaiting ADR-ES-003 acceptance).

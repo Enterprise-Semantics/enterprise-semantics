@@ -1,0 +1,94 @@
+# Action concept record ;;; per CR-ES-004 §9 + ADR-ES-004 §14
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+# Status: Candidate (per scope decision ;;; promotion to Established held for a separate governed action)
+# WSF Grounding: ES-canonical (Action is the foundational semantic unit required for agentic action selection ;;; WSF does not define an Action concept at Tier 1 or Tier 2)
+
+id: ES:CONCEPT:action
+canonical_name: Action
+definition: |
+  Action is an intentional act performed or initiated by an Entity
+  toward an intended result.
+
+  Per CR-ES-004 §9 and ADR-ES-004 §14.
+
+  Action is the semantic unit required to describe agentic action
+  selection. Per ADR-ES-004 §17 ;;; the agentic decision boundary
+  distinguishes:
+  - Instruction (prescribed action or procedure) ;; from ;;
+  - Decision (selection among possible actions or responses) ;; from ;;
+  - Agentic Decision (context-sensitive action selection performed
+    by an Agent within delegated authority toward an intended outcome)
+
+  Action shall remain distinct from:
+  - Process ;;; per CR-ES-004 §9. Process is an organized execution
+    or transformation.
+  - Activity ;;; per CR-ES-004 §9. Activity is a unit of work.
+  - Task ;;; per CR-ES-004 §9. Task is a specific piece of work.
+  - Workflow ;;; per CR-ES-004 §9. Workflow is coordinated execution.
+
+status: Candidate
+version: 0.1.0
+concept_type: action
+wsf_grounding:
+  - wsf_concept_id: null
+    relationship: null
+    note: |
+      Action is ES-canonical ;;; no WSF Tier 1 or Tier 2 equivalent
+      at the time of CR-ES-004 implementation. Per ADR-ES-004 §14 ;
+      Action is the semantic unit required to describe agentic
+      action selection. WSF does not define this construct at Tier 1
+      or Tier 2.
+
+profile_bindings: []
+relationships:
+  - subject: ES:CONCEPT:action
+    predicate: produces
+    object: external:concept:outcome
+    qualification: action-outcome
+    status: established
+    provenance: CR-ES-004 §10 + ADR-ES-004 §14
+    rationale: |
+      Action produces an Outcome when the Action results in the
+      intended or achieved state. Per CR-ES-004 §9 ;;; Action is
+      performed toward an intended result.
+
+exclusions:
+  - Process ;;; per CR-ES-004 §9 ;;; Action is the semantic unit ;;; Process is the organized execution pattern
+  - Activity ;;; per CR-ES-004 §9 ;;; Action is intentional ;;; Activity is execution-level
+  - Task ;;; per CR-ES-004 §9 ;;; Action is broader than Task ;;; a Task is one form of Action
+  - Workflow ;;; per CR-ES-004 §9 ;;; Workflow is coordinated execution ;;; Action is the unit being coordinated
+
+# The 3 instruction-decision-action patterns per ADR-ES-004 §17
+agentic_decision_pattern:
+  instruction: |
+    Instruction -> Execution (prescribed action or procedure)
+  decision: |
+    Decision -> Selection among possible actions or responses
+  agentic_decision: |
+    Intent -> Context -> Decision / Action Selection -> Execution -> Outcome
+    ;;; the core agentic pattern per ADR-ES-004 §17
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-004 §9 + ADR-ES-004 §14
+    note: Foundational Action concept definition. Action is an intentional act performed or initiated by an Entity toward an intended result.
+  - source: ADR-ES-004 §17
+    note: Establishes the 3-pattern instruction-decision-action distinction (Instruction, Decision, Agentic Decision) ;;; Action is the semantic unit required to describe agentic action selection.
+  - source: https://github.com/Enterprise-Semantics/enterprise-semantics-governance
+    note: Governance traceable via docs/adr/0006-agentic-semantic-grounding.md (Proposed) and docs/cr/0012-agentic-semantic-grounding.md (Proposed).
+
+mappings:
+  wsf: pending ;;; ES-canonical
+  opendea: pending ;;; architectural correspondence per CR-ES-004 §20
+  dea_catalog: held ;;; instantiation is downstream per CR-ES-004 §18
+
+lifecycle:
+  status: candidate
+  candidate_since: 2026-09-23
+
+validation_rules:
+  - id: AG-CON-009
+    description: Agentic execution must support action selection.
+  - id: AG-CON-010
+    description: Agentic execution must be outcome-oriented.

@@ -33,6 +33,25 @@ Dash rule: this changelog uses colons (:) and semicolons (;) only ;;; no en-dash
 - D-004 clean ;; 0 forbidden glyphs
 - No vendor-specific material from embargoed sources
 
+## [0.19.0] ; 2026-09-23 ; VS-A ;;; Agentic Operations concept record rewritten per CR-ES-007 §6 + ADR-ES-007 §2
+
+### Changed
+
+- concepts/agentic-operations.concept.yaml ;;; rewritten to align with CR-ES-007 specialisation hypothesis ;; supersedes the prior FND-ES-AG-004 Profile hypothesis ;; canonical identity ES:CONCEPT:agentic-operations preserved ;; 9 canonical relationships + 10 properties + 8 characteristics + 8 invariants + 2 mappings
+
+### Added
+
+- registry/profiles/agentic-operations.profile.yaml ;;; new ;; 6-element scope per CR-ES-007 §16
+- registry/profile-types.yaml ;;; registered profile_type: agentic-operations
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere on both YAML files
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
+- Conformance: local python3 conformance/check_concepts.py ;;; NO_DRIFT (19 Concept records)
+
 ## [0.17.0] ; 2026-09-23 ; VS-A ;;; Agentic Workflow concept record rewritten per CR-ES-006 §5 + ADR-ES-006 §2
 
 ### Changed

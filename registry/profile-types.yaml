@@ -10,6 +10,14 @@
 #   3. Profile records can then declare this profile_type.
 
 profile_types:
+  - id: agentic-operations
+    canonical_name: Agentic Operations
+    definition: |
+      A profile_type family for the Agentic Operations Profile per
+      CR-ES-007 §16 + ADR-ES-007 §16. Aggregates Agentic Operations ;;
+      Agent ;; Agentic ;; Intent ;; Authority ;; and Agentic Workflow
+      for discoverability and grouping. Does not imply inheritance.
+    governance: enterprise-semantics
   - id: agentic-execution
     canonical_name: Agentic Execution
     definition: |

@@ -1,0 +1,325 @@
+# concepts/autonomous-operations.concept.yaml ;; Autonomous Operations (ES:CONCEPT:autonomous-operations) ;; per CR-ES-008 §6 + ADR-ES-008 §2
+#
+# Per CR-ES-008 §2 + §6 + ADR-ES-008 §2:
+#   Autonomous Operations are operations capable of independently
+#   sensing ;; interpreting ;; deciding ;; coordinating ;; executing ;;;
+#   and adapting operational behavior within defined objectives ;;;
+#   authority ;; policies ;; and constraints without requiring human
+#   intervention for every operational decision or action.
+#
+# This is a fresh canonical record (no prior Phase 1 record exists for
+# autonomous-operations) ;;; no architectural conflict to resolve.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
+id: ES:CONCEPT:autonomous-operations
+canonical_name: Autonomous Operations
+status: Candidate
+version: 0.7.0
+concept_type: autonomous-operations
+
+definition: |
+  Autonomous Operations are operations capable of independently
+  sensing ;; interpreting ;; deciding ;; coordinating ;; executing ;;;
+  and adapting operational behavior within defined objectives ;;;
+  authority ;; policies ;; and constraints without requiring human
+  intervention for every operational decision or action.
+
+# Per CR-ES-008 §3 + ADR-ES-008 §1 + §17:
+#   Autonomous Operations specialises Operations.
+#   NOT Agentic Operations ;; NOT Agentic Workflow ;; NOT Agentic Value Stream.
+
+specializes:
+  - ES:CONCEPT:operations
+
+# Per ADR-ES-008 §17 + CR-ES-008 §9: 9 canonical relationships
+
+relationships:
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: specializes
+    object: ES:CONCEPT:operations
+    qualification: direct-specialisation
+    status: established
+    provenance: CR-ES-008 §3 + §9.1 + ADR-ES-008 §1 + §17
+    rationale: |
+      Autonomous Operations is a direct specialisation of Operations ;; per
+      the canonical relationship established by ADR-ES-008 §1 + §17 + §25
+      + CR-ES-008 §3 + §9.1.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: operates-within
+    object: ES:CONCEPT:authority
+    qualification: bounded-authority
+    status: established
+    provenance: ADR-ES-008 §5 + §14 + §17 + CR-ES-008 §9.2
+    rationale: |
+      Autonomous Operations operates within defined Authority. Per
+      ADR-ES-008 §5 (Autonomy Boundary) + §14 (Semantic Control Boundary).
+      Authority semantics inherited from CR-ES-004 + ADR-ES-004.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: governed-by
+    object: external:concept:policy
+    qualification: policy-governance
+    status: established
+    provenance: ADR-ES-008 §14 + §17 + CR-ES-008 §9.3
+    rationale: |
+      Autonomous Operations is governed by applicable policies. Per
+      ADR-ES-008 §14 (Semantic Control Boundary) + CR-ES-008 §9.3.
+      Policy is a forward-reference ;; not yet canonicalised as an
+      Enterprise-Semantics concept ;; per CR-ES-008 §5.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: pursues
+    object: external:concept:operational-objective
+    qualification: operational-objective-pursuit
+    status: established
+    provenance: ADR-ES-008 §5 + §14 + §17 + CR-ES-008 §9.4
+    rationale: |
+      Autonomous Operations pursues an Operational Objective. Per
+      ADR-ES-008 §5 + §14 + §17 + CR-ES-008 §9.4. Operational
+      Objective is a forward-reference ;; per CR-ES-008 §5 ;; if
+      Intent/Goal vocabulary is authoritative ;; map rather than
+      duplicate.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: responds-to
+    object: external:concept:operational-context
+    qualification: contextual-response
+    status: established
+    provenance: ADR-ES-008 §5 + §17 + CR-ES-008 §9.5
+    rationale: |
+      Autonomous Operations responds to Operational Context. Per
+      ADR-ES-008 §5 (Autonomy Boundary) + CR-ES-008 §9.5. Operational
+      Context is a forward-reference ;; per CR-ES-008 §5.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: produces
+    object: external:concept:operational-outcome
+    qualification: outcome-production
+    status: established
+    provenance: ADR-ES-008 §13 + §17 + CR-ES-008 §9.6
+    rationale: |
+      Autonomous Operations produces Operational Outcome. Per
+      ADR-ES-008 §13 (Autonomous Operations vs Agentic Value Stream) +
+      CR-ES-008 §9.6. Operational Outcome is a forward-reference.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: adapts-to
+    object: external:concept:operational-context
+    qualification: contextual-adaptation
+    status: established
+    provenance: ADR-ES-008 §5 + §7.7 + §17 + CR-ES-008 §9.5
+    rationale: |
+      Autonomous Operations adapts to Operational Context. Per
+      ADR-ES-008 §5 (Autonomy Boundary) + §7.7 (Adaptation characteristic).
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: escalates-to
+    object: external:concept:human-authority
+    qualification: escalation-boundary
+    status: established
+    provenance: ADR-ES-008 §7.8 + §8 + §17 + CR-ES-008 §9.7
+    rationale: |
+      Autonomous Operations escalates to Human / Authority. Per
+      ADR-ES-008 §7.8 (Escalation characteristic) + §8 (Human Governance
+      Boundary) + CR-ES-008 §9.7. Human/Authority is a
+      forward-reference ;; the relationship expresses an operational
+      boundary ;; not human ownership.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: uses
+    object: ES:CONCEPT:workflow
+    qualification: workflow-usage
+    status: established
+    provenance: ADR-ES-008 §12 + §17 + CR-ES-008 §9.8
+    rationale: |
+      Autonomous Operations uses Workflow. Per ADR-ES-008 §12
+      (Autonomous Operations vs Agentic Workflow) + CR-ES-008 §9.8.
+      Workflow semantics inherited from CR-ES-001.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    qualification: agentic-workflow-usage
+    status: established
+    provenance: ADR-ES-008 §12 + §17 + CR-ES-008 §9.8
+    rationale: |
+      Autonomous Operations uses Agentic Workflow. Per ADR-ES-008 §12
+      + CR-ES-008 §9.8. Agentic Workflow semantics inherited from
+      CR-ES-006 + ADR-ES-006. This relationship does NOT imply
+      Autonomous Operations specialises Agentic Workflow.
+
+# Per ADR-ES-008 §7 + CR-ES-008 §7: 12 properties
+
+properties:
+  - name: operational_objective
+    type: reference
+    required: true
+    description: |
+      Defines the operational result or objective being pursued ;; per
+      ADR-ES-008 §7.6 (Outcome Orientation) + CR-ES-008 §7.
+
+  - name: operational_scope
+    type: reference_set
+    required: true
+    description: |
+      Defines the operational domain within which autonomy applies ;;
+      per CR-ES-008 §7 + ADR-ES-008 §15 (Scope of Autonomy).
+
+  - name: autonomy_scope
+    type: reference_set
+    required: true
+    description: |
+      Defines which decisions/actions may occur independently. Per
+      ADR-ES-008 §6 (Autonomy as Semantic Property) + §15 (Scope of
+      Autonomy) + CR-ES-008 §7 + §8. The autonomy_scope distinguishes
+      Autonomous Operations from Agentic Operations.
+
+  - name: authority_context
+    type: reference
+    required: true
+    description: |
+      Defines delegated operational authority. Per ADR-ES-008 §5
+      (Autonomy Boundary) + §7.4 (Bounded Authority) + CR-ES-008 §7.
+      Authority semantics inherited from CR-ES-004.
+
+  - name: policy_context
+    type: reference
+    required: true
+    description: |
+      Defines applicable policies governing autonomous behavior. Per
+      ADR-ES-008 §14 (Semantic Control Boundary) + CR-ES-008 §7.
+      Policy is a forward-reference.
+
+  - name: constraint_context
+    type: reference
+    required: true
+    description: |
+      Defines operational constraints and limits. Per ADR-ES-008 §14
+      + CR-ES-008 §7. Constraint is a forward-reference ;; per
+      CR-ES-008 §5.
+
+  - name: decision_scope
+    type: reference_set
+    required: false
+    description: |
+      Defines decisions that may be made independently. Per
+      ADR-ES-008 §15 (Scope of Autonomy) + CR-ES-008 §7 + §8.
+
+  - name: action_scope
+    type: reference_set
+    required: false
+    description: |
+      Defines actions that may be executed independently. Per
+      ADR-ES-008 §15 + CR-ES-008 §7 + §8.
+
+  - name: adaptation_scope
+    type: reference_set
+    required: false
+    description: |
+      Defines operational conditions under which behavior may adapt.
+      Per ADR-ES-008 §7.7 (Adaptation) + CR-ES-008 §7.
+
+  - name: intervention_model
+    type: enumeration
+    required: false
+    values:
+      - human-policy-definition
+      - human-authority-delegation
+      - human-exception-handling
+      - human-escalation
+      - human-intervention
+      - human-emergency-override
+      - mixed
+    description: |
+      Defines permitted human or external intervention. Per ADR-ES-008
+      §8 (Human Governance Boundary) + CR-ES-008 §7 + §14.
+
+  - name: escalation_boundary
+    type: reference_set
+    required: true
+    description: |
+      Defines conditions requiring escalation. Per ADR-ES-008 §7.8
+      (Escalation) + §16 (Autonomy and Failure Boundaries) +
+      CR-ES-008 §7.
+
+  - name: observation_scope
+    type: reference_set
+    required: false
+    description: |
+      Defines conditions and outcomes being observed. Per ADR-ES-008
+      §5 + CR-ES-008 §7 + §15 (Autonomous Operational Loop).
+
+# Per ADR-ES-008 §7 + CR-ES-008 §24: 8 characteristics
+
+characteristics:
+  - independent_decision_execution ;; per ADR-ES-008 §7.1
+  - independent_action_execution ;; per ADR-ES-008 §7.2
+  - operational_context_awareness ;; per ADR-ES-008 §7.3
+  - bounded_authority ;; per ADR-ES-008 §7.4
+  - policy_and_constraint_compliance ;; per ADR-ES-008 §7.5
+  - outcome_orientation ;; per ADR-ES-008 §7.6
+  - adaptation ;; per ADR-ES-008 §7.7
+  - escalation ;; per ADR-ES-008 §7.8
+
+# Per ADR-ES-008 §23 + CR-ES-008 §25: semantic invariants
+
+invariants:
+  - AUTO-INV-001 ;; Autonomous Operations != Operations merely containing an Agent ;;; per ADR-ES-008 §23 ;; material-participation criterion
+  - AUTO-INV-002 ;; Autonomous Operations != AI Operations ;;; per ADR-ES-008 §19 + §23
+  - AUTO-INV-003 ;; Autonomous Operations != Agentic Operations ;;; per ADR-ES-008 §9 + §10 + §13 + AOP-AUTO-CON-014
+  - AUTO-INV-004 ;; Autonomous Operations != Automation ;;; per ADR-ES-008 §11 + §23
+  - AUTO-INV-005 ;; Autonomous Operations != Unattended Operations ;;; per ADR-ES-008 §23
+  - AUTO-INV-006 ;; Autonomous Operations != Human-free Operations ;;; per ADR-ES-008 §23
+  - AUTO-INV-007 ;; Autonomous Operations != Unlimited Operations ;;; per ADR-ES-008 §23
+  - AUTO-INV-008 ;; Autonomous Operations != Autonomous Agent as universal Entity subtype ;;; per ADR-ES-008 §23
+  - AUTO-INV-009 ;; Autonomous Operations does not imply Autonomous Value Stream ;;; per ADR-ES-008 §13
+  - AUTO-INV-010 ;; Autonomous Operations does not imply Autonomous Enterprise ;;; per ADR-ES-008 §24
+
+# Per CR-ES-008 §19 + §20 + ADR-ES-008 §16: 2 mapping files
+
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Operations
+    relationship: specialization
+    note: |
+      Autonomous Operations is a Tier 2 Specialisation of WSF Operations ;;;
+      via the Operations grounding. Per CR-ES-008 §19 + ADR-ES-008 §16.
+      No new WSF foundational Autonomous Operations concept is asserted.
+    file: enterprise-semantics-mappings/mappings/wsf/autonomous-operations.yaml
+
+  - authority: opendea
+    target_id: external:opendea:Operations
+    relationship: specialization
+    note: |
+      Autonomous Operations is an OpenDEA Operations operating-mode
+      specialisation ;; per CR-ES-008 §20 + ADR-ES-008 §16. No
+      OpenDEA metamodel modification is required.
+    file: enterprise-semantics-mappings/mappings/opendea/autonomous-operations.yaml
+
+# Cardinal rules
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 forbidden glyphs
+  - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
+  - naming: lowercase kebab-case per ADR-ES-002 §11 ;; canonical_name stays un-prefixed ;; id form is ES:CONCEPT:autonomous-operations
+  - technology_neutral: no AI vendor ;; no specific framework ;; no LLM ;; per ADR-ES-008 §18
+
+# Provenance chain
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-008 §6
+    note: Canonical schema ;; this record is the canonical implementation.
+  - source: ADR-ES-008 §1 + §2 + §17
+    note: Architectural decision ;; canonical relationships.
+  - source: ADR-ES-007 §31
+    note: "Future Decision Candidates ;;; ADR-ES-008 chosen as natural follow-on."
+  - source: ADR-ES-006 §36
+    note: "Earlier follow-on sequence ;;; Agentic Operations chain precedes Autonomous Operations."
+  - source: FND-ES-AG-008 §1.3
+    note: "Tier 1 / Tier 2 grounding classification ;;; Autonomous Operations is Tier 2 Specialisation."
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Activity grounding inherited via Operations.

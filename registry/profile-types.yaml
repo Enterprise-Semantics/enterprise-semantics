@@ -10,6 +10,14 @@
 #   3. Profile records can then declare this profile_type.
 
 profile_types:
+  - id: autonomous-operations
+    canonical_name: Autonomous Operations
+    definition: |
+      A profile_type family for the Autonomous Operations Profile per
+      CR-ES-008 §18 + ADR-ES-008 §16. Aggregates Autonomous Operations ;;
+      Operations ;; Authority ;; Intent ;; Workflow ;; Agentic Workflow
+      for discoverability and grouping. Does not imply inheritance.
+    governance: enterprise-semantics
   - id: agentic-operations
     canonical_name: Agentic Operations
     definition: |

@@ -1,0 +1,123 @@
+# Autonomous Operations Profile (ES:PROFILE:autonomous-operations) ;;; per CR-ES-008 §18 + ADR-ES-008 §16
+#
+# Per CR-ES-008 §18:
+#   id: ES:PROFILE:AUTONOMOUS_OPERATIONS
+#   name: Autonomous Operations
+#   scope (10 concepts):
+#     - Autonomous Operations
+#     - Operations
+#     - Authority
+#     - Intent / Objective
+#     - Policy
+#     - Constraint
+#     - Operational Context
+#     - Operational Outcome
+#     - Workflow
+#     - Agentic Workflow
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
+id: ES:PROFILE:autonomous-operations
+canonical_name: Autonomous Operations Profile
+definition: |
+  A Profile that provides discoverability and grouping for Autonomous
+  Operations and its related semantic surface. Per CR-ES-008 §18 +
+  ADR-ES-008 §16. The profile is not an inheritance hierarchy ;; it
+  is a semantic overlay for grouping related concepts.
+status: Candidate
+version: 0.7.0
+profile_type: autonomous-operations
+
+# Per CR-ES-008 §18: scope includes Autonomous Operations + 9 related concepts
+
+scope:
+  - ES:CONCEPT:autonomous-operations
+  - ES:CONCEPT:operations
+  - ES:CONCEPT:authority
+  - ES:CONCEPT:intent
+  - ES:CONCEPT:workflow
+  - ES:CONCEPT:agentic-workflow
+
+characteristics:
+  - id: ES:CHAR:independent-decision-execution
+    canonical_name: Independent decision execution
+    description: |
+      The operation can make defined operational decisions without
+      requiring human approval for every decision ;; per ADR-ES-008
+      §7.1 + CR-ES-008 §24 (AOP-AUTO-CON-002).
+
+  - id: ES:CHAR:independent-action-execution
+    canonical_name: Independent action execution
+    description: |
+      The operation can execute authorized actions without requiring
+      human initiation for every action ;; per ADR-ES-008 §7.2 +
+      CR-ES-008 §24 (AOP-AUTO-CON-003).
+
+  - id: ES:CHAR:operational-context-awareness-autonomous
+    canonical_name: Operational context awareness (autonomous)
+    description: |
+      The operation can respond to relevant operational conditions ;;
+      per ADR-ES-008 §7.3 + CR-ES-008 §24 (AOP-AUTO-CON-007).
+
+  - id: ES:CHAR:bounded-authority-autonomous
+    canonical_name: Bounded authority (autonomous)
+    description: |
+      The operation operates within explicit authority ;; per ADR-ES-008
+      §7.4 + CR-ES-008 §24 (AOP-AUTO-CON-004).
+
+  - id: ES:CHAR:policy-constraint-compliance
+    canonical_name: Policy and constraint compliance
+    description: |
+      Operational behavior remains bounded by applicable policies and
+      constraints ;; per ADR-ES-008 §7.5 + CR-ES-008 §24
+      (AOP-AUTO-CON-005).
+
+  - id: ES:CHAR:outcome-orientation-autonomous
+    canonical_name: Outcome orientation (autonomous)
+    description: |
+      Autonomous behavior remains directed toward defined operational
+      outcomes ;; per ADR-ES-008 §7.6 + CR-ES-008 §24
+      (AOP-AUTO-CON-006).
+
+  - id: ES:CHAR:adaptation-autonomous
+    canonical_name: Adaptation (autonomous)
+    description: |
+      The operation can modify operational behavior in response to
+      changing conditions within its authority ;; per ADR-ES-008 §7.7
+      + CR-ES-008 §24 (AOP-AUTO-CON-008).
+
+  - id: ES:CHAR:escalation-autonomous
+    canonical_name: Escalation (autonomous)
+    description: |
+      Conditions exceeding delegated authority or capability can trigger
+      escalation ;; per ADR-ES-008 §7.8 + CR-ES-008 §24
+      (AOP-AUTO-CON-009).
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-008 §18
+    note: |
+      Establishes the Autonomous Operations Profile with the 10-element
+      scope per CR-ES-008 §18.
+  - source: ADR-ES-008 §16
+    note: |
+      Architectural position ;; the Profile is organisational ;; not
+      inheritance ;; per ADR-ES-008 §16.
+
+mappings: []
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash, 0 em-dash, 0 horizontal-ellipsis divider, 0 arrow glyph"
+  - vendor_specific_embargo: "0 references ;; no vendor-specific material from embargoed sources"
+  - naming: "ES:PROFILE:autonomous-operations ;; lowercase kebab-case per ADR-ES-002 §11"
+
+held_non_actions:
+  - "Profile promotion to Established (held for separate governed action)"
+  - "Release tag v0.7.0 not cut (held per v3.1.4 user directive)"
+  - "Profile does not imply inheritance hierarchy (per CR-ES-008 §18)"
+  - "Autonomous Value Stream profile not created (per ADR-ES-008 §24)"
+  - "Autonomous Enterprise profile not created (per ADR-ES-008 §24)"
+  - "Autonomous Network profile not created (per ADR-ES-008 §24)"
+  - "Autonomous Ecosystem profile not created (per ADR-ES-008 §24)"
+  - "Autonomous Workflow profile not created (per ADR-ES-008 §24)"

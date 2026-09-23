@@ -1,28 +1,191 @@
-<!--
-Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
-Filing: CR-ES-001 §3-§7 (scaffold scaffolding only ;;; no concept mutation, no schema mutation)
--->
-
-# relationship vocabulary ;;; initial governed predicate list
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+# Filing: VS-B of CR-ES-003 ;;; Value Stream Semantic Grounding ;;; populates the
+#         vocabulary with 13 governed predicates from CR-ES-003 §9 + §10.
+#         Backed by ADR-ES-003 (Proposed, slot 0005).
+#
+# Relationship vocabulary ;;; v0.2.0 ;;; 13 governed predicates for Value Stream
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, relationships are first-class semantic
 # content with governed predicates. The vocabulary file is the authoritative
 # registry of predicates that may appear in concept YAMLs.
 #
 # No predicate shall be invented outside an approved ADR/CR or explicitly
-# authorised seed activity. This file is therefore deliberately empty at
-# v0.0.1; the first governed predicates will be introduced by ADR-ES-002 or
-# subsequent concept-specific ADRs.
+# authorised seed activity. The 13 predicates below are introduced by
+# CR-ES-003 §9 + §10 and ratified by ADR-ES-003 (Proposed).
+#
+# Per ADR-ES-002 §22, semantic-kind decisions (incl. new predicates) must be
+# made through the Finding / ADR / CR process. CR-ES-003 is the carrier for
+# the Value Stream predicate set.
 
 vocabulary:
-  version: 0.0.1
-  status: scaffold
-  governed_predicates: []
+  version: 0.2.0
+  status: candidate ;;; awaiting ADR-ES-003 acceptance
+  governed_predicates:
+
+    # ===== Value Stream ;;; Subject predicates (CR-ES-003 §9 + §10.1-§10.7) =====
+
+    - id: ES:REL:realizes
+      canonical_name: realizes
+      inverse: realized-by
+      subject_type: ES:CONCEPT:value-stream
+      object_type: external:concept:stakeholder-value
+      definition: |
+        A Value Stream realizes Stakeholder Value when progression through the
+        Value Stream results in the intended stakeholder value being achieved
+        or made available. This is the primary Value Stream relationship.
+      lifecycle_status: established
+      provenance: CR-ES-003 §10.1 + ADR-ES-003 §10
+
+    - id: ES:REL:contains
+      canonical_name: contains
+      inverse: belongs-to
+      subject_type: ES:CONCEPT:value-stream
+      object_type: ES:CONCEPT:value-stage
+      definition: |
+        A Value Stream contains a Value Stage when that stage forms part of
+        the defined progression of value realization.
+      lifecycle_status: established
+      provenance: CR-ES-003 §10.2 + ADR-ES-003 §20
+
+    - id: ES:REL:enabled-by
+      canonical_name: enabled-by
+      inverse: enables
+      subject_type: ES:CONCEPT:value-stream
+      object_type: ES:CONCEPT:capability
+      definition: |
+        A Value Stream is enabled by a Capability when that Capability provides
+        an ability required for one or more stages of the Value Stream to be
+        realized.
+      lifecycle_status: established
+      provenance: CR-ES-003 §10.3 + ADR-ES-003 §9
+
+    - id: ES:REL:realized-through
+      canonical_name: realized-through
+      inverse: realizes
+      subject_type: ES:CONCEPT:value-stream
+      object_type: external:concept:process
+      definition: |
+        A Value Stream is realized through a Process when Process execution
+        contributes to the realization of one or more stages of the Value
+        Stream. This relationship must NOT imply Value Stream = Process.
+        The architectural boundary is preserved.
+      lifecycle_status: established
+      provenance: CR-ES-003 §10.4 + ADR-ES-003 §8 + §16
+
+    - id: ES:REL:produces
+      canonical_name: produces
+      inverse: produced-by
+      subject_type: ES:CONCEPT:value-stream
+      object_type: external:concept:outcome
+      definition: |
+        A Value Stream produces an Outcome when progression through the Value
+        Stream results in the specified outcome.
+      lifecycle_status: established
+      provenance: CR-ES-003 §10.5 + ADR-ES-003 §11
+
+    - id: ES:REL:uses
+      canonical_name: uses
+      inverse: used-by
+      subject_type: ES:CONCEPT:value-stream
+      object_type: external:concept:service
+      definition: |
+        A Value Stream uses a Service when the Service provides functionality,
+        interaction, or value-enabling means required by the Value Stream.
+        Value Stream != Service.
+      lifecycle_status: established
+      provenance: CR-ES-003 §10.6 + ADR-ES-003 §17
+
+    - id: ES:REL:involves
+      canonical_name: involves
+      inverse: involved-in
+      subject_type: ES:CONCEPT:value-stream
+      object_type: external:concept:organization
+      definition: |
+        A Value Stream involves an Organization when the Organization
+        participates in, enables, or contributes to one or more stages of the
+        Value Stream. The Organization boundary is a participation boundary,
+        not a Value Stream boundary.
+      lifecycle_status: established
+      provenance: CR-ES-003 §10.7 + ADR-ES-003 §19
+
+    - id: ES:REL:uses-resource
+      canonical_name: uses-resource
+      inverse: used-by-resource
+      subject_type: ES:CONCEPT:value-stream
+      object_type: external:concept:resource
+      definition: |
+        A Value Stream uses a Resource when the Resource provides means
+        required by the Value Stream. Disambiguated from `uses` which
+        applies to Services ;;; per CR-ES-003 §9 relationship table which
+        lists two `uses` rows (Service and Resource).
+      lifecycle_status: established
+      provenance: CR-ES-003 §9 (relationship table) + ADR-ES-003 §20
+
+    # ===== Value Stage ;;; Stage-level predicates (CR-ES-003 §9 + §10.8-§10.11) =====
+
+    - id: ES:REL:precedes
+      canonical_name: precedes
+      inverse: follows
+      subject_type: ES:CONCEPT:value-stage
+      object_type: ES:CONCEPT:value-stage
+      definition: |
+        A Value Stage precedes another Value Stage when it occurs earlier in
+        the defined progression of value realization. The relationship supports
+        explicit ordering without requiring an implementation-specific
+        workflow.
+      lifecycle_status: established
+      provenance: CR-ES-003 §10.8 + ADR-ES-003 §20
+
+    - id: ES:REL:stage-realized-through
+      canonical_name: stage-realized-through
+      inverse: stage-realizes
+      subject_type: ES:CONCEPT:value-stage
+      object_type: external:concept:process
+      definition: |
+        A Value Stage is realized through a Process when execution of the
+        Process contributes to the transition represented by the Value Stage.
+        Per VS-INV-008 (Value Stage is not inherently a Process).
+      lifecycle_status: established
+      provenance: CR-ES-003 §10.9 + ADR-ES-003 §8
+
+    - id: ES:REL:requires
+      canonical_name: requires
+      inverse: required-by
+      subject_type: ES:CONCEPT:value-stage
+      object_type: ES:CONCEPT:capability
+      definition: |
+        A Value Stage requires a Capability when the Capability provides an
+        ability necessary for the stage to be realized.
+      lifecycle_status: established
+      provenance: CR-ES-003 §10.10 + ADR-ES-003 §9
+
+    - id: ES:REL:stage-produces
+      canonical_name: stage-produces
+      inverse: stage-produced-by
+      subject_type: ES:CONCEPT:value-stage
+      object_type: external:concept:outcome
+      definition: |
+        A Value Stage produces an Outcome when completion of the stage results
+        in the specified outcome.
+      lifecycle_status: established
+      provenance: CR-ES-003 §10.11 + ADR-ES-003 §11
+
+    - id: ES:REL:contributes-to
+      canonical_name: contributes-to
+      inverse: receives-contribution-from
+      subject_type: ES:CONCEPT:value-stage
+      object_type: external:concept:stakeholder-value
+      definition: |
+        A Value Stage contributes to Stakeholder Value when the stage outcome
+        contributes to the overall stakeholder value realized by the parent
+        Value Stream.
+      lifecycle_status: established
+      provenance: CR-ES-003 §9 (relationship table) + ADR-ES-003 §20
 
 governance:
-  adr: ADR-ES-001
-  cr: CR-ES-001
-  finding: null
+  adr: ADR-ES-003
+  cr: CR-ES-003
+  finding: FND-ES-AG-008
   lifecycle_states:
     - PROPOSED
     - CANDIDATE
@@ -34,7 +197,24 @@ governance:
 
 provenance:
   source: ES
-  research: null
-  decision: ADR-ES-001 §13
-  implementation: CR-ES-001 §8
+  research: FND-ES-AG-001-Grounding-Result
+  decision: ADR-ES-003 section 20
+  implementation: CR-ES-003 section 9 + section 10
   mapping: null
+
+change_history:
+  - date: 2026-09-22
+    by: CR-ES-001 section 3-7 (scaffolding only)
+    change: |
+      Vocabulary scaffold landed at v0.0.1 with empty governed_predicates
+      list. No predicates invented outside ADR/CR authority per CR-ES-001 §8.
+  - date: 2026-09-23
+    by: CR-ES-003 + ADR-ES-003 + FND-ES-AG-008
+    change: |
+      13 Value Stream predicates introduced per CR-ES-003 §9 + §10 and
+      ratified by ADR-ES-003 (Proposed). 8 subject predicates for
+      value-stream (realizes, contains, enabled-by, realized-through,
+      produces, uses, involves, uses-resource) + 5 stage-level predicates
+      for value-stage (precedes, stage-realized-through, requires,
+      stage-produces, contributes-to). Version bumped to v0.2.0. Status:
+      candidate (awaiting ADR-ES-003 acceptance).

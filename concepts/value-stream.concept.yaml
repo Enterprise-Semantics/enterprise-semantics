@@ -60,7 +60,7 @@ relationships:
 
   - subject: ES:CONCEPT:value-stream
     predicate: realized-through
-    object: ES:CONCEPT:process
+    object: external:concept:process
     qualification: process-realization
     status: established
     provenance: CR-ES-003 §10.4 + ADR-ES-003 §8 + §16
@@ -72,7 +72,7 @@ relationships:
 
   - subject: ES:CONCEPT:value-stream
     predicate: produces
-    object: ES:CONCEPT:outcome
+    object: external:concept:outcome
     qualification: outcome-production
     status: established
     provenance: CR-ES-003 §10.5 + ADR-ES-003 §11
@@ -82,7 +82,7 @@ relationships:
 
   - subject: ES:CONCEPT:value-stream
     predicate: uses
-    object: ES:CONCEPT:service
+    object: external:concept:service
     qualification: service-utilisation
     status: established
     provenance: CR-ES-003 §10.6 + ADR-ES-003 §17
@@ -93,7 +93,7 @@ relationships:
 
   - subject: ES:CONCEPT:value-stream
     predicate: involves
-    object: ES:CONCEPT:organization
+    object: external:concept:organization
     qualification: organization-participation
     status: established
     provenance: CR-ES-003 §10.7 + ADR-ES-003 §19
@@ -105,7 +105,7 @@ relationships:
 
   - subject: ES:CONCEPT:value-stream
     predicate: uses
-    object: ES:CONCEPT:resource
+    object: external:concept:resource
     qualification: resource-utilisation
     status: established
     provenance: CR-ES-003 §10 (relationship table) + ADR-ES-003 §20

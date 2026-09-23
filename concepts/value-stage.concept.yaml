@@ -87,7 +87,7 @@ relationships:
 
   - subject: ES:CONCEPT:value-stage
     predicate: realized-through
-    object: ES:CONCEPT:process
+    object: external:concept:process
     qualification: process-realization
     status: established
     provenance: CR-ES-003 §10.9 + ADR-ES-003 §8
@@ -108,7 +108,7 @@ relationships:
 
   - subject: ES:CONCEPT:value-stage
     predicate: produces
-    object: ES:CONCEPT:outcome
+    object: external:concept:outcome
     qualification: outcome-production
     status: established
     provenance: CR-ES-003 §10.11 + ADR-ES-003 §11

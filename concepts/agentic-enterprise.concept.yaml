@@ -2,9 +2,9 @@
 #
 # Per CR-ES-010 §2 + §3 + §4 + ADR-ES-010 §1 + §3:
 #   An Agentic Enterprise is an Enterprise in which material aspects of
-#   enterprise value realization ;;; operational coordination ;;;
-#   decision-making ;;; or execution are performed through agentic
-#   behavior within defined intent ;;; authority ;;; policy ;;; and
+#   enterprise value realization , operational coordination , 
+#   decision-making , or execution are performed through agentic
+#   behavior within defined intent , authority , policy , and
 #   governance boundaries. Agentic Enterprise is a specialisation of
 #   Enterprise ;; NOT of Agent ;; Agentic Operations ;; Agentic Value
 #   Stream ;; or Agentic Workflow. The Agentic Enterprise describes an
@@ -38,7 +38,7 @@ concept_type: agentic-enterprise
 
 definition: |
   An Agentic Enterprise is an Enterprise in which material aspects of
-  enterprise value realisation ;; operational coordination ;;;
+  enterprise value realisation ;; operational coordination , 
   decision-making ;; or execution are performed through agentic
   behavior within defined intent ;; authority ;; policy ;; and
   governance boundaries.

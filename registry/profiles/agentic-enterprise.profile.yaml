@@ -16,7 +16,7 @@ definition: |
   discoverability per CR-ES-010 §6 + ADR-ES-010 §6. The Profile
   applies enterprise-level agentic characteristics to a base
   Enterprise concept. Profile membership does NOT imply semantic
-  inheritance ;;; the base Enterprise concept retains its
+  inheritance , the base Enterprise concept retains its
   identity.
 status: Proposed
 version: 0.9.0
@@ -46,7 +46,7 @@ characteristics:
     canonical_name: Human governance compatible
     description: |
       Human participation is permitted (human-in-the-loop ;;
-      on-the-loop ;; over-the-loop) ;;; governance bodies ;; policy
+      on-the-loop ;; over-the-loop) , governance bodies ;; policy
       owners ;; exception escalation ;; and intervention authority
       remain valid (per ADR-ES-010 §10 + §17). Agentic Enterprise
       does NOT imply human elimination.

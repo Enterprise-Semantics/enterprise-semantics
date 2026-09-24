@@ -1,4 +1,4 @@
-# versions/v0.9.0.yaml ;;; Agentic Enterprise semantic establishment
+# versions/v0.9.0.yaml , Agentic Enterprise semantic establishment
 #
 # Per CR-ES-010 §23 + ADR-ES-010. This version indicates semantic
 # establishment of the Agentic Enterprise ;; a specialisation of
@@ -15,7 +15,7 @@
 #     profiles, examples, documentation, and conformance artefacts
 #
 # Per CR-ES-011 §34 ;; v1.0.0 will be the FIRST MAJOR semantic release
-# boundary ;;; it is NOT established by this version ;; v1.0.0 release is
+# boundary , it is NOT established by this version ;; v1.0.0 release is
 # gated on the full ADR-ES-001 -> ADR-ES-011 chain acceptance per
 # CR-ES-011 §38. This v0.9.0 is the cumulative Agentic Enterprise semantic
 # establishment version.
@@ -38,7 +38,7 @@ release_summary: |
     - 1 concept record (ES:CONCEPT:agentic-enterprise ;; rewritten in
       place ;; canonical identity preserved per CR-ES-010 §2)
     - 2 governed predicates (enterprise-realizes-through ;;
-      enterprise-operates-through) ;;; subject-type namespaced ;; the
+      enterprise-operates-through) , subject-type namespaced ;; the
       vocabulary internal version bumps from v0.9.0 to v1.0.0
     - 2 inverse pairs (enterprise-realizes-through -> realizes-via ;;
       enterprise-operates-through -> operates-via)
@@ -129,13 +129,13 @@ out_of_scope:
 
 cardinal_rules:
   author: Emmanuel A. Otchere
-  dash_rule_d004: clean ;;; no en-dash ;; no em-dash ;; no U+2E3B
-  vendor_specific_embargo: clean ;;; zero hits across the
+  dash_rule_d004: clean , no en-dash ;; no em-dash ;; no U+2E3B
+  vendor_specific_embargo: clean , zero hits across the
     TMForum-adjacent term list (per the universal vendor-specific
     embargo)
-  profile_type_registration: present ;;; profile_type
+  profile_type_registration: present , profile_type
     agentic-enterprise registered in registry/profile-types.yaml
-  governance_field: enterprise-semantics ;;; top-level field
+  governance_field: enterprise-semantics , top-level field
     present on every concept record
 
 # Authorities
@@ -172,7 +172,7 @@ change_history:
       goes from 42 (end of CR-ES-009 VS-B) to 44 (with the two
       enterprise-subject namespaced predicates). Inverse pair count
       goes from 42 to 44. Profile count goes from 5 to 6. Concept
-      record count remains 21 ;;; the agentic-enterprise concept is
+      record count remains 21 , the agentic-enterprise concept is
       rewritten in place per the architectural-conflict triage in
       PLAN-CHANGELOG [3.1.27] R1. Status: candidate (awaiting
       ADR-ES-010 acceptance).

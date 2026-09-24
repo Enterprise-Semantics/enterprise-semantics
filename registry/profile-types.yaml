@@ -1,4 +1,4 @@
-# profile-types.yaml ;;; Profile type registry
+# profile-types.yaml , Profile type registry
 #
 # Each entry declares a named profile_type family.
 # Profile records must reference a registered profile_type.
@@ -6,7 +6,7 @@
 #
 # To register a new profile_type:
 #   1. Add an entry below with id, canonical_name, definition, governance.
-#   2. Open a PR ;;; review + accept before merge.
+#   2. Open a PR , review + accept before merge.
 #   3. Profile records can then declare this profile_type.
 
 profile_types:
@@ -50,7 +50,7 @@ profile_types:
     canonical_name: Autonomous Operation
     definition: |
       A profile_type family for Profiles that apply stronger autonomy characteristics
-      than agentic-execution ;;; self-governance, broader self-adaptation, and
+      than agentic-execution , self-governance, broader self-adaptation, and
       self-execution under policy with optional human governance.
       Reserved for future Autonomous semantic work (per FND-ES-AG-001 §4 Q11).
     governance: enterprise-semantics
@@ -58,9 +58,9 @@ profile_types:
     created: 2026-09-02
 
   - id: example-do-not-use
-    canonical_name: Example ;;; Do Not Use
+    canonical_name: Example , Do Not Use
     definition: |
-      Example profile_type ;;; exists only to demonstrate registry conventions.
+      Example profile_type , exists only to demonstrate registry conventions.
       Do not register Profiles with this profile_type.
     governance: enterprise-semantics
     status: Reserved

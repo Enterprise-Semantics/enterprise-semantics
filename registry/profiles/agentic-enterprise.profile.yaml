@@ -1,0 +1,70 @@
+# registry/profiles/agentic-enterprise.profile.yaml ;; Agentic Enterprise Profile (ES:PROFILE:agentic-enterprise) ;; per CR-ES-010 §6 + ADR-ES-010 §6
+#
+# Per CR-ES-010 §6 + ADR-ES-010 §6:
+#   The Agentic Enterprise Profile groups Agentic Enterprise
+#   specialisations for discoverability. Profile membership does NOT
+#   imply semantic inheritance (per ADR-ES-010 §11). The Profile
+#   applies the enterprise-level agentic characteristics to a base
+#   Enterprise concept.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:agentic-enterprise
+canonical_name: Agentic Enterprise Profile
+definition: |
+  A Profile that groups Agentic Enterprise specialisations for
+  discoverability per CR-ES-010 §6 + ADR-ES-010 §6. The Profile
+  applies enterprise-level agentic characteristics to a base
+  Enterprise concept. Profile membership does NOT imply semantic
+  inheritance ;;; the base Enterprise concept retains its
+  identity.
+status: Proposed
+version: 0.9.0
+profile_type: agentic-enterprise
+applies_to:
+  - enterprise
+characteristics:
+  - id: ES:CHAR:material-agentic-participation
+    canonical_name: Material agentic participation
+    description: |
+      Agentic behavior materially influences enterprise value
+      realisation ;; operational coordination ;; decision-making ;;
+      execution ;; or adaptation (per ADR-ES-010 §3 + §6).
+  - id: ES:CHAR:enterprise-intent-anchored
+    canonical_name: Enterprise-intent-anchored behavior
+    description: |
+      Agentic enterprise behavior is anchored to defined enterprise
+      intent ;; authority ;; policy ;; and governance boundaries
+      (per ADR-ES-010 §1 + §6 + §7 + §17).
+  - id: ES:CHAR:enterprise-outcome-oriented
+    canonical_name: Enterprise-outcome-oriented behavior
+    description: |
+      Agentic Enterprise produces enterprise-level outcomes through
+      defined value realisation ;; operational coordination ;; and
+      execution mechanisms (per ADR-ES-010 §6 + AE-CON-016).
+  - id: ES:CHAR:human-governance-compatible
+    canonical_name: Human governance compatible
+    description: |
+      Human participation is permitted (human-in-the-loop ;;
+      on-the-loop ;; over-the-loop) ;;; governance bodies ;; policy
+      owners ;; exception escalation ;; and intervention authority
+      remain valid (per ADR-ES-010 §10 + §17). Agentic Enterprise
+      does NOT imply human elimination.
+  - id: ES:CHAR:authority-bound
+    canonical_name: Authority-bound operation
+    description: |
+      Agentic Enterprise operates within defined authority ;;
+      authority = unrestricted fails conformance (per AE-CON-007 +
+      AE-CON-018).
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-010
+    note: "Agentic Enterprise Semantic Grounding implementation ;; slot 0018"
+  - source: ADR-ES-010
+    note: "Agentic Enterprise Semantic Grounding decision ;; slot 0012"
+  - source: docs/finding/0005-agentic-enterprise-semantic-grounding.md
+    note: "Finding that motivated the semantic specialisation decision"
+  - source: FND-ES-AG-005
+    note: "Prior Profile hypothesis (agentic-execution profile_type) ;; superseded by CR-ES-010 + ADR-ES-010 specialisation hypothesis with new agentic-enterprise profile_type"
+created: 2026-09-24
+updated: 2026-09-24

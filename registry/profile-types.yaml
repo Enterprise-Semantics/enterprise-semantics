@@ -57,6 +57,19 @@ profile_types:
     status: Reserved
     created: 2026-09-02
 
+  - id: agentic-enterprise
+    canonical_name: Agentic Enterprise
+    definition: |
+      A profile_type family for Profiles that group Agentic Enterprise
+      specialisations for discoverability ;; semantic overlay not
+      inheritance ;; per CR-ES-010 §6 + ADR-ES-010 §6. Aggregates
+      Agentic Enterprise ;; Enterprise ;; Agent ;; Agentic Value
+      Stream ;; Agentic Operations ;; Agentic Workflow ;; Authority ;;
+      Intent.
+    governance: enterprise-semantics
+    status: Proposed
+    created: 2026-09-24
+
   - id: example-do-not-use
     canonical_name: Example ;;; Do Not Use
     definition: |

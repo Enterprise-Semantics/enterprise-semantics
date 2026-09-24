@@ -19,7 +19,17 @@ wsf_grounding:
 profile_bindings:
   - profile_id: ES:PROFILE:agentic-execution
     profile_type: agentic-execution
+    active: false
+    note: |
+      The prior profile-of-Capability binding under ES:PROFILE:agentic-execution
+      is preserved as inactive for audit traceability.
+  - profile_id: ES:PROFILE:agentic-capability
+    profile_type: agentic-capability
     active: true
+    note: |
+      Active binding established by VS-D2c slice per CR-ES-012 §6.
+      Profile canonicalised in registry/profiles/agentic-capability.profile.yaml
+      and registered in registry/profile-types.yaml.
 relationships:
   - subject: ES:CONCEPT:agentic-capability
     predicate: profile-of

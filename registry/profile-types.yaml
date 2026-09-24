@@ -35,6 +35,15 @@ profile_types:
       Agent ;; Agentic ;; Intent ;; Authority ;; and Agentic Workflow
       for discoverability and grouping. Does not imply inheritance.
     governance: enterprise-semantics
+  - id: agentic-capability
+    canonical_name: Agentic Capability
+    definition: |
+      A profile_type family for the Agentic Capability Profile per
+      CR-ES-012 §6 + ADR-ES-012 §1. Aggregates Capability, Agentic
+      Capability, Agent, Agentic Workflow, Agentic Operations, Outcome,
+      Intent, and Authority for discoverability and grouping. Does
+      not imply inheritance.
+    governance: enterprise-semantics
   - id: agentic-execution
     canonical_name: Agentic Execution
     definition: |

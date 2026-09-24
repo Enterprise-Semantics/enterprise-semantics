@@ -1,0 +1,99 @@
+# Agentic Capability Profile (ES:PROFILE:agentic-capability) ,  per CR-ES-012 §6 + ADR-ES-012 §1
+#
+# Per CR-ES-012 §6:
+#   id: ES:PROFILE:agentic-capability
+#   name: Agentic Capability
+#   scope: Capability + Agentic Capability + Agent + Agentic Workflow
+#          + Agentic Operations + Outcome + Intent + Authority
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:agentic-capability
+canonical_name: Agentic Capability
+definition: |
+  A Profile that provides discoverability and grouping for Agentic
+  Capability and its related semantic surface. Per CR-ES-012 §6 +
+  ADR-ES-012 §1. The profile is not an inheritance hierarchy ,  it
+  is a semantic overlay for grouping related concepts.
+status: Candidate
+version: 1.1.0
+profile_type: agentic-capability
+
+scope:
+  - ES:CONCEPT:capability
+  - ES:CONCEPT:agentic-capability
+  - ES:CONCEPT:agent
+  - ES:CONCEPT:agentic-workflow
+  - ES:CONCEPT:agentic-operations
+  - ES:CONCEPT:outcome
+  - ES:CONCEPT:intent
+  - ES:CONCEPT:authority
+
+characteristics:
+  - id: ES:CHAR:material-agentic-realization
+    canonical_name: Material agentic realization
+    description: |
+      Agentic behavior is material to capability realization, not
+      merely present. Mere Agent participation does not qualify.
+      Per ADR-ES-012 §7 + ACAP-CON-003.
+  - id: ES:CHAR:outcome-orientation-capability
+    canonical_name: Outcome orientation (capability)
+    description: |
+      Agentic Capability retains the Capability -> Outcome semantic
+      anchor. Outcome orientation is preserved per ACAP-CON-004.
+  - id: ES:CHAR:bounded-authority-capability
+    canonical_name: Bounded authority (capability)
+    description: |
+      Agentic Capability operates within explicitly defined authority,
+      policy, and contextual boundaries per ADR-ES-012 §1 +
+      ACAP-CON-017.
+  - id: ES:CHAR:capability-universality-preserved
+    canonical_name: Capability universality preserved
+    description: |
+      Agentic Capability is a contextual specialization of Capability,
+      not a replacement or new foundational type. The Capability
+      concept remains universal per ADR-ES-012 §2 + §4.
+  - id: ES:CHAR:agentic-autonomous-orthogonality-capability
+    canonical_name: Agentic / Autonomous orthogonality (capability)
+    description: |
+      Capability can be Agentic, Autonomous, both, or neither. The
+      2x2 matrix at the capability boundary permits Autonomous
+      Capability as a future orthogonal specialization per ADR-ES-012
+      §14 + §25.
+  - id: ES:CHAR:human-participation-permitted-capability
+    canonical_name: Human participation permitted (capability)
+    description: |
+      Human participation patterns (Human, Human+Agent, Human+System)
+      are valid in Agentic Capability realizations per CR-ES-012 §18 +
+      ACAP-NEG-014.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-012 §6
+    note: |
+      Establishes the Agentic Capability Profile with the 8-element
+      scope (Capability + Agentic Capability + Agent + Agentic
+      Workflow + Agentic Operations + Outcome + Intent + Authority).
+  - source: ADR-ES-012 §1
+    note: |
+      Architectural position ,  the Profile is organisational, not
+      inheritance.
+  - source: ADR-ES-002
+    note: |
+      Capability universal concept grounding ; the Profile aggregates
+      Capability + Agentic Capability for discoverability.
+
+mappings: []
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash, 0 em-dash, 0 horizontal-ellipsis divider, 0 arrow glyph"
+  - vendor_specific_embargo: "0 references, no vendor-specific material from embargoed sources"
+  - naming: "ES:PROFILE:agentic-capability ,  lowercase kebab-case per ADR-ES-002 §11"
+
+held_non_actions:
+  - "Profile promotion to Established (held for separate governed action)"
+  - "Release tag v1.1.0 not cut (held per v3.1.4 user directive)"
+  - "Profile does not imply inheritance hierarchy (per CR-ES-012 §6)"
+  - "Autonomous Capability profile not created (held for ADR-ES-013)"
+  - "AI Capability profile not created (held per ADR-ES-012 §25)"

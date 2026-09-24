@@ -1,0 +1,60 @@
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+# Filing: VS-D2c of CR-ES-014 ; Agentic Service Profile per CR-ES-014 §6 + ADR-ES-014 §15
+
+id: ES:PROFILE:agentic-service
+canonical_name: Agentic Service
+profile_type: agentic-service
+semantic_kind: service
+target_release: v1.3.0
+
+description: |
+  A profile that groups the Agentic Service semantic
+  characteristics established by ADR-ES-014 + CR-ES-014. The
+  profile references the canonical Agentic Service concept
+  (ES:CONCEPT:agentic-service) and aggregates the Agentic
+  Materiality rule plus the Agentic/Autonomous orthogonality
+  rule at the service boundary.
+
+characteristics:
+  - material agentic behavior , contextual interpretation, action selection, coordination, adaptation
+  - service intent awareness , preserves service-level intent
+  - service context awareness , interprets contextual conditions
+  - delegated intent , interprets delegated service intent
+  - authority-bounded , operates within defined Authority
+  - policy-governed , governed by applicable Policy
+  - constraint-bounded , bounded by defined Constraints
+  - governance-aware , governance boundaries explicit
+  - adaptable , may adapt service behavior
+  - intervention-aware , human participation remains valid
+  - escalation-aware , supports escalation when authority exceeded
+  - ai-independent , does NOT require AI
+  - automation-independent , does NOT require Automation
+  - autonomy-independent , does NOT imply Autonomous Service
+
+references:
+  - concept_id: ES:CONCEPT:agentic-service
+    relationship: groups
+    note: |
+      Profile groups the Agentic Service concept. The profile
+      does NOT add inheritance beyond the canonical
+      specialization-of Service established by ADR-ES-014 §3.
+  - concept_id: external:concept:service
+    relationship: inherits-from-via-specialization
+    note: |
+      Profile references the universal Service concept via the
+      Agentic Service specialization. No additional ontology
+      inheritance.
+  - concept_id: external:concept:authority
+    relationship: references
+    note: Authority concept referenced for bounded service authority.
+  - concept_id: external:policy:Policy
+    relationship: references
+    note: Policy concept referenced for service governance.
+
+governance:
+  ratified_by: ADR-ES-014
+  implemented_by: CR-ES-014
+  status: candidate ; awaiting CR-ES-014 implementation acceptance
+
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+filing_date: 2026-09-25

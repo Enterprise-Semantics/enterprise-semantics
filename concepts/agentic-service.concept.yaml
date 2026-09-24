@@ -1,0 +1,210 @@
+id: ES:CONCEPT:agentic-service
+canonical_name: Agentic Service
+definition: |
+  An Agentic Service is a Service whose delivery or interaction
+  materially incorporates agentic behavior in interpreting intent,
+  selecting or coordinating actions, adapting service behavior, or
+  executing service responses toward an intended outcome within
+  defined authority, policy, and contextual boundaries.
+  The Service concept remains the universal foundational type per
+  ADR-ES-002 ; Agentic Service is a contextual specialization, not
+  a replacement or narrowing of Service. Agentic behavior must be
+  material to service realization ; AI, automation, Agent
+  participation, or autonomous behavior alone do not establish
+  Agentic Service.
+status: Candidate
+version: 1.3.0
+concept_type: agentic-service
+specializes:
+  - canonical_id: external:service:Service
+    relationship: specialization-of
+    rationale: |
+      Agentic Service is a contextual specialization of the Service
+      concept. The Service concept remains universal per ADR-ES-002 ;
+      Agentic Service does not redefine Service.
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Service
+    relationship: references
+    note: |
+      Agentic Service inherits the WSF Service grounding via its
+      parent Service concept. The specialization does not introduce
+      a new WSF semantic kind.
+profile_bindings:
+  - profile_id: ES:PROFILE:agentic-service
+    profile_type: agentic-service
+    active: true
+    note: |
+      Active binding established by VS-D2c slice per CR-ES-014 §6.
+      Profile canonicalised at
+      registry/profiles/agentic-service.profile.yaml.
+relationships:
+  - subject: ES:CONCEPT:agentic-service
+    predicate: specialization-of
+    object: external:service:Service
+    qualification: contextual-specialization
+    status: proposed
+    provenance: ADR-ES-014 §3 ; CR-ES-014 §3
+    rationale: |
+      Agentic Service is a contextual specialization of Service,
+      not a new foundational type of service.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: engages
+    object: ES:CONCEPT:agent
+    qualification: agent-engagement
+    status: proposed
+    provenance: ADR-ES-014 §6 ; CR-ES-014 §7
+    rationale: |
+      Agentic Service may engage an Agent. An Agent may participate
+      in an Agentic Service without being the Service itself.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: interprets
+    object: external:concept:intent
+    qualification: intent-interpretation
+    status: proposed
+    provenance: ADR-ES-014 §7 ; CR-ES-014 §7
+    rationale: Agentic Service may interpret intent.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: operates-within
+    object: external:concept:authority
+    qualification: authority-bounded
+    status: proposed
+    provenance: ADR-ES-014 §15 ; CR-ES-014 §7
+    rationale: Agentic Service operates within defined Authority.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: governed-by
+    object: external:policy:Policy
+    qualification: policy-compliance
+    status: proposed
+    provenance: ADR-ES-014 §15 ; CR-ES-014 §7
+    rationale: Agentic Service is governed by applicable Policy.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    qualification: workflow-usage
+    status: proposed
+    provenance: ADR-ES-014 §8 ; CR-ES-014 §7
+    rationale: Agentic Service may use Agentic Workflow.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: produces
+    object: external:outcome:Outcome
+    qualification: outcome-production
+    status: proposed
+    provenance: ADR-ES-014 §16 ; CR-ES-014 §7
+    rationale: Agentic Service produces Service Outcomes.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: adapts-to
+    object: external:concept:context
+    qualification: adaptive-realization
+    status: proposed
+    provenance: ADR-ES-014 §5 ; CR-ES-014 §7
+    rationale: Agentic Service adapts to Context.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: delivers
+    object: external:concept:value
+    qualification: value-delivery
+    status: proposed
+    provenance: ADR-ES-014 §15 ; CR-ES-014 §7
+    rationale: Agentic Service delivers Value.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: supports
+    object: ES:CONCEPT:capability
+    qualification: capability-support
+    status: proposed
+    provenance: ADR-ES-014 §15 ; CR-ES-014 §7
+    rationale: Agentic Service supports Capability realization.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: distinct-from
+    object: ES:CONCEPT:agent
+    qualification: service-vs-agent
+    status: proposed
+    provenance: ADR-ES-014 §6 ; CR-ES-014 §11 ; ASVC-NEG-001
+    rationale: Agentic Service is NOT an Agent.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: distinct-from
+    object: ES:CONCEPT:agentic-capability
+    qualification: service-vs-capability
+    status: proposed
+    provenance: ADR-ES-014 §7 ; CR-ES-014 §11 ; ASVC-NEG-002
+    rationale: Agentic Service is NOT Agentic Capability.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: distinct-from
+    object: ES:CONCEPT:agentic-workflow
+    qualification: service-vs-workflow
+    status: proposed
+    provenance: ADR-ES-014 §8 ; CR-ES-014 §11 ; ASVC-NEG-003
+    rationale: Agentic Service is NOT Agentic Workflow.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: distinct-from
+    object: ES:CONCEPT:agentic-operations
+    qualification: service-vs-operations
+    status: proposed
+    provenance: ADR-ES-014 §9 ; CR-ES-014 §11 ; ASVC-NEG-004
+    rationale: Agentic Service is NOT Agentic Operations.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: distinct-from
+    object: ES:CONCEPT:agentic-value-stream
+    qualification: service-vs-value-stream
+    status: proposed
+    provenance: ADR-ES-014 §10 ; CR-ES-014 §11 ; ASVC-NEG-005
+    rationale: Agentic Service is NOT Agentic Value Stream.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: not-implies
+    object: external:concept:autonomous-service
+    qualification: agentic-not-autonomous
+    status: proposed
+    provenance: ADR-ES-014 §11 ; CR-ES-014 §9 ; ASVC-NEG-006
+    rationale: Agentic Service does NOT imply Autonomous Service.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: not-implies
+    object: external:concept:ai-service
+    qualification: ai-not-required
+    status: proposed
+    provenance: ADR-ES-014 §12 ; CR-ES-014 §17 ; ASVC-CON-014
+    rationale: Agentic Service does NOT require AI.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: not-implies
+    object: external:concept:automated-service
+    qualification: automation-not-sufficient
+    status: proposed
+    provenance: ADR-ES-014 §13 ; CR-ES-014 §17 ; ASVC-CON-015
+    rationale: Agentic Service does NOT require Automation.
+  - subject: ES:CONCEPT:agentic-service
+    predicate: materiality-required
+    object: external:concept:agentic-behavior
+    qualification: materiality-rule
+    status: proposed
+    provenance: ADR-ES-014 §4 ; CR-ES-014 §8 ; ASVC-CON-003
+    rationale: Material agentic behavior required.
+governance: enterprise-semantics
+provenance:
+  - source: ADR-ES-002
+    note: "Universal Service concept grounding."
+  - source: ADR-ES-003
+    note: "Value Stream lineage ; Agentic Service delivers Value."
+  - source: ADR-ES-004
+    note: "Agentic semantic grounding."
+  - source: ADR-ES-005
+    note: "Agentic Value Stream lineage."
+  - source: ADR-ES-006
+    note: "Agentic Workflow lineage."
+  - source: ADR-ES-007
+    note: "Agentic Operations lineage."
+  - source: ADR-ES-012
+    note: "Agentic Capability lineage."
+  - source: ADR-ES-014
+    note: "Foundational specialization decision ; v1.3.0 release target."
+  - source: CR-ES-014
+    note: "Implementation specification ; canonical concept record."
+  - source: FND-ES-AG-008
+    note: "WSF Tier 1 / Tier 2 Grounding Boundary."
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Service
+    relationship: references
+    note: "Inherits WSF Service grounding via parent Service concept."
+  - authority: opendea
+    target_id: external:opendea:Service
+    relationship: references
+    note: "References OpenDEA Service semantics."
+created: 2026-09-25
+updated: 2026-09-25

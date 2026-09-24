@@ -4,7 +4,7 @@
 #         from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Inverse predicate map ;;; v0.9.0 ;;; 13 Value Stream inverse pairs + 9 Capability inverse pairs + 11 Agentic inverse pairs + 3 Agentic Value Stream inverse pairs + 2 Agentic Workflow inverse pairs + 2 Agentic Operations inverse pairs + 1 Autonomous Operations inverse pair + 1 Autonomous Value Stream inverse pair + 4 namespaced inverses (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced inverse (process-realized-through) for Process->Workflow disambiguation
+# Inverse predicate map ;;; v1.0.0 ;;; 13 Value Stream inverse pairs + 9 Capability inverse pairs + 11 Agentic inverse pairs + 3 Agentic Value Stream inverse pairs + 2 Agentic Workflow inverse pairs + 2 Agentic Operations inverse pairs + 1 Autonomous Operations inverse pair + 1 Autonomous Value Stream inverse pair + 4 namespaced inverses + 1 cross-tranche namespaced inverse + 2 Enterprise-subject namespaced inverse pairs (enterprise-realizes-through -> realizes-via ;; enterprise-operates-through -> operates-via) per CR-ES-010 §4
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, every predicate that has an inverse
 # must declare it explicitly here. This file is populated by VS-B with the
@@ -12,7 +12,7 @@
 # relationships/vocabulary.yaml v0.2.0.
 
 inverse:
-  version: 0.9.0
+  version: 1.0.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_inverses:
 
@@ -324,9 +324,25 @@ inverse:
 
 
 
+
+    # ===== Enterprise ;;; Subject namespaced inverses (CR-ES-010 §4 + ADR-ES-010 §5 + §15) =====
+
+    - forward: ES:REL:enterprise-realizes-through
+      forward_canonical: realizes-through
+      inverse: realizes-via
+      subject_type: ES:CONCEPT:agentic-enterprise
+      object_type: ES:CONCEPT:agentic-value-stream
+      provenance: CR-ES-010 §4 + ADR-ES-010 §5 + §14
+
+    - forward: ES:REL:enterprise-operates-through
+      forward_canonical: operates-through
+      inverse: operates-via
+      subject_type: ES:CONCEPT:agentic-enterprise
+      object_type: ES:CONCEPT:agentic-operations
+      provenance: CR-ES-010 §4 + ADR-ES-010 §5 + §15
 governance:
-  adr: ADR-ES-003
-  cr: CR-ES-003
+  adr: ADR-ES-010
+  cr: CR-ES-010
   finding: FND-ES-AG-008
 
 provenance:

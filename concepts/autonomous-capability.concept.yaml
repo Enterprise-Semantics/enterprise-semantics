@@ -1,0 +1,296 @@
+id: ES:CONCEPT:autonomous-capability
+canonical_name: Autonomous Capability
+definition: |
+  An Autonomous Capability is a Capability whose realization is
+  capable of progressing through decisions, actions, coordination,
+  and adaptation within defined objectives, authority, policies,
+  constraints, and governance boundaries without requiring human
+  intervention for every capability decision or action.
+  The Capability concept remains the universal foundational type
+  per ADR-ES-002 ; Autonomous Capability is a contextual
+  specialization, not a replacement or narrowing.
+  Autonomy is bounded ; AI, automation, Agent participation, or
+  absence of humans alone do not establish Autonomous Capability.
+status: Candidate
+version: 1.2.0
+concept_type: autonomous-capability
+specializes:
+  - canonical_id: ES:CONCEPT:capability
+    relationship: specialization-of
+    rationale: |
+      Autonomous Capability is a contextual specialization of the
+      universal Capability concept. The semantic distinction remains:
+      Capability describes enduring ability ; Autonomous Capability
+      additionally describes how that ability can be realized with
+      bounded independence.
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Capability
+    relationship: references
+    note: |
+      Autonomous Capability inherits the WSF Capability grounding via
+      its parent Capability. The specialization does not introduce a
+      new WSF semantic kind.
+profile_bindings: []
+relationships:
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: specialization-of
+    object: ES:CONCEPT:capability
+    qualification: contextual-specialization
+    status: proposed
+    provenance: ADR-ES-013 §3.1 ,  CR-ES-013 §3
+    rationale: |
+      Autonomous Capability is a contextual specialization of
+      Capability, not a new foundational type of ability. The
+      Capability concept remains universal per ADR-ES-002.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: enables
+    object: external:outcome:Outcome
+    qualification: outcome-orientation
+    status: proposed
+    provenance: ADR-ES-013 §3.1 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability retains the Capability -> Outcome
+      semantic anchor. Outcome orientation is preserved per
+      ACAP-AUTO-CON-003.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: exercised-by
+    object: external:concept:role
+    qualification: role-exercise
+    status: proposed
+    provenance: ADR-ES-013 §6 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability may be exercised by a Role.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: supported-by
+    object: external:concept:resource
+    qualification: resource-support
+    status: proposed
+    provenance: ADR-ES-013 §6 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability may be supported by a Resource.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: delivered-through
+    object: external:concept:service
+    qualification: service-delivery
+    status: proposed
+    provenance: ADR-ES-013 §6 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability may be delivered through a Service.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: implemented-by
+    object: external:concept:system
+    qualification: system-implementation
+    status: proposed
+    provenance: ADR-ES-013 §6 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability may be implemented by a System.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: operates-within
+    object: ES:CONCEPT:authority
+    qualification: authority-bounded
+    status: proposed
+    provenance: ADR-ES-013 §3.4 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability operates within defined Authority
+      boundaries. Unlimited authority must fail conformance per
+      CR-ES-013 §17 CI requirements.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: governed-by
+    object: external:policy:Policy
+    qualification: policy-compliance
+    status: proposed
+    provenance: ADR-ES-013 §3.4 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability is governed by applicable Policy per
+      ACAP-AUTO-CON-008.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: constrained-by
+    object: external:concept:constraint
+    qualification: constraint-compliance
+    status: proposed
+    provenance: ADR-ES-013 §3.4 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability is bounded by defined Constraints per
+      ACAP-AUTO-CON-009.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: pursues
+    object: external:concept:objective
+    qualification: objective-directed
+    status: proposed
+    provenance: ADR-ES-013 §5 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability pursues a defined Objective. The
+      realization pattern establishes objective-directed
+      progression.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: adapts-to
+    object: external:concept:context
+    qualification: adaptive-realization
+    status: proposed
+    provenance: ADR-ES-013 §3.4 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability may adapt to changing Context per
+      ACAP-AUTO-CON-010.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: produces
+    object: external:outcome:Outcome
+    qualification: outcome-production
+    status: proposed
+    provenance: ADR-ES-013 §3.4 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability produces Outcomes through bounded
+      independent progression.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: realized-through
+    object: external:concept:workflow
+    qualification: realization-mechanism
+    status: proposed
+    provenance: ADR-ES-013 §5 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability may be realized through a Workflow.
+      The execution mechanism may be human-supported, automated,
+      agentic, system-mediated, service-mediated, or hybrid.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: supported-by
+    object: external:concept:autonomous-operations
+    qualification: operational-support
+    status: proposed
+    provenance: ADR-ES-013 §10 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability may be supported by Autonomous
+      Operations. Autonomous Operations do NOT automatically make
+      every supported Capability autonomous per ACAP-AUTO-NEG-012.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: enables
+    object: external:concept:autonomous-value-stream
+    qualification: value-stream-enabler
+    status: proposed
+    provenance: ADR-ES-013 §11 ,  CR-ES-013 §7
+    rationale: |
+      Autonomous Capability may enable an Autonomous Value Stream.
+      Autonomous Value Stream does NOT automatically make every
+      enabling Capability autonomous per ACAP-AUTO-NEG-013.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: distinct-from
+    object: ES:CONCEPT:agentic-capability
+    qualification: orthogonality
+    status: proposed
+    provenance: ADR-ES-013 §7 ,  CR-ES-013 §8 ,  ACAP-AUTO-CON-015
+    rationale: |
+      Autonomous Capability is NOT Agentic Capability. The two
+      dimensions remain independent per the 2x2 matrix at the
+      capability boundary (Agentic yes/no, Autonomous yes/no).
+      The fourth state is a compositional semantic characterization.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: distinct-from
+    object: ES:CONCEPT:agent
+    qualification: what-vs-who
+    status: proposed
+    provenance: ADR-ES-013 §7 ,  CR-ES-013 §10
+    rationale: |
+      Autonomous Capability is the what (enduring ability with
+      bounded independence) ; Agent is the who (the bearer).
+      The two are distinct semantic kinds.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: distinct-from
+    object: external:concept:autonomous-operations
+    qualification: capability-vs-operations
+    status: proposed
+    provenance: ADR-ES-013 §10 ,  CR-ES-013 §11 ,  ACAP-AUTO-NEG-004
+    rationale: |
+      Autonomous Capability is the capability boundary (what an
+      Entity is able to achieve) ; Autonomous Operations is the
+      operations boundary (how ongoing operational activity
+      progresses). The two are distinct semantic kinds.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: distinct-from
+    object: external:concept:autonomous-value-stream
+    qualification: capability-vs-value-stream
+    status: proposed
+    provenance: ADR-ES-013 §11 ,  CR-ES-013 §11 ,  ACAP-AUTO-NEG-005
+    rationale: |
+      Autonomous Capability is enduring ability ; Autonomous Value
+      Stream is end-to-end autonomous value realization. The two
+      are distinct semantic kinds.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: distinct-from
+    object: external:concept:autonomous-enterprise
+    qualification: capability-vs-enterprise
+    status: proposed
+    provenance: ADR-ES-013 §12 ,  CR-ES-013 §11 ,  ACAP-AUTO-NEG-006
+    rationale: |
+      Autonomous Capability is capability-level autonomy ;
+      Autonomous Enterprise is enterprise-level autonomous
+      progression. A single Autonomous Capability does NOT
+      establish Autonomous Enterprise.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: not-implies
+    object: external:concept:ai-capability
+    qualification: ai-not-required
+    status: proposed
+    provenance: ADR-ES-013 §3.3 ,  CR-ES-013 §10 ,  ACAP-AUTO-CON-013
+    rationale: |
+      Autonomous Capability does NOT require AI. AI-enabled
+      Capability is NOT automatically Autonomous Capability per
+      ACAP-AUTO-NEG-008.
+  - subject: ES:CONCEPT:autonomous-capability
+    predicate: not-implies
+    object: external:concept:automated-capability
+    qualification: automation-not-sufficient
+    status: proposed
+    provenance: ADR-ES-013 §3.3 ,  CR-ES-013 §10 ,  ACAP-AUTO-CON-014
+    rationale: |
+      Automated Capability does NOT establish Autonomous
+      Capability per ACAP-AUTO-NEG-009. Autonomy requires
+      independent decision and action progression within bounds.
+governance: enterprise-semantics
+provenance:
+  - source: ADR-ES-002
+    note: "Universal Capability concept grounding ; semantic_type basis."
+  - source: ADR-ES-004
+    note: "Agentic semantic grounding ; behavioral foundation."
+  - source: ADR-ES-008
+    note: "Autonomous Operations lineage ; ACAP-AUTO-CON-017 supported-by relationship."
+  - source: ADR-ES-009
+    note: "Autonomous Value Stream lineage ; ACAP-AUTO-CON-016 enables relationship."
+  - source: ADR-ES-011
+    note: "Autonomous Enterprise lineage ; orthogonality at enterprise boundary mirrors orthogonality at capability boundary."
+  - source: ADR-ES-012
+    note: "Agentic Capability lineage ; establishes the 2x2 matrix at capability boundary (Agentic yes/no, Autonomous yes/no)."
+  - source: ADR-ES-013
+    note: |
+      Foundational specialization decision ; v1.2.0 release target ;
+      ACAP-AUTO-CON-001..018 invariants established ;
+      capability-level autonomy orthogonality at §7 ; capability
+      universality preserved at §3.1.
+  - source: CR-ES-013
+    note: |
+      Implementation specification ; canonical concept record ;
+      schema requirements at §4 ; required relationships at §7 ;
+      registry addition at §5 ; profile binding at §6 ; WSF
+      mapping at §15 ; OpenDEA mapping at §15 ; relationship
+      integrity at §7 ; Agentic/Autonomous orthogonality at §8.
+  - source: CR-ES-002
+    note: "Capability foundation ; CR-ES-002 implementation supplied the universal Capability concept and the relationship vocabulary that CR-ES-013 §7 references."
+  - source: FND-ES-AG-008
+    note: "WSF Tier 1 / Tier 2 Grounding Boundary (Established 2026-09-22)."
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Capability
+    relationship: references
+    note: |
+      Inherits WSF Capability grounding via the parent Capability
+      concept. The specialization does not introduce a new WSF
+      semantic kind. Detailed mapping at
+      enterprise-semantics-mappings/wsf/autonomous-capability.yaml
+      (canonicalisation held for VS-C slice).
+  - authority: opendea
+    target_id: external:opendea:Capability
+    relationship: references
+    note: |
+      References OpenDEA Capability semantics without modifying the
+      OpenDEA metamodel. Detailed mapping at
+      enterprise-semantics-mappings/opendea/autonomous-capability.yaml
+      (canonicalisation held for VS-C slice).
+created: 2026-09-24
+updated: 2026-09-24

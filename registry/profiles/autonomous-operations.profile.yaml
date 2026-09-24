@@ -1,4 +1,4 @@
-# Autonomous Operations Profile (ES:PROFILE:autonomous-operations) ;;; per CR-ES-008 §18 + ADR-ES-008 §16
+# Autonomous Operations Profile (ES:PROFILE:autonomous-operations), per CR-ES-008 §18 + ADR-ES-008 §16
 #
 # Per CR-ES-008 §18:
 #   id: ES:PROFILE:AUTONOMOUS_OPERATIONS

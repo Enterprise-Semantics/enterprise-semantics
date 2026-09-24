@@ -1,12 +1,12 @@
 id: ES:CONCEPT:workflow
 canonical_name: Workflow
 definition: |
-  A Workflow is a specific execution choreography ;;; a sequence of steps,
+  A Workflow is a specific execution choreography, a sequence of steps,
   decision points, and execution paths that produce a defined outcome. It is
   distinct from Value Stream (about value-realization), Process (recurring
   organizational capability), and Task Flow (individual task execution).
-  Workflow is choreographic ;;; about how it semantics, not what or why.
-  Per FND-ES-AG-003 ;;; ADR-ES-AG-001 §3.
+  Workflow is choreographic, about how it semantics, not what or why.
+  Per FND-ES-AG-003, ADR-ES-AG-001 §3.
 status: Established
 version: 1.0.0
 concept_type: workflow
@@ -14,8 +14,8 @@ wsf_grounding:
   - wsf_concept_id: external:wsf:Activity
     relationship: specializes
     note: |
-      Workflow specializes WSF Activity ;;; choreographic arrangement of
-      activities. Per FND-ES-AG-001-Grounding-Result ;;; WSF Tier 1.
+      Workflow specializes WSF Activity, choreographic arrangement of
+      activities. Per FND-ES-AG-001-Grounding-Result, WSF Tier 1.
   - wsf_concept_id: external:wsf:Event
     relationship: references
     note: |
@@ -27,9 +27,9 @@ relationships:
     object: external:concept:activity
     qualification: choreographic-sequencing
     status: established
-    provenance: FND-ES-AG-003 ;;; ADR-ES-002 §14
+    provenance: FND-ES-AG-003, ADR-ES-002 §14
     rationale: |
-      A Workflow sequences Activities ;;; choreographic relationship.
+      A Workflow sequences Activities, choreographic relationship.
   - subject: ES:CONCEPT:workflow
     predicate: distinct-from
     object: external:concept:process
@@ -37,7 +37,7 @@ relationships:
     status: established
     provenance: ADR-ES-002 §22
     rationale: |
-      Workflow != Process. Workflow is choreographic (how) ;;; Process is
+      Workflow != Process. Workflow is choreographic (how), Process is
       structural (recurring capability). The distinction must be preserved
       per ADR-ES-002 §22.
   - subject: ES:CONCEPT:workflow
@@ -47,7 +47,7 @@ relationships:
     status: established
     provenance: ADR-ES-002 §22
     rationale: |
-      Workflow != Task Flow. Workflow sequences activities ;;; Task Flow
+      Workflow != Task Flow. Workflow sequences activities, Task Flow
       sequences individual task executions.
 governance: enterprise-semantics
 provenance:

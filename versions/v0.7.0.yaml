@@ -1,4 +1,4 @@
-# versions/v0.7.0.yaml ;;; Autonomous Operations semantic establishment
+# versions/v0.7.0.yaml, Autonomous Operations semantic establishment
 #
 # Per CR-ES-008 §32 + ADR-ES-008 §28.
 # This version indicates semantic establishment of the Autonomous
@@ -22,8 +22,8 @@ date: 2026-09-23
 
 release_summary: |
   Semantic establishment of the Autonomous Operations concept ;; a
-  specialisation of Operations ;; with 10 canonical relationships ;;;
-  12 properties ;;; 8 characteristics ;;; 10 invariants ;;; and 2
+  specialisation of Operations ;; with 10 canonical relationships, 
+  12 properties, 8 characteristics, 10 invariants, and 2
   mappings to WSF + OpenDEA. The release adds:
     - 1 concept record (ES:CONCEPT:autonomous-operations)
     - 1 governed predicate (escalates-to)
@@ -39,19 +39,19 @@ release_summary: |
 # Tranche boundaries
 
 tranche_boundaries:
-  - CR-ES-001 ;;; Profile Semantic Construct (scaffolding)
-  - CR-ES-002 ;;; Capability Semantic Grounding (v0.1.0)
-  - CR-ES-003 ;;; Value Stream Semantic Grounding (v0.2.0)
-  - CR-ES-004 ;;; Agentic Semantic Grounding (v0.3.0 vocabulary ;; v0.4.0 vocabulary)
-  - CR-ES-005 ;;; Agentic Value Stream Semantic Grounding (v0.4.0 version ;; v0.5.0 vocabulary)
-  - CR-ES-006 ;;; Agentic Workflow Semantic Grounding (v0.5.0 version ;; v0.6.0 vocabulary)
-  - CR-ES-007 ;;; Agentic Operations Semantic Grounding (v0.6.0 version ;; v0.7.0 vocabulary)
-  - CR-ES-008 ;;; Autonomous Operations Semantic Grounding (v0.7.0 version ;; v0.8.0 vocabulary) ;; THIS RELEASE
+  - CR-ES-001, Profile Semantic Construct (scaffolding)
+  - CR-ES-002, Capability Semantic Grounding (v0.1.0)
+  - CR-ES-003, Value Stream Semantic Grounding (v0.2.0)
+  - CR-ES-004, Agentic Semantic Grounding (v0.3.0 vocabulary ;; v0.4.0 vocabulary)
+  - CR-ES-005, Agentic Value Stream Semantic Grounding (v0.4.0 version ;; v0.5.0 vocabulary)
+  - CR-ES-006, Agentic Workflow Semantic Grounding (v0.5.0 version ;; v0.6.0 vocabulary)
+  - CR-ES-007, Agentic Operations Semantic Grounding (v0.6.0 version ;; v0.7.0 vocabulary)
+  - CR-ES-008, Autonomous Operations Semantic Grounding (v0.7.0 version ;; v0.8.0 vocabulary) ;; THIS RELEASE
 
 # Architectural position
 
 architectural_position: |
-  Per ADR-ES-008 §25 ;;; the canonical semantic architecture:
+  Per ADR-ES-008 §25, the canonical semantic architecture:
     VALUE REALISATION
       Agentic Value Stream -> Value Stage
     WORK ORGANIZATION
@@ -67,7 +67,7 @@ architectural_position: |
 # Core semantic distinction
 
 core_semantic_distinction: |
-  Per ADR-ES-008 §3 + §4 + §26 ;;; the architecture distinguishes:
+  Per ADR-ES-008 §3 + §4 + §26, the architecture distinguishes:
     Agentic = mode of operation ;; how operational behavior may interpret
              ;; select ;; coordinate ;; adapt ;; and act.
     Autonomous = degree of independent operational execution ;; how
@@ -87,11 +87,11 @@ grounding:
   classification: Tier 2 Specialisation + ES-canonical novelty
   ws_foundation_reference: external:wsf:Operations (via Operations)
   notes: |
-    Per FND-ES-AG-008 §1.3 ;;; Operations is a WSF Tier 1
+    Per FND-ES-AG-008 §1.3, Operations is a WSF Tier 1
     specialisation (WSF Activity grounding). Autonomous Operations is
-    a Tier 2 Specialisation ;;; it inherits the Operations grounding
-    and adds ES-canonical novelty (the 8 characteristics ;;; 12
-    properties ;;; 10 canonical relationships).
+    a Tier 2 Specialisation, it inherits the Operations grounding
+    and adds ES-canonical novelty (the 8 characteristics, 12
+    properties, 10 canonical relationships).
 
 # Cardinal rules
 
@@ -112,7 +112,7 @@ provenance:
     note: |
       Implementation authorization ;; target release v0.7.0.
   - source: ADR-ES-007 §31
-    note: "Future Decision Candidates ;;; ADR-ES-008 chosen as natural follow-on."
+    note: "Future Decision Candidates, ADR-ES-008 chosen as natural follow-on."
   - source: FND-ES-AG-008 §1.3
     note: "Tier 1 / Tier 2 grounding classification."
   - source: https://github.com/World-Semantic-Foundation

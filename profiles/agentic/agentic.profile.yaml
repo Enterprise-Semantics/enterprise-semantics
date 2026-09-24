@@ -1,18 +1,18 @@
-# Agentic Profile (ES:PROFILE:AGENTIC) ;;; per CR-ES-004 §22 + ADR-ES-004 §6 + §16
+# Agentic Profile (ES:PROFILE:AGENTIC), per CR-ES-004 §22 + ADR-ES-004 §6 + §16
 #
 # Per CR-ES-004 §22:
 #   - id: ES:PROFILE:AGENTIC
 #   - name: Agentic
 #   - scope: Agent, Agentic, Intent, Authority, Action
 #
-# Per ADR-ES-004 §6 ;;; Agentic is modeled primarily as a semantic
+# Per ADR-ES-004 §6, Agentic is modeled primarily as a semantic
 # property / mode of operation, rather than automatically as a universal
 # Entity subtype. The Agentic Profile thus serves as a governed
-# configuration overlay ;;; not as an Entity subtype.
+# configuration overlay, not as an Entity subtype.
 #
-# Per ADR-ES-004 §16 ;;; human participation does not invalidate Agentic
-# semantics ;;; human-in/on/over-the-loop patterns are first-class
-# participation modes ;;; not exclusions.
+# Per ADR-ES-004 §16, human participation does not invalidate Agentic
+# semantics, human-in/on/over-the-loop patterns are first-class
+# participation modes, not exclusions.
 #
 # The profile remains organizational metadata, not an ontology. Per
 # CR-ES-004 §22.
@@ -21,19 +21,19 @@
 
 id: ES:PROFILE:AGENTIC
 canonical_name: Agentic
-status: Candidate ;;; promotion to Established held until CR-ES-004 promotion ritual
+status: Candidate, promotion to Established held until CR-ES-004 promotion ritual
 version: 0.1.0
-profile_type: semantic-property-overlay ;;; distinct from agentic-execution (which is a Profile family for behavior overlays)
+profile_type: semantic-property-overlay, distinct from agentic-execution (which is a Profile family for behavior overlays)
 
 scope:
-  - ES:CONCEPT:agent ;;; the Entity that operates agentically
-  - ES:CONCEPT:agentic ;;; the semantic property / mode of operation
-  - ES:CONCEPT:intent ;;; the delegated objective
-  - ES:CONCEPT:authority ;;; the bounded scope of permitted action
-  - ES:CONCEPT:action ;;; the semantic unit of agentic action selection
+  - ES:CONCEPT:agent, the Entity that operates agentically
+  - ES:CONCEPT:agentic, the semantic property / mode of operation
+  - ES:CONCEPT:intent, the delegated objective
+  - ES:CONCEPT:authority, the bounded scope of permitted action
+  - ES:CONCEPT:action, the semantic unit of agentic action selection
 
-# Per CR-ES-004 §22 ;;; the profile is organizational metadata.
-# It does NOT introduce new concepts ;;; it provides a governed configuration
+# Per CR-ES-004 §22, the profile is organizational metadata.
+# It does NOT introduce new concepts, it provides a governed configuration
 # overlay for the 5 scoped concepts.
 
 # The profile captures the 6 Agentic characteristics from ADR-ES-004 §7.1-§7.6.
@@ -84,7 +84,7 @@ boundary_distinctions:
     canonical_name: Agentic != AI
     description: |
       Agentic semantics must not be defined as synonymous with AI. An
-      agentic implementation may use AI ;;; AI is not a necessary
+      agentic implementation may use AI, AI is not a necessary
       condition for agentic action. Per ADR-ES-004 §10 + AG-INV-001.
   - id: AG-BND:agentic-vs-automation
     canonical_name: Agentic != Automation
@@ -105,41 +105,41 @@ boundary_distinctions:
       Human and non-AI agents may satisfy the foundational semantic
       definition. Per ADR-ES-004 §10 + AG-INV-004.
 
-# Architectural invariants ;;; per ADR-ES-004 §20
+# Architectural invariants, per ADR-ES-004 §20
 
 architectural_invariants:
-  - AG-INV-001 ;;; Agentic != AI
-  - AG-INV-002 ;;; Agentic != Automation
-  - AG-INV-003 ;;; Agentic != Autonomous
-  - AG-INV-004 ;;; Agent != AI Agent
-  - AG-INV-005 ;;; Agentic operation requires delegated intent or objective
-  - AG-INV-006 ;;; Agentic operation occurs within defined authority
-  - AG-INV-007 ;;; Agentic operation is outcome-oriented
-  - AG-INV-008 ;;; Human participation does not invalidate Agentic semantics
-  - AG-INV-009 ;;; Agentic Value Stream is a specialization of Value Stream (held for ADR-ES-005)
-  - AG-INV-010 ;;; Autonomy requires separate semantic grounding (ADR-ES-007)
+  - AG-INV-001, Agentic != AI
+  - AG-INV-002, Agentic != Automation
+  - AG-INV-003, Agentic != Autonomous
+  - AG-INV-004, Agent != AI Agent
+  - AG-INV-005, Agentic operation requires delegated intent or objective
+  - AG-INV-006, Agentic operation occurs within defined authority
+  - AG-INV-007, Agentic operation is outcome-oriented
+  - AG-INV-008, Human participation does not invalidate Agentic semantics
+  - AG-INV-009, Agentic Value Stream is a specialization of Value Stream (held for ADR-ES-005)
+  - AG-INV-010, Autonomy requires separate semantic grounding (ADR-ES-007)
 
-# Human participation patterns ;;; per ADR-ES-004 §16 ;;; all 3 are first-class patterns
+# Human participation patterns, per ADR-ES-004 §16, all 3 are first-class patterns
 
 human_participation_patterns:
   - id: AG-HUMAN:human-in-the-loop
     canonical_name: Human-in-the-loop
     description: |
-      Human defines intent ;;; human approves actions ;;; human is
+      Human defines intent, human approves actions, human is
       involved in each action selection. Per ADR-ES-004 §16.
   - id: AG-HUMAN:human-on-the-loop
     canonical_name: Human-on-the-loop
     description: |
-      Human supervises execution ;;; human can intervene at any time ;
-      ;;; but routine action selection is delegated. Per ADR-ES-004 §16.
+      Human supervises execution, human can intervene at any time ;
+      - but routine action selection is delegated. Per ADR-ES-004 §16.
   - id: AG-HUMAN:human-over-the-loop
     canonical_name: Human-over-the-loop
     description: |
-      Human provides governance and policy ;;; may revoke authority ;
-      ;;; set evaluation criteria for outcomes. Per ADR-ES-004 §16.
+      Human provides governance and policy, may revoke authority ;
+      - set evaluation criteria for outcomes. Per ADR-ES-004 §16.
 
 # Conceptual relationship to Agentic Execution Profile
-# Per CR-ES-004 §22 ;;; the Agentic Profile is distinct from the Agentic
+# Per CR-ES-004 §22, the Agentic Profile is distinct from the Agentic
 # Execution Profile (ES:PROFILE:AGENTIC-EXECUTION). The Execution Profile
 # is a behavior overlay for Value Streams, Workflows, Operations, and
 # Enterprises (per ADR-ES-AG-001 §3). The Agentic Profile (this file) is
@@ -154,7 +154,7 @@ related_profiles:
       on existing concepts (Value Stream, Workflow, Operations, Enterprise) ;
       ;; ES:PROFILE:AGENTIC (this profile) is a semantic-property overlay
       on the 5 foundational Agentic concepts (Agent, Agentic, Intent,
-      Authority, Action). Both are valid ;;; they apply to different
+      Authority, Action). Both are valid, they apply to different
       scopes.
 
 governance: enterprise-semantics
@@ -172,7 +172,7 @@ provenance:
 # Cardinal rules verification
 
 cardinal_rules:
-  - author: Emmanuel A. Otchere ;;; present in this file header
+  - author: Emmanuel A. Otchere, present in this file header
   - d004_dash_rule: 0 en-dash (U+2013) ;; 0 em-dash (U+2014) ;; 0 horizontal-ellipsis divider (U+2E3B) ;; 0 arrow glyph ;; uses semicolon boundary lines
   - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
   - es_sourcing: SDO-neutral standardisation only (ISO/IEC, ITU-T, ETSI, NIST)
@@ -180,9 +180,9 @@ cardinal_rules:
 # Held non-actions
 
 held_non_actions:
-  - "No Agentic Value Stream specialization ;;; per CR-ES-004 §3 + §17 ;;; governed by prospective ADR-ES-005"
-  - "No Autonomous specialization ;;; per CR-ES-004 §3 + AG-INV-003 + AG-INV-010"
-  - "No Agentic Workflow canonicalization ;;; per CR-ES-004 §3 + §15 ;;; governed by prospective ADR-ES-006"
-  - "No Agentic Operations canonicalization ;;; per CR-ES-004 §3 + §16 ;;; governed by prospective ADR-ES-007"
-  - "No profile promotion to Established ;;; held for separate governed action"
-  - "No release tag ;;; held per v3.1.4 user directive"
+  - "No Agentic Value Stream specialization, per CR-ES-004 §3 + §17, governed by prospective ADR-ES-005"
+  - "No Autonomous specialization, per CR-ES-004 §3 + AG-INV-003 + AG-INV-010"
+  - "No Agentic Workflow canonicalization, per CR-ES-004 §3 + §15, governed by prospective ADR-ES-006"
+  - "No Agentic Operations canonicalization, per CR-ES-004 §3 + §16, governed by prospective ADR-ES-007"
+  - "No profile promotion to Established, held for separate governed action"
+  - "No release tag, held per v3.1.4 user directive"

@@ -273,8 +273,8 @@ cardinal_rules:
   - status: "Candidate (per the candidate-then-established lifecycle per ADR-ES-002 §11)"
 
 held_non_actions:
-  - "Agentic Workflow not established (per CR-ES-005 §3 ;;; ADR-ES-006 future)"
-  - "Agentic Operations not established (per CR-ES-005 §3 ;;; ADR-ES-007 future)"
-  - "Autonomous Value Stream not established (per CR-ES-005 §3 ;;; ADR-ES-009 future)"
-  - "Agentic Value Stage not established (per ADR-ES-005 §18.6 rejected alternative ;;; existing Value Stage construct preserved)"
+  - "Agentic Workflow not established (per CR-ES-005 §3, ADR-ES-006 future)"
+  - "Agentic Operations not established (per CR-ES-005 §3, ADR-ES-007 future)"
+  - "Autonomous Value Stream not established (per CR-ES-005 §3, ADR-ES-009 future)"
+  - "Agentic Value Stage not established (per ADR-ES-005 §18.6 rejected alternative, existing Value Stage construct preserved)"
   - "Release tag v0.4.0 not cut (held per v3.1.4 user directive)"

@@ -1,9 +1,9 @@
-# Capability concept record ;;; per CR-ES-002 §7 template and ADR-ES-002 §1.
+# Capability concept record, per CR-ES-002 §7 template and ADR-ES-002 §1.
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
-# Status: Candidate (per scope decision ;;; promotion to Established held for a separate governed action)
-# WSF Grounding: Tier 2 Specialisation per FND-ES-AG-008 §1.3 ;;; provisional Business-Capability equivalent per WSF pre-declared pattern.
-# Identity: ES:CONCEPT:capability ;;; namespace divergence with CR-ES-002 §7 ES:CAPABILITY:... form documented in ADR-ES-002 §2.5.
+# Status: Candidate (per scope decision, promotion to Established held for a separate governed action)
+# WSF Grounding: Tier 2 Specialisation per FND-ES-AG-008 §1.3, provisional Business-Capability equivalent per WSF pre-declared pattern.
+# Identity: ES:CONCEPT:capability, namespace divergence with CR-ES-002 §7 ES:CAPABILITY:... form documented in ADR-ES-002 §2.5.
 
 id: ES:CONCEPT:capability
 canonical_name: Capability
@@ -46,7 +46,7 @@ wsf_grounding:
       §1.3, this is the Tier 2 Specialisation pattern. WSF pre-declares
       Business / Operational / Technical / Organisational / Digital
       Capability sub-kinds. ES capability is the Business-Capability
-      equivalent (provisional ;;; ADR-ES-002 §1.5 confirms).
+      equivalent (provisional, ADR-ES-002 §1.5 confirms).
 
 profile_bindings: []
 
@@ -71,7 +71,7 @@ relationships:
     rationale: |
       A Capability is realized-through a Process when execution of the
       Process exercises or manifests the Capability. This relationship
-      establishes the critical Capability-Process boundary ;;; a
+      establishes the critical Capability-Process boundary, a
       Capability must not be defined as a collection of Processes.
 
   - subject: ES:CONCEPT:capability
@@ -171,7 +171,7 @@ relationships:
     object_type: ES:CONCEPT:value-stream
     qualification: capability-substrate
     status: proposed
-    provenance: FND-ES-AG-001-Grounding-Result §7 ;;; FND-ES-AG-002 cross-ref
+    provenance: FND-ES-AG-001-Grounding-Result §7, FND-ES-AG-002 cross-ref
     rationale: |
       Value Streams are enabled by Capabilities. Preserved from prior version.
 
@@ -179,13 +179,13 @@ governance: enterprise-semantics
 
 provenance:
   - source: CR-ES-002
-    note: Capability Semantic Grounding ;;; establishes canonical definition, boundaries, relationships, identity, grounding, mappings, conformance tests.
+    note: Capability Semantic Grounding, establishes canonical definition, boundaries, relationships, identity, grounding, mappings, conformance tests.
   - source: ADR-ES-002
-    note: Capability Semantic Grounding Decision ;;; ratifies CR-ES-002 as the governed semantic decision.
+    note: Capability Semantic Grounding Decision, ratifies CR-ES-002 as the governed semantic decision.
   - source: FND-ES-AG-001-Grounding-Result §7
     note: WSF Tier 2 grounding (Capability as specialisation of Disposition derived from Capacity + Ability).
   - source: FND-ES-AG-008 §1.3
-    note: Per-concept WSF ↔ ES classification ;;; ES capability is Tier 2 Specialisation ;;; provisional Business-Capability equivalent.
+    note: Per-concept WSF ↔ ES classification, ES capability is Tier 2 Specialisation, provisional Business-Capability equivalent.
   - source: WSF live Tier 2 (Capability)
     note: WSF pre-declares Business/Operational/Technical/Organisational/Digital Capability sub-kinds.
 
@@ -195,21 +195,21 @@ mappings:
     relationship: specializes
     mapping_type: specialization
     note: |
-      Per FND-ES-AG-008 §1.3 ;;; Tier 2 Specialisation. ES capability is the
+      Per FND-ES-AG-008 §1.3, Tier 2 Specialisation. ES capability is the
       Business-Capability equivalent (provisional).
   - authority: opendea
     target_id: external:opendea:Capability
     relationship: maps-to
     mapping_type: correspondence
     note: |
-      Per CR-ES-002 §16 ;;; OpenDEA may represent Capability as an
-      architecture construct. Mapping only ;;; no metamodel modification.
+      Per CR-ES-002 §16, OpenDEA may represent Capability as an
+      architecture construct. Mapping only, no metamodel modification.
   - authority: dea-catalogs
     target_id: external:catalog:Capability
     relationship: instantiated-by
     mapping_type: instantiation
     note: |
-      Per CR-ES-002 §17 ;;; catalog entries instantiate or classify
+      Per CR-ES-002 §17, catalog entries instantiate or classify
       Capability without redefining foundational meaning.
 
 identity:
@@ -218,7 +218,7 @@ identity:
   namespace_divergence_note: |
     CR-ES-002 §7 example uses ES:CAPABILITY:<K> (4-segment, UPPERCASE).
     Existing concept record uses ES:CONCEPT:capability (3-segment, lowercase).
-    Per ADR-ES-002 §2.5, this divergence is permitted ;;; future
+    Per ADR-ES-002 §2.5, this divergence is permitted, future
     housekeeping CR can migrate identifiers.
 
 created: 2026-09-02

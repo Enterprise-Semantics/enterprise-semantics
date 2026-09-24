@@ -1,8 +1,8 @@
-# versions/v0.3.0.yaml ;;; Agentic semantic establishment
+# versions/v0.3.0.yaml, Agentic semantic establishment
 #
 # Per CR-ES-004 §29 + ADR-ES-004 §21.
 # This version indicates semantic establishment of the foundational
-# Agentic concept ;;; not maturity of the wider Enterprise-Semantics
+# Agentic concept, not maturity of the wider Enterprise-Semantics
 # program. Per CR-ES-004 §29, the version signals Agentic establishment.
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
@@ -10,7 +10,7 @@
 version:
   id: v0.3.0
   release_date: 2026-09-23
-  status: candidate ;;; awaiting ADR-ES-004 acceptance
+  status: candidate, awaiting ADR-ES-004 acceptance
   includes:
     - agent_canonical_definition ;; per §5; ES:CONCEPT:agent
     - agentic_semantic_property ;; per §6; semantic_type=SemanticProperty; not Entity subtype
@@ -26,75 +26,75 @@ version:
     - agentic_vs_automation_boundary ;; per ADR-ES-004 §8
     - agentic_vs_autonomy_boundary ;; per ADR-ES-004 §9 + §14
     - agentic_vs_ai_boundary ;; per ADR-ES-004 §10
-    - agentic_vs_workflow_boundary ;; per ADR-ES-004 §11 ;;; preparatory only (CR-ES-006 territory)
-    - agentic_operations_boundary ;; per ADR-ES-004 §12 ;;; preparatory only (CR-ES-007 territory)
-    - value_stream_boundary ;; per ADR-ES-004 §13 ;;; preparatory only (CR-ES-005 territory)
+    - agentic_vs_workflow_boundary ;; per ADR-ES-004 §11, preparatory only (CR-ES-006 territory)
+    - agentic_operations_boundary ;; per ADR-ES-004 §12, preparatory only (CR-ES-007 territory)
+    - value_stream_boundary ;; per ADR-ES-004 §13, preparatory only (CR-ES-005 territory)
     - agentic_decision_boundary ;; per ADR-ES-004 §17
-    - human_participation_patterns ;; per ADR-ES-004 §16 ;;; human-in/on/over-the-loop
+    - human_participation_patterns ;; per ADR-ES-004 §16, human-in/on/over-the-loop
     - wsf_grounding ;; pending; ES-canonical; no WSF mapping at Tier 1 or Tier 2
     - opendea_correspondence ;; pending; architectural correspondence per CR-ES-004 §20
     - dea_catalog_boundary ;; held; instantiation is downstream per CR-ES-004 §18
     - validation_rules ;; 13 per CR-ES-004 §26 (AG-CON-001..013)
     - conformance_tests ;; held; will land in VS-D test-probe slice
     - documentation ;; held; will land in VS-D docs slice
-    - worked_example ;; held; OTCHERE Inc customer service agent ;;; will land in VS-D examples slice
+    - worked_example ;; held; OTCHERE Inc customer service agent, will land in VS-D examples slice
     - visual_source ;; held; will land in VS-D visuals slice
 
   excludes:
-    - agentic_value_stream ;; per CR-ES-004 §3 ;;; out of scope ;;; governed by prospective CR-ES-005
-    - autonomous_value_stream ;; per CR-ES-004 §3 ;;; out of scope
-    - autonomous_agent ;; per CR-ES-004 §3 ;;; out of scope
-    - autonomous_enterprise ;; per CR-ES-004 §3 ;;; out of scope
-    - autonomous_operations ;; per CR-ES-004 §3 ;;; out of scope
-    - agentic_workflow_canonical ;; per CR-ES-004 §3 ;;; out of scope ;;; governed by prospective ADR-ES-006
-    - agentic_operations_canonical ;; per CR-ES-004 §3 ;;; out of scope ;;; governed by prospective ADR-ES-007
-    - ai_model_semantics ;; per CR-ES-004 §3 ;;; out of scope
-    - llm_semantics ;; per CR-ES-004 §3 ;;; out of scope
-    - vendor_specific_agent_frameworks ;; per CR-ES-004 §3 ;;; out of scope
-    - implementation_technology_standards ;; per CR-ES-004 §3 ;;; out of scope
-    - opendea_metamodel_changes ;; per CR-ES-004 §3 ;;; out of scope ;;; only correspondence recorded
-    - wsf_modifications ;; per CR-ES-004 §3 ;;; out of scope ;;; only ES-canonical novelty recorded
+    - agentic_value_stream ;; per CR-ES-004 §3, out of scope, governed by prospective CR-ES-005
+    - autonomous_value_stream ;; per CR-ES-004 §3, out of scope
+    - autonomous_agent ;; per CR-ES-004 §3, out of scope
+    - autonomous_enterprise ;; per CR-ES-004 §3, out of scope
+    - autonomous_operations ;; per CR-ES-004 §3, out of scope
+    - agentic_workflow_canonical ;; per CR-ES-004 §3, out of scope, governed by prospective ADR-ES-006
+    - agentic_operations_canonical ;; per CR-ES-004 §3, out of scope, governed by prospective ADR-ES-007
+    - ai_model_semantics ;; per CR-ES-004 §3, out of scope
+    - llm_semantics ;; per CR-ES-004 §3, out of scope
+    - vendor_specific_agent_frameworks ;; per CR-ES-004 §3, out of scope
+    - implementation_technology_standards ;; per CR-ES-004 §3, out of scope
+    - opendea_metamodel_changes ;; per CR-ES-004 §3, out of scope, only correspondence recorded
+    - wsf_modifications ;; per CR-ES-004 §3, out of scope, only ES-canonical novelty recorded
 
 governance:
   - level: CR-ES-004 (Agentic Semantic Grounding)
     role: Carrier for the 11-predicate table + per-predicate definitions + concept records + boundary tests.
   - level: ADR-ES-004 (Agentic Semantic Grounding Decision)
-    role: Ratifies the foundational Agentic decision ;;; establishes the 10 architectural invariants AG-INV-001..010.
+    role: Ratifies the foundational Agentic decision, establishes the 10 architectural invariants AG-INV-001..010.
 
 provenance:
   - source: CR-ES-004 §29
     note: Establishes Enterprise-Semantics v0.3.0 as the Agentic semantic establishment version pointer.
   - source: ADR-ES-004 §21
-    note: Implementation is via CR-ES-004 ;;; this version pointer ratifies the slice.
+    note: Implementation is via CR-ES-004, this version pointer ratifies the slice.
   - source: FND-ES-AG-008 §1.3 (Established 2026-09-22)
-    note: Establishes the per-concept WSF-grounding classification framework ;;; Agentic is ES-canonical (no WSF Tier 1/Tier 2 equivalent at this time).
+    note: Establishes the per-concept WSF-grounding classification framework, Agentic is ES-canonical (no WSF Tier 1/Tier 2 equivalent at this time).
   - source: FND-ES-AG-001-Grounding-Result
-    note: Establishes the persona-first development methodology ;;; semantic kernel 1.0.0 immutable ;;; registry/ for extensions ;;; ES specialises, does not duplicate.
+    note: Establishes the persona-first development methodology, semantic kernel 1.0.0 immutable, registry/ for extensions, ES specialises, does not duplicate.
   - source: https://github.com/Enterprise-Semantics/enterprise-semantics-governance
     note: Governance traceable via docs/adr/0006-agentic-semantic-grounding.md (Proposed) and docs/cr/0012-agentic-semantic-grounding.md (Proposed).
 
 relationships:
   version_relationship:
-    - predecessor: v0.1.0 ;;; Capability semantic establishment
-    - intermediate: v0.2.0 ;;; Value Stream semantic establishment
-    - current: v0.3.0 ;;; Agentic semantic establishment (this version)
-    - note: Per CR-ES-001 §23, version pointers are additive ;;; each tranche increments the major or minor version pointer to mark semantic establishment.
+    - predecessor: v0.1.0, Capability semantic establishment
+    - intermediate: v0.2.0, Value Stream semantic establishment
+    - current: v0.3.0, Agentic semantic establishment (this version)
+    - note: Per CR-ES-001 §23, version pointers are additive, each tranche increments the major or minor version pointer to mark semantic establishment.
 
 # Cardinal rules verification
 cardinal_rules:
-  - author: Emmanuel A. Otchere ;;; present in this file header
-  - d004_dash_rule: 0 en-dash (U+2013) ;;; 0 em-dash (U+2014) ;;; 0 horizontal-ellipsis divider (U+2E3B) ;;; 0 arrow glyph ;;; uses semicolon boundary lines
+  - author: Emmanuel A. Otchere, present in this file header
+  - d004_dash_rule: 0 en-dash (U+2013), 0 em-dash (U+2014), 0 horizontal-ellipsis divider (U+2E3B), 0 arrow glyph, uses semicolon boundary lines
   - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
   - es_sourcing: SDO-neutral standardisation only (ISO/IEC, ITU-T, ETSI, NIST)
 
 # Held non-actions
 held_non_actions:
-  - "No concept promotion to Established ;;; ES:CONCEPT:{agent,agentic,intent,authority,action} remain Candidate"
-  - "No ADR-ES-004 promotion to Accepted ;;; held for separate governed action"
-  - "No CR-ES-004 promotion to Accepted ;;; held for separate governed action"
-  - "No Agentic Value Stream semantics canonicalized ;;; per CR-ES-004 §3 + §11"
-  - "No Autonomous semantics established ;;; per CR-ES-004 §3 + AG-INV-003"
-  - "No WSF modification ;;; per CR-ES-004 §3 + §19"
-  - "No OpenDEA metamodel change ;;; per CR-ES-004 §3"
-  - "No AI model / LLM semantics ;;; per CR-ES-004 §3"
-  - "No release tag ;;; held per v3.1.4 user directive"
+  - "No concept promotion to Established, ES:CONCEPT:{agent,agentic,intent,authority,action} remain Candidate"
+  - "No ADR-ES-004 promotion to Accepted, held for separate governed action"
+  - "No CR-ES-004 promotion to Accepted, held for separate governed action"
+  - "No Agentic Value Stream semantics canonicalized, per CR-ES-004 §3 + §11"
+  - "No Autonomous semantics established, per CR-ES-004 §3 + AG-INV-003"
+  - "No WSF modification, per CR-ES-004 §3 + §19"
+  - "No OpenDEA metamodel change, per CR-ES-004 §3"
+  - "No AI model / LLM semantics, per CR-ES-004 §3"
+  - "No release tag, held per v3.1.4 user directive"

@@ -1,10 +1,10 @@
 # concepts/agentic-operations.concept.yaml ;; Agentic Operations (ES:CONCEPT:agentic-operations) ;; per CR-ES-007 §6 + ADR-ES-007 §2
 #
 # Per CR-ES-007 §2 + §6 + ADR-ES-007 §2:
-#   Agentic Operations are operations in which operational sensing ;;;
-#   interpretation ;;; decision ;;; coordination ;;; adaptation ;;; or
+#   Agentic Operations are operations in which operational sensing, 
+#   interpretation, decision, coordination, adaptation, or
 #   execution is materially performed through agentic behavior within
-#   defined intent ;;; authority ;;; and policy boundaries.
+#   defined intent, authority, and policy boundaries.
 #
 # This record supersedes the prior Profile hypothesis (FND-ES-AG-004 +
 # ADR-ES-AG-001 §3.3) with the specialisation hypothesis established
@@ -21,10 +21,10 @@ version: 0.6.0
 concept_type: agentic-operations
 
 definition: |
-  Agentic Operations are operations in which operational sensing ;;;
-  interpretation ;;; decision ;;; coordination ;;; adaptation ;;; or
+  Agentic Operations are operations in which operational sensing, 
+  interpretation, decision, coordination, adaptation, or
   execution is materially performed through agentic behavior within
-  defined intent ;;; authority ;;; and policy boundaries.
+  defined intent, authority, and policy boundaries.
 
 # Per CR-ES-007 §3 + ADR-ES-007 §2:
 #   Agentic Operations specializes Operations.
@@ -251,7 +251,7 @@ mappings:
     target_id: external:wsf:Operations
     relationship: specialization
     note: |
-      Agentic Operations is a Tier 2 Specialisation of WSF Operations ;;;
+      Agentic Operations is a Tier 2 Specialisation of WSF Operations, 
       via the Operations grounding. Per CR-ES-007 §17 + ADR-ES-007 §16.
       No new WSF foundational Agentic Operations concept is asserted.
     file: enterprise-semantics-mappings/mappings/wsf/agentic-operations.yaml
@@ -287,10 +287,10 @@ provenance:
       record. The canonical identity ES:CONCEPT:agentic-operations is
       preserved ;; the hypothesis is updated to specialisation.
   - source: ADR-ES-AG-001
-    note: Profile pattern generalised ;;; superseded by ADR-ES-007.
+    note: Profile pattern generalised, superseded by ADR-ES-007.
   - source: ADR-ES-006 §36
-    note: "Next Decision Candidates ;;; ADR-ES-007 chosen as natural follow-on."
+    note: "Next Decision Candidates, ADR-ES-007 chosen as natural follow-on."
   - source: FND-ES-AG-008 §1.3
-    note: "Tier 1 / Tier 2 grounding classification ;;; Agentic Operations is Tier 2 Specialisation."
+    note: "Tier 1 / Tier 2 grounding classification, Agentic Operations is Tier 2 Specialisation."
   - source: https://github.com/World-Semantic-Foundation
     note: WSF Activity grounding inherited via Operations.

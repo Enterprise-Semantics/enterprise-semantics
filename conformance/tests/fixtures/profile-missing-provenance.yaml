@@ -1,7 +1,7 @@
 id: ES:PROFILE:test-missing-provenance
 canonical_name: Test Missing Provenance Profile
 definition: |
-  Test profile with empty provenance ;;; should fail conformance.
+  Test profile with empty provenance, should fail conformance.
 status: Candidate
 version: 0.1.0
 profile_type: agentic-execution

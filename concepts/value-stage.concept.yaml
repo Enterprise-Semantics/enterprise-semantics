@@ -1,10 +1,10 @@
-# Value Stage concept record ;;; per CR-ES-003 §5 + §8 + §13 + ADR-ES-003 §13 + §14
+# Value Stage concept record, per CR-ES-003 §5 + §8 + §13 + ADR-ES-003 §13 + §14
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
-# Status: Candidate (per scope decision ;;; promotion to Established held for a separate governed action)
-# WSF Grounding: ES-canonical novelty ;;; Value Stage is an ES construct (WSF has no equivalent)
-# Identity: ES:CONCEPT:value-stage ;;; namespace divergence with CR-ES-003 §8 ES:VALUE-STAGE:... form documented in ADR-ES-002 §2.5 (4-segment uppercase form permitted for foundational concept records).
-# Provenance: CR-ES-003 §5 + §13 + §14 ;;; ADR-ES-003 §13 + §14 ;;; FND-ES-AG-008 §1.3
+# Status: Candidate (per scope decision, promotion to Established held for a separate governed action)
+# WSF Grounding: ES-canonical novelty, Value Stage is an ES construct (WSF has no equivalent)
+# Identity: ES:CONCEPT:value-stage, namespace divergence with CR-ES-003 §8 ES:VALUE-STAGE:... form documented in ADR-ES-002 §2.5 (4-segment uppercase form permitted for foundational concept records).
+# Provenance: CR-ES-003 §5 + §13 + §14, ADR-ES-003 §13 + §14, FND-ES-AG-008 §1.3
 
 id: ES:CONCEPT:value-stage
 canonical_name: Value Stage
@@ -131,9 +131,9 @@ governance: enterprise-semantics
 
 provenance:
   - source: CR-ES-003 §5 + §13 + §14
-    note: Canonical Value Stage definition ;;; semantic boundaries ;;; stage-level relationships.
+    note: Canonical Value Stage definition, semantic boundaries, stage-level relationships.
   - source: ADR-ES-003 §13 + §14
-    note: Foundational semantic decision ;;; Stage semantics ratified as governed.
+    note: Foundational semantic decision, Stage semantics ratified as governed.
   - source: FND-ES-AG-008 §1.3
     note: Establishes ES-canonical classification for Value Stage.
   - source: ADR-ES-002 (Enterprise Semantic Model) §22
@@ -141,8 +141,8 @@ provenance:
       process) that this concept honours.
 
 mappings:
-  # No WSF mapping ;;; Value Stage is ES-canonical. (CR-ES-003 §21 mapping
-  # record is for Value Stream only ;;; Value Stage mapping to be added if
+  # No WSF mapping, Value Stage is ES-canonical. (CR-ES-003 §21 mapping
+  # record is for Value Stream only, Value Stage mapping to be added if
   # a WSF Tier 2 Specialisation pattern emerges that anticipates Stage.)
   - authority: none
     target_id: null

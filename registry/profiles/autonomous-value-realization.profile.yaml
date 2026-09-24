@@ -1,4 +1,4 @@
-# Autonomous Value Realization Profile (ES:PROFILE:autonomous-value-realization) ;;; per CR-ES-009 §19 + ADR-ES-009 §16
+# Autonomous Value Realization Profile (ES:PROFILE:autonomous-value-realization), per CR-ES-009 §19 + ADR-ES-009 §16
 #
 # Per CR-ES-009 §19:
 #   id: ES:PROFILE:AUTONOMOUS_VALUE_REALIZATION

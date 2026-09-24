@@ -1,9 +1,9 @@
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
-# Filing: VS-B of CR-ES-003 ;;; Value Stream Semantic Grounding ;;; populates the
+# Filing: VS-B of CR-ES-003, Value Stream Semantic Grounding, populates the
 #         vocabulary with 13 governed predicates from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Vocabulary predicate map ;;; v0.9.0 ;;; 13 Value Stream predicates + 9 Capability predicates + 11 Agentic predicates + 3 Agentic Value Stream predicates + 2 Agentic Workflow predicates + 2 Agentic Operations predicates + 1 Autonomous Operations predicate + 1 Autonomous Value Stream predicate + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced predicate (process-realized-through) for Process->Workflow disambiguation
+# Vocabulary predicate map, v0.9.0, 13 Value Stream predicates + 9 Capability predicates + 11 Agentic predicates + 3 Agentic Value Stream predicates + 2 Agentic Workflow predicates + 2 Agentic Operations predicates + 1 Autonomous Operations predicate + 1 Autonomous Value Stream predicate + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced predicate (process-realized-through) for Process->Workflow disambiguation
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, relationships are first-class semantic
 # content with governed predicates. The vocabulary file is the authoritative
@@ -19,10 +19,10 @@
 
 vocabulary:
   version: 0.9.0
-  status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
+  status: candidate, awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
-    # ===== Value Stream ;;; Subject predicates (CR-ES-003 §9 + §10.1-§10.7) =====
+    # ===== Value Stream, Subject predicates (CR-ES-003 §9 + §10.1-§10.7) =====
 
     - id: ES:REL:realizes
       canonical_name: realizes
@@ -116,12 +116,12 @@ vocabulary:
       definition: |
         A Value Stream uses a Resource when the Resource provides means
         required by the Value Stream. Disambiguated from `uses` which
-        applies to Services ;;; per CR-ES-003 §9 relationship table which
+        applies to Services, per CR-ES-003 §9 relationship table which
         lists two `uses` rows (Service and Resource).
       lifecycle_status: established
       provenance: CR-ES-003 §9 (relationship table) + ADR-ES-003 §20
 
-    # ===== Capability ;;; Subject predicates (CR-ES-002 §4 + §5.2-§5.8 + ADR-ES-002 §1.4) =====
+    # ===== Capability, Subject predicates (CR-ES-002 §4 + §5.2-§5.8 + ADR-ES-002 §1.4) =====
 
     - id: ES:REL:enables
       canonical_name: enables
@@ -143,7 +143,7 @@ vocabulary:
       definition: |
         A Capability is realized-through a Process when execution of the
         Process exercises or manifests the Capability. This relationship
-        establishes the critical Capability-Process boundary ;;; the
+        establishes the critical Capability-Process boundary, the
         predicate is namespaced (capability-realized-through) to
         disambiguate from the Value Stream subject variant
         (subject_type: ES:CONCEPT:value-stream) in CR-ES-003 §10.4.
@@ -234,12 +234,12 @@ vocabulary:
       definition: |
         An Entity possesses a Capability when the Capability is associated
         with the Entity (per CR-ES-002 §5.1 + ADR-ES-002 §1.1). The
-        relationship does not assert exercise ;;; only possession or
+        relationship does not assert exercise, only possession or
         association.
       lifecycle_status: established
       provenance: CR-ES-002 §4 + §5.1 + ADR-ES-002 §1.1
 
-    # ===== Agent ;;; Subject predicates (CR-ES-004 §10 + ADR-ES-004 §14) =====
+    # ===== Agent, Subject predicates (CR-ES-004 §10 + ADR-ES-004 §14) =====
 
     - id: ES:REL:interprets
       canonical_name: interprets
@@ -275,7 +275,7 @@ vocabulary:
           An Agent acts-within Authority when the Agent's actions are
           constrained by a defined scope of permitted action, decision
           boundaries, resource limits, and escalation conditions. Per
-          ADR-ES-004 §15 ;;; Authority is required for agentic
+          ADR-ES-004 §15, Authority is required for agentic
           operation.
       lifecycle_status: established
       provenance: CR-ES-004 §10 + ADR-ES-004 §14 + §15
@@ -288,7 +288,7 @@ vocabulary:
       definition: |
           An Agent selects an Action when the Agent chooses among
           possible actions within its bounded authority. The selection
-          is context-sensitive ;;; per ADR-ES-004 §17 this is the
+          is context-sensitive, per ADR-ES-004 §17 this is the
           agentic-decision pattern (distinct from Instruction).
       lifecycle_status: established
       provenance: CR-ES-004 §10 + ADR-ES-004 §14 + §17
@@ -342,12 +342,12 @@ vocabulary:
       definition: |
           An Agent receives an Intent when the Intent is delegated to
           the Agent. The receipt establishes the Agent's interpretive
-          obligation but not the Outcome obligation ;;; Action Selection
+          obligation but not the Outcome obligation, Action Selection
           and Outcome production are separate predicates.
       lifecycle_status: established
       provenance: CR-ES-004 §10 + ADR-ES-004 §14
 
-    # ===== Intent ;;; Subject predicate (CR-ES-004 §10 + ADR-ES-004 §14) =====
+    # ===== Intent, Subject predicate (CR-ES-004 §10 + ADR-ES-004 §14) =====
 
     - id: ES:REL:guides
       canonical_name: guides
@@ -358,11 +358,11 @@ vocabulary:
           Intent guides Action when the Action is directed toward the
           Intent's communicated desired direction or purpose. Guidance
           is distinct from prescription (an Instruction prescribes an
-          Action ;;; Intent may inform multiple Actions).
+          Action, Intent may inform multiple Actions).
       lifecycle_status: established
       provenance: CR-ES-004 §10 + ADR-ES-004 §14
 
-    # ===== Authority ;;; Subject predicate (CR-ES-004 §10 + ADR-ES-004 §14 + §15) =====
+    # ===== Authority, Subject predicate (CR-ES-004 §10 + ADR-ES-004 §14 + §15) =====
 
     - id: ES:REL:constrains
       canonical_name: constrains
@@ -373,14 +373,14 @@ vocabulary:
           Authority constrains Action when the Action is limited by the
           defined scope of permitted action, decision boundaries,
           resource boundaries, escalation conditions, or constraints.
-          Per ADR-ES-004 §15 ;;; Authority may include permitted
+          Per ADR-ES-004 §15, Authority may include permitted
           actions, prohibited actions, resource limits, decision
           thresholds, escalation requirements, policy constraints, human
           approval requirements.
       lifecycle_status: established
       provenance: CR-ES-004 §10 + ADR-ES-004 §14 + §15
 
-    # ===== Action ;;; Subject predicate (CR-ES-004 §10 + ADR-ES-004 §14) =====
+    # ===== Action, Subject predicate (CR-ES-004 §10 + ADR-ES-004 §14) =====
 
     - id: ES:REL:action-produces
       canonical_name: produces
@@ -389,7 +389,7 @@ vocabulary:
       object_type: external:concept:outcome
       definition: |
           Action produces an Outcome when the Action results in the
-          intended or achieved state. Per CR-ES-004 §9 ;;; Action is
+          intended or achieved state. Per CR-ES-004 §9, Action is
           performed toward an intended result. The predicate is
           namespaced (action-produces) to disambiguate from the Agent
           subject variant (subject_type: ES:CONCEPT:agent per CR-ES-004
@@ -398,7 +398,7 @@ vocabulary:
       lifecycle_status: established
       provenance: CR-ES-004 §10 + ADR-ES-004 §14
 
-    # ===== Value Stage ;;; Stage-level predicates (CR-ES-003 §9 + §10.8-§10.11) =====
+    # ===== Value Stage, Stage-level predicates (CR-ES-003 §9 + §10.8-§10.11) =====
 
     - id: ES:REL:precedes
       canonical_name: precedes
@@ -460,7 +460,7 @@ vocabulary:
       provenance: CR-ES-003 §9 (relationship table) + ADR-ES-003 §20
 
 
-    # ;;; CR-ES-005 §7 ;; Agentic Value Stream predicates ;; VS-B tranche
+    #, CR-ES-005 §7 ;; Agentic Value Stream predicates ;; VS-B tranche
     - id: ES:REL:specializes
       canonical_name: specialises
       inverse: generalised-by
@@ -506,7 +506,7 @@ vocabulary:
       provenance: ADR-ES-005 §6 + §7 + CR-ES-005 §6
 
 
-    # ===== Agentic Workflow ;;; Subject predicates (CR-ES-006 §5 + §18 + ADR-ES-006 §18) =====
+    # ===== Agentic Workflow, Subject predicates (CR-ES-006 §5 + §18 + ADR-ES-006 §18) =====
 
     - id: ES:REL:operates-within
       canonical_name: operates-within
@@ -515,10 +515,10 @@ vocabulary:
       object_type: ES:CONCEPT:authority
       definition: |
         An Agentic Workflow operates within Authority when its dynamic
-        decisions ;;; action selections ;;; routing choices ;;; and
+        decisions, action selections, routing choices, and
         escalation requests are constrained by a defined authority. Per
         ADR-ES-006 §4.6 (Bounded Decision Authority) + §11 (Authority
-        Boundary) ;;; and CR-ES-006 §13 (Authority Integration).
+        Boundary), and CR-ES-006 §13 (Authority Integration).
       lifecycle_status: established
       provenance: ADR-ES-006 §18 + CR-ES-006 §5 + §13
 
@@ -526,11 +526,11 @@ vocabulary:
       canonical_name: realized-through
       inverse: realizes-process
       subject_type: external:concept:process
-      object_type: ES:CONCEPT:workflow ;;; may resolve to agentic-workflow via subtyping
+      object_type: ES:CONCEPT:workflow, may resolve to agentic-workflow via subtyping
       definition: |
         A Process is realized through a Workflow when workflow execution
         produces the process outcomes. Per ADR-ES-006 §6 (Relationship to
-        Process) ;;; CR-ES-006 §9 (Process Integration). When the Workflow
+        Process), CR-ES-006 §9 (Process Integration). When the Workflow
         is an Agentic Workflow ;; the process is realized through an
         agentic execution. The predicate is namespaced
         (process-realized-through) to disambiguate from
@@ -539,7 +539,7 @@ vocabulary:
       provenance: ADR-ES-006 §6 + CR-ES-006 §9
 
 
-    # ===== Agentic Operations ;;; Subject predicates (CR-ES-007 §21 + ADR-ES-007 §21) =====
+    # ===== Agentic Operations, Subject predicates (CR-ES-007 §21 + ADR-ES-007 §21) =====
 
     - id: ES:REL:responds-to
       canonical_name: responds-to
@@ -549,7 +549,7 @@ vocabulary:
       definition: |
         An Agentic Operations responds-to Operational Context when
         the operational sensing ;; interpretation ;; and decision
-        process engages with operational conditions ;; events ;;;
+        process engages with operational conditions ;; events, 
         signals ;; or state changes. Per ADR-ES-007 §6.1 + §6.2 +
         §16 + §21 + CR-ES-007 §8.3 + §17 (Operational Control Loop).
       lifecycle_status: established
@@ -562,14 +562,14 @@ vocabulary:
       object_type: external:concept:policy
       definition: |
         An Agentic Operations is governed-by Policy when the
-        operational behavior is constrained by applicable policies ;;;
+        operational behavior is constrained by applicable policies, 
         rules ;; or equivalent operational constraints. Per ADR-ES-007
         §6.7 + §21 + CR-ES-007 §8.5 + §15.
       lifecycle_status: established
       provenance: ADR-ES-007 §21 + CR-ES-007 §8.5
 
 
-    # ===== Autonomous Operations ;;; Subject predicate (CR-ES-008 §9.7 + ADR-ES-008 §17) =====
+    # ===== Autonomous Operations, Subject predicate (CR-ES-008 §9.7 + ADR-ES-008 §17) =====
 
     - id: ES:REL:escalates-to
       canonical_name: escalates-to
@@ -587,7 +587,7 @@ vocabulary:
       provenance: ADR-ES-008 §17 + CR-ES-008 §9.7
 
 
-    # ===== Autonomous Value Stream ;;; Subject predicate (CR-ES-009 §8 + ADR-ES-009 §18) =====
+    # ===== Autonomous Value Stream, Subject predicate (CR-ES-009 §8 + ADR-ES-009 §18) =====
 
     - id: ES:REL:contains
       canonical_name: contains

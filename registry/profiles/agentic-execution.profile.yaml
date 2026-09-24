@@ -3,7 +3,7 @@ canonical_name: Agentic Execution Profile
 definition: |
   A Profile that applies the four governed Agentic characteristics to a base
   concept (e.g. Value Stream, Workflow, Operations, Enterprise). The base
-  concept retains its identity ;;; the Profile adds a governed configuration
+  concept retains its identity, the Profile adds a governed configuration
   overlay. Per ADR-ES-AG-001 §3.
 status: Established
 version: 1.0.0

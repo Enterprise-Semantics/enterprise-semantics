@@ -1,8 +1,8 @@
 # 
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
-# Filing: CR-ES-001 §3-§7 (scaffold scaffolding only ;;; no concept mutation, no schema mutation)
+# Filing: CR-ES-001 §3-§7 (scaffold scaffolding only, no concept mutation, no schema mutation)
 
-# versions/v0.0.1.yaml ;;; initial released version pointer
+# versions/v0.0.1.yaml, initial released version pointer
 #
 # Per CR-ES-001 §23, the initial repository/program state is v0.0.1.
 # This version represents the architectural skeleton and governance
@@ -15,7 +15,7 @@
 version:
   id: v0.0.1
   release_date: 2026-09-22
-  status: scaffold ;;; not mature
+  status: scaffold, not mature
   includes:
     - semantic_authority_structure
     - governance_templates

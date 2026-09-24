@@ -1,9 +1,9 @@
-# Agent concept record ;;; per CR-ES-004 §5 + ADR-ES-004 §5
+# Agent concept record, per CR-ES-004 §5 + ADR-ES-004 §5
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
-# Status: Candidate (per scope decision ;;; promotion to Established held for a separate governed action)
-# WSF Grounding: ES-canonical (Agent is a foundational ES construct ;;; WSF does not define an Agent concept at Tier 1 or Tier 2)
-# Identity: ES:CONCEPT:agent ;;; namespace divergence with CR-ES-004 §5 schema field (where the id field is empty in the body) documented below
+# Status: Candidate (per scope decision, promotion to Established held for a separate governed action)
+# WSF Grounding: ES-canonical (Agent is a foundational ES construct, WSF does not define an Agent concept at Tier 1 or Tier 2)
+# Identity: ES:CONCEPT:agent, namespace divergence with CR-ES-004 §5 schema field (where the id field is empty in the body) documented below
 
 id: ES:CONCEPT:agent
 canonical_name: Agent
@@ -26,8 +26,8 @@ definition: |
 
   The concept "AI Agent" shall therefore be treated as a possible
   specialization or implementation of Agent rather than as the
-  definition of Agent itself. Per ADR-ES-004 §10 ;;; Agent != AI Agent
-  ;;; AI is not a necessary condition for Agentic action.
+  definition of Agent itself. Per ADR-ES-004 §10, Agent != AI Agent
+  - AI is not a necessary condition for Agentic action.
 
 status: Candidate
 version: 0.1.0
@@ -36,10 +36,10 @@ wsf_grounding:
   - wsf_concept_id: null
     relationship: null
     note: |
-      Agent is ES-canonical ;;; no WSF Tier 1 or Tier 2 equivalent at
-      the time of CR-ES-004 implementation. Per ADR-ES-004 §5 ;;; the
+      Agent is ES-canonical, no WSF Tier 1 or Tier 2 equivalent at
+      the time of CR-ES-004 implementation. Per ADR-ES-004 §5, the
       semantic classification is "Entity capable of interpreting
-      delegated intent" ;;; WSF does not define this construct directly.
+      delegated intent", WSF does not define this construct directly.
       Future WSF integration is governed by separate ADR/CR.
 
 profile_bindings: []
@@ -108,7 +108,7 @@ relationships:
     rationale: |
       An Agent produces an Outcome when the Agent's actions result in
       the intended or achieved state. The Outcome may or may not be
-      the original Intent's target ;;; Action Selection may produce
+      the original Intent's target, Action Selection may produce
       emergent Outcomes.
 
   - subject: ES:CONCEPT:agent
@@ -133,32 +133,32 @@ relationships:
     rationale: |
       An Agent receives an Intent when the Intent is delegated to the
       Agent. The receipt establishes the Agent's interpretive
-      obligation but not the Outcome obligation ;;; Action Selection
+      obligation but not the Outcome obligation, Action Selection
       and Outcome production are separate predicates.
 
 exclusions:
-  - AI Agent ;;; per ADR-ES-004 §10 ;;; AI Agent is a possible specialization of Agent, not the definition
-  - Autonomous Agent ;;; per ADR-ES-004 §14 ;;; autonomy requires separate semantic grounding (ADR-ES-007)
-  - Process ;;; per ADR-ES-004 §13 ;;; Agent is distinct from Process
-  - Activity ;;; per ADR-ES-004 §9 ;;; Action is the semantic unit required for agentic action selection ;;; Activity is execution-level
-  - System ;;; per ADR-ES-004 §5 ;;; System may support or implement an Agent but is not itself an Agent
-  - Role ;;; per CR-ES-004 §5 ;;; Role identifies responsibility, Agent identifies the entity with the ability to act
+  - AI Agent, per ADR-ES-004 §10, AI Agent is a possible specialization of Agent, not the definition
+  - Autonomous Agent, per ADR-ES-004 §14, autonomy requires separate semantic grounding (ADR-ES-007)
+  - Process, per ADR-ES-004 §13, Agent is distinct from Process
+  - Activity, per ADR-ES-004 §9, Action is the semantic unit required for agentic action selection, Activity is execution-level
+  - System, per ADR-ES-004 §5, System may support or implement an Agent but is not itself an Agent
+  - Role, per CR-ES-004 §5, Role identifies responsibility, Agent identifies the entity with the ability to act
 
 governance: enterprise-semantics
 provenance:
   - source: CR-ES-004 §5 + ADR-ES-004 §5
     note: Foundational Agent concept definition. An Entity capable of interpreting delegated intent, selecting or coordinating actions, and acting within defined authority toward an intended outcome.
   - source: ADR-ES-004 §10
-    note: Establishes the Agent != AI Agent architectural invariant (AG-INV-004) ;;; AI Agent is a possible specialization of Agent, not the definition.
+    note: Establishes the Agent != AI Agent architectural invariant (AG-INV-004), AI Agent is a possible specialization of Agent, not the definition.
   - source: CR-ES-004 §10 + ADR-ES-004 §14
     note: Authorises the 7 governed Agent subject-level predicates (interprets, pursues, acts-within, selects, coordinates, produces, adapts-to, receives).
   - source: https://github.com/Enterprise-Semantics/enterprise-semantics-governance
     note: Governance traceable via docs/adr/0006-agentic-semantic-grounding.md (Proposed) and docs/cr/0012-agentic-semantic-grounding.md (Proposed).
 
 mappings:
-  wsf: pending ;;; ES-canonical ;;; no WSF mapping required for foundational establishment
-  opendea: pending ;;; architectural correspondence to be recorded in mappings/opendea/agentic.yaml per CR-ES-004 §20
-  dea_catalog: held ;;; instantiation is downstream per CR-ES-004 §18 ;;; no catalog instantiation at this scope
+  wsf: pending, ES-canonical, no WSF mapping required for foundational establishment
+  opendea: pending, architectural correspondence to be recorded in mappings/opendea/agentic.yaml per CR-ES-004 §20
+  dea_catalog: held, instantiation is downstream per CR-ES-004 §18, no catalog instantiation at this scope
 
 lifecycle:
   status: candidate

@@ -12,6 +12,6 @@ characteristics:
 governance: enterprise-semantics
 provenance:
   - source: conformance/tests/fixtures/profile-invalid-id.yaml
-    note: Test fixture ;;; should fail.
+    note: Test fixture, should fail.
 mappings: []
 created: 2026-09-02

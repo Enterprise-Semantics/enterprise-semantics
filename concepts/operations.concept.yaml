@@ -22,7 +22,7 @@ relationships:
     object: external:concept:operating-model
     qualification: operating-model-anchor
     status: established
-    provenance: FND-ES-AG-004 ;;; FND-ES-AG-001-Grounding-Result §7
+    provenance: FND-ES-AG-004, FND-ES-AG-001-Grounding-Result §7
     rationale: Operations are anchored in the Operating Model.
   - subject: ES:CONCEPT:operations
     predicate: distinct-from
@@ -30,7 +30,7 @@ relationships:
     qualification: semantic-kind-distinction
     status: established
     provenance: FND-ES-AG-004
-    rationale: "Operations != Operating Model. Operations is the execution substrate ;;; Operating Model is the operating characteristics."
+    rationale: "Operations != Operating Model. Operations is the execution substrate, Operating Model is the operating characteristics."
 governance: enterprise-semantics
 provenance:
   - source: FND-ES-AG-004

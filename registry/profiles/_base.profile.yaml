@@ -1,7 +1,7 @@
-# _base.profile.yaml ;;; Profile conventions + canonical example
+# _base.profile.yaml, Profile conventions + canonical example
 #
 # This file documents the Profile semantic construct per ADR-ES-AG-001 §3.
-# It is NOT a real Profile ;;; it is a self-documenting example.
+# It is NOT a real Profile, it is a self-documenting example.
 #
 # A real Profile lives in a separate YAML file (e.g. agentic-execution.profile.yaml)
 # and conforms to schema/profile.schema.json.
@@ -11,7 +11,7 @@
 #   2. Replace the id, canonical_name, definition, profile_type, characteristics.
 #   3. Update provenance and mappings.
 #   4. Run `python3 conformance/check.py` to validate.
-#   5. Open a PR ;;; review + accept before merge.
+#   5. Open a PR, review + accept before merge.
 #
 # Profile identity convention (per ADR-ES-002 §11):
 #   ES:PROFILE:<kebab-case-name>
@@ -25,19 +25,19 @@
 #   Each characteristic should be reusable across Profiles within a type.
 #
 # Lifecycle status (per ADR-ES-002 §13):
-#   Candidate ;;; Investigating ;;; Proposed ;;; Established ;;; Canonical
-#                              ;; Mapped ;;; Deprecated ;;; Retired
+#   Candidate, Investigating, Proposed, Established, Canonical
+#                              ;; Mapped, Deprecated, Retired
 #
 # Versioning (semver):
-#   Major ;;; breaking change to Profile shape or characteristics.
-#   Minor ;;; additive characteristic or mapping.
-#   Patch ;;; definition, provenance, or documentation fix.
+#   Major, breaking change to Profile shape or characteristics.
+#   Minor, additive characteristic or mapping.
+#   Patch, definition, provenance, or documentation fix.
 #
-# Example structure (DO NOT use this id ;;; it is illustrative only):
+# Example structure (DO NOT use this id, it is illustrative only):
 
 example_id:
   id: ES:PROFILE:example-do-not-use
-  canonical_name: Example Profile ;;; Do Not Use
+  canonical_name: Example Profile, Do Not Use
   definition: |
     This Profile exists only to document Profile YAML conventions.
     Do not register or cite it.

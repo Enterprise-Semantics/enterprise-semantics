@@ -1,4 +1,4 @@
-# versions/v0.6.0.yaml ;;; Agentic Operations semantic establishment
+# versions/v0.6.0.yaml, Agentic Operations semantic establishment
 #
 # Per CR-ES-007 §30 + ADR-ES-007 §30.
 # This version indicates semantic establishment of the Agentic
@@ -22,7 +22,7 @@ date: 2026-09-23
 
 release_summary: |
   Semantic establishment of the Agentic Operations concept ;; a
-  specialisation of Operations ;; with 9 canonical relationships ;;;
+  specialisation of Operations ;; with 9 canonical relationships, 
   10 properties ;; 8 characteristics ;; 8 invariants ;; and 2 mappings
   to WSF + OpenDEA. The release adds:
     - 1 concept record (ES:CONCEPT:agentic-operations)
@@ -38,18 +38,18 @@ release_summary: |
 # Tranche boundaries
 
 tranche_boundaries:
-  - CR-ES-001 ;;; Profile Semantic Construct (scaffolding)
-  - CR-ES-002 ;;; Capability Semantic Grounding (v0.1.0)
-  - CR-ES-003 ;;; Value Stream Semantic Grounding (v0.2.0)
-  - CR-ES-004 ;;; Agentic Semantic Grounding (v0.3.0 vocabulary ;; v0.4.0 vocabulary)
-  - CR-ES-005 ;;; Agentic Value Stream Semantic Grounding (v0.4.0 version ;; v0.5.0 vocabulary)
-  - CR-ES-006 ;;; Agentic Workflow Semantic Grounding (v0.5.0 version ;; v0.6.0 vocabulary)
-  - CR-ES-007 ;;; Agentic Operations Semantic Grounding (v0.6.0 version ;; v0.7.0 vocabulary) ;; THIS RELEASE
+  - CR-ES-001, Profile Semantic Construct (scaffolding)
+  - CR-ES-002, Capability Semantic Grounding (v0.1.0)
+  - CR-ES-003, Value Stream Semantic Grounding (v0.2.0)
+  - CR-ES-004, Agentic Semantic Grounding (v0.3.0 vocabulary ;; v0.4.0 vocabulary)
+  - CR-ES-005, Agentic Value Stream Semantic Grounding (v0.4.0 version ;; v0.5.0 vocabulary)
+  - CR-ES-006, Agentic Workflow Semantic Grounding (v0.5.0 version ;; v0.6.0 vocabulary)
+  - CR-ES-007, Agentic Operations Semantic Grounding (v0.6.0 version ;; v0.7.0 vocabulary) ;; THIS RELEASE
 
 # Architectural position
 
 architectural_position: |
-  Per ADR-ES-007 §26 ;;; the canonical semantic architecture:
+  Per ADR-ES-007 §26, the canonical semantic architecture:
     VALUE
       Agentic Value Stream -> Value Stage
     WORK ORGANIZATION
@@ -69,11 +69,11 @@ grounding:
   classification: Tier 2 Specialisation + ES-canonical novelty
   ws_foundation_reference: external:wsf:Operations (via Operations)
   notes: |
-    Per FND-ES-AG-008 §1.3 ;;; Operations is a WSF Tier 1
+    Per FND-ES-AG-008 §1.3, Operations is a WSF Tier 1
     specialisation (WSF Activity grounding). Agentic Operations is
-    a Tier 2 Specialisation ;;; it inherits the Operations grounding
-    and adds ES-canonical novelty (the 8 characteristics ;;; 10
-    properties ;;; 9 canonical relationships).
+    a Tier 2 Specialisation, it inherits the Operations grounding
+    and adds ES-canonical novelty (the 8 characteristics, 10
+    properties, 9 canonical relationships).
 
 # Cardinal rules
 
@@ -96,7 +96,7 @@ provenance:
       with enterprise operations without collapsing either into the
       other.
   - source: ADR-ES-006 §36
-    note: "Next Decision Candidates ;;; ADR-ES-007 chosen as natural follow-on."
+    note: "Next Decision Candidates, ADR-ES-007 chosen as natural follow-on."
   - source: FND-ES-AG-008 §1.3
     note: "Tier 1 / Tier 2 grounding classification."
   - source: https://github.com/World-Semantic-Foundation

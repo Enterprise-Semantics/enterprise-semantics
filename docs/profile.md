@@ -4,7 +4,7 @@ Per [ADR-ES-AG-001 §3](https://github.com/Enterprise-Semantics/enterprise-seman
 
 ## What is a Profile?
 
-A `Profile` is a governed configuration overlay on a base concept. It does **not** introduce a new semantic kind ;;; the base concept retains its identity. The Profile adds a governed set of characteristics that apply when the Profile is active.
+A `Profile` is a governed configuration overlay on a base concept. It does **not** introduce a new semantic kind, the base concept retains its identity. The Profile adds a governed set of characteristics that apply when the Profile is active.
 
 ```text
 Profile
@@ -31,9 +31,9 @@ A Profile:
 
 This repository governs a family of Profiles:
 
-- `agentic-execution` ;;; the Agentic profile (per ADR-ES-AG-001).
-- `autonomous-operation` ;;; reserved for future Autonomous semantic work.
-- `example-do-not-use` ;;; documentation only.
+- `agentic-execution`, the Agentic profile (per ADR-ES-AG-001).
+- `autonomous-operation`, reserved for future Autonomous semantic work.
+- `example-do-not-use`, documentation only.
 
 See [`registry/profile-types.yaml`](../registry/profile-types.yaml) for the canonical registry.
 
@@ -52,7 +52,7 @@ See [`registry/profile-types.yaml`](../registry/profile-types.yaml) for the cano
    - `mappings` (list of bi-directional mappings, can be empty)
 3. Save as `<profile-id>.yaml` in `registry/profiles/`.
 4. Run `python3 conformance/check.py` to validate.
-5. Open a PR ;;; review + accept before merge.
+5. Open a PR, review + accept before merge.
 
 ## Profile YAML schema
 
@@ -130,6 +130,6 @@ Promotion rules:
 
 ## Related
 
-- [ADR-ES-AG-001](https://github.com/Enterprise-Semantics/enterprise-semantics-governance/blob/main/docs/adr/0003-agentic-semantic-decision.md) ;;; Agentic Semantic Decision (Accepted 2026-09-02).
-- [CR-ES-AG-001](https://github.com/Enterprise-Semantics/enterprise-semantics-governance/blob/main/docs/cr/0001-profile-semantic-construct.md) ;;; this CR.
-- [ADR-ES-002](https://github.com/Enterprise-Semantics/enterprise-semantics-governance/blob/main/docs/adr/0002-enterprise-semantic-model.md) ;;; Enterprise Semantic Model.
+- [ADR-ES-AG-001](https://github.com/Enterprise-Semantics/enterprise-semantics-governance/blob/main/docs/adr/0003-agentic-semantic-decision.md), Agentic Semantic Decision (Accepted 2026-09-02).
+- [CR-ES-AG-001](https://github.com/Enterprise-Semantics/enterprise-semantics-governance/blob/main/docs/cr/0001-profile-semantic-construct.md), this CR.
+- [ADR-ES-002](https://github.com/Enterprise-Semantics/enterprise-semantics-governance/blob/main/docs/adr/0002-enterprise-semantic-model.md), Enterprise Semantic Model.

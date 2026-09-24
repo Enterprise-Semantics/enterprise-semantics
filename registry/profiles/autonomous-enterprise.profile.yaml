@@ -1,0 +1,87 @@
+# registry/profiles/autonomous-enterprise.profile.yaml ; Autonomous Enterprise Profile (ES:PROFILE:autonomous-enterprise) ; per CR-ES-011 §7 + ADR-ES-011 §24
+#
+# Per CR-ES-011 §7 + ADR-ES-011 §24:
+#   The Autonomous Enterprise Profile groups Autonomous Enterprise
+#   specialisations for discoverability. Profile membership does NOT
+#   imply semantic inheritance (per ADR-ES-011 §11 + §24). The Profile
+#   applies the enterprise-level autonomous characteristics to a base
+#   Enterprise concept.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:autonomous-enterprise
+canonical_name: Autonomous Enterprise Profile
+definition: |
+  A Profile that groups Autonomous Enterprise specialisations for
+  discoverability per CR-ES-011 §7 + ADR-ES-011 §24. The Profile
+  applies enterprise-level autonomous characteristics to a base
+  Enterprise concept. Profile membership does NOT imply semantic
+  inheritance, the base Enterprise concept retains its identity.
+status: Proposed
+version: 1.0.0
+profile_type: autonomous-enterprise
+applies_to:
+  - enterprise
+characteristics:
+  - id: ES:CHAR:autonomous-decision-making
+    canonical_name: Autonomous decision-making
+    description: |
+      The enterprise can independently make defined decisions within
+      authorised boundaries, including demand response, resource
+      allocation, operational prioritisation, service response,
+      fulfillment decisions, and exception resolution (per
+      ADR-ES-011 §7.1).
+  - id: ES:CHAR:autonomous-coordination
+    canonical_name: Autonomous coordination
+    description: |
+      The enterprise can independently coordinate relevant processes,
+      workflows, operations, services, resources, agents, systems,
+      and value-stage progression within authorised boundaries (per
+      ADR-ES-011 §7.2).
+  - id: ES:CHAR:autonomous-execution
+    canonical_name: Autonomous execution
+    description: |
+      The enterprise can independently initiate or execute authorised
+      actions without requiring human approval for each action. This
+      does not imply unlimited execution authority (per ADR-ES-011
+      §7.3).
+  - id: ES:CHAR:autonomous-adaptation
+    canonical_name: Autonomous adaptation
+    description: |
+      The enterprise can modify relevant behaviour in response to
+      environmental conditions, stakeholder conditions, operational
+      conditions, demand, resource availability, exceptions, and
+      observed outcomes within defined constraints (per ADR-ES-011
+      §7.4).
+  - id: ES:CHAR:autonomous-value-progression
+    canonical_name: Autonomous value progression
+    description: |
+      Material value realisation may progress through defined value
+      stages without human intervention at every stage-level decision
+      while remaining bounded by authority, policies, constraints,
+      and governance (per ADR-ES-011 §7.5).
+  - id: ES:CHAR:bounded-authority
+    canonical_name: Bounded authority
+    description: |
+      Autonomous behaviour operates within defined objectives,
+      authority, policies, constraints, decision scope, action scope,
+      and escalation boundary. Unlimited authority is explicitly
+      incompatible with the Autonomous Enterprise semantic model (per
+      AE-AUTO-CON-005 + AE-AUTO-CON-018).
+  - id: ES:CHAR:human-intervention-compatible
+    canonical_name: Human intervention compatible
+    description: |
+      Human participation is permitted: strategic direction,
+      governance bodies, policy owners, exception escalation,
+      intervention authority, regulatory oversight, human approval
+      for high-impact decisions, emergency intervention, and
+      accountability mechanisms. Autonomous does not mean human-free
+      (per AE-AUTO-CON-010 + ADR-ES-011 §9).
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-011
+    note: "Autonomous Enterprise Semantic Grounding implementation ; slot 0019"
+  - source: ADR-ES-011
+    note: "Autonomous Enterprise Semantic Grounding decision ; slot 0013"
+created: 2026-09-24
+updated: 2026-09-24

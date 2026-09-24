@@ -1,0 +1,16 @@
+version: v1.2.0
+release_date: 2026-09-24
+release_type: minor
+prior_version: v1.1.0
+includes:
+  - autonomous-capability
+notes: |
+  Second post-v1.0.0 minor release. Completes the Capability 2x2
+  matrix established by v1.1.0 by adding Autonomous Capability as
+  the orthogonal specialization of Capability per ADR-ES-013 and
+  CR-ES-013. The four states at the capability boundary are now
+  structurally complete: Conventional (Agentic=no, Autonomous=no),
+  Agentic (Agentic=yes, Autonomous=no), Autonomous (Agentic=no,
+  Autonomous=yes), and Agentic+Autonomous (compositional semantic
+  characterization, not a new concept). Preserves all preceding
+  semantic contracts from v0.0.1 through v1.1.0.

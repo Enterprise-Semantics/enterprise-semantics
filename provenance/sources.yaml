@@ -1,14 +1,14 @@
 # 
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
-# Filing: CR-ES-001 §3-§7 (scaffold scaffolding only ;;; no concept mutation, no schema mutation)
+# Filing: CR-ES-001 §3-§7 (scaffold scaffolding only, no concept mutation, no schema mutation)
 
-# provenance/sources.yaml ;;; SOURCE provenance registry
+# provenance/sources.yaml, SOURCE provenance registry
 #
 # Per CR-ES-001 §9 and ADR-ES-001 §14, provenance distinguishes:
 #   SOURCE, RESEARCH, FINDING, DECISION, IMPLEMENTATION, MAPPING.
 #
 # This file tracks external sources that contributed to ES concepts.
-# Empty at v0.0.1 ;;; first entries will be added by concept-specific ADRs.
+# Empty at v0.0.1, first entries will be added by concept-specific ADRs.
 
 sources:
   version: 0.0.1

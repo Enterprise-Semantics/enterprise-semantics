@@ -1,6 +1,6 @@
 <!--
 Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
-Filing: CR-ES-001 §3-§7 (scaffold scaffolding only ;;; no concept mutation, no schema mutation)
+Filing: CR-ES-001 §3-§7 (scaffold scaffolding only, no concept mutation, no schema mutation)
 -->
 
 # Relationships

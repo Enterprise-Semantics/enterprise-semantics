@@ -1,4 +1,4 @@
-# Agentic Operations Profile (ES:PROFILE:agentic-operations) ;;; per CR-ES-007 §16 + ADR-ES-007 §16
+# Agentic Operations Profile (ES:PROFILE:agentic-operations), per CR-ES-007 §16 + ADR-ES-007 §16
 #
 # Per CR-ES-007 §16:
 #   id: ES:PROFILE:AGENTIC_OPERATIONS
@@ -47,7 +47,7 @@ characteristics:
   - id: ES:CHAR:agentic-coordination-operational
     canonical_name: Agentic coordination (operational)
     description: |
-      Agents may coordinate operational activities ;; processes ;;;
+      Agents may coordinate operational activities ;; processes, 
       workflows ;; services ;; systems ;; resources ;; or other
       Agents ;; per ADR-ES-007 §6.4.
   - id: ES:CHAR:adaptive-execution-operational

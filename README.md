@@ -23,9 +23,9 @@ As of 2026-09-22 (CR-ES-001 scaffolding landing), the following directories exis
 | `relationships/vocabulary.yaml` + `relationships/inverse.yaml` | Governed predicate vocabulary and inverse map | 33 governed predicates (13 Value Stream + 9 Capability + 11 Agentic, v0.4.0, awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance) |
 | `provenance/sources.yaml` + `provenance/findings.yaml` + `provenance/decisions.yaml` | Provenance registries (SOURCE, FINDING, DECISION) | Scaffold, empty (per CR-ES-001 §9) |
 | `versions/v0.0.1.yaml` | Initial released version pointer | Scaffold, not mature (per CR-ES-001 §23) |
-| `versions/v0.2.0.yaml` | Value Stream semantic establishment version pointer | v0.2.0, candidate (per CR-ES-003 §34 ;;; awaiting ADR-ES-003 acceptance) |
-| `versions/v0.1.0.yaml` | Capability semantic establishment version pointer | v0.1.0, candidate (per CR-ES-002 §24 ;;; awaiting ADR-ES-002 acceptance) |
-| `versions/v0.3.0.yaml` | Agentic semantic establishment version pointer | v0.3.0, candidate (per CR-ES-004 §29 ;;; awaiting ADR-ES-004 acceptance) |
+| `versions/v0.2.0.yaml` | Value Stream semantic establishment version pointer | v0.2.0, candidate (per CR-ES-003 §34, awaiting ADR-ES-003 acceptance) |
+| `versions/v0.1.0.yaml` | Capability semantic establishment version pointer | v0.1.0, candidate (per CR-ES-002 §24, awaiting ADR-ES-002 acceptance) |
+| `versions/v0.3.0.yaml` | Agentic semantic establishment version pointer | v0.3.0, candidate (per CR-ES-004 §29, awaiting ADR-ES-004 acceptance) |
 | `docs/profile.md` | Human-readable Profile pattern documentation | Implemented |
 
 ## Relationship to other repositories
@@ -46,7 +46,7 @@ As of 2026-09-22 (CR-ES-001 scaffolding landing), the following directories exis
                      WSF
                       : foundation grounding
                       v
-             ENTERPRISE SEMANTICS  ;;; this repository lives here
+             ENTERPRISE SEMANTICS , this repository lives here
                       : enterprise semantic grounding
                       v
                    OpenDEA

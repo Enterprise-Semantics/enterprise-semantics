@@ -1,4 +1,4 @@
-# Agentic Value Realization Profile (ES:PROFILE:agentic-value-realization) ;;; per CR-ES-005 §14 + ADR-ES-005 §6 + §16
+# Agentic Value Realization Profile (ES:PROFILE:agentic-value-realization), per CR-ES-005 §14 + ADR-ES-005 §6 + §16
 #
 # Per CR-ES-005 §14:
 #   id: ES:PROFILE:AGENTIC_VALUE_REALIZATION
@@ -20,7 +20,7 @@ canonical_name: Agentic Value Realization
 definition: |
   A Profile that provides discoverability and grouping for Agentic Value
   Stream specialisations. Per CR-ES-005 §14 + ADR-ES-005 §6. The profile
-  is not an inheritance hierarchy ;;; it is a semantic overlay for
+  is not an inheritance hierarchy, it is a semantic overlay for
   grouping related concepts.
 status: Candidate
 version: 0.1.0

@@ -1,6 +1,6 @@
 <!--
 Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
-Filing: CR-ES-001 §10 + §11-§13 (governance scaffolding ;;; no destructive replaces)
+Filing: CR-ES-001 §10 + §11-§13 (governance scaffolding, no destructive replaces)
 -->
 
 # Semantic Profiles
@@ -9,7 +9,7 @@ This directory holds semantic Profile records per CR-ES-001 §18 and ADR-ES-001 
 
 ## Profile vs Profile record
 
-A **Profile** in Enterprise-Semantics is a governed configuration overlay applied to a base concept. The base concept retains its semantic identity ;;; the Profile adds characteristics.
+A **Profile** in Enterprise-Semantics is a governed configuration overlay applied to a base concept. The base concept retains its semantic identity, the Profile adds characteristics.
 
 A **Profile record** is a YAML file in one of the subdirectories below that declares:
 

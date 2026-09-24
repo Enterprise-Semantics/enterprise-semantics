@@ -2,13 +2,13 @@
 #
 # Per CR-ES-008 §2 + §6 + ADR-ES-008 §2:
 #   Autonomous Operations are operations capable of independently
-#   sensing ;; interpreting ;; deciding ;; coordinating ;; executing ;;;
-#   and adapting operational behavior within defined objectives ;;;
+#   sensing ;; interpreting ;; deciding ;; coordinating ;; executing, 
+#   and adapting operational behavior within defined objectives, 
 #   authority ;; policies ;; and constraints without requiring human
 #   intervention for every operational decision or action.
 #
 # This is a fresh canonical record (no prior Phase 1 record exists for
-# autonomous-operations) ;;; no architectural conflict to resolve.
+# autonomous-operations), no architectural conflict to resolve.
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
 
@@ -20,8 +20,8 @@ concept_type: autonomous-operations
 
 definition: |
   Autonomous Operations are operations capable of independently
-  sensing ;; interpreting ;; deciding ;; coordinating ;; executing ;;;
-  and adapting operational behavior within defined objectives ;;;
+  sensing ;; interpreting ;; deciding ;; coordinating ;; executing, 
+  and adapting operational behavior within defined objectives, 
   authority ;; policies ;; and constraints without requiring human
   intervention for every operational decision or action.
 
@@ -266,16 +266,16 @@ characteristics:
 # Per ADR-ES-008 §23 + CR-ES-008 §25: semantic invariants
 
 invariants:
-  - AUTO-INV-001 ;; Autonomous Operations != Operations merely containing an Agent ;;; per ADR-ES-008 §23 ;; material-participation criterion
-  - AUTO-INV-002 ;; Autonomous Operations != AI Operations ;;; per ADR-ES-008 §19 + §23
-  - AUTO-INV-003 ;; Autonomous Operations != Agentic Operations ;;; per ADR-ES-008 §9 + §10 + §13 + AOP-AUTO-CON-014
-  - AUTO-INV-004 ;; Autonomous Operations != Automation ;;; per ADR-ES-008 §11 + §23
-  - AUTO-INV-005 ;; Autonomous Operations != Unattended Operations ;;; per ADR-ES-008 §23
-  - AUTO-INV-006 ;; Autonomous Operations != Human-free Operations ;;; per ADR-ES-008 §23
-  - AUTO-INV-007 ;; Autonomous Operations != Unlimited Operations ;;; per ADR-ES-008 §23
-  - AUTO-INV-008 ;; Autonomous Operations != Autonomous Agent as universal Entity subtype ;;; per ADR-ES-008 §23
-  - AUTO-INV-009 ;; Autonomous Operations does not imply Autonomous Value Stream ;;; per ADR-ES-008 §13
-  - AUTO-INV-010 ;; Autonomous Operations does not imply Autonomous Enterprise ;;; per ADR-ES-008 §24
+  - AUTO-INV-001 ;; Autonomous Operations != Operations merely containing an Agent, per ADR-ES-008 §23 ;; material-participation criterion
+  - AUTO-INV-002 ;; Autonomous Operations != AI Operations, per ADR-ES-008 §19 + §23
+  - AUTO-INV-003 ;; Autonomous Operations != Agentic Operations, per ADR-ES-008 §9 + §10 + §13 + AOP-AUTO-CON-014
+  - AUTO-INV-004 ;; Autonomous Operations != Automation, per ADR-ES-008 §11 + §23
+  - AUTO-INV-005 ;; Autonomous Operations != Unattended Operations, per ADR-ES-008 §23
+  - AUTO-INV-006 ;; Autonomous Operations != Human-free Operations, per ADR-ES-008 §23
+  - AUTO-INV-007 ;; Autonomous Operations != Unlimited Operations, per ADR-ES-008 §23
+  - AUTO-INV-008 ;; Autonomous Operations != Autonomous Agent as universal Entity subtype, per ADR-ES-008 §23
+  - AUTO-INV-009 ;; Autonomous Operations does not imply Autonomous Value Stream, per ADR-ES-008 §13
+  - AUTO-INV-010 ;; Autonomous Operations does not imply Autonomous Enterprise, per ADR-ES-008 §24
 
 # Per CR-ES-008 §19 + §20 + ADR-ES-008 §16: 2 mapping files
 
@@ -284,7 +284,7 @@ mappings:
     target_id: external:wsf:Operations
     relationship: specialization
     note: |
-      Autonomous Operations is a Tier 2 Specialisation of WSF Operations ;;;
+      Autonomous Operations is a Tier 2 Specialisation of WSF Operations, 
       via the Operations grounding. Per CR-ES-008 §19 + ADR-ES-008 §16.
       No new WSF foundational Autonomous Operations concept is asserted.
     file: enterprise-semantics-mappings/mappings/wsf/autonomous-operations.yaml
@@ -316,10 +316,10 @@ provenance:
   - source: ADR-ES-008 §1 + §2 + §17
     note: Architectural decision ;; canonical relationships.
   - source: ADR-ES-007 §31
-    note: "Future Decision Candidates ;;; ADR-ES-008 chosen as natural follow-on."
+    note: "Future Decision Candidates, ADR-ES-008 chosen as natural follow-on."
   - source: ADR-ES-006 §36
-    note: "Earlier follow-on sequence ;;; Agentic Operations chain precedes Autonomous Operations."
+    note: "Earlier follow-on sequence, Agentic Operations chain precedes Autonomous Operations."
   - source: FND-ES-AG-008 §1.3
-    note: "Tier 1 / Tier 2 grounding classification ;;; Autonomous Operations is Tier 2 Specialisation."
+    note: "Tier 1 / Tier 2 grounding classification, Autonomous Operations is Tier 2 Specialisation."
   - source: https://github.com/World-Semantic-Foundation
     note: WSF Activity grounding inherited via Operations.

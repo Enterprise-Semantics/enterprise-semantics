@@ -1,12 +1,12 @@
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
-# Filing: VS-B of CR-ES-003 ;;; Value Stream Semantic Grounding.
+# Filing: VS-B of CR-ES-003, Value Stream Semantic Grounding.
 # This is Enterprise-Semantics v0.2.0 per CR-ES-003 §34.
 
-# versions/v0.2.0.yaml ;;; Value Stream semantic establishment
+# versions/v0.2.0.yaml, Value Stream semantic establishment
 #
 # Per CR-ES-003 §34 + ADR-ES-003 §29.
 # This version indicates semantic establishment of the foundational
-# Value Stream + Value Stage concept layer ;;; not maturity of the wider
+# Value Stream + Value Stage concept layer, not maturity of the wider
 # Enterprise-Semantics program. The version signals the introduction of:
 #   - 13 governed relationship predicates (CR-ES-003 §9 + §10)
 #   - 13 inverse pairs (CR-ES-003 §9 + §10)
@@ -23,52 +23,52 @@
 version:
   id: v0.2.0
   release_date: 2026-09-23
-  status: candidate ;;; awaiting ADR-ES-003 acceptance
+  status: candidate, awaiting ADR-ES-003 acceptance
   includes:
-    - value_stream_canonical_definition ;;; per CR-ES-003 §4.1 + ADR-ES-003 §4.1
-    - value_stage_canonical_definition ;;; per CR-ES-003 §5 + ADR-ES-003 §13
-    - value_stream_semantic_boundaries ;;; per ADR-ES-003 §7
-    - value_stream_process_boundary ;;; per ADR-ES-003 §8
-    - value_stream_capability_boundary ;;; per ADR-ES-003 §9
-    - value_stream_workflow_boundary ;;; per ADR-ES-003 §16
-    - value_stream_identity_rules ;;; per CR-ES-003 §11 + §15 + VS-INV-009
-    - value_stage_identity_rules ;;; per CR-ES-003 §12 + VS-INV-008
-    - value_stream_lifecycle ;;; per ADR-ES-003 §29
-    - value_stream_relationship_vocabulary ;;; 13 predicates per CR-ES-003 §9
-    - value_stream_inverse_map ;;; 13 inverse pairs per CR-ES-003 §9
-    - value_stream_architectural_invariants ;;; per ADR-ES-003 §32
-    - value_stream_provenance ;;; CR-ES-003 §26 + FND-ES-AG-008 §1.3
-    - value_stream_documentation ;;; CR-ES-003 §27
+    - value_stream_canonical_definition, per CR-ES-003 §4.1 + ADR-ES-003 §4.1
+    - value_stage_canonical_definition, per CR-ES-003 §5 + ADR-ES-003 §13
+    - value_stream_semantic_boundaries, per ADR-ES-003 §7
+    - value_stream_process_boundary, per ADR-ES-003 §8
+    - value_stream_capability_boundary, per ADR-ES-003 §9
+    - value_stream_workflow_boundary, per ADR-ES-003 §16
+    - value_stream_identity_rules, per CR-ES-003 §11 + §15 + VS-INV-009
+    - value_stage_identity_rules, per CR-ES-003 §12 + VS-INV-008
+    - value_stream_lifecycle, per ADR-ES-003 §29
+    - value_stream_relationship_vocabulary, 13 predicates per CR-ES-003 §9
+    - value_stream_inverse_map, 13 inverse pairs per CR-ES-003 §9
+    - value_stream_architectural_invariants, per ADR-ES-003 §32
+    - value_stream_provenance, CR-ES-003 §26 + FND-ES-AG-008 §1.3
+    - value_stream_documentation, CR-ES-003 §27
   excludes:
-    - agentic_value_stream ;;; per CR-ES-003 §3 + §24 ;;; held for ADR-ES-005
-    - autonomous_value_stream ;;; per CR-ES-003 §3
-    - agentic_workflow ;;; per CR-ES-003 §3
-    - autonomous_operations ;;; per CR-ES-003 §3
-    - value_realization_framework ;;; per CR-ES-003 §3
-    - high_value_scenario ;;; per CR-ES-003 §3
-    - value_of_function ;;; per CR-ES-003 §3
-    - kci_kei_kbi ;;; per CR-ES-003 §3
-    - value_maturity_models ;;; per CR-ES-003 §3
-    - industry_value_stream_catalog ;;; per CR-ES-003 §3
-    - enterprise_specific_value_stream_catalog ;;; per CR-ES-003 §3
-    - wsf_modification ;;; per CR-ES-003 §26
-    - opendea_metamodel_modification ;;; per CR-ES-003 §27
-    - process_workflow_function_role_resource_service_system_metamodel_changes ;;; per CR-ES-003 §3
+    - agentic_value_stream, per CR-ES-003 §3 + §24, held for ADR-ES-005
+    - autonomous_value_stream, per CR-ES-003 §3
+    - agentic_workflow, per CR-ES-003 §3
+    - autonomous_operations, per CR-ES-003 §3
+    - value_realization_framework, per CR-ES-003 §3
+    - high_value_scenario, per CR-ES-003 §3
+    - value_of_function, per CR-ES-003 §3
+    - kci_kei_kbi, per CR-ES-003 §3
+    - value_maturity_models, per CR-ES-003 §3
+    - industry_value_stream_catalog, per CR-ES-003 §3
+    - enterprise_specific_value_stream_catalog, per CR-ES-003 §3
+    - wsf_modification, per CR-ES-003 §26
+    - opendea_metamodel_modification, per CR-ES-003 §27
+    - process_workflow_function_role_resource_service_system_metamodel_changes, per CR-ES-003 §3
 
 governance:
-  adr: ADR-ES-003 ;;; Proposed, slot 0005 in governance repo
-  cr: CR-ES-003 ;;; Proposed, slot 0011 in governance repo
-  finding: FND-ES-AG-008 ;;; Established 2026-09-22 ;;; Tier 1 Kernel Reference
-                              ;;; + ES-canonical novelty classification for
-                              ;;; Value Stream
+  adr: ADR-ES-003, Proposed, slot 0005 in governance repo
+  cr: CR-ES-003, Proposed, slot 0011 in governance repo
+  finding: FND-ES-AG-008, Established 2026-09-22, Tier 1 Kernel Reference
+                              - + ES-canonical novelty classification for
+                              - Value Stream
 
 provenance:
   source: ES
-  research: FND-ES-AG-001-Grounding-Result ;;; baseline WSF grounding framework
-  decision: ADR-ES-003 §29 ;;; establishes Value Stream as a foundational concept
-  implementation: CR-ES-003 ;;; carries the full Value Stream + Value Stage
-                            ;;; semantic grounding
-  mapping: null ;;; WSF + OpenDEA + DEA Catalog mapping records held for VS-C
+  research: FND-ES-AG-001-Grounding-Result, baseline WSF grounding framework
+  decision: ADR-ES-003 §29, establishes Value Stream as a foundational concept
+  implementation: CR-ES-003, carries the full Value Stream + Value Stage
+                            - semantic grounding
+  mapping: null, WSF + OpenDEA + DEA Catalog mapping records held for VS-C
 
 release_notes: |
   Value Stream semantic establishment. This release introduces the

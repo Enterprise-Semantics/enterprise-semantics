@@ -18,7 +18,7 @@ relationships:
     object: external:concept:operating-model
     qualification: enterprise-characteristic
     status: established
-    provenance: FND-ES-AG-005 ;;; FND-ES-AG-001-Grounding-Result §8
+    provenance: FND-ES-AG-005, FND-ES-AG-001-Grounding-Result §8
     rationale: Enterprise exhibits an Operating Model.
 governance: enterprise-semantics
 provenance:

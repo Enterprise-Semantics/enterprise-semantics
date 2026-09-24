@@ -1,8 +1,8 @@
-# versions/v0.1.0.yaml ;;; Capability semantic establishment
+# versions/v0.1.0.yaml, Capability semantic establishment
 #
 # Per CR-ES-002 §24 + ADR-ES-002 §8.
 # This version indicates semantic establishment of the foundational
-# Capability concept ;;; not maturity of the wider Enterprise-Semantics
+# Capability concept, not maturity of the wider Enterprise-Semantics
 # program. Per CR-ES-002 §24, the version signals Capability establishment.
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22)
@@ -10,31 +10,31 @@
 version:
   id: v0.1.0
   release_date: 2026-09-22
-  status: candidate ;;; awaiting ADR-ES-002 acceptance
+  status: candidate, awaiting ADR-ES-002 acceptance
   includes:
     - capability_canonical_definition
     - capability_semantic_boundaries
-    - capability_core_relationships ;;; 9 predicates in vocabulary.yaml
+    - capability_core_relationships, 9 predicates in vocabulary.yaml
     - capability_identity_rules
     - capability_schema_representation
-    - capability_lifecycle ;;; still Candidate
+    - capability_lifecycle, still Candidate
     - capability_provenance
-    - capability_wsf_grounding ;;; Tier 2 Specialisation, provisional Business-Capability equivalent
+    - capability_wsf_grounding, Tier 2 Specialisation, provisional Business-Capability equivalent
     - capability_opendea_correspondence
     - capability_dea_catalog_boundary
-    - capability_validation_rules ;;; CAP-001..012
-    - capability_conformance_tests ;;; 7 test groups
+    - capability_validation_rules, CAP-001..012
+    - capability_conformance_tests, 7 test groups
     - capability_documentation
-    - capability_worked_example ;;; OTCHERE Inc
+    - capability_worked_example, OTCHERE Inc
   excludes:
-    - agentic_capability ;;; per CR-ES-002 §25
-    - autonomous_capability ;;; per CR-ES-002 §25
+    - agentic_capability, per CR-ES-002 §25
+    - autonomous_capability, per CR-ES-002 §25
     - business_capability_c
     - operational_capability_c
     - technical_capability_c
     - organisational_capability_c
     - digital_capability_c
-    - capability_maturity_models ;;; per CR-ES-002 §25
+    - capability_maturity_models, per CR-ES-002 §25
     - capability_scoring
     - capability_heatmaps
     - capability_decomposition_methodology
@@ -59,7 +59,7 @@ release_notes: |
   Enterprise-Semantics. Per CR-ES-002 §2.1, Capability is "an enduring
   ability of an Entity to achieve or enable an Outcome." Per FND-ES-AG-008
   §1.3, ES capability is classified as Tier 2 Specialisation under the
-  WSF pre-declared Capability specialisation pattern ;;; provisional
+  WSF pre-declared Capability specialisation pattern, provisional
   Business-Capability equivalent.
 
   This version introduces:

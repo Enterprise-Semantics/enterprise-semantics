@@ -1,0 +1,12 @@
+version: v1.3.0
+release_date: 2026-09-25
+release_type: minor
+prior_version: v1.2.0
+includes:
+  - agentic-service
+notes: |
+  Third post-v1.0.0 minor release. Extends agentic semantics into
+  the Service layer per ADR-ES-014 + CR-ES-014. Establishes the
+  Agentic Capability -> Agentic Service -> Agentic Value Stream
+  traceability chain. Preserves all preceding semantic contracts
+  from v0.0.1 through v1.2.0.

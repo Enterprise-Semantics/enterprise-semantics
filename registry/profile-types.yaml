@@ -27,6 +27,15 @@ profile_types:
       Operations ;; Authority ;; Intent ;; Workflow ;; Agentic Workflow
       for discoverability and grouping. Does not imply inheritance.
     governance: enterprise-semantics
+  - id: autonomous-capability
+    canonical_name: Autonomous Capability
+    definition: |
+      A profile_type family for the Autonomous Capability Profile
+      per CR-ES-013 §6 + ADR-ES-013 §15. Groups Autonomous Capability
+      ;; Capability ;; Authority ;; Policy ;; Constraint ;; Governance
+      ;; Outcome for discoverability and grouping. Does not imply
+      inheritance.
+    governance: enterprise-semantics
   - id: agentic-operations
     canonical_name: Agentic Operations
     definition: |

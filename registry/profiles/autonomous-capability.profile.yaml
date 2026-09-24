@@ -1,0 +1,61 @@
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+# Filing: VS-D2c of CR-ES-013 , Autonomous Capability Profile per CR-ES-013 §6 + ADR-ES-013 §15
+#
+# Profile groups Autonomous Capability semantic characteristics
+# without implying additional ontology or inheritance beyond the
+# canonical specialization of Capability established by ADR-ES-013.
+
+id: ES:PROFILE:autonomous-capability
+canonical_name: Autonomous Capability
+profile_type: autonomous-capability
+semantic_kind: capability
+target_release: v1.2.0
+
+description: |
+  A profile that groups the Autonomous Capability semantic
+  characteristics established by ADR-ES-013 + CR-ES-013. The
+  profile references the canonical Autonomous Capability concept
+  (ES:CONCEPT:autonomous-capability) and aggregates the bounded
+  autonomy properties (Authority, Policy, Constraints, Governance,
+  Escalation) plus the Agentic/Autonomous orthogonality rule.
+
+characteristics:
+  - bounded independence , decisions/actions progress within authority
+  - outcome orientation , preserves Capability -> Outcome semantic anchor
+  - authority-bounded , operates within defined Authority
+  - policy-governed , governed by applicable Policy
+  - constraint-bounded , bounded by defined Constraints
+  - governance-aware , governance boundaries explicit
+  - adaptable , may adapt within defined scope
+  - intervention-aware , may retain human intervention
+  - escalation-aware , supports escalation when authority exceeded
+  - ai-independent , does NOT require AI
+  - automation-independent , does NOT require Automation
+
+references:
+  - concept_id: ES:CONCEPT:autonomous-capability
+    relationship: groups
+    note: |
+      Profile groups the Autonomous Capability concept. The
+      profile does NOT add inheritance beyond the canonical
+      specialization-of Capability established by ADR-ES-013 §3.1.
+  - concept_id: ES:CONCEPT:capability
+    relationship: inherits-from-via-specialization
+    note: |
+      Profile references the universal Capability concept via the
+      Autonomous Capability specialization. No additional ontology
+      inheritance.
+  - concept_id: ES:CONCEPT:authority
+    relationship: references
+    note: Authority concept referenced for bounded autonomy.
+  - concept_id: ES:CONCEPT:policy
+    relationship: references
+    note: Policy concept referenced for governance.
+
+governance:
+  ratified_by: ADR-ES-013
+  implemented_by: CR-ES-013
+  status: candidate , awaiting CR-ES-013 implementation acceptance
+
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+filing_date: 2026-09-24

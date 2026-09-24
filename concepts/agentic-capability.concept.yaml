@@ -1,77 +1,257 @@
 id: ES:CONCEPT:agentic-capability
 canonical_name: Agentic Capability
 definition: |
-  An Agentic Capability is a Capability whose outcome-realization is
-  characterized by goal-directed progression under bounded autonomy,
-  AI-augmented decision-making, adaptive reconfiguration, and human
-  governance rather than human execution. Per FND-ES-AG-001-Grounding-Result
-  §7 ;; ADR-ES-AG-001 §3.3.
+  An Agentic Capability is a Capability whose realization materially
+  incorporates agentic behavior in achieving or enabling an intended
+  Outcome within defined authority, policy, and contextual boundaries.
+  The Capability concept remains the universal foundational type per
+  ADR-ES-002 ; Agentic Capability is a contextual specialization, not a
+  replacement or narrowing. Agentic behavior must be material to
+  realization; AI, automation, Agent participation, or autonomy alone
+  do not qualify.
 status: Candidate
-version: 0.1.0
+version: 1.1.0
 concept_type: agentic-capability
+specializes:
+  - canonical_id: ES:CONCEPT:capability
+    relationship: specialization-of
+    rationale: |
+      Agentic Capability is a contextual specialization of the universal
+      Capability concept. The semantic distinction remains: Capability
+      describes enduring ability ; Agentic Capability additionally
+      describes how that ability is materially realized.
 wsf_grounding:
   - wsf_concept_id: external:wsf:Capability
     relationship: references
     note: |
       Agentic Capability inherits the WSF Capability grounding via its
-      profiled Capability. The Profile does not introduce a new semantic
-      kind.
+      parent Capability. The specialization does not introduce a new
+      WSF semantic kind.
 profile_bindings:
   - profile_id: ES:PROFILE:agentic-execution
     profile_type: agentic-execution
-    active: true
+    active: false
+    note: |
+      The prior profile-of-Capability binding under ES:PROFILE:agentic-execution
+      is preserved as inactive for audit traceability. Active binding is
+      established under the new ES:PROFILE:agentic-capability profile (per
+      CR-ES-012 §6) in a follow-on VS-D slice.
 relationships:
   - subject: ES:CONCEPT:agentic-capability
-    predicate: profile-of
+    predicate: specialization-of
     object: ES:CONCEPT:capability
-    qualification: agentic-execution-profile
+    qualification: contextual-specialization
     status: proposed
-    provenance: FND-ES-AG-001-Grounding-Result §7
-    rationale: Agentic Capability is a Profile of Capability under agent-augmented execution conditions.
+    provenance: ADR-ES-012 §2 ,  ADR-ES-012 §4 ,  CR-ES-012 §3
+    rationale: |
+      Agentic Capability is a contextual specialization of Capability,
+      not a new foundational type of ability. The Capability concept
+      remains universal per ADR-ES-002.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: enables
+    object: external:outcome:Outcome
+    qualification: outcome-orientation
+    status: proposed
+    provenance: ADR-ES-012 §1 ,  ADR-ES-012 §6
+    rationale: |
+      Agentic Capability retains the Capability -> Outcome semantic
+      anchor. Outcome orientation is preserved per ACAP-CON-004.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: realized-through
+    object: external:concept:agentic-workflow
+    qualification: realization-mechanism
+    status: proposed
+    provenance: ADR-ES-012 §6 ,  CR-ES-012 §4 ,  CR-ES-012 §11
+    rationale: |
+      Agentic Capability may be realized through an Agentic Workflow.
+      The distinction remains: Capability = ability, Workflow =
+      coordinated execution. Per ACAP-CON-006 and ACAP-CON-014.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: supported-by
+    object: external:concept:agentic-operations
+    qualification: operational-support
+    status: proposed
+    provenance: ADR-ES-012 §6 ,  CR-ES-012 §12
+    rationale: |
+      Agentic Capability may be supported by Agentic Operations.
+      Per ACAP-CON-007 and ACAP-CON-015.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: engages
+    object: ES:CONCEPT:agent
+    qualification: actor-engagement
+    status: proposed
+    provenance: ADR-ES-012 §9 ,  CR-ES-012 §10
+    rationale: |
+      An Agent may participate in the realization of an Agentic
+      Capability. The Agent is not the Capability. Per ACAP-CON-005
+      and ACAP-CON-013.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: exercised-by
+    object: external:concept:role
+    qualification: role-exercise
+    status: proposed
+    provenance: ADR-ES-012 §6
+    rationale: |
+      Agentic Capability may be exercised by a Role.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: supported-by
+    object: external:concept:resource
+    qualification: resource-support
+    status: proposed
+    provenance: ADR-ES-012 §6
+    rationale: |
+      Agentic Capability may be supported by a Resource.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: delivered-through
+    object: external:concept:service
+    qualification: service-delivery
+    status: proposed
+    provenance: ADR-ES-012 §6
+    rationale: |
+      Agentic Capability may be delivered through a Service.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: implemented-by
+    object: external:concept:system
+    qualification: system-implementation
+    status: proposed
+    provenance: ADR-ES-012 §6
+    rationale: |
+      Agentic Capability may be implemented by a System.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: enables
+    object: external:concept:agentic-value-stream
+    qualification: value-stream-enabler
+    status: proposed
+    provenance: ADR-ES-012 §12 ,  CR-ES-012 §13
+    rationale: |
+      Agentic Capability may enable an Agentic Value Stream.
+      Per ACAP-CON-008 and ACAP-CON-016.
   - subject: ES:CONCEPT:agentic-capability
     predicate: distinct-from
     object: ES:CONCEPT:ai-agent
     qualification: what-vs-who
     status: proposed
-    provenance: CR-ES-AG-008 §2
+    provenance: ADR-ES-012 §9 ,  CR-ES-AG-008 §2
     rationale: |
-      Agentic Capability is the *what* (outcome-realization under agent-augmented
-      execution). AI Agent is the *who* (the bearer). The two are distinct
-      semantic kinds, related via the bearer relationship.
+      Agentic Capability is the what (outcome-realization). AI Agent
+      is the who (the bearer). The two are distinct semantic kinds,
+      related via the bears relationship below.
   - subject: ES:CONCEPT:agentic-capability
     predicate: bears
     object: ES:CONCEPT:ai-agent
     qualification: typical-bearer
     status: proposed
-    provenance: CR-ES-AG-008 §2 ;; FND-ES-AG-007 §3.6
+    provenance: CR-ES-AG-008 §2 ,  FND-ES-AG-007 §3.6
     rationale: |
-      Agentic Capabilities are typically borne by AI Agents (but may also be
-      borne by composite human+AI teams). The bearer relationship is
-      identified but not exclusive.
+      Agentic Capabilities are typically borne by AI Agents (but may
+      also be borne by composite human+AI teams). The bearer
+      relationship is identified but not exclusive.
   - subject: ES:CONCEPT:agentic-capability
-    predicate: enables
-    object: ES:CONCEPT:agentic-value-stream
-    qualification: value-stream-enabler
+    predicate: distinct-from
+    object: external:concept:autonomous-capability
+    qualification: orthogonality
     status: proposed
-    provenance: agentic-value-stream.concept.yaml cross-ref
+    provenance: ADR-ES-012 §13 ,  ADR-ES-012 §14 ,  ADR-ES-012 §25
     rationale: |
-      Agentic Capabilities enable Agentic Value Streams ;; the value stream
-      cross-reference to external:concept:capability now resolves via the
-      Profile chain (Agentic Value Stream -> Capability -> Agentic Capability).
+      Agentic Capability is not Autonomous Capability. The 2x2 matrix
+      at the capability boundary permits: Agentic, Autonomous,
+      Agentic+Autonomous, neither. Only Agentic Capability is
+      established by CR-ES-012 ; Autonomous Capability is explicitly
+      deferred per ADR-ES-012 §25.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: not-implies
+    object: external:concept:ai-capability
+    qualification: ai-not-required
+    status: proposed
+    provenance: ADR-ES-012 §15 ,  CR-ES-012 §15
+    rationale: |
+      Agentic Capability does not require AI. An AI system may
+      support a Capability without the Capability being materially
+      agentic. Per ACAP-CON-009.
+  - subject: ES:CONCEPT:agentic-capability
+    predicate: not-implies
+    object: external:concept:automated-capability
+    qualification: automation-not-sufficient
+    status: proposed
+    provenance: ADR-ES-012 §16 ,  CR-ES-012 §16
+    rationale: |
+      Automation does not establish Agentic Capability. A predefined
+      automated mechanism can support a Capability without
+      interpreting delegated intent, selecting actions contextually,
+      or adapting behavior. Per ACAP-CON-010.
 governance: enterprise-semantics
 provenance:
-  - source: FND-ES-AG-001-Grounding-Result §7
-    note: Capability + Agentic Capability identified.
-  - source: ADR-ES-AG-001
-    note: Profile pattern applied (ES:PROFILE:agentic-execution).
+  - source: ADR-ES-002
+    note: Universal Capability concept grounding ; semantic_type basis.
+  - source: ADR-ES-004
+    note: Agentic semantic grounding ; behavioral foundation.
+  - source: ADR-ES-012
+    note: |
+      Foundational specialization decision ; v1.1.0 release target ;
+      ACAP-CON-001 through ACAP-CON-018 invariants established ;
+      Agentic/Autonomous orthogonality at the capability boundary
+      established at §14 ; Autonomous Capability explicitly deferred
+      at §25.
+  - source: CR-ES-012
+    note: |
+      Implementation specification ; canonical concept record ;
+      schema requirements at §3 ; required relationships at §4 ;
+      registry addition at §5 ; profile binding at §6 ; WSF mapping
+      at §25 ; OpenDEA mapping at §26 ; relationship integrity at §27.
+  - source: FND-ES-AG-001-Grounding-Result
+    note: |
+      Prior ES-AG lineage grounding. The Profile-of-Capability
+      hypothesis from §7 + ADR-ES-AG-001 §3.3 is superseded by the
+      specialization-of-Capability hypothesis from ADR-ES-012 §2.
+      The prior profile binding to ES:PROFILE:agentic-execution is
+      preserved as inactive (audit traceability) ; active binding
+      shifts to ES:PROFILE:agentic-capability per CR-ES-012 §6.
   - source: FND-ES-AG-007
     note: AI Agent is the typical bearer (but not exclusive).
-  - source: https://github.com/World-Semantic-Foundation
-    note: WSF Capability grounding inherited via Capability.
+  - source: CR-ES-AG-008
+    note: |
+      What-vs-who distinction between Agentic Capability (what) and
+      AI Agent (who). Bears relationship inherited as typical-bearer
+      (not exclusive).
+  - source: CR-ES-AG-005
+    note: Agentic Value Stream cross-reference target for the enables relationship.
+  - source: CR-ES-AG-009
+    note: Agentic Workflow + Agentic Operations cross-reference targets for realized-through / supported-by.
+  - source: CR-ES-AG-007
+    note: Agentic Workflow + Agentic Operations lineage reference.
+  - source: FND-ES-AG-008
+    note: WSF Tier 1 / Tier 2 Grounding Boundary (Established 2026-09-22).
+  - source: CR-ES-007
+    note: Agentic Operations lineage.
+  - source: CR-ES-006
+    note: Agentic Workflow lineage.
+  - source: CR-ES-010
+    note: Agentic Enterprise lineage ; Agentic Enterprise possesses Agentic Capability.
+  - source: CR-ES-011
+    note: Autonomous Enterprise lineage ; orthogonality at enterprise boundary mirrors orthogonality at capability boundary.
+  - source: CR-ES-002
+    note: |
+      Capability foundation ; CR-ES-002 implementation supplied the
+      universal Capability concept and the relationship vocabulary
+      that CR-ES-012 §4 references.
+superseded: FND-ES-AG-001-Grounding-Result §7 ,  ADR-ES-AG-001 §3.3
 mappings:
   - authority: wsf
     target_id: external:wsf:Capability
     relationship: references
-    note: Inherits Capability grounding via Capability.
+    note: |
+      Inherits WSF Capability grounding via the parent Capability
+      concept. The specialization does not introduce a new WSF
+      semantic kind. Detailed mapping at
+      enterprise-semantics-mappings/wsf/agentic-capability.yaml
+      (canonicalisation held for VS-C slice).
+  - authority: opendea
+    target_id: external:opendea:Capability
+    relationship: references
+    note: |
+      References OpenDEA Capability semantics without modifying the
+      OpenDEA metamodel. Detailed mapping at
+      enterprise-semantics-mappings/opendea/agentic-capability.yaml
+      (canonicalisation held for VS-C slice).
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-09-24

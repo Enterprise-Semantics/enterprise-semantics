@@ -28,7 +28,7 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 1.0.0
+  version: 1.1.0
   status: candidate , awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
@@ -657,11 +657,55 @@ vocabulary:
         is the enterprise-level operating condition.
       lifecycle_status: proposed
       provenance: CR-ES-010 §4 + ADR-ES-010 §5 + §15
+
+    # ===== Autonomous Enterprise ;; Subject predicates (CR-ES-011 §5 + ADR-ES-011 §11-§15) =====
+
+    - id: ES:REL:autonomous-enterprise-realizes-through
+      canonical_name: realizes-through
+      inverse: realizes-via
+      subject_type: ES:CONCEPT:autonomous-enterprise
+      object_type: ES:CONCEPT:autonomous-value-stream
+      definition: |
+        An Autonomous Enterprise realizes value through Autonomous
+        Value Streams per CR-ES-011 §5 + ADR-ES-011 §11 + §13. The
+        predicate is subject-type namespaced
+        (autonomous-enterprise-realizes-through) to disambiguate from
+        enterprise-realizes-through (subject_type:
+        ES:CONCEPT:agentic-enterprise per CR-ES-010 §4) and
+        value-stream-realized-through (subject_type:
+        ES:CONCEPT:value-stream per CR-ES-003 §10.4). The predicate
+        does NOT imply Autonomous Enterprise = Autonomous Value
+        Stream per CR-ES-011 §23 + AE-AUTO-NEG-018.
+      lifecycle_status: established
+      provenance: CR-ES-011 §5 + ADR-ES-011 §11 + §13
+
+    - id: ES:REL:autonomous-enterprise-operates-through
+      canonical_name: operates-through
+      inverse: operates-via
+      subject_type: ES:CONCEPT:autonomous-enterprise
+      object_type: ES:CONCEPT:autonomous-operations
+      definition: |
+        An Autonomous Enterprise operates through Autonomous
+        Operations per CR-ES-011 §5 + ADR-ES-011 §11 + §12. The
+        predicate is subject-type namespaced
+        (autonomous-enterprise-operates-through) to disambiguate from
+        enterprise-operates-through (subject_type:
+        ES:CONCEPT:agentic-enterprise per CR-ES-010 §4) and other
+        operates-through family members. The predicate does NOT
+        imply Autonomous Enterprise = Autonomous Operations per
+        CR-ES-011 §23 + AE-AUTO-NEG-017, and Autonomous Operations
+        do NOT automatically establish Autonomous Enterprise per
+        CR-ES-011 §11 + AE-AUTO-CON-015.
+      lifecycle_status: established
+      provenance: CR-ES-011 §5 + ADR-ES-011 §11 + §12
+
 governance:
   adr: ADR-ES-010
   cr: CR-ES-010
   finding: FND-ES-AG-008
   lifecycle_states:
+  cr_es_011: CR-ES-011
+  adr_es_011: ADR-ES-011
     - PROPOSED
     - CANDIDATE
     - ESTABLISHED

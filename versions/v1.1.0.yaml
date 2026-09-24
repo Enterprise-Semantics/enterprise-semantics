@@ -1,0 +1,143 @@
+# versions/v1.1.0.yaml , Agentic Capability semantic establishment
+#
+# Per CR-ES-012 §1 + §29 + ADR-ES-012 §27.
+
+id: ES:VERSION:v1.1.0
+canonical_name: v1.1.0
+status: Candidate
+date: 2026-09-24
+
+release_summary: |
+  Semantic establishment of the Agentic Capability concept , a
+  contextual specialization of Capability , with 15 canonical
+  relationships , 8 reused governed predicates , 16 provenance entries ,
+  18 conformance invariants (ACAP-CON-001..018) , 14 negative tests
+  (ACAP-NEG-001..014) , and 2 mappings to WSF + OpenDEA.
+
+tranche_boundaries:
+  - "CR-ES-001 , Profile Semantic Construct (scaffolding)"
+  - "CR-ES-002 , Capability Semantic Grounding (v0.1.0)"
+  - "CR-ES-003 , Value Stream Semantic Grounding (v0.2.0)"
+  - "CR-ES-004 , Agentic Semantic Grounding (v0.3.0 vocabulary , v0.4.0 vocabulary)"
+  - "CR-ES-005 , Agentic Value Stream Semantic Grounding (v0.4.0 version , v0.5.0 vocabulary)"
+  - "CR-ES-006 , Agentic Workflow Semantic Grounding (v0.5.0 version , v0.6.0 vocabulary)"
+  - "CR-ES-007 , Agentic Operations Semantic Grounding (v0.6.0 version , v0.7.0 vocabulary)"
+  - "CR-ES-008 , Autonomous Operations Semantic Grounding (v0.7.0 version , v0.8.0 vocabulary)"
+  - "CR-ES-009 , Autonomous Value Stream Semantic Grounding (v0.8.0 version , v0.9.0 vocabulary)"
+  - "CR-ES-010 , Agentic Enterprise Semantic Grounding (v0.9.0 vocabulary)"
+  - "CR-ES-011 , Autonomous Enterprise Semantic Grounding (v1.0.0 release boundary)"
+  - "CR-ES-012 , Agentic Capability Semantic Grounding (v1.0.0 vocabulary , v1.1.0 release pointer , post-v1.0.0 first minor release)"
+
+concept_coverage:
+  concepts:
+    - canonical_id: ES:CONCEPT:agentic-capability
+      relationship: specialization-of
+      parent: ES:CONCEPT:capability
+      note: "Contextual specialization per ADR-ES-012 §2 ; material agentic realization requirement per ADR-ES-012 §7"
+
+vocabulary_coverage:
+  predicates_used:
+    - canonical_id: ES:REL:specializes
+    - canonical_id: ES:REL:enables
+    - canonical_id: ES:REL:realized-through
+    - canonical_id: ES:REL:supported-by
+    - canonical_id: ES:REL:engages
+    - canonical_id: ES:REL:exercised-by
+    - canonical_id: ES:REL:delivered-through
+    - canonical_id: ES:REL:implemented-by
+  predicates_invented: []
+  note: |
+    CR-ES-012 does not invent any new governed predicate. All 8
+    predicates required by §4 are reused from prior vocabulary entries
+    introduced by CR-ES-002 + CR-ES-004 + CR-ES-005 + CR-ES-006 + CR-ES-007.
+
+profile_coverage:
+  profiles:
+    - canonical_id: ES:PROFILE:agentic-capability
+      status: pending-vs-d-slice
+      note: "Profile_id registration held for CR-ES-012 §6 follow-on"
+    - canonical_id: ES:PROFILE:agentic-execution
+      status: preserved-inactive
+      note: "Prior profile-of binding preserved as inactive for audit traceability per the canonical-identity preservation rewrite"
+
+mapping_coverage:
+  mappings:
+    - authority: wsf
+      status: pending-vs-c-slice
+      reference: "CR-ES-012 §25"
+    - authority: opendea
+      status: pending-vs-c-slice
+      reference: "CR-ES-012 §26"
+
+conformance_coverage:
+  positive:
+    rules:
+      - "ACAP-CON-001 , Agentic Capability specializes Capability"
+      - "ACAP-CON-002 , Agentic Capability retains Capability definition"
+      - "ACAP-CON-003 , Agentic behavior material to realization"
+      - "ACAP-CON-004 , Agentic Capability outcome-oriented"
+      - "ACAP-CON-005 , Agentic Capability engages Agent"
+      - "ACAP-CON-006 , Agentic Capability realized through Agentic Workflow"
+      - "ACAP-CON-007 , Agentic Capability supported by Agentic Operations"
+      - "ACAP-CON-008 , Agentic Capability enables Agentic Value Stream"
+      - "ACAP-CON-009 , Agentic Capability does not require AI"
+      - "ACAP-CON-010 , Automation does not establish Agentic Capability"
+      - "ACAP-CON-011 , Agentic Capability does not imply autonomy"
+      - "ACAP-CON-012 , Agentic Capability does not imply Agentic Enterprise"
+      - "ACAP-CON-013 , Agent is not a subtype of Capability"
+      - "ACAP-CON-014 , Agentic Workflow is not a subtype of Capability"
+      - "ACAP-CON-015 , Agentic Operations is not a subtype of Capability"
+      - "ACAP-CON-016 , Agentic Value Stream is not a subtype of Capability"
+      - "ACAP-CON-017 , Agentic Capability operates within authority boundaries"
+      - "ACAP-CON-018 , Agentic Capability requires provenance and semantic grounding"
+  negative:
+    rules:
+      - "ACAP-NEG-001 , Agentic Capability is-a Agent"
+      - "ACAP-NEG-002 , Agent is-a Agentic Capability"
+      - "ACAP-NEG-003 , Agentic Capability is-a Agentic Workflow"
+      - "ACAP-NEG-004 , Agentic Workflow is-a Agentic Capability"
+      - "ACAP-NEG-005 , Agentic Capability is-a Agentic Operations"
+      - "ACAP-NEG-006 , Agentic Operations is-a Agentic Capability"
+      - "ACAP-NEG-007 , Agentic Capability is-a Agentic Value Stream"
+      - "ACAP-NEG-008 , Agentic Value Stream is-a Agentic Capability"
+      - "ACAP-NEG-009 , Agentic Capability requires AI"
+      - "ACAP-NEG-010 , AI automatically establishes Agentic Capability"
+      - "ACAP-NEG-011 , Automation automatically establishes Agentic Capability"
+      - "ACAP-NEG-012 , Agentic Capability automatically implies Autonomous Capability"
+      - "ACAP-NEG-013 , Agentic Capability automatically establishes Agentic Enterprise"
+      - "ACAP-NEG-014 , Agentic Capability requires removal of humans"
+
+deferred_concepts:
+  concepts:
+    - "Autonomous Capability"
+    - "AI Capability"
+    - "Agentic Capability Maturity"
+    - "Agentic Capability Levels"
+    - "Agentic Organization"
+    - "Autonomous Organization"
+    - "Agentic Culture"
+    - "Autonomous Culture"
+    - "Agentic Ecosystem"
+    - "Autonomous Ecosystem"
+  note: |
+    Each deferred concept requires independent ADR/CR pair ; the 2x2
+    matrix at the capability boundary (ADR-ES-012 §14) permits
+    Autonomous Capability as a future orthogonal specialization , but
+    is explicitly held for ADR-ES-013 per ADR-ES-012 §25.
+
+governance: enterprise-semantics
+provenance:
+  - source: ADR-ES-002
+    note: "Universal Capability concept grounding."
+  - source: ADR-ES-004
+    note: "Agentic semantic grounding , behavioral foundation."
+  - source: ADR-ES-012
+    note: "Foundational specialization decision ; Agentic Capability as contextual specialization of Capability ; 2x2 matrix at capability boundary ; Agentic/Autonomous orthogonality."
+  - source: CR-ES-012
+    note: "Implementation specification ; v1.1.0 target release per §1 + §29 ; 32 implementation sections ; 18 conformance invariants ; 14 negative tests ; supersedes FND-ES-AG-001-Grounding-Result §7 + ADR-ES-AG-001 §3.3 Profile-of hypothesis."
+  - source: CR-ES-011
+    note: "v1.0.0 release boundary precedent ; per CR-ES-011 §38 v1.0.0 is gated on full ADR-ES-001 -> ADR-ES-011 chain acceptance ; v1.1.0 is the first minor release after the v1.0.0 major boundary."
+
+release_date: 2026-09-24
+created: 2026-09-24
+updated: 2026-09-24

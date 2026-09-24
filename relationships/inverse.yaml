@@ -4,7 +4,7 @@
 #         from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Inverse predicate map ;;; v0.9.0 ;;; 13 Value Stream inverse pairs + 9 Capability inverse pairs + 11 Agentic inverse pairs + 3 Agentic Value Stream inverse pairs + 2 Agentic Workflow inverse pairs + 2 Agentic Operations inverse pairs + 1 Autonomous Operations inverse pair + 1 Autonomous Value Stream inverse pair + 4 namespaced inverses (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced inverse (process-realized-through) for Process->Workflow disambiguation
+# Inverse predicate map ;;; v1.0.0 ;;; 13 Value Stream inverse pairs + 9 Capability inverse pairs + 11 Agentic inverse pairs + 3 Agentic Value Stream inverse pairs + 2 Agentic Workflow inverse pairs + 2 Agentic Operations inverse pairs + 1 Autonomous Operations inverse pair + 1 Autonomous Value Stream inverse pair + 8 Agentic Capability subject-typed inverse pairs (existing inverses reused) + 4 namespaced inverses (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced inverse (process-realized-through) for Process->Workflow disambiguation
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, every predicate that has an inverse
 # must declare it explicitly here. This file is populated by VS-B with the
@@ -12,8 +12,8 @@
 # relationships/vocabulary.yaml v0.2.0.
 
 inverse:
-  version: 0.9.0
-  status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
+  version: 1.0.0
+  status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 + ADR-ES-012 acceptance
   governed_inverses:
 
     # ===== Value Stream subject-level inverses =====
@@ -348,3 +348,10 @@ change_history:
       13 inverse pairs introduced matching the 13 Value Stream predicates
       in relationships/vocabulary.yaml v0.2.0. Version bumped to v0.2.0.
       Status: candidate (awaiting ADR-ES-003 acceptance).
+  - date: 2026-09-24
+    by: CR-ES-012 + ADR-ES-012
+    change: |
+      Agentic Capability inverse pairs registered per CR-ES-012 §4 + §10-§14.
+      8 inverse pairs reused from prior inverse map entries ; no new
+      inverse pair invention required. Version bumped to v1.0.0.
+      Status: candidate (awaiting ADR-ES-012 acceptance).

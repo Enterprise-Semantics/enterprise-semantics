@@ -3,7 +3,7 @@
 #         vocabulary with 13 governed predicates from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Vocabulary predicate map ;;; v0.9.0 ;;; 13 Value Stream predicates + 9 Capability predicates + 11 Agentic predicates + 3 Agentic Value Stream predicates + 2 Agentic Workflow predicates + 2 Agentic Operations predicates + 1 Autonomous Operations predicate + 1 Autonomous Value Stream predicate + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced predicate (process-realized-through) for Process->Workflow disambiguation
+# Vocabulary predicate map ;;; v1.0.0 ;;; 13 Value Stream predicates + 9 Capability predicates + 11 Agentic predicates + 3 Agentic Value Stream predicates + 2 Agentic Workflow predicates + 2 Agentic Operations predicates + 1 Autonomous Operations predicate + 1 Autonomous Value Stream predicate + 8 Agentic Capability subject-typed predicates (existing predicates reused: specializes, enables, realized-through, supported-by, engages, exercised-by, delivered-through, implemented-by) + 4 namespaced predicates (capability-realized-through, capability-contributes-to, agent-produces, action-produces) + 1 cross-tranche subject-type namespaced predicate (process-realized-through) for Process->Workflow disambiguation
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, relationships are first-class semantic
 # content with governed predicates. The vocabulary file is the authoritative
@@ -18,8 +18,8 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.9.0
-  status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
+  version: 1.0.0
+  status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 + ADR-ES-012 acceptance
   governed_predicates:
 
     # ===== Value Stream ;;; Subject predicates (CR-ES-003 §9 + §10.1-§10.7) =====
@@ -638,3 +638,13 @@ change_history:
       for value-stage (precedes, stage-realized-through, requires,
       stage-produces, contributes-to). Version bumped to v0.2.0. Status:
       candidate (awaiting ADR-ES-003 acceptance).
+  - date: 2026-09-24
+    by: CR-ES-012 + ADR-ES-012
+    change: |
+      Agentic Capability predicate registration per CR-ES-012 §4 + §10-§14.
+      8 predicates reused from prior vocabulary (no new predicate
+      invention required ,  CR-ES-012 §4 predicates already established
+      by prior tranches ,  re-registered under agentic-capability
+      subject_type in §6 profile binding ,  ACAP-CON-001 through
+      ACAP-CON-018 conformance invariants established). Version bumped
+      to v1.0.0. Status: candidate (awaiting ADR-ES-012 acceptance).

@@ -18,8 +18,8 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.9.0
-  status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
+  version: 1.2.0
+  status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 + ADR-ES-012 + ADR-ES-013 + ADR-ES-014 + ADR-ES-015 acceptance
   governed_predicates:
 
     # ===== Value Stream ;;; Subject predicates (CR-ES-003 §9 + §10.1-§10.7) =====
@@ -638,3 +638,33 @@ change_history:
       for value-stage (precedes, stage-realized-through, requires,
       stage-produces, contributes-to). Version bumped to v0.2.0. Status:
       candidate (awaiting ADR-ES-003 acceptance).
+
+  - date: 2026-09-24
+    by: CR-ES-012
+    change: |
+      Agentic Capability predicate registration. All entries
+      already present from prior tranches, semantic layer
+      verification only. Version bumped to v1.0.0.
+  - date: 2026-09-24
+    by: CR-ES-013
+    change: |
+      Autonomous Capability predicate registration. All
+      entries already present from prior tranches, semantic
+      layer verification only.
+  - date: 2026-09-24
+    by: CR-ES-014
+    change: |
+      Agentic Service predicate registration. All entries
+      already present from prior tranches, semantic layer
+      verification only.
+  - date: 2026-09-25
+    by: CR-ES-015
+    change: |
+      Autonomous Service predicate registration. Adds 15
+      predicates (specialization-of, operates-within,
+      governed-by, constrained-by, pursues, responds-to,
+      produces, adapts-to, uses, supported-by, supports,
+      contributes-to, distinct-from, not-implies,
+      materiality-required). All entries already present
+      from prior tranches, semantic layer verification only.
+      Version bumped to v1.2.0.

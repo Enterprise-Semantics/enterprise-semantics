@@ -1,0 +1,17 @@
+version: v1.4.0
+release_date: 2026-09-25
+release_type: minor
+prior_version: v1.3.0
+includes:
+  - autonomous-service
+notes: |
+  Fourth post-v1.0.0 minor release. Completes the Service 2x2
+  matrix established by v1.3.0 by adding Autonomous Service as
+  the orthogonal specialization of Service per ADR-ES-015 +
+  CR-ES-015. The four states at the service boundary are now
+  structurally complete: Conventional Service (no, no), Agentic
+  Service (yes, no, v1.3.0), Autonomous Service (no, yes,
+  v1.4.0), Agentic + Autonomous (yes, yes, combined
+  characterization, NOT a new subtype). Mirrors the Capability
+  2x2 matrix at v1.2.0. Preserves all preceding semantic
+  contracts from v0.0.1 through v1.3.0.

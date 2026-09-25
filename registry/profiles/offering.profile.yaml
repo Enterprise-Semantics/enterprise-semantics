@@ -1,0 +1,81 @@
+# registry/profiles/offering.profile.yaml ; Offering Profile
+#
+# Per CR-ES-021 section 6 ; profile record for Offering Profile
+# (ES:PROFILE:OFFERING).
+#
+# Per CR-ES-021 section 6, the profile shall identify the semantic
+# scope of the canonical Offering concept. The profile shall NOT
+# imply that every scoped concept is a subtype of Offering.
+#
+# Foundational concept per ADR-ES-021 section 1.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:OFFERING
+canonical_name: Offering Profile
+profile_type: offering
+status: established
+version: 1.8.1
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+scope:
+  - Offering
+  - Customer Need
+  - Product
+  - Service
+  - Capability
+  - Objective
+  - Context
+  - Authority
+  - Policy
+  - Constraint
+  - Governance
+  - Fulfillment Process
+  - Customer Outcome
+  - Value
+  - Escalation Boundary
+
+description: |
+  The Offering Profile aggregates the canonical concepts that
+  participate in or support Offering realization. The profile
+  enables discoverability and grouping. It does NOT imply that
+  every scoped concept is a subtype of Offering.
+
+scope_assertions:
+  - id: OFFR-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: OFFR-PROF-SCOPE-002
+    description: Profile does NOT make Product a subtype of Offering.
+  - id: OFFR-PROF-SCOPE-003
+    description: Profile does NOT make Service a subtype of Offering.
+  - id: OFFR-PROF-SCOPE-004
+    description: Profile does NOT make Capability a subtype of Offering.
+  - id: OFFR-PROF-SCOPE-005
+    description: Profile does NOT make Value Stream a subtype of Offering.
+  - id: OFFR-PROF-SCOPE-006
+    description: Profile does NOT make Enterprise a subtype of Offering.
+
+boundary_invariants:
+  - id: OFFR-PROF-BND-001
+    description: Offering is NOT a Product per ADR-ES-021 section 5 + OFFR-NEG-001.
+  - id: OFFR-PROF-BND-002
+    description: Offering is NOT a Service per ADR-ES-021 section 5 + OFFR-NEG-002.
+  - id: OFFR-PROF-BND-003
+    description: Offering is NOT a Capability per ADR-ES-021 section 5 + OFFR-NEG-003.
+  - id: OFFR-PROF-BND-004
+    description: Offering is NOT a Value Stream per ADR-ES-021 section 6 + OFFR-NEG-004.
+  - id: OFFR-PROF-BND-005
+    description: Offering is NOT an Enterprise per ADR-ES-021 section 7 + OFFR-NEG-005.
+  - id: OFFR-PROF-BND-006
+    description: Offering is NOT a Customer Need per ADR-ES-021 section 8 + OFFR-NEG-006.
+  - id: OFFR-PROF-BND-007
+    description: Offering is NOT a Fulfillment Process per ADR-ES-021 section 9 + OFFR-NEG-007.
+
+provenance:
+  - source: CR-ES-021 section 6
+  - source: ADR-ES-021 section 1
+  - source: CR-ES-021 section 15
+
+release_target: v1.8.1

@@ -1,0 +1,150 @@
+# concepts/agentic-system.concept.yaml ; Agentic System Specialization
+#
+# Per CR-ES-025 section 2 + ADR-ES-025 section 1. Agentic System
+# specializes System (canonical per ADR-ES-027 + CR-ES-027
+# Accepted).
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:agentic-system
+canonical_name: Agentic System
+definition: |
+  A System in which material system behavior incorporates
+  the interpretation of delegated intent, contextual decision
+  selection, action coordination, adaptation, or execution
+  toward an intended outcome within defined authority, policy,
+  and contextual boundaries.
+concept_type: agentic-system
+status: Candidate
+version: 2.3.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+specializes:
+  - ES:CONCEPT:system
+
+relationships:
+  - subject: ES:CONCEPT:agentic-system
+    predicate: engages
+    object: ES:CONCEPT:agent
+    qualification: system-agent-engagement
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: interprets
+    object: ES:CONCEPT:intent
+    qualification: intent-interpretation
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: operates-within
+    object: external:system:Authority
+    qualification: authority-operation
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: governed-by
+    object: external:policy:Policy
+    qualification: policy-governance
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: constrained-by
+    object: external:constraint:Constraint
+    qualification: constraint-operation
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: responds-to
+    object: external:system:Context
+    qualification: contextual-response
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: selects
+    object: ES:CONCEPT:action
+    qualification: action-selection
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: coordinates
+    object: ES:CONCEPT:action
+    qualification: action-coordination
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: produces
+    object: external:system:Outcome
+    qualification: outcome-production
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: adapts-to
+    object: external:system:Context
+    qualification: contextual-adaptation
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    qualification: workflow-use
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: supports
+    object: ES:CONCEPT:capability
+    qualification: capability-support
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: implements
+    object: external:service:Service
+    qualification: service-implementation
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+  - subject: ES:CONCEPT:agentic-system
+    predicate: contributes-to
+    object: external:system:Value
+    qualification: value-contribution
+    status: established
+    provenance: ADR-ES-025 section 10 + CR-ES-025 section 6
+
+properties:
+  system_intent: required
+  agentic_scope: required
+  system_context: required
+  delegated_intent: required
+  authority_context: required
+  policy_context: required
+  constraint_context: required
+  interpretation_scope: required
+  decision_scope: required
+  action_selection_scope: required
+  coordination_scope: required
+  adaptation_scope: required
+  intervention_model: required
+  escalation_boundary: required
+  observation_scope: required
+  realization_mode: required
+
+provenance:
+  - source: ADR-ES-025 section 1
+  - source: CR-ES-025 section 2
+  - source: ADR-ES-027 section 1
+  - source: CR-ES-027 section 2
+
+cardinal_rules:
+  - "Agentic System is a specialization of System (canonical per ADR-ES-027 + CR-ES-027 Accepted)"
+  - "Agentic System is NOT Autonomous System (Autonomous System remains deferred per ADR-ES-022 section 13)"
+  - "Agentic System is NOT Agent per ADR-ES-025 section 5"
+  - "Agentic System is NOT Agentic Workflow per ADR-ES-025 section 6"
+  - "Agentic System is NOT Agentic Operations per ADR-ES-025 section 7"
+  - "Agentic System is NOT Agentic Service per ADR-ES-025 section 11"
+  - "Agentic System is NOT Agentic Organization per ADR-ES-025 section 11"
+  - "Agentic System is NOT Agentic Enterprise per ADR-ES-025 section 11"
+  - "Agentic System is NOT AI System merely because it uses AI per ADR-ES-025 section 3 + section 11"
+  - "Agentic System is NOT Automated System merely because it automates execution per ADR-ES-025 section 3 + section 11"
+  - "AI NOT required per ADR-ES-025 section 3"
+  - "Automation NOT sufficient per ADR-ES-025 section 3"
+  - "Agent presence alone NOT sufficient per ADR-ES-025 section 3"

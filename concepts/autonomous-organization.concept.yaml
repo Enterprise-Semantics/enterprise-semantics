@@ -1,0 +1,291 @@
+# concepts/autonomous-organization.concept.yaml ; Autonomous Organization
+
+# Per CR-ES-021 section 3 + ADR-ES-021 section 1:
+#   An Autonomous Organization is an Organization in which
+#   material organizational decisions, coordination, execution,
+#   or adaptation are capable of progressing independently
+#   within defined objectives, authority, policies, constraints,
+#   accountability, and governance boundaries without requiring
+#   human intervention for every organizational decision or action.
+#
+# Specialisation of Organization. Per CR-ES-021 section 3 +
+# ADR-ES-021 section 1, this record does NOT redefine foundational
+# Organization semantics.
+#
+# FOUNDATIONAL DEPENDENCY (resolved):
+# This specialization depends on `Organization` being canonical
+# in Enterprise-Semantics. Per CR-ES-021 section 2 + ADR-ES-022,
+# the parent Organization concept IS canonical as of 2026-09-25
+# (organization.concept.yaml exists on origin/main). Dependency
+# resolved.
+#
+# Per ADR-ES-021 section 11, AI is NOT required and automation is
+# NOT sufficient. Human participation remains valid. Material
+# organizational autonomy must be demonstrated.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:autonomous-organization
+canonical_name: Autonomous Organization
+definition: |
+  An Autonomous Organization is an Organization in which material
+  organizational decisions, coordination, execution, or adaptation
+  are capable of progressing independently within defined
+  objectives, authority, policies, constraints, accountability, and
+  governance boundaries without requiring human intervention for
+  every organizational decision or action.
+  The Organization concept remains the universal foundational
+  concept at the Organization boundary ;; Autonomous Organization
+  is a contextual specialization, not a replacement or narrowing
+  of Organization.
+  Material organizational autonomy must be demonstrated ;; AI,
+  automation, autonomous software, autonomous services, autonomous
+  products, autonomous offerings, autonomous operations, or Agent
+  participation alone do not establish Autonomous Organization.
+status: Candidate
+version: 2.0.0
+concept_type: autonomous-organization
+governance: enterprise-semantics
+
+specializes:
+  - canonical_id: external:organization:Organization
+    relationship: specialization-of
+    rationale: |
+      Autonomous Organization is a contextual specialization of the
+      universal Organization concept. The semantic distinction
+      remains: Organization describes the coordinated boundary of
+      actors, roles, responsibilities, authority, resources, and
+      activities ;; Autonomous Organization additionally describes
+      how that organizational behavior is realized through
+      material organizational autonomy within defined governance
+      boundaries.
+    dependency_note: |
+      Per CR-ES-021 section 2 dependency gate. The parent
+      Organization concept is canonical in Enterprise-Semantics
+      per ADR-ES-022 (slot 0024) + CR-ES-022 (slot 0030). The
+      canonical concept YAML lives on the
+      docs/cr-es-022-vs-a-organization-concepts branch (not yet
+      merged to origin/main). This specialization therefore uses
+      the external:organization:Organization forward-reference
+      pattern established by ES-018 section 3 + ES-019 section 3
+      + ES-020 section 3. Dependency is resolved at the
+      governance level.
+
+relationships:
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: specialization-of
+    object: external:organization:Organization
+    qualification: contextual-specialization
+    status: proposed
+    provenance: ADR-ES-021 section 1 ; CR-ES-021 section 3
+    rationale: |
+      Autonomous Organization is a contextual specialization of
+      the universal Organization concept.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: operates-within
+    object: external:concept:authority
+    qualification: bounded-authority
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization operates within Authority ;; autonomy
+      does not imply unrestricted discretion.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: governed-by
+    object: external:concept:policy
+    qualification: policy-bounded
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization is governed by Policy ;; autonomy
+      does not imply no governance.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: constrained-by
+    object: external:concept:constraint
+    qualification: constraint-bounded
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization is constrained by Constraint ;;
+      autonomy does not imply unlimited authority.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: pursues
+    object: external:concept:organizational-objective
+    qualification: objective-bounded
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization pursues Organizational Objective ;;
+      autonomy is bounded by objectives.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: responds-to
+    object: external:concept:organizational-context
+    qualification: contextual
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization responds to Organizational Context.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: produces
+    object: external:concept:organizational-outcome
+    qualification: outcome-production
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization produces Organizational Outcome.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: adapts-to
+    object: external:concept:organizational-context
+    qualification: adaptation
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization adapts to Organizational Context.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: escalates-to
+    object: external:concept:human-or-authority
+    qualification: escalation-boundary
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization escalates to Human or Authority
+      when authority is exceeded.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: uses
+    object: external:concept:workflow
+    qualification: workflow-support
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization uses Workflow.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: uses
+    object: external:concept:agentic-workflow
+    qualification: workflow-support
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization uses Agentic Workflow.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: uses
+    object: external:concept:autonomous-operations
+    qualification: operations-support
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization uses Autonomous Operations.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: uses
+    object: external:concept:agentic-operations
+    qualification: operations-support
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization uses Agentic Operations.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: exercises
+    object: external:concept:capability
+    qualification: capability-exercise
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization exercises Capability.
+  - subject: ES:CONCEPT:autonomous-organization
+    predicate: contributes-to
+    object: external:concept:value
+    qualification: value-contribution
+    status: proposed
+    provenance: ADR-ES-021 section 9 ; CR-ES-021 section 5
+    rationale: |
+      Autonomous Organization contributes to Value.
+
+properties:
+  organizational_objective: string
+  organizational_scope: string
+  autonomy_scope: string
+  decision_scope: string
+  action_scope: string
+  coordination_scope: string
+  adaptation_scope: string
+  organizational_context: string
+  authority_context: string
+  policy_context: string
+  constraint_context: string
+  governance_context: string
+  accountability_context: string
+  intervention_model: string
+  escalation_boundary: string
+  observation_scope: string
+  realization_mode: string
+
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Organization
+    relationship: references
+    note: |
+      Autonomous Organization inherits the WSF Organization
+      grounding via its parent Organization concept.
+
+profile_bindings: []  # populated by VS-D2c after profile record is authored
+
+autonomy_orthogonality:
+  - id: AORG-AUTO-ORTH-001
+    description: Agentic Organization is NOT Autonomous Organization (orthogonal dimensions per ADR-ES-021 section 3 + section 8)
+  - id: AORG-AUTO-ORTH-002
+    description: Autonomous Organization is NOT Agentic Organization (orthogonal dimensions per ADR-ES-021 section 3 + section 8)
+  - id: AORG-AUTO-ORTH-003
+    description: An Organization may be both Agentic and Autonomous per ADR-ES-021 section 8 four-state model
+
+autonomy_materiality:
+  - id: AORG-AUTO-MAT-001
+    description: Material organizational autonomy required per ADR-ES-021 section 5
+  - id: AORG-AUTO-MAT-002
+    description: AI NOT required per ADR-ES-021 section 11 + CR-ES-021 section 7
+  - id: AORG-AUTO-MAT-003
+    description: Automation NOT sufficient per ADR-ES-021 section 11 + CR-ES-021 section 7
+  - id: AORG-AUTO-MAT-004
+    description: Autonomous components alone NOT sufficient per ADR-ES-021 section 5
+
+boundary_invariants:
+  - id: AORG-AUTO-BND-001
+    description: Autonomous Organization is NOT Autonomous Enterprise per ADR-ES-021 section 10 + AORG-AUTO-NEG-001
+  - id: AORG-AUTO-BND-002
+    description: Autonomous Organization is NOT Autonomous Operations per ADR-ES-021 section 10 + AORG-AUTO-NEG-002
+  - id: AORG-AUTO-BND-003
+    description: Autonomous Organization is NOT Autonomous Service per ADR-ES-021 section 10 + AORG-AUTO-NEG-003
+  - id: AORG-AUTO-BND-004
+    description: Autonomous Organization is NOT Autonomous Product per ADR-ES-021 section 10 + AORG-AUTO-NEG-004
+  - id: AORG-AUTO-BND-005
+    description: Autonomous Organization is NOT Autonomous Offering per ADR-ES-021 section 10 + AORG-AUTO-NEG-005
+  - id: AORG-AUTO-BND-006
+    description: Autonomous Organization is NOT Autonomous Workflow per ADR-ES-021 section 10
+  - id: AORG-AUTO-BND-007
+    description: Autonomous Organization is NOT Agentic Organization per ADR-ES-021 section 3 + section 8 + AORG-AUTO-NEG-001
+  - id: AORG-AUTO-BND-008
+    description: Autonomous Organization does NOT require AI per ADR-ES-021 section 11 + AORG-AUTO-NEG-006
+  - id: AORG-AUTO-BND-009
+    description: Automation does NOT establish Autonomous Organization per ADR-ES-021 section 11 + AORG-AUTO-NEG-007
+  - id: AORG-AUTO-BND-010
+    description: Autonomous Organization does NOT prohibit human participation per ADR-ES-021 section 7 + AORG-AUTO-NEG-008
+  - id: AORG-AUTO-BND-011
+    description: Autonomous Organization has bounded authority per ADR-ES-021 section 12 + AORG-AUTO-NEG-009
+  - id: AORG-AUTO-BND-012
+    description: Autonomous Organization retains governance per ADR-ES-021 section 12 + AORG-AUTO-NEG-010
+  - id: AORG-AUTO-BND-013
+    description: Autonomous Organization retains accountability per ADR-ES-021 section 12 + AORG-AUTO-NEG-011
+  - id: AORG-AUTO-BND-014
+    description: Autonomous Organization supports escalation per ADR-ES-021 section 4 + section 12 + AORG-AUTO-NEG-012
+
+provenance:
+  source:
+    - ADR-ES-008
+    - ADR-ES-009
+    - ADR-ES-011
+    - ADR-ES-015
+    - ADR-ES-019
+    - ADR-ES-020
+  decision:
+    - ADR-ES-021
+  implementation:
+    - CR-ES-021
+
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)

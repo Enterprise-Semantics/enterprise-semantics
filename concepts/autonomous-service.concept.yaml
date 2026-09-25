@@ -1,0 +1,297 @@
+id: ES:CONCEPT:autonomous-service
+canonical_name: Autonomous Service
+definition: |
+  An Autonomous Service is a Service whose delivery or interaction
+  is capable of progressing through decisions, actions,
+  coordination, and adaptation within defined service objectives,
+  authority, policies, constraints, and governance boundaries
+  without requiring human intervention for every service decision
+  or action.
+  The Service concept remains the universal foundational type per
+  ADR-ES-002 ; Autonomous Service is a contextual specialization,
+  not a replacement or narrowing of Service. Autonomy must be
+  material to service realization ; AI, automation, Agent
+  participation, autonomous system usage, machine learning, or
+  predefined decision rules alone do not establish Autonomous
+  Service.
+status: Candidate
+version: 1.4.0
+concept_type: autonomous-service
+specializes:
+  - canonical_id: external:service:Service
+    relationship: specialization-of
+    rationale: |
+      Autonomous Service is a contextual specialization of the
+      universal Service concept. The semantic distinction remains:
+      Service describes a means through which a capability or
+      value is made available ; Autonomous Service additionally
+      describes how that service can be realized with bounded
+      independent progression within authority, policy,
+      constraints, and governance boundaries.
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Service
+    relationship: references
+    note: |
+      Autonomous Service inherits the WSF Service grounding via
+      its parent Service concept. The specialization does not
+      introduce a new WSF semantic kind.
+profile_bindings: []
+relationships:
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: specialization-of
+    object: external:service:Service
+    qualification: contextual-specialization
+    status: proposed
+    provenance: ADR-ES-015 §1 ; CR-ES-015 §3
+    rationale: |
+      Autonomous Service is a contextual specialization of
+      Service, not a new foundational type of service. The
+      Service concept remains universal per ADR-ES-002.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: operates-within
+    object: external:concept:authority
+    qualification: authority-bounded
+    status: proposed
+    provenance: ADR-ES-015 §6 ; CR-ES-015 §7
+    rationale: |
+      Autonomous Service operates within defined Authority
+      boundaries. Unlimited authority must fail conformance per
+      CR-ES-015 §18 CI requirements.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: governed-by
+    object: external:policy:Policy
+    qualification: policy-compliance
+    status: proposed
+    provenance: ADR-ES-015 §6 ; CR-ES-015 §7
+    rationale: |
+      Autonomous Service is governed by applicable Policy per
+      ASVC-AUTO-CON-009.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: constrained-by
+    object: external:concept:constraint
+    qualification: constraint-compliance
+    status: proposed
+    provenance: ADR-ES-015 §6 ; CR-ES-015 §7
+    rationale: |
+      Autonomous Service is bounded by defined Constraints per
+      ASVC-AUTO-CON-010.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: pursues
+    object: external:concept:objective
+    qualification: objective-directed
+    status: proposed
+    provenance: ADR-ES-015 §5 ; CR-ES-015 §7
+    rationale: |
+      Autonomous Service pursues a defined Service Objective.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: responds-to
+    object: external:concept:context
+    qualification: context-responsive
+    status: proposed
+    provenance: ADR-ES-015 §5 ; CR-ES-015 §7
+    rationale: Autonomous Service responds to Service Context.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: produces
+    object: external:outcome:Outcome
+    qualification: outcome-production
+    status: proposed
+    provenance: ADR-ES-015 §5 ; CR-ES-015 §7
+    rationale: Autonomous Service produces Service Outcomes.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: adapts-to
+    object: external:concept:context
+    qualification: adaptive-realization
+    status: proposed
+    provenance: ADR-ES-015 §5 ; CR-ES-015 §7
+    rationale: Autonomous Service adapts within defined scope per ASVC-AUTO-CON-012.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: uses
+    object: ES:CONCEPT:workflow
+    qualification: workflow-usage
+    status: proposed
+    provenance: ADR-ES-015 §15 ; CR-ES-015 §7
+    rationale: Autonomous Service may use a Workflow.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    qualification: agentic-workflow-usage
+    status: proposed
+    provenance: ADR-ES-015 §15 ; CR-ES-015 §7
+    rationale: Autonomous Service may use an Agentic Workflow per ASVC-AUTO-CON-017.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: supported-by
+    object: external:concept:autonomous-operations
+    qualification: operational-support
+    status: proposed
+    provenance: ADR-ES-015 §12 ; CR-ES-015 §7
+    rationale: |
+      Autonomous Service may be supported by Autonomous
+      Operations per ASVC-AUTO-CON-018. Autonomous Operations
+      do NOT automatically make every Service autonomous per
+      ASVC-AUTO-NEG-013.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: supports
+    object: ES:CONCEPT:capability
+    qualification: capability-support
+    status: proposed
+    provenance: ADR-ES-015 §15 ; CR-ES-015 §7
+    rationale: Autonomous Service supports Capability realization.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: contributes-to
+    object: external:concept:value
+    qualification: value-contribution
+    status: proposed
+    provenance: ADR-ES-015 §15 ; CR-ES-015 §7
+    rationale: Autonomous Service contributes to Value.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: distinct-from
+    object: external:agentic-service:AgenticService
+    qualification: orthogonality
+    status: proposed
+    provenance: ADR-ES-015 §7 + §8 ; CR-ES-015 §9 ; ASVC-AUTO-NEG-001
+    rationale: |
+      Autonomous Service is NOT Agentic Service. The two
+      dimensions remain orthogonal at the service boundary per
+      the 2x2 matrix established by ADR-ES-015 §7 + ADR-ES-014
+      §11.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: distinct-from
+    object: ES:CONCEPT:agent
+    qualification: service-vs-agent
+    status: proposed
+    provenance: ADR-ES-015 §17 ; CR-ES-015 §11 ; ASVC-AUTO-NEG-002
+    rationale: |
+      Autonomous Service is the service boundary ; Agent is
+      the bearer. The two are distinct semantic kinds.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: distinct-from
+    object: external:concept:autonomous-capability
+    qualification: service-vs-capability
+    status: proposed
+    provenance: ADR-ES-015 §14 ; CR-ES-015 §11 ; ASVC-AUTO-NEG-003
+    rationale: |
+      Autonomous Service is service-level autonomous
+      realization ; Autonomous Capability is capability-level
+      autonomy. Distinct semantic kinds per ADR-ES-015 §14.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: distinct-from
+    object: external:concept:autonomous-operations
+    qualification: service-vs-operations
+    status: proposed
+    provenance: ADR-ES-015 §12 ; CR-ES-015 §11 ; ASVC-AUTO-NEG-004
+    rationale: |
+      Autonomous Service is the service boundary ;
+      Autonomous Operations is the operations boundary.
+      Distinct semantic kinds per ADR-ES-015 §12.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: distinct-from
+    object: external:concept:autonomous-value-stream
+    qualification: service-vs-value-stream
+    status: proposed
+    provenance: ADR-ES-015 §13 ; CR-ES-015 §11 ; ASVC-AUTO-NEG-005
+    rationale: |
+      Autonomous Service is service-level autonomous
+      realization ; Autonomous Value Stream is end-to-end
+      autonomous value realization. Distinct semantic kinds
+      per ADR-ES-015 §13.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: distinct-from
+    object: external:concept:autonomous-enterprise
+    qualification: service-vs-enterprise
+    status: proposed
+    provenance: ADR-ES-015 §17 ; CR-ES-015 §11 ; ASVC-AUTO-NEG-006
+    rationale: |
+      Autonomous Service is service-level autonomy ;
+      Autonomous Enterprise is enterprise-level autonomy.
+      A single Autonomous Service does NOT establish
+      Autonomous Enterprise.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: not-implies
+    object: external:concept:ai-service
+    qualification: ai-not-required
+    status: proposed
+    provenance: ADR-ES-015 §9 ; CR-ES-015 §11 ; ASVC-AUTO-CON-015 ; ASVC-AUTO-NEG-007
+    rationale: |
+      Autonomous Service does NOT require AI. AI-enabled
+      Service is NOT automatically Autonomous Service per
+      ASVC-AUTO-NEG-008.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: not-implies
+    object: external:concept:automated-service
+    qualification: automation-not-sufficient
+    status: proposed
+    provenance: ADR-ES-015 §10 ; CR-ES-015 §11 ; ASVC-AUTO-CON-016 ; ASVC-AUTO-NEG-009
+    rationale: |
+      Automated Service does NOT establish Autonomous
+      Service per ASVC-AUTO-NEG-009. Autonomy requires
+      material independent decision/action progression
+      within bounds.
+  - subject: ES:CONCEPT:autonomous-service
+    predicate: materiality-required
+    object: external:concept:autonomous-progression
+    qualification: autonomy-materiality
+    status: proposed
+    provenance: ADR-ES-015 §4 ; CR-ES-015 §8 ; ASVC-AUTO-CON-003
+    rationale: |
+      Autonomous Service requires material autonomous
+      progression in service realization. Mere use of AI,
+      automation, Agent, autonomous system, machine
+      learning, or predefined decision rules does NOT
+      establish autonomy per ASVC-AUTO-NEG-008/009/010.
+governance: enterprise-semantics
+provenance:
+  - source: ADR-ES-003
+    note: "Value Stream lineage ; Autonomous Service contributes to Value."
+  - source: ADR-ES-004
+    note: "Agentic semantic grounding ; behavioral foundation."
+  - source: ADR-ES-006
+    note: "Agentic Workflow lineage ; Autonomous Service may use Agentic Workflow."
+  - source: ADR-ES-007
+    note: "Agentic Operations lineage."
+  - source: ADR-ES-008
+    note: "Autonomous Operations lineage ; ASVC-AUTO-CON-018 supported-by relationship."
+  - source: ADR-ES-009
+    note: "Autonomous Value Stream lineage ; ASVC-AUTO-CON-019 participate relationship."
+  - source: ADR-ES-011
+    note: "Autonomous Enterprise lineage ; orthogonality at enterprise boundary."
+  - source: ADR-ES-014
+    note: |
+      Agentic Service lineage ; establishes the 2x2 matrix at
+      service boundary (Agentic yes/no, Autonomous yes/no) per
+      ADR-ES-014 §11 + ADR-ES-015 §7.
+  - source: ADR-ES-015
+    note: |
+      Foundational specialization decision ; v1.4.0 release
+      target ; ASVC-AUTO-CON-001..020 invariants established ;
+      service-level autonomy orthogonality at §7 ; service
+      universality preserved at §3 ; autonomy materiality at §4.
+  - source: CR-ES-015
+    note: |
+      Implementation specification ; canonical concept record ;
+      schema requirements at §4 ; required relationships at §7 ;
+      registry addition at §5 ; profile binding at §6 ; WSF
+      mapping at §16 ; OpenDEA mapping at §16 ; relationship
+      integrity at §7 ; autonomy materiality at §8 ; Agentic /
+      Autonomous orthogonality at §9.
+  - source: FND-ES-AG-008
+    note: "WSF Tier 1 / Tier 2 Grounding Boundary (Established 2026-09-22)."
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Service
+    relationship: references
+    note: |
+      Inherits WSF Service grounding via the parent Service
+      concept. The specialization does not introduce a new WSF
+      semantic kind. Detailed mapping at
+      enterprise-semantics-mappings/wsf/autonomous-service.yaml
+      (canonicalisation held for VS-C slice).
+  - authority: opendea
+    target_id: external:opendea:Service
+    relationship: references
+    note: |
+      References OpenDEA Service semantics without modifying the
+      OpenDEA metamodel. Detailed mapping at
+      enterprise-semantics-mappings/opendea/autonomous-service.yaml
+      (canonicalisation held for VS-C slice).
+created: 2026-09-25
+updated: 2026-09-25

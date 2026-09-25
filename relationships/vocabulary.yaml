@@ -18,7 +18,7 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.9.0
+  version: 1.7.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
@@ -638,3 +638,57 @@ change_history:
       for value-stage (precedes, stage-realized-through, requires,
       stage-produces, contributes-to). Version bumped to v0.2.0. Status:
       candidate (awaiting ADR-ES-003 acceptance).
+
+change_history:
+  - version: 1.7.0
+    date: 2026-09-25
+    author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+    adr: ADR-ES-020
+    cr: CR-ES-020
+    scope: Add Agentic Organization canonical predicates and target concepts
+    foundational_dependency: documented per ADR-ES-020 section 2 + CR-ES-020 section 2
+    changes:
+      - Add Agentic Organization concept (ES:CONCEPT:agentic-organization)
+      - Add organizational_intent property
+      - Add agentic_scope property
+      - Add organizational_context property
+      - Add delegated_intent property
+      - Add decision_boundary property
+      - Add coordination_scope property
+      - Add action_selection_scope property
+      - Add adaptation_scope property
+      - Add intervention_model property
+      - Add escalation_boundary property
+      - Add governance_context property
+      - Add accountability_context property
+      - Add realization_mode property
+      - Add specializes predicate target Organization
+      - Add engages predicate target Agent
+      - Add interprets predicate target Intent
+      - Add operates-within predicate target Authority
+      - Add governed-by predicate target Policy
+      - Add constrained-by predicate target Constraint
+      - Add coordinates predicate target Process
+      - Add uses predicate target Agentic Workflow
+      - Add uses predicate target Agentic Operations
+      - Add produces predicate target Organizational Outcome
+      - Add adapts-to predicate target Organizational Context
+      - Add exercises predicate target Capability
+      - Add contributes-to predicate target Value
+      - Add materiality-required predicate (materiality-validation)
+      - Add boundary-maintained predicate (authority-escalation)
+      - Add ai-independent predicate (ai-independence)
+      - Add automation-independent predicate (automation-independence)
+      - Add distinct-from predicate target Agentic Enterprise
+      - Add distinct-from predicate target Agentic Operations
+      - Add distinct-from predicate target Agentic Workflow
+      - Add distinct-from predicate target Agent
+      - Add distinct-from predicate target Agentic Culture
+      - Add distinct-from predicate target Autonomous Organization
+      - Note: ES-016 + ES-017 + ES-018 + ES-019 + ES-020 prior bumps (v1.3.0 + v1.4.0 + v1.5.0 + v1.6.0) did not land on origin/main; this is a combined bump covering ES-016 + ES-017 + ES-018 + ES-019 + ES-020 change history
+    cardinal_rules:
+      - D-004 compliance: zero en-dash, zero em-dash, zero U+2E3B
+      - Zero inline 3-semicolon dividers in new entry
+      - Zero vendor-specific embargoed references
+      - Foundational Dependency Gate documented per ADR-ES-020 section 2 + CR-ES-020 section 2
+      - Authored by Emmanuel A. Otchere (cardinal author rule, 2026-09-24)

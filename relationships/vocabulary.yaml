@@ -18,8 +18,8 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.9.0
-  status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
+  version: 1.4.0
+  status: established ;;; awaiting ADR-ES-017 acceptance for v1.4.0 release
   governed_predicates:
 
     # ===== Value Stream ;;; Subject predicates (CR-ES-003 §9 + §10.1-§10.7) =====
@@ -638,3 +638,18 @@ change_history:
       for value-stage (precedes, stage-realized-through, requires,
       stage-produces, contributes-to). Version bumped to v0.2.0. Status:
       candidate (awaiting ADR-ES-003 acceptance).
+
+
+  - date: 2026-09-25
+    by: CR-ES-017
+    change: |
+      Vocabulary internal version bump v1.3.0 -> v1.4.0 covering ES-017
+      implementation chain. 13 predicates ratified for Autonomous
+      Product per CR-ES-017 §6 (specialization-of, operates-within,
+      governed-by, constrained-by, pursues, responds-to, produces,
+      adapts-to, uses, supported-by, supports, delivered-through,
+      contributes-to). Plus CR-ES-017 §7 invariant predicates
+      (distinct-from, not-implies, materiality-required, permits)
+      already established by prior tranches. The Autonomous Product
+      boundary completes the Product 2x2 matrix alongside Agentic
+      Product at v1.5.0 per ADR-ES-016 §3 + ADR-ES-017 §3.

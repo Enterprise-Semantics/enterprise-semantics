@@ -1,0 +1,144 @@
+# versions/v1.6.0.yaml ;; Autonomous Product Semantic Grounding
+#
+# v1.6.0 release pointer ;; Enterprise-Semantics Programme
+#
+# Authoring CR: CR-ES-017 (Autonomous Product Semantic Grounding)
+# Ratifying ADR: ADR-ES-017 (Autonomous Product Semantic Grounding)
+#
+# Release scope (per CR-ES-017 §17 + ADR-ES-017 §16):
+#   - Canonical schema validation passes
+#   - Registry validation passes
+#   - Relationship validation passes
+#   - Specialization validation passes
+#   - Material autonomy validation passes (CR-ES-017 §8)
+#   - AI/automation independence tests pass (CR-ES-017 §10)
+#   - Agentic/Autonomous orthogonality tests pass (CR-ES-017 §7)
+#   - Provenance validation passes (CR-ES-017 §15)
+#   - Mappings validate (CR-ES-017 §14)
+#   - Documentation and diagrams are synchronized (CR-ES-017 §11)
+#   - Positive conformance tests pass (APROD-AUTO-CON-001 .. APROD-AUTO-CON-021)
+#   - Negative conformance tests pass (APROD-AUTO-NEG-001 .. APROD-AUTO-NEG-016)
+#   - No unauthorized foundational concepts are introduced
+#
+# Release authority chain:
+#   - ADR-ES-017 (Foundational Specialization Decision, Proposed, slot 0019)
+#   - CR-ES-017 (Implementation Specification, Proposed, slot 0025)
+#
+# Architectural continuity (per ADR-ES-017 §22 implicit + ADR-ES-018 §22):
+#   Capability
+#     |-- Agentic Capability
+#     |-- Autonomous Capability
+#   Product
+#     |-- Agentic Product                  v1.5.0
+#     |-- Autonomous Product               v1.6.0 (this release)
+#   Service
+#     |-- Agentic Service
+#     |-- Autonomous Service
+#   Offering
+#     |-- Agentic Offering                 v1.7.0 (gated on foundational Offering dependency)
+#     |-- [Autonomous Offering -- future]
+#   Value Stream
+#     |-- Agentic Value Stream
+#     |-- Autonomous Value Stream
+#   Enterprise
+#     |-- Agentic Enterprise
+#     |-- Autonomous Enterprise
+#
+# Prior releases in the v1.x line:
+#   v1.1.0 -- Agentic Capability Semantic Grounding (CR-ES-012)
+#   v1.2.0 -- Autonomous Capability Semantic Grounding (CR-ES-013)
+#   v1.3.0 -- Agentic Service Semantic Grounding (CR-ES-014)
+#   v1.4.0 -- Autonomous Service Semantic Grounding (CR-ES-015)
+#   v1.5.0 -- Agentic Product Semantic Grounding (CR-ES-016)
+#   v1.6.0 -- Autonomous Product Semantic Grounding (CR-ES-017) ; this release
+#
+# Boundaries preserved:
+#   Autonomous Product != Agentic Product
+#   Autonomous Product != Autonomous Service
+#   Autonomous Product != Autonomous Capability
+#   Autonomous Product != Autonomous Operations
+#   Autonomous Product != Autonomous Value Stream
+#   Autonomous Product != Autonomous Workflow
+#   Autonomous Product != Autonomous Enterprise
+#   Autonomous Product != AI Product
+#   Autonomous Product != Automated Product
+#
+# Deferred concepts (per ADR-ES-017 §14 + CR-ES-017 §2):
+#   Autonomous Offering
+#   Product autonomy maturity
+#   Autonomy levels
+#   Autonomous Portfolio
+#   Autonomous Agent
+#   Autonomous Product Agent
+#   Autonomous Ecosystem
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+version: "1.6.0"
+release_target: Autonomous Product Semantic Grounding
+status: candidate  # gated on ADR-ES-017 acceptance
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance:
+  authorizing_adr: ADR-ES-017
+  implementing_cr: CR-ES-017
+  precedence: ES-017 supersedes prior v1.x patches in Autonomous Product scope
+architectural_continuity:
+  capability_branch:
+    agentic_capability: v1.1.0
+    autonomous_capability: v1.2.0
+  product_branch:
+    agentic_product: v1.5.0
+    autonomous_product: v1.6.0  # this release
+  service_branch:
+    agentic_service: v1.3.0
+    autonomous_service: v1.4.0
+  offering_branch:
+    agentic_offering: v1.7.0  # gated on foundational Offering dependency
+    autonomous_offering: deferred per ADR-ES-018 §14
+  value_stream_branch:
+    agentic_value_stream: v0.4.0
+    autonomous_value_stream: v0.8.0
+  enterprise_branch:
+    agentic_enterprise: v1.0.0
+    autonomous_enterprise: v1.1.0
+semantic_release:
+  new_concepts:
+    - id: ES:CONCEPT:autonomous-product
+      semantic_type: AutonomousProduct
+      version: 1.6.0
+      specialization: external:product:Product
+  new_profiles:
+    - id: ES:PROFILE:autonomous-product
+      profile_type: autonomous-product
+      version: 1.6.0
+  new_vocabulary_predicates: []  # all required predicates already established
+  new_mappings:
+    - authority: wsf
+      target: external:wsf:Product
+      relationship: references
+    - authority: opendea
+      target: external:opendea:Product
+      relationship: references
+acceptance_criteria:
+  positive_tests: 21  # APROD-AUTO-CON-001 .. APROD-AUTO-CON-021
+  negative_tests: 16  # APROD-AUTO-NEG-001 .. APROD-AUTO-NEG-016
+  total: 37
+invariants:
+  specialization_validity: required
+  material_autonomy_validation: required
+  ai_independence: required
+  automation_independence: required
+  human_participation_compatibility: required
+  agentic_autonomous_orthogonality: required
+  provenance_completeness: required
+  boundary_preservation:
+    autonomous_product_not_agentic_product: required
+    autonomous_product_not_autonomous_service: required
+    autonomous_product_not_autonomous_capability: required
+    autonomous_product_not_autonomous_operations: required
+    autonomous_product_not_autonomous_value_stream: required
+    autonomous_product_not_autonomous_workflow: required
+    autonomous_product_not_autonomous_enterprise: required
+    autonomous_product_not_ai_product: required
+    autonomous_product_not_automated_product: required

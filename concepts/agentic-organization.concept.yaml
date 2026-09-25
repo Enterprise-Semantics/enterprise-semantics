@@ -1,0 +1,191 @@
+# concepts/agentic-organization.concept.yaml ;; Agentic Organization (ES:CONCEPT:agentic-organization)
+#
+# Per CR-ES-020 section 3 + ADR-ES-020 section 1.
+#
+# Per ADR-ES-020 section 2 + CR-ES-020 section 2 Foundational Dependency
+# Gate: Parent Organization concept is NOT yet canonical on origin/main
+# as of 2026-09-25. Per user directive messages 1552900782440058902
+# (Proceed with 18) + 1552912455527571546 (save, read, understand,
+# implement), the dependency is documented rather than blocking.
+# The next-foundational tranche is ADR-ES-021 (Organization canonical
+# grounding). Until that ADR is filed and Accepted, this concept record
+# carries the documented dependency in the `foundational_dependency_gate`
+# block.
+#
+# Specialisation of Organization (not replacement ; not parallel construct).
+# Per CR-ES-020 section 2, the Agentic Organization schema shall
+# preserve the mandatory Organization semantics.
+#
+# Per ADR-ES-020 section 5 + section 6 + CR-ES-020 section 9 + section 10
+# + section 11, the implementation shall reject Agentic Organization ->
+# Agentic Enterprise, Agentic Workflow, Agentic Operations, Agent,
+# Agentic Culture, Autonomous Organization. AI is NOT required,
+# automation is NOT sufficient, human participation remains compatible.
+#
+# Per ADR-ES-020 section 17 + CR-ES-020 section 2, this record does NOT
+# establish Autonomous Organization, Agentic Culture, Autonomous Culture,
+# Agentic Ecosystem, Autonomous Ecosystem, Agentic Network, Autonomous
+# Network, organizational autonomy maturity, organizational agent
+# hierarchy, Agentic Management, Autonomous Management. Those concepts
+# are explicitly deferred to separate governance decisions.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:agentic-organization
+canonical_name: Agentic Organization
+definition: |
+  An Agentic Organization is an Organization in which material
+  organizational activities, coordination, decision-making, or
+  execution incorporate agentic behavior to interpret delegated
+  intent, select or coordinate actions, adapt to context, or
+  pursue organizational outcomes within defined authority, policy,
+  and governance boundaries.
+
+status: Candidate
+version: 1.0.0
+concept_type: agentic-organization
+
+specializes:
+  canonical_target: external:organization:Organization
+  per: ADR-ES-020 section 1 + CR-ES-020 section 3 + section 7
+  foundational_dependency: documented per ADR-ES-020 section 2 + CR-ES-020 section 2
+
+foundational_dependency_gate:
+  status: documented  # per ADR-ES-020 section 2 + CR-ES-020 section 2
+  parent_concept: external:organization:Organization
+  parent_canonical: false  # as of 2026-09-25
+  resolution: per user directive messages 1552900782440058902 + 1552912455527571546
+  next_foundational_tranche: ADR-ES-021 (Organization canonical grounding)
+
+properties:
+  organizational_intent: pursuit of an organizational-level outcome
+  agentic_scope: extent of agentic organizational behaviour permitted
+  organizational_context: contextual conditions affecting organizational operations
+  delegated_intent: delegated authority and intent within organization
+  authority_context: defined organizational authority
+  decision_boundary: decisions permitted for agentic selection
+  coordination_scope: coordinated organizational actors and units
+  action_selection_scope: actions permitted for agentic selection
+  adaptation_scope: outcome-based adaptation
+  intervention_model: human-in/on/over-the-loop, approval, exception intervention
+  escalation_boundary: escalation points
+  policy_context: policy compliance boundaries
+  constraint_context: constraint boundaries
+  governance_context: governance boundaries
+  accountability_context: organizational accountability boundaries
+  realization_mode: mixed (conventional + automated + human + agentic)
+
+wsf_grounding:
+  tier: 2
+  basis: external:wsf:Organization
+  novelty: agentic-organizational-coordination-representation
+  per: FND-ES-AG-008 section 1.3
+  no_modification: WSF live baseline remains authoritative
+
+relationships:
+  # canonical specialization (per CR-ES-020 section 7)
+  - predicate: specializes
+    target: external:organization:Organization
+  - predicate: engages
+    target: ES:CONCEPT:agent
+  - predicate: interprets
+    target: ES:CONCEPT:intent
+  - predicate: operates-within
+    target: ES:CONCEPT:authority
+  - predicate: governed-by
+    target: ES:CONCEPT:policy
+  - predicate: constrained-by
+    target: external:constraint:Constraint
+  - predicate: coordinates
+    target: external:process:Process
+  - predicate: uses
+    target: external:agentic-workflow:Agentic-Workflow
+  - predicate: uses
+    target: external:agentic-operations:Agentic-Operations
+  - predicate: produces
+    target: external:organizational-outcome:Organizational-Outcome
+  - predicate: adapts-to
+    target: external:organizational-context:Organizational-Context
+  - predicate: exercises
+    target: external:capability:Capability
+  - predicate: contributes-to
+    target: external:value:Value
+
+  # material agentic validation (per CR-ES-020 section 8)
+  - predicate: materiality-required
+    object: external:concept:material-agentic-organizational-behaviour
+    qualification: materiality-validation
+    rationale: Material agentic organizational behaviour required per CR-ES-020 section 8.
+  - predicate: boundary-maintained
+    object: external:concept:organizational-authority-escalation
+    qualification: authority-escalation
+    rationale: Bounded organizational authority + escalation per ADR-ES-020 section 13.
+  - predicate: ai-independent
+    object: external:concept:ai-not-required
+    qualification: ai-independence
+    rationale: AI is neither necessary nor sufficient per ADR-ES-020 section 9.
+  - predicate: automation-independent
+    object: external:concept:automation-not-sufficient
+    qualification: automation-independence
+    rationale: Automation is neither necessary nor sufficient per ADR-ES-020 section 10.
+
+  # boundaries (per CR-ES-020 section 9 + section 10 + section 11 + section 12 + section 13)
+  - predicate: distinct-from
+    object: external:agentic-enterprise:Agentic-Enterprise
+    rationale: Agentic Enterprise boundary per CR-ES-020 section 9 + AORG-NEG-004.
+  - predicate: distinct-from
+    object: external:agentic-operations:Agentic-Operations
+    rationale: Agentic Operations boundary per CR-ES-020 section 10 + AORG-NEG-003.
+  - predicate: distinct-from
+    object: external:agentic-workflow:Agentic-Workflow
+    rationale: Agentic Workflow boundary per CR-ES-020 section 11 + AORG-NEG-002.
+  - predicate: distinct-from
+    object: external:agent:Agent
+    rationale: Agent boundary per CR-ES-020 section 12 + AORG-NEG-001.
+  - predicate: distinct-from
+    object: external:agentic-culture:Agentic-Culture
+    rationale: Agentic Culture boundary per CR-ES-020 section 13 + AORG-NEG-005.
+  - predicate: distinct-from
+    object: external:autonomous-organization:Autonomous-Organization
+    rationale: Autonomous Organization boundary per CR-ES-020 section 8 + AORG-NEG-013.
+
+provenance:
+  - source: ADR-ES-004
+    note: Agentic Semantic Grounding
+  - source: ADR-ES-007
+    note: Agentic Operations Semantic Grounding
+  - source: ADR-ES-010
+    note: Agentic Enterprise Semantic Grounding
+  - source: ADR-ES-011
+    note: Autonomous Enterprise Semantic Grounding
+  - source: ADR-ES-020
+    note: Agentic Organization decision
+  - source: CR-ES-020
+    note: Agentic Organization implementation
+  - source: USER-DIRECTIVE-1552900782440058902
+    note: Proceed with 18 (dependency override)
+  - source: USER-DIRECTIVE-1552912455527571546
+    note: Save, read, understand, implement (paired tranche)
+
+opendea_grounding:
+  classification: specialisation
+  basis: external:opendea:Organization
+  novelty: agentic-organizational-coordination-representation
+  no_modification: OpenDEA live baseline remains authoritative
+
+mappings:
+  - external:wsf:Organization
+  - external:opendea:Organization
+
+governance: enterprise-semantics
+
+created: 2026-09-25
+updated: 2026-09-25
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 en-dash, 0 em-dash, 0 U+2E3B, 0 arrow glyph
+  - vendor_specific_embargo: 0 references; no vendor-specific material from embargoed sources
+  - foundational_dependency_gate: documented per ADR-ES-020 section 2 + CR-ES-020 section 2
+  - no_wsF_modification: WSF metamodel not modified
+  - no_openDea_modification: OpenDEA metamodel not modified

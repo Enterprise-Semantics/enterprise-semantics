@@ -1,0 +1,62 @@
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+# Filing: VS-D2c of CR-ES-015 , Autonomous Service Profile per CR-ES-015 §6 + ADR-ES-015 §15
+
+id: ES:PROFILE:autonomous-service
+canonical_name: Autonomous Service
+profile_type: autonomous-service
+semantic_kind: service
+target_release: v1.4.0
+
+description: |
+  A profile that groups the Autonomous Service semantic
+  characteristics established by ADR-ES-015 + CR-ES-015. The
+  profile references the canonical Autonomous Service concept
+  (ES:CONCEPT:autonomous-service) and aggregates the bounded
+  autonomy properties (Service Objective, Authority, Policy,
+  Constraints, Governance, Service Contract, Escalation) plus
+  the Autonomy Materiality rule and the Agentic/Autonomous
+  orthogonality rule at the service boundary.
+
+characteristics:
+  - bounded independent progression , decisions/actions progress within authority
+  - outcome orientation , preserves Service -> Outcome semantic anchor
+  - authority-bounded , operates within defined Authority
+  - policy-governed , governed by applicable Policy
+  - constraint-bounded , bounded by defined Constraints
+  - governance-aware , governance boundaries explicit
+  - service-contract-aware , bounded by Service Contract
+  - adaptable , may adapt within defined scope
+  - intervention-aware , human participation remains valid
+  - escalation-aware , supports escalation when authority exceeded
+  - material autonomous progression , materiality rule enforced per ASVC-AUTO-CON-003
+  - ai-independent , does NOT require AI
+  - automation-independent , does NOT require Automation
+  - autonomy-independent , does NOT imply Agentic Service
+
+references:
+  - concept_id: ES:CONCEPT:autonomous-service
+    relationship: groups
+    note: |
+      Profile groups the Autonomous Service concept. The profile
+      does NOT add inheritance beyond the canonical
+      specialization-of Service established by ADR-ES-015 §3.
+  - concept_id: external:concept:service
+    relationship: inherits-from-via-specialization
+    note: |
+      Profile references the universal Service concept via the
+      Autonomous Service specialization. No additional ontology
+      inheritance.
+  - concept_id: external:concept:authority
+    relationship: references
+    note: Authority concept referenced for bounded autonomy.
+  - concept_id: external:policy:Policy
+    relationship: references
+    note: Policy concept referenced for governance.
+
+governance:
+  ratified_by: ADR-ES-015
+  implemented_by: CR-ES-015
+  status: candidate , awaiting CR-ES-015 implementation acceptance
+
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+filing_date: 2026-09-25

@@ -1,0 +1,142 @@
+# vocabulary/cross-cutting.yaml ; Cross-Cutting Vocabulary
+#
+# Per CR-ES-022 section 8 + ADR-ES-022 sections 7 + 8 ;
+# cross-cutting vocabulary covering the semantic dimensions
+# consistently used across Agentic + Autonomous specializations.
+#
+# This vocabulary SHALL reduce uncontrolled vocabulary divergence
+# across specializations per CR-ES-022 section 8.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:VOCAB:cross-cutting
+canonical_name: Cross-Cutting Vocabulary
+status: established
+version: 2.0.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+governing: ADR-ES-022 ; CR-ES-022
+
+# Per ADR-ES-022 section 12 ; governance concept dependency
+governance_concepts:
+  - id: intent
+    canonical_name: Intent
+    usage: Agentic specializations per ADR-ES-022 section 7
+  - id: objective
+    canonical_name: Objective
+    usage: Autonomous specializations per ADR-ES-022 section 8
+  - id: context
+    canonical_name: Context
+    usage: Both Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: authority
+    canonical_name: Authority
+    usage: Both Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: policy
+    canonical_name: Policy
+    usage: Both Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: constraint
+    canonical_name: Constraint
+    usage: Both Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: governance
+    canonical_name: Governance
+    usage: Both Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: accountability
+    canonical_name: Accountability
+    usage: Both Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: delegation
+    canonical_name: Delegation
+    usage: Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: decision
+    canonical_name: Decision
+    usage: Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: action
+    canonical_name: Action
+    usage: Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: coordination
+    canonical_name: Coordination
+    usage: Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: adaptation
+    canonical_name: Adaptation
+    usage: Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: intervention
+    canonical_name: Intervention
+    usage: Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: escalation
+    canonical_name: Escalation
+    usage: Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+  - id: observation
+    canonical_name: Observation
+    usage: Autonomous specializations per ADR-ES-022 section 8
+  - id: outcome
+    canonical_name: Outcome
+    usage: Agentic + Autonomous per ADR-ES-022 sections 7 + 8
+
+# Per CR-ES-022 section 5 ; validation rules
+validation_rules:
+  - id: V-A2A
+    description: Agentic SHALL NOT imply Autonomous
+    per: ADR-ES-022 section 3 + section 5
+  - id: V-A2AI
+    description: Agentic SHALL NOT imply AI
+    per: ADR-ES-022 section 3
+  - id: V-AU2AI
+    description: Autonomous SHALL NOT imply AI
+    per: ADR-ES-022 section 3
+  - id: V-AU2AUT
+    description: Autonomous SHALL NOT imply Automation
+    per: ADR-ES-022 section 3
+  - id: V-A2AUT
+    description: Agentic SHALL NOT imply Automation
+    per: ADR-ES-022 section 3
+
+# Per CR-ES-022 section 6 ; specialization gate metadata
+specialization_gate:
+  required_metadata:
+    - base_concept
+    - semantic_delta
+    - materiality
+    - authority_boundary
+    - policy_boundary
+    - constraint_boundary
+    - outcome
+    - applicable_relationships
+    - dependency
+    - adr
+    - cr
+  per: ADR-ES-022 section 4 + CR-ES-022 section 6
+
+# Per CR-ES-022 section 7 ; dependency gate
+dependency_gate:
+  rule: |
+    A candidate specialization SHALL fail validation when its
+    base concept is not canonical. The validator SHALL prevent
+    implicit base-concept creation.
+  examples:
+    - candidate: agentic-system
+      blocker: system concept not canonical
+    - candidate: agentic-ecosystem
+      blocker: ecosystem concept not canonical
+    - candidate: agentic-network
+      blocker: network concept not canonical
+    - candidate: agentic-culture
+      blocker: culture concept not canonical
+
+# Per ADR-ES-022 section 13 ; prohibition on mechanical symmetry
+mechanical_symmetry_prohibition:
+  rule: |
+    Enterprise-Semantics SHALL NOT create a corresponding
+    Autonomous concept solely because an Agentic concept exists.
+    Likewise, the existence of an Autonomous concept SHALL NOT
+    require an Agentic counterpart.
+  examples:
+    - description: Agentic Workflow exists but Autonomous Workflow is NOT auto-established
+    - description: Autonomous Operations exists but Agentic Operations is separate specialization
+
+provenance:
+  source:
+    - ADR-ES-001 through ADR-ES-021
+  decision:
+    - ADR-ES-022
+  implementation:
+    - CR-ES-022

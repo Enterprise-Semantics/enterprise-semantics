@@ -1,0 +1,109 @@
+# registry/profiles/autonomous-organization.profile.yaml ; Autonomous Organization Profile
+#
+# Per CR-ES-021 section 9 ; profile record for Autonomous
+# Organization Profile (ES:PROFILE:AUTONOMOUS_ORGANIZATION).
+#
+# Per CR-ES-021 section 9, the profile shall identify the
+# semantic scope of the Autonomous Organization specialization.
+# The profile shall NOT imply that every scoped concept is a
+# subtype of Organization.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:AUTONOMOUS_ORGANIZATION
+canonical_name: Autonomous Organization Profile
+profile_type: autonomous-organization
+status: established
+version: 2.0.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+scope:
+  - Organization
+  - Autonomous Organization
+  - Authority
+  - Policy
+  - Constraint
+  - Organizational Objective
+  - Organizational Context
+  - Organizational Outcome
+  - Human or Authority
+  - Workflow
+  - Agentic Workflow
+  - Autonomous Operations
+  - Agentic Operations
+  - Capability
+  - Value
+
+description: |
+  The Autonomous Organization Profile aggregates the canonical
+  concepts that participate in or support Autonomous Organization
+  realization. The profile enables discoverability and grouping.
+  It does NOT imply that every scoped concept is a subtype of
+  Organization.
+
+scope_assertions:
+  - id: AORG-AUTO-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: AORG-AUTO-PROF-SCOPE-002
+    description: Profile does NOT make Workflow a subtype of Organization.
+  - id: AORG-AUTO-PROF-SCOPE-003
+    description: Profile does NOT make Autonomous Operations a subtype of Organization.
+  - id: AORG-AUTO-PROF-SCOPE-004
+    description: Profile does NOT make Capability a subtype of Organization.
+  - id: AORG-AUTO-PROF-SCOPE-005
+    description: Profile does NOT make Value a subtype of Organization.
+  - id: AORG-AUTO-PROF-SCOPE-006
+    description: Profile does NOT make Policy a subtype of Organization.
+
+materiality_invariants:
+  - id: AORG-AUTO-PROF-MAT-001
+    description: Material organizational autonomy required per ADR-ES-021 section 5.
+  - id: AORG-AUTO-PROF-MAT-002
+    description: AI NOT required per ADR-ES-021 section 11.
+  - id: AORG-AUTO-PROF-MAT-003
+    description: Automation NOT sufficient per ADR-ES-021 section 11.
+  - id: AORG-AUTO-PROF-MAT-004
+    description: Autonomous components alone NOT sufficient per ADR-ES-021 section 5.
+
+orthogonality_invariants:
+  - id: AORG-AUTO-PROF-ORTH-001
+    description: Agentic Organization is NOT Autonomous Organization per ADR-ES-021 section 3 + section 8.
+  - id: AORG-AUTO-PROF-ORTH-002
+    description: Autonomous Organization is NOT Agentic Organization per ADR-ES-021 section 3 + section 8.
+
+boundary_invariants:
+  - id: AORG-AUTO-PROF-BND-001
+    description: Autonomous Organization is NOT Autonomous Enterprise per ADR-ES-021 section 10 + AORG-AUTO-NEG-002.
+  - id: AORG-AUTO-PROF-BND-002
+    description: Autonomous Organization is NOT Autonomous Operations per ADR-ES-021 section 10 + AORG-AUTO-NEG-003.
+  - id: AORG-AUTO-PROF-BND-003
+    description: Autonomous Organization is NOT Autonomous Service per ADR-ES-021 section 10 + AORG-AUTO-NEG-004.
+  - id: AORG-AUTO-PROF-BND-004
+    description: Autonomous Organization is NOT Autonomous Product per ADR-ES-021 section 10 + AORG-AUTO-NEG-005.
+  - id: AORG-AUTO-PROF-BND-005
+    description: Autonomous Organization is NOT Autonomous Offering per ADR-ES-021 section 10 + AORG-AUTO-NEG-013.
+  - id: AORG-AUTO-PROF-BND-006
+    description: Autonomous Organization is NOT Autonomous Workflow per ADR-ES-021 section 10 + AORG-AUTO-NEG-014.
+  - id: AORG-AUTO-PROF-BND-007
+    description: Autonomous Organization is NOT Agentic Organization per ADR-ES-021 section 3 + AORG-AUTO-NEG-001.
+  - id: AORG-AUTO-PROF-BND-008
+    description: AI not required per ADR-ES-021 section 11 + AORG-AUTO-NEG-006.
+  - id: AORG-AUTO-PROF-BND-009
+    description: Automation not sufficient per ADR-ES-021 section 11 + AORG-AUTO-NEG-007.
+  - id: AORG-AUTO-PROF-BND-010
+    description: Human participation remains valid per ADR-ES-021 section 7 + AORG-AUTO-NEG-008.
+  - id: AORG-AUTO-PROF-BND-011
+    description: Bounded authority per ADR-ES-021 section 12 + AORG-AUTO-NEG-009.
+  - id: AORG-AUTO-PROF-BND-012
+    description: Governance retained per ADR-ES-021 section 12 + AORG-AUTO-NEG-010.
+
+provenance:
+  - source: CR-ES-021 section 9
+  - source: ADR-ES-021 section 12
+  - source: ADR-ES-021 section 3 + section 8
+  - source: CR-ES-021 section 16
+  - source: USER-DIRECTIVE-1552962576894394389
+
+release_target: v2.0.0

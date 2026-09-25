@@ -12,7 +12,7 @@
 # relationships/vocabulary.yaml v0.2.0.
 
 inverse:
-  version: 0.9.0
+  version: 2.3.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_inverses:
 

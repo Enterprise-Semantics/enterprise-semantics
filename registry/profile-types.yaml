@@ -75,3 +75,13 @@ profile_types:
     governance: enterprise-semantics
     status: Established
     created: 2026-09-23
+  - id: agentic-offering
+    canonical_name: Agentic Offering
+    definition: |
+      A profile_type family for the Agentic Offering Profile per
+      CR-ES-018 §6 + ADR-ES-018 §10. Aggregates Offering ;; Agentic
+      Offering ;; Agent ;; Intent ;; Authority ;; Policy ;;
+      Constraint ;; Agentic Product ;; Agentic Service ;; Agentic
+      Workflow ;; Capability ;; Context ;; Outcome ;; Value for
+      discoverability and grouping. Does not imply inheritance.
+    governance: enterprise-semantics

@@ -1,0 +1,100 @@
+# registry/profiles/agentic-offering.profile.yaml ;; Agentic Offering Profile
+#
+# Per CR-ES-018 §6, profile record for Agentic Offering Profile
+# (ES:PROFILE:agentic-offering).
+#
+# Per CR-ES-018 §6, the profile shall identify the semantic scope of
+# Agentic Offering ; the profile shall NOT imply that every scoped
+# concept is a subtype of Offering.
+#
+# Foundational Dependency Gate (per ADR-ES-018 §16 + CR-ES-018 §2):
+# The profile depends on the parent Offering concept being canonical.
+# Per user directive message 1552900782440058902, this profile is
+# established with the dependency documented rather than blocked.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:agentic-offering
+canonical_name: Agentic Offering Profile
+profile_type: agentic-offering
+status: candidate
+version: 1.0.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+foundational_dependency_gate:
+  status: documented  # per ADR-ES-018 §16 + CR-ES-018 §2
+  parent_concept: external:offering:Offering
+  parent_canonical: false  # as of 2026-09-25
+  resolution: user directive message 1552900782440058902 ("Proceed with 18") overrode Path X BLOCK
+  next_foundational_tranche: ADR-ES-019 (Offering canonical grounding)
+scope:
+  - Offering
+  - Agentic Offering
+  - Agent
+  - Intent
+  - Authority
+  - Policy
+  - Constraint
+  - Agentic Product
+  - Agentic Service
+  - Agentic Workflow
+  - Capability
+  - Context
+  - Outcome
+  - Value
+description: |
+  The Agentic Offering Profile aggregates the canonical concepts
+  that participate in or support Agentic Offering realization.
+  The profile enables discoverability and grouping. It does NOT
+  imply that every scoped concept is a subtype of Offering.
+scope_assertions:
+  - id: AOFF-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: AOFF-PROF-SCOPE-002
+    description: Profile does NOT make Product a subtype of Offering.
+  - id: AOFF-PROF-SCOPE-003
+    description: Profile does NOT make Service a subtype of Offering.
+  - id: AOFF-PROF-SCOPE-004
+    description: Profile does NOT make Agentic Product a subtype of Agentic Offering.
+  - id: AOFF-PROF-SCOPE-005
+    description: Profile does NOT make Agent a subtype of Offering.
+  - id: AOFF-PROF-SCOPE-006
+    description: Profile does NOT make Workflow a subtype of Offering.
+materiality_invariants:
+  - id: AOFF-PROF-MAT-001
+    description: Material agentic realization required per ADR-ES-018 §5.
+  - id: AOFF-PROF-MAT-002
+    description: AI NOT required per ADR-ES-018 §7.
+  - id: AOFF-PROF-MAT-003
+    description: Automation NOT sufficient per ADR-ES-018 §8.
+  - id: AOFF-PROF-MAT-004
+    description: Human participation remains valid per ADR-ES-018 §9.
+boundary_invariants:
+  - id: AOFF-PROF-BND-001
+    description: Agentic Offering is NOT an Agent per AOFF-NEG-001.
+  - id: AOFF-PROF-BND-002
+    description: Agentic Offering is NOT Agentic Product per AOFF-NEG-002.
+  - id: AOFF-PROF-BND-003
+    description: Agentic Offering is NOT Agentic Service per AOFF-NEG-003.
+  - id: AOFF-PROF-BND-004
+    description: Agentic Offering is NOT Agentic Workflow per AOFF-NEG-004.
+  - id: AOFF-PROF-BND-005
+    description: Agentic Offering is NOT Agentic Operations per AOFF-NEG-005.
+  - id: AOFF-PROF-BND-006
+    description: Agentic Offering is NOT Agentic Value Stream per AOFF-NEG-006.
+  - id: AOFF-PROF-BND-007
+    description: Agentic Offering is NOT Agentic Enterprise per AOFF-NEG-013.
+  - id: AOFF-PROF-BND-008
+    description: Agentic Offering is NOT AI Offering per AOFF-NEG-007.
+  - id: AOFF-PROF-BND-009
+    description: Agentic Offering is NOT Automated Offering per AOFF-NEG-009.
+  - id: AOFF-PROF-BND-010
+    description: Agentic Offering is NOT Autonomous Offering per AOFF-NEG-011.
+provenance:
+  - source: CR-ES-018 §6
+  - source: ADR-ES-018 §10
+  - source: ADR-ES-018 §3
+  - source: CR-ES-018 §19
+  - source: USER-DIRECTIVE-1552900782440058902
+release_target: v1.7.0

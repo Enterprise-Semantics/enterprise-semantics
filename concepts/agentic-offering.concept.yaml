@@ -1,0 +1,325 @@
+# concepts/agentic-offering.concept.yaml ;; Agentic Offering (ES:CONCEPT:agentic-offering) ;; per CR-ES-018 §3 + ADR-ES-018 §1
+#
+# Per CR-ES-018 §3 + ADR-ES-018 §1:
+#   An Agentic Offering is an Offering whose composition,
+#   interaction, configuration, fulfillment, or value realization
+#   materially incorporates agentic behavior in interpreting intent,
+#   selecting or coordinating actions, or adapting the offering
+#   toward an intended stakeholder outcome within defined authority,
+#   policy, and contextual boundaries.
+#
+# Specialisation of Offering (not replacement ;; not parallel
+# construct). Per CR-ES-018 §3 + ADR-ES-018 §1, this record does
+# NOT redefine foundational Offering semantics.
+#
+# FOUNDATIONAL DEPENDENCY GATE (per ADR-ES-018 §16 + CR-ES-018 §2):
+# This specialization depends on `Offering` being canonical in
+# Enterprise-Semantics. Per the dependency gate, before canonical
+# implementation, the repository must verify one of:
+#   1. Offering already exists as a canonical Enterprise-Semantics
+#      concept ;; or
+#   2. a separately authorized Offering semantic grounding ADR
+#      establishes it.
+# If neither condition is satisfied, implementation of the
+# specialization shall remain blocked. CR-ES-018 shall not create
+# Offering implicitly.
+#
+# STATUS AS OF 2026-09-25 (per user directive message
+# 1552900782440058902, "Proceed with 18"):
+#   The user has explicitly directed implementation of ES-018 to
+#   proceed without a separate Offering grounding ADR. This is a
+#   deliberate override of the Path X BLOCK confirmation from
+#   message 1552885930522706062. Per the user's explicit authority,
+#   this specialization concept is established with the dependency
+#   documented rather than blocked. The specialization refines an
+#   external:offering:Offering grounding that is NOT yet canonical
+#   in Enterprise-Semantics. This is acknowledged and documented
+#   per ADR-ES-018 §16 dependency gate.
+#
+# Per ADR-ES-018 §15 + CR-ES-018 §8-§12, the implementation shall
+# reject Agentic Offering -> Agent, Agentic Product, Agentic Service,
+# Agentic Workflow, Agentic Operations, Agentic Value Stream, Agentic
+# Enterprise, or AI Offering inheritance. AI is NOT required,
+# automation is NOT sufficient, human participation remains valid.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:agentic-offering
+canonical_name: Agentic Offering
+definition: |
+  An Offering whose composition, interaction, configuration,
+  fulfillment, or value realization materially incorporates agentic
+  behavior in interpreting intent, selecting or coordinating
+  actions, or adapting the offering toward an intended stakeholder
+  outcome within defined authority, policy, and contextual
+  boundaries.
+  The Offering concept remains the universal foundational concept at
+  the Offering boundary ;; Agentic Offering is a contextual
+  specialization, not a replacement or narrowing of Offering.
+  Agentic behavior must be material to offering realization ;; AI,
+  automation, chatbot interface, Agent participation, or automated
+  billing/ordering alone do not establish Agentic Offering.
+status: Candidate
+version: 1.7.0
+concept_type: agentic-offering
+specializes:
+  - canonical_id: external:offering:Offering
+    relationship: specialization-of
+    rationale: |
+      Agentic Offering is a contextual specialization of the
+      universal Offering concept. The semantic distinction remains:
+      Offering describes what an organization makes available to a
+      stakeholder or market as a coherent proposition ;; Agentic
+      Offering additionally describes how that offering is realized
+      through material agentic behavior within defined authority,
+      policy, and contextual boundaries.
+    dependency_note: |
+      Per ADR-ES-018 §16 + CR-ES-018 §2 Foundational Dependency
+      Gate. The parent Offering concept is NOT yet canonical in
+      Enterprise-Semantics as of 2026-09-25. Implementation
+      proceeded per user directive message 1552900782440058902
+      ("Proceed with 18") overriding the Path X BLOCK from
+      message 1552885930522706062. ADR-ES-019 (Offering canonical
+      grounding) remains held as the next-foundational tranche to
+      canonicalize the parent.
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Offering
+    relationship: references
+    note: |
+      Agentic Offering inherits the WSF Offering grounding via its
+      parent Offering concept.
+profile_bindings:
+  - profile: ES:PROFILE:agentic-offering
+    profile_type: agentic-offering
+    binding_role: specializing-profile
+    status: candidate
+    per: CR-ES-018 §6
+    foundational_dependency: documented per ADR-ES-018 §16 + CR-ES-018 §2  # populated by VS-D2c after profile record is authored
+relationships:
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: specialization-of
+    object: external:offering:Offering
+    qualification: contextual-specialization
+    status: proposed
+    provenance: ADR-ES-018 §1 ; CR-ES-018 §3
+    rationale: |
+      Agentic Offering is a contextual specialization of Offering,
+      not a new foundational type of offering.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: engages
+    object: ES:CONCEPT:agent
+    qualification: agent-engagement
+    status: proposed
+    provenance: ADR-ES-018 §10 ; CR-ES-018 §7
+    rationale: |
+      Agentic Offering may engage an Agent (optional, not required).
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: interprets
+    object: external:concept:intent
+    qualification: intent-interpretation
+    status: proposed
+    provenance: ADR-ES-018 §10 ; CR-ES-018 §7 ; AOFF-CON-004
+    rationale: Agentic Offering may interpret stakeholder intent.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: operates-within
+    object: external:concept:authority
+    qualification: authority-bounded
+    status: proposed
+    provenance: ADR-ES-018 §10 ; CR-ES-018 §7 ; AOFF-CON-010
+    rationale: Agentic Offering operates within defined Authority.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: governed-by
+    object: external:policy:Policy
+    qualification: policy-compliance
+    status: proposed
+    provenance: ADR-ES-018 §10 ; CR-ES-018 §7 ; AOFF-CON-011
+    rationale: Agentic Offering is governed by applicable Policy.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: constrained-by
+    object: external:concept:constraint
+    qualification: constraint-compliance
+    status: proposed
+    provenance: ADR-ES-018 §10 ; CR-ES-018 §7 ; AOFF-CON-011
+    rationale: Agentic Offering is bounded by defined Constraints.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: uses
+    object: external:concept:agentic-product
+    qualification: agentic-product-usage
+    status: proposed
+    provenance: ADR-ES-018 §10 ; CR-ES-018 §7 ; AOFF-CON-014
+    rationale: Agentic Offering may use an Agentic Product.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: uses
+    object: external:concept:agentic-service
+    qualification: agentic-service-usage
+    status: proposed
+    provenance: ADR-ES-018 §10 ; CR-ES-018 §7 ; AOFF-CON-015
+    rationale: Agentic Offering may use an Agentic Service.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    qualification: agentic-workflow-usage
+    status: proposed
+    provenance: ADR-ES-018 §10 ; CR-ES-018 §7 ; AOFF-CON-016
+    rationale: Agentic Offering may use an Agentic Workflow.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: supports
+    object: ES:CONCEPT:capability
+    qualification: capability-support
+    status: proposed
+    provenance: ADR-ES-018 §10 ; CR-ES-018 §7
+    rationale: Agentic Offering may support Capability realization.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: produces
+    object: external:outcome:Outcome
+    qualification: outcome-production
+    status: proposed
+    provenance: ADR-ES-018 §10 ; CR-ES-018 §7 ; AOFF-CON-012
+    rationale: Agentic Offering produces intended Outcomes.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: adapts-to
+    object: external:concept:context
+    qualification: contextual-adaptation
+    status: proposed
+    provenance: ADR-ES-018 §10 ; CR-ES-018 §7 ; AOFF-CON-009
+    rationale: Agentic Offering adapts to Context.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: contributes-to
+    object: external:concept:value
+    qualification: value-contribution
+    status: proposed
+    provenance: ADR-ES-018 §10 ; CR-ES-018 §7
+    rationale: Agentic Offering contributes to intended Value.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: distinct-from
+    object: ES:CONCEPT:agent
+    qualification: offering-vs-agent
+    status: proposed
+    provenance: ADR-ES-018 §15 + §17 ; CR-ES-018 §8 ; AOFF-NEG-001
+    rationale: Agentic Offering is NOT an Agent.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: distinct-from
+    object: external:concept:agentic-product
+    qualification: offering-vs-product
+    status: proposed
+    provenance: ADR-ES-018 §3 + §15 + §17 ; CR-ES-018 §8 ; AOFF-NEG-002
+    rationale: Agentic Offering is NOT Agentic Product.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: distinct-from
+    object: external:concept:agentic-service
+    qualification: offering-vs-service
+    status: proposed
+    provenance: ADR-ES-018 §4 + §15 + §17 ; CR-ES-018 §9 ; AOFF-NEG-003
+    rationale: Agentic Offering is NOT Agentic Service.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: distinct-from
+    object: ES:CONCEPT:agentic-workflow
+    qualification: offering-vs-workflow
+    status: proposed
+    provenance: ADR-ES-018 §15 + §17 ; CR-ES-018 §11 ; AOFF-NEG-004
+    rationale: Agentic Offering is NOT Agentic Workflow.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: distinct-from
+    object: ES:CONCEPT:agentic-operations
+    qualification: offering-vs-operations
+    status: proposed
+    provenance: ADR-ES-018 §15 + §17 ; CR-ES-018 §12 ; AOFF-NEG-005
+    rationale: Agentic Offering is NOT Agentic Operations.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: distinct-from
+    object: ES:CONCEPT:agentic-value-stream
+    qualification: offering-vs-value-stream
+    status: proposed
+    provenance: ADR-ES-018 §12 + §15 + §17 ; CR-ES-018 §10 ; AOFF-NEG-006
+    rationale: Agentic Offering is NOT Agentic Value Stream.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: distinct-from
+    object: external:concept:agentic-enterprise
+    qualification: offering-vs-enterprise
+    status: proposed
+    provenance: ADR-ES-018 §13 + §17 ; CR-ES-018 §8 ; AOFF-NEG-013
+    rationale: Agentic Offering is NOT Agentic Enterprise.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: distinct-from
+    object: external:concept:ai-offering
+    qualification: ai-not-required
+    status: proposed
+    provenance: ADR-ES-018 §7 + §15 + §17 ; CR-ES-018 §8 ; AOFF-NEG-007 + AOFF-NEG-008
+    rationale: Agentic Offering is NOT AI Offering.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: distinct-from
+    object: external:concept:automated-offering
+    qualification: automation-not-sufficient
+    status: proposed
+    provenance: ADR-ES-018 §8 + §15 + §17 ; CR-ES-018 §8 ; AOFF-NEG-009
+    rationale: Agentic Offering is NOT Automated Offering.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: not-implies
+    object: external:concept:ai-offering
+    qualification: ai-not-required
+    status: proposed
+    provenance: ADR-ES-018 §7 ; CR-ES-018 §14 ; AOFF-CON-017
+    rationale: Agentic Offering does NOT require AI.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: not-implies
+    object: external:concept:automated-offering
+    qualification: automation-not-sufficient
+    status: proposed
+    provenance: ADR-ES-018 §8 ; CR-ES-018 §14 ; AOFF-CON-018
+    rationale: Agentic Offering does NOT require Automation.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: not-implies
+    object: external:concept:autonomous-offering
+    qualification: orthogonality
+    status: proposed
+    provenance: ADR-ES-018 §6 ; CR-ES-018 §14 ; AOFF-CON-019 + AOFF-NEG-011
+    rationale: Agentic Offering does NOT imply Autonomous Offering.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: materiality-required
+    object: external:concept:material-agentic-realization
+    qualification: agentic-materiality
+    status: proposed
+    provenance: ADR-ES-018 §5 + §13 ; CR-ES-018 §13 ; AOFF-CON-003
+    rationale: Material agentic realization required.
+  - subject: ES:CONCEPT:agentic-offering
+    predicate: permits
+    object: external:concept:human-participation
+    qualification: human-participation-valid
+    status: proposed
+    provenance: ADR-ES-018 §9 ; CR-ES-018 §14 ; AOFF-CON-013
+    rationale: Agentic Offering permits human participation (in-loop, on-loop, over-loop).
+governance: enterprise-semantics
+provenance:
+  - source: ADR-ES-004
+    note: "Agentic semantic grounding."
+  - source: ADR-ES-005
+    note: "Agentic Value Stream lineage."
+  - source: ADR-ES-006
+    note: "Agentic Workflow lineage."
+  - source: ADR-ES-007
+    note: "Agentic Operations lineage."
+  - source: ADR-ES-012
+    note: "Agentic Capability lineage."
+  - source: ADR-ES-014
+    note: "Agentic Service lineage."
+  - source: ADR-ES-016
+    note: "Agentic Product lineage ;; Agentic specialization pattern."
+  - source: ADR-ES-017
+    note: "Autonomous Product lineage ;; orthogonal autonomy dimension."
+  - source: ADR-ES-018
+    note: "Foundational specialization decision ; v1.7.0 release target ; Foundational Dependency Gate documented per §16."
+  - source: CR-ES-018
+    note: "Implementation specification."
+  - source: USER-DIRECTIVE-1552900782440058902
+    note: "User explicit override of Path X BLOCK ; dependency documented per CR-ES-018 §2."
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Offering
+    relationship: references
+    note: "Inherits WSF Offering grounding via parent Offering concept (external reference pending canonical)."
+  - authority: opendea
+    target_id: external:opendea:Offering
+    relationship: references
+    note: "References OpenDEA Offering semantics."
+created: 2026-09-25
+updated: 2026-09-25

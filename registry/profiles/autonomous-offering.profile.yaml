@@ -1,0 +1,104 @@
+# registry/profiles/autonomous-offering.profile.yaml ; Autonomous Offering Profile
+#
+# Per CR-ES-019 section 6 ; profile record for Autonomous Offering
+# Profile (ES:PROFILE:autonomous-offering).
+#
+# Per CR-ES-019 section 6, the profile shall identify the semantic
+# scope of Autonomous Offering ; the profile shall NOT imply that
+# every scoped concept is a subtype of Offering.
+#
+# Foundational Dependency Gate (per ADR-ES-019 section 2 + CR-ES-019
+# section 2): The profile depends on the parent Offering concept
+# being canonical. Per user directive messages 1552900782440058902
+# + 1552912455527571546, this profile is established with the
+# dependency documented rather than blocked.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:autonomous-offering
+canonical_name: Autonomous Offering Profile
+profile_type: autonomous-offering
+status: candidate
+version: 1.0.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+foundational_dependency_gate:
+  status: documented  # per ADR-ES-019 section 2 + CR-ES-019 section 2
+  parent_concept: external:offering:Offering
+  parent_canonical: false  # as of 2026-09-25
+  resolution: per user directive messages 1552900782440058902 + 1552912455527571546
+  next_foundational_tranche: ADR-ES-019 (Offering canonical grounding)
+scope:
+  - Offering
+  - Autonomous Offering
+  - Authority
+  - Policy
+  - Constraint
+  - Governance
+  - Objective
+  - Context
+  - Outcome
+  - Workflow
+  - Agentic Workflow
+  - Autonomous Operations
+  - Capability
+  - Autonomous Product
+  - Autonomous Service
+  - Value
+description: |
+  The Autonomous Offering Profile aggregates the canonical concepts
+  that participate in or support Autonomous Offering realization.
+  The profile enables discoverability and grouping. It does NOT
+  imply that every scoped concept is a subtype of Offering.
+scope_assertions:
+  - id: AOFF-AUTO-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: AOFF-AUTO-PROF-SCOPE-002
+    description: Profile does NOT make Product a subtype of Offering.
+  - id: AOFF-AUTO-PROF-SCOPE-003
+    description: Profile does NOT make Service a subtype of Offering.
+  - id: AOFF-AUTO-PROF-SCOPE-004
+    description: Profile does NOT make Autonomous Product a subtype of Autonomous Offering.
+  - id: AOFF-AUTO-PROF-SCOPE-005
+    description: Profile does NOT make Workflow a subtype of Offering.
+  - id: AOFF-AUTO-PROF-SCOPE-006
+    description: Profile does NOT make Operations a subtype of Offering.
+materiality_invariants:
+  - id: AOFF-AUTO-PROF-MAT-001
+    description: Material autonomous realization required per ADR-ES-019 section 6.
+  - id: AOFF-AUTO-PROF-MAT-002
+    description: AI NOT required per ADR-ES-019 section 14.
+  - id: AOFF-AUTO-PROF-MAT-003
+    description: Automation NOT sufficient per ADR-ES-019 section 15.
+  - id: AOFF-AUTO-PROF-MAT-004
+    description: Human participation remains valid per ADR-ES-019 section 7.
+boundary_invariants:
+  - id: AOFF-AUTO-PROF-BND-001
+    description: Autonomous Offering is NOT Agentic Offering per AOFF-AUTO-NEG-001.
+  - id: AOFF-AUTO-PROF-BND-002
+    description: Autonomous Offering is NOT Autonomous Product per AOFF-AUTO-NEG-002.
+  - id: AOFF-AUTO-PROF-BND-003
+    description: Autonomous Offering is NOT Autonomous Service per AOFF-AUTO-NEG-003.
+  - id: AOFF-AUTO-PROF-BND-004
+    description: Autonomous Offering is NOT Autonomous Operations per AOFF-AUTO-NEG-004.
+  - id: AOFF-AUTO-PROF-BND-005
+    description: Autonomous Offering is NOT Autonomous Value Stream per AOFF-AUTO-NEG-005.
+  - id: AOFF-AUTO-PROF-BND-006
+    description: Autonomous Offering is NOT Autonomous Enterprise per AOFF-AUTO-NEG-016.
+  - id: AOFF-AUTO-PROF-BND-007
+    description: Autonomous Offering does NOT require AI per AOFF-AUTO-NEG-006.
+  - id: AOFF-AUTO-PROF-BND-008
+    description: Automation does NOT establish Autonomous Offering per AOFF-AUTO-NEG-008.
+  - id: AOFF-AUTO-PROF-BND-009
+    description: Autonomous Offering permits human participation per AOFF-AUTO-CON-014.
+  - id: AOFF-AUTO-PROF-BND-010
+    description: Autonomous Offering has bounded authority per AOFF-AUTO-NEG-011.
+provenance:
+  - source: CR-ES-019 section 6
+  - source: ADR-ES-019 section 10
+  - source: ADR-ES-019 section 3
+  - source: CR-ES-019 section 19
+  - source: USER-DIRECTIVE-1552900782440058902
+  - source: USER-DIRECTIVE-1552912455527571546
+release_target: v1.8.0

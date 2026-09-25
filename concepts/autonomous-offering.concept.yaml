@@ -1,0 +1,205 @@
+# concepts/autonomous-offering.concept.yaml ;; Autonomous Offering (ES:CONCEPT:autonomous-offering)
+#
+# Per CR-ES-019 §3 + ADR-ES-019 §1.
+#
+# Per ADR-ES-019 §2 + CR-ES-019 §2 Foundational Dependency Gate:
+# Parent Offering concept is NOT yet canonical on origin/main
+# as of 2026-09-25. Per user directive messages 1552900782440058902
+# (Proceed with 18) + 1552912455527571546 (save, read, understand,
+# implement), the dependency is documented rather than blocking.
+# The next-foundational tranche is ADR-ES-019 (Offering canonical
+# grounding). Until that ADR is filed and Accepted, this concept
+# record carries the documented dependency in the
+# `foundational_dependency_gate` block.
+#
+# Specialisation of Offering (not replacement ; not parallel construct).
+# Per CR-ES-019 §2, the Autonomous Offering schema shall preserve
+# the mandatory Offering semantics.
+#
+# Per ADR-ES-019 §5 + §7 + CR-ES-019 §8, the implementation shall
+# reject Autonomous Offering -> Agentic Offering, Autonomous Product,
+# Autonomous Service, Autonomous Value Stream, Autonomous Operations,
+# Autonomous Enterprise inheritance. AI is NOT required, automation is
+# NOT sufficient, human participation remains compatible with autonomy.
+#
+# Per ADR-ES-019 §18 + CR-ES-019 §2, this record does NOT establish
+# Offering autonomy maturity, autonomy levels, Autonomous Portfolio,
+# Autonomous Marketplace, Autonomous Ecosystem, Autonomous Product
+# Portfolio, Autonomous Agent. Those concepts are explicitly deferred
+# to separate governance decisions.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:autonomous-offering
+canonical_name: Autonomous Offering
+definition: |
+  An Autonomous Offering is an Offering whose composition,
+  interaction, configuration, fulfillment, or value realization
+  is capable of progressing through defined decisions, actions,
+  coordination, and adaptation within specified offering objectives,
+  authority, policies, constraints, and governance boundaries without
+  requiring human intervention for every offering decision or action.
+
+status: Candidate
+version: 1.0.0
+concept_type: autonomous-offering
+
+specializes:
+  canonical_target: external:offering:Offering
+  per: ADR-ES-019 §1 + CR-ES-019 §3 + §7
+  foundational_dependency: documented per ADR-ES-019 §2 + CR-ES-019 §2
+
+foundational_dependency_gate:
+  status: documented  # per ADR-ES-019 §2 + CR-ES-019 §2
+  parent_concept: external:offering:Offering
+  parent_canonical: false  # as of 2026-09-25
+  resolution: per user directive messages 1552900782440058902 + 1552912455527571546
+  next_foundational_tranche: ADR-ES-019 (Offering canonical grounding)
+
+properties:
+  offering_objective: pursuit of an offering-level outcome
+  autonomy_scope: extent of independent progression permitted
+  offering_context: contextual conditions affecting offering realization
+  decision_scope: decisions permitted for autonomous selection
+  action_scope: actions permitted for autonomous selection
+  configuration_scope: offering configuration repertoire
+  composition_scope: composition repertoire
+  coordination_scope: coordinated offering components
+  authority_context: defined offering authority
+  policy_context: policy compliance boundaries
+  constraint_context: constraint boundaries
+  governance_context: governance boundaries
+  adaptation_scope: outcome-based adaptation
+  intervention_model: human-in/on/over-the-loop, approval, exception intervention
+  escalation_boundary: escalation points
+  observation_scope: outcomes observed
+  realization_mode: mixed (conventional + automated + human + autonomous)
+
+wsf_grounding:
+  tier: 2
+  basis: external:wsf:Offering
+  novelty: autonomous-offering-realization-representation
+  per: FND-ES-AG-008 §1.3
+  no_modification: WSF live baseline remains authoritative
+
+relationships:
+  # canonical specialization (per CR-ES-019 §7)
+  - predicate: specializes
+    target: external:offering:Offering
+  - predicate: operates-within
+    target: ES:CONCEPT:authority
+  - predicate: governed-by
+    target: ES:CONCEPT:policy
+  - predicate: constrained-by
+    target: external:constraint:Constraint
+  - predicate: pursues
+    target: external:objective:Objective
+  - predicate: responds-to
+    target: external:context:Context
+  - predicate: produces
+    target: external:outcome:Outcome
+  - predicate: adapts-to
+    target: external:context:Context
+  - predicate: uses
+    target: external:workflow:Workflow
+  - predicate: uses
+    target: external:agentic-workflow:Agentic-Workflow
+  - predicate: supported-by
+    target: external:autonomous-operations:Autonomous-Operations
+  - predicate: supports
+    target: external:capability:Capability
+  - predicate: uses
+    target: external:product:Product
+  - predicate: uses
+    target: external:service:Service
+  - predicate: contributes-to
+    target: external:value:Value
+
+  # material autonomy validation (per CR-ES-019 §8)
+  - predicate: materiality-required
+    object: external:concept:material-independent-offering-progression
+    qualification: autonomy-materiality
+    rationale: Material autonomous offering progression required.
+  - predicate: boundary-maintained
+    object: external:concept:offering-authority-escalation
+    qualification: authority-escalation
+    rationale: Bounded authority + escalation per ADR-ES-019 §5.
+  - predicate: ai-independent
+    object: external:concept:ai-not-required
+    qualification: ai-independence
+    rationale: AI is neither necessary nor sufficient per ADR-ES-019 §14.
+  - predicate: automation-independent
+    object: external:concept:automation-not-sufficient
+    qualification: automation-independence
+    rationale: Automation is neither necessary nor sufficient per ADR-ES-019 §15.
+
+  # boundaries (per CR-ES-019 §9-§12)
+  - predicate: distinct-from
+    object: external:autonomous-product:Autonomous-Product
+    rationale: Autonomous Product boundary per CR-ES-019 §9.
+  - predicate: distinct-from
+    object: external:autonomous-service:Autonomous-Service
+    rationale: Autonomous Service boundary per CR-ES-019 §10.
+  - predicate: distinct-from
+    object: external:autonomous-value-stream:Autonomous-Value-Stream
+    rationale: Autonomous Value Stream boundary per CR-ES-019 §11.
+  - predicate: distinct-from
+    object: external:agentic-offering:Agentic-Offering
+    rationale: Agentic / Autonomous orthogonality per ADR-ES-019 §13.
+  - predicate: distinct-from
+    object: external:autonomous-operations:Autonomous-Operations
+    rationale: Autonomous Operations boundary per CR-ES-019 §12.
+  - predicate: distinct-from
+    object: external:autonomous-enterprise:Autonomous-Enterprise
+    rationale: Autonomous Enterprise boundary per ADR-ES-019 §12.
+
+provenance:
+  - source: ADR-ES-004
+    note: Agentic Semantic Grounding
+  - source: ADR-ES-005
+    note: Agentic Value Stream Semantic Grounding
+  - source: ADR-ES-007
+    note: Agentic Operations Semantic Grounding
+  - source: ADR-ES-008
+    note: Autonomous Operations Semantic Grounding
+  - source: ADR-ES-009
+    note: Autonomous Value Stream Semantic Grounding
+  - source: ADR-ES-011
+    note: Autonomous Enterprise Semantic Grounding
+  - source: ADR-ES-015
+    note: Autonomous Service Semantic Grounding
+  - source: ADR-ES-017
+    note: Autonomous Product Semantic Grounding
+  - source: ADR-ES-018
+    note: Agentic Offering Semantic Grounding (Accepted 2026-09-25)
+  - source: ADR-ES-019
+    note: Autonomous Offering decision
+  - source: CR-ES-019
+    note: Autonomous Offering implementation
+  - source: USER-DIRECTIVE-1552900782440058902
+    note: Proceed with 18 (dependency override)
+  - source: USER-DIRECTIVE-1552912455527571546
+    note: Save, read, understand, implement (paired tranche)
+
+opendea_grounding:
+  classification: specialisation
+  basis: external:opendea:Offering
+  novelty: autonomous-offering-realization-representation
+  no_modification: OpenDEA live baseline remains authoritative
+
+mappings:
+  - external:wsf:Offering
+  - external:opendea:Offering
+
+governance: enterprise-semantics
+
+created: 2026-09-25
+updated: 2026-09-25
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 en-dash, 0 em-dash, 0 U+2E3B, 0 arrow glyph
+  - vendor_specific_embargo: 0 references; no vendor-specific material from embargoed sources
+  - foundational_dependency_gate: documented per ADR-ES-019 §2 + CR-ES-019 §2
+  - no_wsF_modification: WSF metamodel not modified
+  - no_openDea_modification: OpenDEA metamodel not modified

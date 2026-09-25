@@ -18,7 +18,7 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.9.0
+  version: 2.0.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
@@ -638,3 +638,19 @@ change_history:
       for value-stage (precedes, stage-realized-through, requires,
       stage-produces, contributes-to). Version bumped to v0.2.0. Status:
       candidate (awaiting ADR-ES-003 acceptance).
+  - date: 2026-09-25
+    version: 2.0.0
+    change: |
+      Added Autonomous Organization specialization predicates
+      (operates-within Authority, governed-by Policy,
+      constrained-by Constraint, pursues Organizational
+      Objective, responds-to Organizational Context, produces
+      Organizational Outcome, adapts-to Organizational Context,
+      escalates-to Human or Authority, uses Workflow, uses
+      Agentic Workflow, uses Autonomous Operations, uses
+      Agentic Operations, exercises Capability, contributes-to
+      Value) per ADR-ES-021 section 9 + CR-ES-021 section 5.
+      Establishes v2.0.0 minor release. Resolves Autonomous
+      Organization specialization for the Organization boundary.
+    author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+    governing: ADR-ES-021

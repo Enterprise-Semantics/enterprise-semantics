@@ -1,0 +1,105 @@
+# versions/v2.0.0.yaml ; v2.0.0 ; Enterprise-Semantics v2.0.0 release pointer
+#
+# Per ADR-ES-021 section 16 + CR-ES-021 section 18 ; this release
+# establishes the Autonomous Organization specialization, completing
+# the Agentic/Autonomous Organization pair at the Organization
+# boundary.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+release: v2.0.0
+date: 2026-09-25
+status: established
+governance: enterprise-semantics
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+included_releases:
+  - v1.0.0
+  - v1.1.0
+  - v1.2.0
+  - v1.3.0
+  - v1.4.0
+  - v1.5.0
+  - v1.6.0
+  - v1.7.0
+  - v1.8.0
+  - v1.8.1
+  - v1.9.0
+  - v1.9.1
+  - v2.0.0
+
+canonical_concepts:
+  - capability
+  - agentic-capability
+  - autonomous-capability
+  - product
+  - agentic-product
+  - autonomous-product
+  - service
+  - agentic-service
+  - autonomous-service
+  - offering
+  - agentic-offering
+  - autonomous-offering
+  - organization
+  - agentic-organization
+  - autonomous-organization ; NEW ; per ADR-ES-021 + CR-ES-021
+
+orthogonality_completion:
+  - boundary: Capability
+    agentic: true ; v1.1.0
+    autonomous: true ; v1.2.0
+  - boundary: Product
+    agentic: true ; v1.5.0
+    autonomous: true ; v1.6.0
+  - boundary: Service
+    agentic: true ; v1.3.0
+    autonomous: true ; v1.4.0
+  - boundary: Offering
+    agentic: true ; v1.7.0
+    autonomous: true ; v1.8.0
+  - boundary: Organization
+    agentic: true ; v1.9.0
+    autonomous: true ; v2.0.0 ; NEW
+  - boundary: Value Stream
+    agentic: true ; ADR-ES-007
+    autonomous: true ; ADR-ES-011
+  - boundary: Enterprise
+    agentic: true ; ADR-ES-008
+    autonomous: true ; ADR-ES-010
+  - boundary: Agent
+    agentic: true ; ADR-ES-004
+    autonomous: true ; ADR-ES-005
+
+organizational_structure:
+  description: |
+    Per ADR-ES-021 final section, the resulting organization model:
+                         Organization
+                              |
+                    +---------+---------+
+                    |                   |
+             Agentic Organization   Autonomous Organization
+                    |                   |
+                    +---------+---------+
+                              |
+                    Agentic + Autonomous
+                    Organization
+                    (orthogonal state)
+  note: |
+    Organization now has the same Agentic/Autonomous semantic
+    treatment as Capability, Service, Product, Offering, Value
+    Stream, Operations, and Enterprise. Neither dimension
+    subsumes the other.
+
+provenance:
+  source:
+    - ADR-ES-008
+    - ADR-ES-009
+    - ADR-ES-011
+    - ADR-ES-015
+    - ADR-ES-019
+    - ADR-ES-020
+  decision:
+    - ADR-ES-021
+  implementation:
+    - CR-ES-021

@@ -1,0 +1,154 @@
+# coverage/agentic-autonomous-coverage.yaml ; Agentic/Autonomous Semantic Coverage Registry
+#
+# Per CR-ES-022 section 2 + ADR-ES-022 section 6 ; the canonical
+# coverage registry for the Agentic/Autonomous semantic family.
+# Records base concept, Agentic + Autonomous applicability,
+# canonical specialization, status, dependency, rationale, ADR,
+# CR, release, disposition.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:COVERAGE:agentic-autonomous
+canonical_name: Agentic/Autonomous Semantic Coverage Registry
+status: established
+version: 2.0.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+governing: ADR-ES-022 ; CR-ES-022
+
+# Per ADR-ES-022 section 6 ; the current canonical family.
+entries:
+  - base_concept: capability
+    agentic_applicability: established
+    autonomous_applicability: established
+    canonical_specialization:
+      agentic: ES:CONCEPT:agentic-capability
+      autonomous: ES:CONCEPT:autonomous-capability
+    status: established
+    dependency: capability canonical ; satisfied
+    rationale: Agentic + Autonomous capability dimensions materially alter capability realization per ADR-ES-001 + ADR-ES-004 + ADR-ES-005
+    adr: ADR-ES-001 ; ADR-ES-004 ; ADR-ES-005
+    cr: CR-ES-001 ; CR-ES-008 ; CR-ES-021
+    release: v1.1.0 ; v1.2.0
+    disposition: canonical
+
+  - base_concept: value-stream
+    agentic_applicability: established
+    autonomous_applicability: established
+    canonical_specialization:
+      agentic: ES:CONCEPT:agentic-value-stream
+      autonomous: ES:CONCEPT:autonomous-value-stream
+    status: established
+    dependency: value-stream canonical ; satisfied
+    rationale: Per ADR-ES-003 + ADR-ES-007 + ADR-ES-011
+    adr: ADR-ES-003 ; ADR-ES-007 ; ADR-ES-011
+    cr: CR-ES-003 ; CR-ES-013 ; CR-ES-017
+    release: v1.x ; v1.x
+    disposition: canonical
+
+  - base_concept: service
+    agentic_applicability: established
+    autonomous_applicability: established
+    canonical_specialization:
+      agentic: ES:CONCEPT:agentic-service
+      autonomous: ES:CONCEPT:autonomous-service
+    status: established
+    dependency: service canonical ; satisfied
+    rationale: Per ADR-ES-016 + ADR-ES-017
+    adr: ADR-ES-016 ; ADR-ES-017
+    cr: CR-ES-022 ; CR-ES-023
+    release: v1.3.0 ; v1.4.0
+    disposition: canonical
+
+  - base_concept: product
+    agentic_applicability: established
+    autonomous_applicability: established
+    canonical_specialization:
+      agentic: ES:CONCEPT:agentic-product
+      autonomous: ES:CONCEPT:autonomous-product
+    status: established
+    dependency: product canonical ; satisfied
+    rationale: Per ADR-ES-018 ; ADR-ES-019
+    adr: ADR-ES-018 ; ADR-ES-019
+    cr: CR-ES-024 ; CR-ES-025
+    release: v1.5.0 ; v1.6.0
+    disposition: canonical
+
+  - base_concept: offering
+    agentic_applicability: established
+    autonomous_applicability: established
+    canonical_specialization:
+      agentic: ES:CONCEPT:agentic-offering
+      autonomous: ES:CONCEPT:autonomous-offering
+    status: established
+    dependency: offering canonical ; satisfied per ADR-ES-021 + CR-ES-021
+    rationale: Per ADR-ES-018 ; ADR-ES-019 ; ADR-ES-021
+    adr: ADR-ES-018 ; ADR-ES-019 ; ADR-ES-021
+    cr: CR-ES-026 ; CR-ES-027
+    release: v1.7.0 ; v1.8.0
+    disposition: canonical
+
+  - base_concept: operations
+    agentic_applicability: established
+    autonomous_applicability: established
+    canonical_specialization:
+      agentic: ES:CONCEPT:agentic-operations
+      autonomous: ES:CONCEPT:autonomous-operations
+    status: established
+    dependency: operations canonical ; satisfied
+    rationale: Per ADR-ES-009 ; ADR-ES-010
+    adr: ADR-ES-009 ; ADR-ES-010
+    cr: CR-ES-015 ; CR-ES-016
+    release: v1.x ; v1.x
+    disposition: canonical
+
+  - base_concept: organization
+    agentic_applicability: established
+    autonomous_applicability: established
+    canonical_specialization:
+      agentic: ES:CONCEPT:agentic-organization
+      autonomous: ES:CONCEPT:autonomous-organization
+    status: established
+    dependency: organization canonical ; satisfied per ADR-ES-022 ; CR-ES-022
+    rationale: Per ADR-ES-020 ; ADR-ES-021
+    adr: ADR-ES-020 ; ADR-ES-021
+    cr: CR-ES-028 ; CR-ES-031
+    release: v1.9.0 ; v2.0.0
+    disposition: canonical
+
+  - base_concept: enterprise
+    agentic_applicability: established
+    autonomous_applicability: established
+    canonical_specialization:
+      agentic: ES:CONCEPT:agentic-enterprise
+      autonomous: ES:CONCEPT:autonomous-enterprise
+    status: established
+    dependency: enterprise canonical ; satisfied
+    rationale: Per ADR-ES-006 ; ADR-ES-008
+    adr: ADR-ES-006 ; ADR-ES-008
+    cr: CR-ES-007
+    release: v1.x ; v1.x
+    disposition: canonical
+
+  - base_concept: workflow
+    agentic_applicability: established
+    autonomous_applicability: not_applicable
+    canonical_specialization:
+      agentic: ES:CONCEPT:agentic-workflow
+    status: established
+    dependency: workflow canonical ; satisfied
+    rationale: Per ADR-ES-014 ; Autonomous Workflow NOT established (per ADR-ES-022 section 13 prohibition on mechanical symmetry)
+    adr: ADR-ES-014
+    cr: CR-ES-014
+    release: v1.x
+    disposition: canonical
+    note: Autonomous Workflow intentionally absent ; separate semantic decision required per ADR-ES-022 section 13
+
+provenance:
+  source:
+    - ADR-ES-001 through ADR-ES-021
+  decision:
+    - ADR-ES-022
+  implementation:
+    - CR-ES-022

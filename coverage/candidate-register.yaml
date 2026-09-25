@@ -1,0 +1,165 @@
+# coverage/candidate-register.yaml ; Candidate Register
+#
+# Per CR-ES-022 section 4 + ADR-ES-022 section 11 ; the register of
+# candidate concepts that SHALL remain subject to investigation
+# rather than automatic canonicalization.
+#
+# Disposition: canonical | investigate | profile | deferred | rejected
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CANDIDATE:register
+canonical_name: Candidate Concept Register
+status: established
+version: 2.0.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+governing: ADR-ES-022 ; CR-ES-022
+
+candidates:
+  - id: agentic-culture
+    name: Agentic Culture
+    disposition: blocked
+    blocker: parent Culture concept not canonical
+    rationale: |
+      Per ADR-ES-023 section 1 ; Culture must be canonical before
+      Agentic Culture can specialize. Culture is not canonical on
+      origin/main as of 2026-09-25.
+    adr: ADR-ES-023
+    cr: CR-ES-023
+    resolution_path: separate Culture canonical grounding ADR + CR
+
+  - id: autonomous-culture
+    name: Autonomous Culture
+    disposition: investigate
+    rationale: |
+      Per ADR-ES-023 section 10 ; Autonomous Culture is intentionally
+      NOT established. Cultural autonomy could mean several materially
+      different things and SHALL NOT be collapsed prematurely.
+    adr: ADR-ES-023
+    next_step: separate semantic analysis required
+
+  - id: agentic-system
+    name: Agentic System
+    disposition: deferred
+    blocker: parent System concept not canonical
+    rationale: |
+      Per ADR-ES-022 section 9 ; System must be canonical before
+      Agentic System can specialize.
+    resolution_path: separate System canonical grounding ADR + CR
+
+  - id: autonomous-system
+    name: Autonomous System
+    disposition: deferred
+    blocker: parent System concept not canonical
+    rationale: |
+      Per ADR-ES-022 section 9 ; System must be canonical before
+      Autonomous System can specialize.
+    resolution_path: separate System canonical grounding ADR + CR
+
+  - id: agentic-ecosystem
+    name: Agentic Ecosystem
+    disposition: deferred
+    blocker: parent Ecosystem concept not canonical
+    rationale: |
+      Per ADR-ES-022 section 9 ; Ecosystem must be canonical.
+    resolution_path: separate Ecosystem canonical grounding ADR + CR
+
+  - id: autonomous-ecosystem
+    name: Autonomous Ecosystem
+    disposition: deferred
+    blocker: parent Ecosystem concept not canonical
+    rationale: |
+      Per ADR-ES-022 section 9 ; Ecosystem must be canonical.
+    resolution_path: separate Ecosystem canonical grounding ADR + CR
+
+  - id: agentic-network
+    name: Agentic Network
+    disposition: deferred
+    blocker: parent Network concept not canonical
+    rationale: |
+      Per ADR-ES-022 section 9 ; Network must be canonical.
+    resolution_path: separate Network canonical grounding ADR + CR
+
+  - id: autonomous-network
+    name: Autonomous Network
+    disposition: deferred
+    blocker: parent Network concept not canonical
+    rationale: |
+      Per ADR-ES-022 section 9 ; Network must be canonical.
+    resolution_path: separate Network canonical grounding ADR + CR
+
+  - id: loop-engineering
+    name: Loop Engineering
+    disposition: profile
+    rationale: |
+      Implementation / operating pattern rather than foundational
+      semantic concept per ADR-ES-022 section 10. Useful term
+      describing a pattern of work.
+    resolution_path: profile record if needed
+
+  - id: closed-loop
+    name: Closed Loop
+    disposition: profile
+    rationale: |
+      Implementation pattern rather than foundational semantic
+      concept per ADR-ES-022 section 10.
+
+  - id: autonomous-closed-loop
+    name: Autonomous Closed Loop
+    disposition: deferred
+    rationale: |
+      Per ADR-ES-022 section 13 prohibition on mechanical symmetry ;
+      autonomous component does not automatically establish closed
+      loop semantic.
+
+  - id: ai-closed-loop
+    name: AI Closed Loop
+    disposition: rejected
+    rationale: |
+      Reduces AI to the definition of closed loop, conflating
+      technology with semantic property per ADR-ES-022 section 3.
+
+  - id: ai-agent
+    name: AI Agent
+    disposition: deferred
+    rationale: |
+      Requires investigation ; conflates AI technology with Agent
+      semantic per ADR-ES-022 section 3.
+
+  - id: agentic-ai
+    name: Agentic AI
+    disposition: rejected
+    rationale: |
+      Reduces Agentic to AI definition, conflating semantic
+      property with technology per ADR-ES-022 section 3.
+
+  - id: aiops
+    name: AIOps
+    disposition: profile
+    rationale: |
+      Industry term describing an operating pattern ; not a
+      foundational semantic concept per ADR-ES-022 section 10.
+
+  - id: mlops
+    name: MLOps
+    disposition: profile
+    rationale: |
+      Industry term describing an operating pattern ; not a
+      foundational semantic concept per ADR-ES-022 section 10.
+
+  - id: ai-native-operations
+    name: AI-Native Operations
+    disposition: profile
+    rationale: |
+      Industry term describing an operating pattern ; not a
+      foundational semantic concept per ADR-ES-022 section 10.
+
+provenance:
+  source:
+    - ADR-ES-001 through ADR-ES-021
+  decision:
+    - ADR-ES-022
+  implementation:
+    - CR-ES-022

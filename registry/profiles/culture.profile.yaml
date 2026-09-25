@@ -1,0 +1,89 @@
+# registry/profiles/culture.profile.yaml ; Culture Profile
+#
+# Per CR-ES-026 section 4 ; profile record for Culture Profile
+# (ES:PROFILE:CULTURE).
+#
+# Per CR-ES-026 section 4, the profile must NOT imply inheritance
+# from Organization, Governance, Policy, Process, or Capability.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:CULTURE
+canonical_name: Culture Profile
+profile_type: culture
+status: established
+version: 2.4.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+scope:
+  - Entity
+  - Culture
+  - Organization
+  - Governance
+  - Policy
+  - Authority
+  - Accountability
+  - Capability
+  - Process
+  - Decision
+  - Adaptation
+
+description: |
+  The Culture Profile aggregates the foundational concept Culture
+  and the concepts Culture supports or shapes. The profile enables
+  discoverability and grouping. It does NOT imply that every scoped
+  concept is a subtype of Culture.
+
+scope_assertions:
+  - id: CULT-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: CULT-PROF-SCOPE-002
+    description: Profile does NOT make Organization a subtype of Culture.
+  - id: CULT-PROF-SCOPE-003
+    description: Profile does NOT make Governance a subtype of Culture.
+  - id: CULT-PROF-SCOPE-004
+    description: Profile does NOT make Policy a subtype of Culture.
+  - id: CULT-PROF-SCOPE-005
+    description: Profile does NOT make Process a subtype of Culture.
+  - id: CULT-PROF-SCOPE-006
+    description: Profile does NOT make Capability a subtype of Culture.
+  - id: CULT-PROF-SCOPE-007
+    description: Profile does NOT make Decision a subtype of Culture.
+  - id: CULT-PROF-SCOPE-008
+    description: Profile does NOT make Adaptation a subtype of Culture.
+
+materiality_invariants:
+  - id: CULT-PROF-MAT-001
+    description: Material shared meaning required per ADR-ES-026 section 4 + Recon-ES-003.
+  - id: CULT-PROF-MAT-002
+    description: AI NOT required per ADR-ES-026 section 3.
+  - id: CULT-PROF-MAT-003
+    description: Technology NOT required per ADR-ES-026 section 3.
+  - id: CULT-PROF-MAT-004
+    description: Agent presence alone NOT sufficient per ADR-ES-026 section 4.
+
+boundary_invariants:
+  - id: CULT-PROF-BND-001
+    description: Culture is NOT Organization per ADR-ES-026 section 6 + CULT-NEG-001.
+  - id: CULT-PROF-BND-002
+    description: Culture is NOT Governance per ADR-ES-026 section 6 + CULT-NEG-002.
+  - id: CULT-PROF-BND-003
+    description: Culture is NOT Policy per ADR-ES-026 section 6 + CULT-NEG-003.
+  - id: CULT-PROF-BND-004
+    description: Culture is NOT Process per ADR-ES-026 section 6 + CULT-NEG-004.
+  - id: CULT-PROF-BND-005
+    description: Culture is NOT Capability per ADR-ES-026 section 6 + CULT-NEG-005.
+  - id: CULT-PROF-BND-006
+    description: Culture is NOT IT system per ADR-ES-026 section 6 + CULT-NEG-007.
+  - id: CULT-PROF-BND-007
+    description: Culture is NOT Agentic Culture per ADR-ES-026 section 6 + CULT-NEG-006.
+
+provenance:
+  - source: CR-ES-026 section 4
+  - source: ADR-ES-026
+  - source: Recon-ES-003
+  - source: USER-DIRECTIVE-1553040695345025105
+
+release_target: v2.4.0

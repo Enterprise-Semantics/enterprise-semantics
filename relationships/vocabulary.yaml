@@ -18,8 +18,8 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.9.0
-  status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
+  version: 1.5.0
+  status: established ;;; awaiting ADR-ES-018 acceptance for v1.5.0 release
   governed_predicates:
 
     # ===== Value Stream ;;; Subject predicates (CR-ES-003 §9 + §10.1-§10.7) =====
@@ -638,3 +638,19 @@ change_history:
       for value-stage (precedes, stage-realized-through, requires,
       stage-produces, contributes-to). Version bumped to v0.2.0. Status:
       candidate (awaiting ADR-ES-003 acceptance).
+
+
+  - date: 2026-09-25
+    by: CR-ES-018
+    change: |
+      Vocabulary internal version bump v0.9.0 -> v1.5.0 covering
+      ES-018 implementation chain. 13 predicates ratified for
+      Agentic Offering per CR-ES-018 §7 (specialization-of, engages,
+      interprets, operates-within, governed-by, constrained-by,
+      uses, supports, produces, adapts-to, contributes-to,
+      materiality-required, distinct-from). Plus CR-ES-018 §8-§12
+      invariant predicates (not-implies, permits) already established
+      by prior tranches. The Agentic Offering boundary introduces
+      the first cell of the Offering 2x2 matrix per ADR-ES-018 §6.
+      Foundational Dependency Gate documented per ADR-ES-018 §16 +
+      CR-ES-018 §2 ;; Offering canonicalization held in ADR-ES-019.

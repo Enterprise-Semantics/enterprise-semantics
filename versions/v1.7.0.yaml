@@ -1,0 +1,162 @@
+# versions/v1.7.0.yaml ;; Agentic Offering Semantic Grounding
+#
+# v1.7.0 release pointer ;; Enterprise-Semantics Programme
+#
+# Authoring CR: CR-ES-018 (Agentic Offering Semantic Grounding)
+# Ratifying ADR: ADR-ES-018 (Agentic Offering Semantic Grounding)
+#
+# Release scope (per CR-ES-018 §21 + ADR-ES-018 §19):
+#   - Foundational Offering dependency documented (per ADR-ES-018 §16 + CR-ES-018 §2)
+#   - Canonical schema validation passes
+#   - Registry validation passes
+#   - Relationship validation passes
+#   - Specialization validation passes
+#   - Material agentic validation passes (CR-ES-018 §13)
+#   - AI/automation independence tests pass (CR-ES-018 §14)
+#   - Agentic/Autonomous orthogonality tests pass (CR-ES-018 §6)
+#   - Provenance validation passes (CR-ES-018 §19)
+#   - Mappings validate (CR-ES-018 §18)
+#   - Documentation and diagrams are synchronized (CR-ES-018 §15)
+#   - Positive conformance tests pass (AOFF-CON-001 .. AOFF-CON-020)
+#   - Negative conformance tests pass (AOFF-NEG-001 .. AOFF-NEG-015)
+#   - No unauthorized foundational concepts are introduced
+#
+# Release authority chain:
+#   - ADR-ES-018 (Semantic Specialization Decision, Proposed, slot 0020)
+#   - CR-ES-018 (Implementation Specification, Proposed, slot 0026)
+#
+# Foundational Dependency Gate status (per ADR-ES-018 §16 + CR-ES-018 §2):
+#   As of 2026-09-25, the parent Offering concept is NOT yet canonical
+#   in Enterprise-Semantics. Per user directive message
+#   1552900782440058902 ("Proceed with 18"), this tranche implements
+#   ES-018 with the dependency documented rather than blocked. The
+#   next-foundational tranche is ADR-ES-019 (Offering canonical
+#   grounding).
+#
+# Architectural continuity (per ADR-ES-018 §22):
+#   Capability
+#     |-- Agentic Capability
+#     |-- Autonomous Capability
+#   Product
+#     |-- Agentic Product
+#     |-- Autonomous Product
+#   Service
+#     |-- Agentic Service
+#     |-- Autonomous Service
+#   Offering
+#     |-- Agentic Offering                  v1.7.0 (this release)
+#     |-- [Autonomous Offering -- future]
+#   Value Stream
+#     |-- Agentic Value Stream
+#     |-- Autonomous Value Stream
+#   Enterprise
+#     |-- Agentic Enterprise
+#     |-- Autonomous Enterprise
+#
+# Prior releases in the v1.x line:
+#   v1.1.0 -- Agentic Capability Semantic Grounding (CR-ES-012)
+#   v1.2.0 -- Autonomous Capability Semantic Grounding (CR-ES-013)
+#   v1.3.0 -- Agentic Service Semantic Grounding (CR-ES-014)
+#   v1.4.0 -- Autonomous Service Semantic Grounding (CR-ES-015)
+#   v1.5.0 -- Agentic Product Semantic Grounding (CR-ES-016)
+#   v1.6.0 -- Autonomous Product Semantic Grounding (CR-ES-017)
+#   v1.7.0 -- Agentic Offering Semantic Grounding (CR-ES-018) ; this release
+#
+# Boundaries preserved:
+#   Agentic Offering != Agent
+#   Agentic Offering != Agentic Product
+#   Agentic Offering != Agentic Service
+#   Agentic Offering != Agentic Workflow
+#   Agentic Offering != Agentic Operations
+#   Agentic Offering != Agentic Value Stream
+#   Agentic Offering != Agentic Enterprise
+#   Agentic Offering != AI Offering
+#   Agentic Offering != Automated Offering
+#
+# Deferred concepts (per ADR-ES-018 §14 + CR-ES-018 §2):
+#   Autonomous Offering
+#   Autonomous Portfolio
+#   Autonomous Agent
+#   Autonomous Product Agent
+#   Autonomous Ecosystem
+#   Autonomous Enterprise beyond ADR-ES-011
+#   Foundational Offering ontology (held for ADR-ES-019)
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+version: "1.7.0"
+release_target: Agentic Offering Semantic Grounding
+status: candidate  # gated on ADR-ES-018 acceptance
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance:
+  authorizing_adr: ADR-ES-018
+  implementing_cr: CR-ES-018
+  precedence: ES-018 supersedes prior v1.x patches in Agentic Offering scope
+foundational_dependency_gate:
+  status: documented  # per ADR-ES-018 §16 + CR-ES-018 §2
+  parent_concept: external:offering:Offering
+  parent_canonical: false  # as of 2026-09-25
+  resolution: user directive message 1552900782440058902 ("Proceed with 18") overrode Path X BLOCK
+  next_foundational_tranche: ADR-ES-019 (Offering canonical grounding)
+architectural_continuity:
+  capability_branch:
+    agentic_capability: v1.1.0
+    autonomous_capability: v1.2.0
+  product_branch:
+    agentic_product: v1.5.0
+    autonomous_product: v1.6.0
+  service_branch:
+    agentic_service: v1.3.0
+    autonomous_service: v1.4.0
+  offering_branch:
+    agentic_offering: v1.7.0  # this release
+    autonomous_offering: deferred per ADR-ES-018 §14
+  value_stream_branch:
+    agentic_value_stream: v0.4.0
+    autonomous_value_stream: v0.8.0
+  enterprise_branch:
+    agentic_enterprise: v1.0.0
+    autonomous_enterprise: v1.1.0
+semantic_release:
+  new_concepts:
+    - id: ES:CONCEPT:agentic-offering
+      semantic_type: AgenticOffering
+      version: 1.7.0
+      specialization: external:offering:Offering
+      dependency_note: "Parent Offering NOT canonical in Enterprise-Semantics per ADR-ES-018 §16 + CR-ES-018 §2. Dependency documented per user directive message 1552900782440058902."
+  new_profiles:
+    - id: ES:PROFILE:agentic-offering
+      profile_type: agentic-offering
+      version: 1.7.0
+  new_vocabulary_predicates: []  # all required predicates already established
+  new_mappings:
+    - authority: wsf
+      target: external:wsf:Offering
+      relationship: references
+    - authority: opendea
+      target: external:opendea:Offering
+      relationship: references
+acceptance_criteria:
+  positive_tests: 20  # AOFF-CON-001 .. AOFF-CON-020
+  negative_tests: 15  # AOFF-NEG-001 .. AOFF-NEG-015
+  total: 35
+invariants:
+  foundational_dependency_gate: documented  # per ADR-ES-018 §16
+  specialization_validity: required
+  materiality_validation: required
+  ai_independence: required
+  automation_independence: required
+  human_participation_validity: required
+  agentic_autonomous_orthogonality: required
+  provenance_completeness: required
+  boundary_preservation:
+    agentic_offering_not_agent: required
+    agentic_offering_not_agentic_product: required
+    agentic_offering_not_agentic_service: required
+    agentic_offering_not_agentic_workflow: required
+    agentic_offering_not_agentic_operations: required
+    agentic_offering_not_agentic_value_stream: required
+    agentic_offering_not_agentic_enterprise: required
+    agentic_offering_not_ai_offering: required
+    agentic_offering_not_automated_offering: required

@@ -12,7 +12,7 @@
 # relationships/vocabulary.yaml v0.2.0.
 
 inverse:
-  version: 0.9.0
+  version: 1.5.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_inverses:
 
@@ -348,3 +348,8 @@ change_history:
       13 inverse pairs introduced matching the 13 Value Stream predicates
       in relationships/vocabulary.yaml v0.2.0. Version bumped to v0.2.0.
       Status: candidate (awaiting ADR-ES-003 acceptance).
+  - date: 2026-09-25
+    by: CR-ES-018
+    change: |
+      Combined inverse internal version bump v0.9.0 -> v1.5.0 covering
+      ES-018 implementation chain.

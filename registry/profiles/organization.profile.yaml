@@ -1,0 +1,80 @@
+# registry/profiles/organization.profile.yaml ; Organization Profile
+#
+# Per CR-ES-022 section 6 ; profile record for Organization Profile
+# (ES:PROFILE:ORGANIZATION).
+#
+# Per CR-ES-022 section 6, the profile shall identify the semantic
+# scope of the canonical Organization concept. The profile shall
+# NOT imply that every scoped concept is a subtype of Organization.
+#
+# Foundational concept per ADR-ES-022 section 1.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:ORGANIZATION
+canonical_name: Organization Profile
+profile_type: organization
+status: established
+version: 1.9.1
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+scope:
+  - Organization
+  - Organizational Intent
+  - Actor
+  - Role
+  - Responsibility
+  - Authority
+  - Resource
+  - Activity
+  - Policy
+  - Constraint
+  - Governance
+  - Accountability
+  - Organizational Outcome
+  - Escalation Boundary
+
+description: |
+  The Organization Profile aggregates the canonical concepts
+  that participate in or support Organization realization. The
+  profile enables discoverability and grouping. It does NOT
+  imply that every scoped concept is a subtype of Organization.
+
+scope_assertions:
+  - id: ORG-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: ORG-PROF-SCOPE-002
+    description: Profile does NOT make Actor a subtype of Organization.
+  - id: ORG-PROF-SCOPE-003
+    description: Profile does NOT make Role a subtype of Organization.
+  - id: ORG-PROF-SCOPE-004
+    description: Profile does NOT make Activity a subtype of Organization.
+  - id: ORG-PROF-SCOPE-005
+    description: Profile does NOT make Resource a subtype of Organization.
+  - id: ORG-PROF-SCOPE-006
+    description: Profile does NOT make Policy a subtype of Organization.
+
+boundary_invariants:
+  - id: ORG-PROF-BND-001
+    description: Organization is NOT an Enterprise per ADR-ES-022 section 5 + ORG-NEG-001.
+  - id: ORG-PROF-BND-002
+    description: Organization is NOT a Process per ADR-ES-022 section 7 + ORG-NEG-002.
+  - id: ORG-PROF-BND-003
+    description: Organization is NOT an Activity per ORG-NEG-003.
+  - id: ORG-PROF-BND-004
+    description: Organization is NOT a Capability per ADR-ES-022 section 9 + ORG-NEG-004.
+  - id: ORG-PROF-BND-005
+    description: Organization is NOT a Value Stream per ADR-ES-022 section 8 + ORG-NEG-005.
+  - id: ORG-PROF-BND-006
+    description: Organization is NOT Operations per ORG-NEG-006.
+  - id: ORG-PROF-BND-007
+    description: Organization is NOT an Agent per ADR-ES-022 section 6 + ORG-NEG-007.
+
+provenance:
+  - source: CR-ES-022 section 6
+  - source: ADR-ES-022 section 1
+  - source: CR-ES-022 section 15
+
+release_target: v1.9.1

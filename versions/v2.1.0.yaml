@@ -1,0 +1,64 @@
+# versions/v2.1.0.yaml ; v2.1.0 ; Enterprise-Semantics v2.1.0 release pointer
+#
+# Per ADR-ES-023 section 17 + CR-ES-023 section 16 ; this release
+# establishes the Agentic Culture specialization, conditional on
+# Culture being canonical (resolved per ADR-ES-026 + CR-ES-026
+# Accepted).
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+release: v2.1.0
+date: 2026-09-25
+status: established
+governance: enterprise-semantics
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+included_releases:
+  - v1.0.0
+  - v1.1.0
+  - v1.2.0
+  - v1.3.0
+  - v1.4.0
+  - v1.5.0
+  - v1.6.0
+  - v1.7.0
+  - v1.8.0
+  - v1.8.1
+  - v1.9.0
+  - v1.9.1
+  - v2.0.0
+  - v2.1.0
+
+canonical_concepts:
+  - capability
+  - agentic-capability
+  - autonomous-capability
+  - product
+  - agentic-product
+  - autonomous-product
+  - service
+  - agentic-service
+  - autonomous-service
+  - offering
+  - agentic-offering
+  - autonomous-offering
+  - organization
+  - agentic-organization
+  - autonomous-organization
+  - culture
+  - agentic-culture ; NEW ; per ADR-ES-023 + CR-ES-023 ; conditional on Culture
+
+orthogonality:
+  boundary: Culture
+  agentic: true ; v2.1.0 ; per ADR-ES-023
+  autonomous: true ; v2.2.0 ; per ADR-ES-024 (pending)
+
+provenance:
+  source:
+    - ADR-ES-022
+    - ADR-ES-023
+    - ADR-ES-026
+  decision:
+    - ADR-ES-023
+  implementation:
+    - CR-ES-023

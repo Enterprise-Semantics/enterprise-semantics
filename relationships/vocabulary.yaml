@@ -18,7 +18,7 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.9.0
+  version: 1.8.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
@@ -638,3 +638,15 @@ change_history:
       for value-stage (precedes, stage-realized-through, requires,
       stage-produces, contributes-to). Version bumped to v0.2.0. Status:
       candidate (awaiting ADR-ES-003 acceptance).
+
+  - date: 2026-09-25
+    version: 1.8.0
+    change: |
+      Added canonical Offering predicates (addresses, composes,
+      exercises, fulfilled-through, realizes, escalates-through)
+      per ADR-ES-021 section 4 + CR-ES-021 section 7. Also adds
+      Offering-as-bundle-of-Products+Services+Capabilities
+      grounding. Resolves Foundational Dependency Gate documented
+      in ADR-ES-018 section 16 + ADR-ES-019 section 2.
+    author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+    governing: ADR-ES-021

@@ -1,0 +1,64 @@
+# versions/v1.8.1.yaml ; v1.8.1 ; Enterprise-Semantics v1.8.1 release pointer
+#
+# Per ADR-ES-021 section 15 + CR-ES-021 section 17 ; this release
+# establishes the canonical Offering concept and unblocks
+# ADR-ES-018 + ADR-ES-019.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+release: v1.8.1
+date: 2026-09-25
+status: established
+governance: enterprise-semantics
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+included_releases:
+  - v1.0.0
+  - v1.1.0
+  - v1.2.0
+  - v1.3.0
+  - v1.4.0
+  - v1.5.0
+  - v1.6.0
+  - v1.7.0
+  - v1.8.0
+  - v1.8.1
+
+canonical_concepts:
+  - capability
+  - agentic-capability
+  - autonomous-capability
+  - product
+  - agentic-product
+  - autonomous-product
+  - service
+  - agentic-service
+  - autonomous-service
+  - offering ; NEW ; canonical grounding per ADR-ES-021 + CR-ES-021
+  - agentic-offering ; per ADR-ES-018 + CR-ES-018 (now solidly grounded)
+  - autonomous-offering ; per ADR-ES-019 + CR-ES-019 (now solidly grounded)
+
+foundational_dependency_resolution:
+  - dependency: Offering canonical grounding
+    prior_status: documented ; blocked by missing parent concept
+    resolution_status: resolved ; ADR-ES-021 + CR-ES-021 Accepted
+    adr: ADR-ES-021
+    cr: CR-ES-021
+
+provenance:
+  source:
+    - ADR-ES-001
+    - ADR-ES-004
+    - ADR-ES-005
+    - ADR-ES-007
+    - ADR-ES-008
+    - ADR-ES-009
+    - ADR-ES-011
+    - ADR-ES-015
+    - ADR-ES-017
+    - ADR-ES-018
+    - ADR-ES-019
+  decision:
+    - ADR-ES-021
+  implementation:
+    - CR-ES-021

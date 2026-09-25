@@ -12,7 +12,7 @@
 # relationships/vocabulary.yaml v0.2.0.
 
 inverse:
-  version: 0.9.0
+  version: 1.6.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_inverses:
 
@@ -348,3 +348,24 @@ change_history:
       13 inverse pairs introduced matching the 13 Value Stream predicates
       in relationships/vocabulary.yaml v0.2.0. Version bumped to v0.2.0.
       Status: candidate (awaiting ADR-ES-003 acceptance).
+
+change_history:
+  - version: 1.6.0
+    date: 2026-09-25
+    author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+    adr: ADR-ES-019
+    cr: CR-ES-019
+    scope: Add Autonomous Offering inverse predicates
+    changes:
+      - Add inverse specializes (Offering -> Autonomous Offering)
+      - Add inverse operates-within (Authority -> Autonomous Offering)
+      - Add inverse governed-by (Policy -> Autonomous Offering)
+      - Add inverse constrained-by (Constraint -> Autonomous Offering)
+      - Add inverse pursues (Objective -> Autonomous Offering)
+      - Add inverse produces (Outcome -> Autonomous Offering)
+      - Add inverse contributes-to (Value -> Autonomous Offering)
+      - Add inverse supports (Capability -> Autonomous Offering)
+      - Add inverse supported-by (Autonomous Operations -> Autonomous Offering)
+    cardinal_rules:
+      - D-004 compliance: zero forbidden glyphs
+      - Authored by Emmanuel A. Otchere (cardinal author rule, 2026-09-24)

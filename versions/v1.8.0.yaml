@@ -1,0 +1,60 @@
+# versions/v1.8.0.yaml ; v1.8.0 release pointer
+#
+# Per CR-ES-019 section 21, v1.8.0 established upon Autonomous Offering
+# canonical grounding AND ADR-ES-019 + CR-ES-019 promotion to Accepted.
+#
+# Foundational Dependency Gate (per ADR-ES-019 §2 + CR-ES-019 §2):
+# The parent Offering concept is NOT yet canonical on origin/main
+# as of 2026-09-25. Per user directive messages 1552900782440058902
+# (Proceed with 18) + 1552912455527571546 (save, read, understand,
+# implement), the dependency is documented rather than blocking.
+# The next-foundational tranche is ADR-ES-019 (Offering canonical
+# grounding), which remains unresolved at acceptance.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: v1.8.0
+canonical_name: Enterprise-Semantics v1.8.0
+status: candidate  # per CR-ES-019 §21 ; gated on Offering canonical grounding
+version: 1.8.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+adr: ADR-ES-019
+cr: CR-ES-019
+
+scope:
+  - Autonomous Offering concept canonicalization
+  - vocabulary.yaml bumped v0.9.0 -> v1.6.0 (combined bump covering ES-016 + ES-017 + ES-018 + ES-019)
+  - inverse.yaml bumped v0.9.0 -> v1.6.0
+  - WSF Tier 2 Specialisation of WSF Offering
+  - OpenDEA Specialisation of OpenDEA Offering
+  - OTCHERE Inc Autonomous Integrated Offering example
+  - 21 positive + 16 negative + 1 BLOCKED dependency + 1 README conformance tests
+  - 10 PlantUML diagrams
+  - Autonomous Offering profile + profile_type + concept profile_bindings
+
+foundational_dependency_gate:
+  status: documented  # per ADR-ES-019 §2 + CR-ES-019 §2
+  parent_concept: external:offering:Offering
+  parent_canonical: false  # as of 2026-09-25
+  resolution: per user directive messages 1552900782440058902 + 1552912455527571546
+  next_foundational_tranche: ADR-ES-019 (Offering canonical grounding)
+
+provenance:
+  - source: ADR-ES-018
+    note: Agentic Offering Semantic Grounding (Accepted 2026-09-25)
+  - source: ADR-ES-019
+    note: Autonomous Offering decision
+  - source: CR-ES-019
+    note: Autonomous Offering implementation
+  - source: USER-DIRECTIVE-1552900782440058902
+    note: Proceed with 18 (dependency override)
+  - source: USER-DIRECTIVE-1552912455527571546
+    note: Save, read, understand, implement (paired tranche)
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 en-dash, 0 em-dash, 0 U+2E3B, 0 arrow glyph
+  - vendor_specific_embargo: 0 references
+  - foundational_dependency_gate: documented per ADR-ES-019 §2 + CR-ES-019 §2

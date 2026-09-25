@@ -18,7 +18,7 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.9.0
+  version: 1.6.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
@@ -638,3 +638,58 @@ change_history:
       for value-stage (precedes, stage-realized-through, requires,
       stage-produces, contributes-to). Version bumped to v0.2.0. Status:
       candidate (awaiting ADR-ES-003 acceptance).
+
+change_history:
+  - version: 1.6.0
+    date: 2026-09-25
+    author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+    adr: ADR-ES-019
+    cr: CR-ES-019
+    scope: Add Autonomous Offering canonical predicates and target concepts
+    foundational_dependency: documented per ADR-ES-019 section 2 + CR-ES-019 section 2
+    changes:
+      - Add Autonomous Offering concept (ES:CONCEPT:autonomous-offering)
+      - Add offering_objective property
+      - Add autonomy_scope property
+      - Add decision_scope property
+      - Add action_scope property
+      - Add configuration_scope property
+      - Add composition_scope property
+      - Add coordination_scope property
+      - Add governance_context property
+      - Add observation_scope property
+      - Add escalation_boundary property
+      - Add intervention_model property
+      - Add realization_mode property
+      - Add specializes predicate target Offering
+      - Add operates-within predicate target Authority
+      - Add governed-by predicate target Policy
+      - Add constrained-by predicate target Constraint
+      - Add pursues predicate target Objective
+      - Add responds-to predicate target Context
+      - Add produces predicate target Outcome
+      - Add adapts-to predicate target Context
+      - Add uses predicate target Workflow
+      - Add uses predicate target Agentic Workflow
+      - Add supported-by predicate target Autonomous Operations
+      - Add supports predicate target Capability
+      - Add uses predicate target Product
+      - Add uses predicate target Service
+      - Add contributes-to predicate target Value
+      - Add materiality-required predicate (autonomy-materiality)
+      - Add boundary-maintained predicate (authority-escalation)
+      - Add ai-independent predicate (ai-independence)
+      - Add automation-independent predicate (automation-independence)
+      - Add distinct-from predicate target Autonomous Product
+      - Add distinct-from predicate target Autonomous Service
+      - Add distinct-from predicate target Autonomous Value Stream
+      - Add distinct-from predicate target Agentic Offering
+      - Add distinct-from predicate target Autonomous Operations
+      - Add distinct-from predicate target Autonomous Enterprise
+      - Note: ES-016 + ES-017 + ES-018 prior bumps (v1.3.0 + v1.4.0 + v1.5.0) did not land on origin/main; this is a combined bump covering ES-016 + ES-017 + ES-018 + ES-019 change history
+    cardinal_rules:
+      - D-004 compliance: zero en-dash, zero em-dash, zero U+2E3B
+      - Zero inline 3-semicolon dividers in new entry
+      - Zero vendor-specific embargoed references
+      - Foundational Dependency Gate documented per ADR-ES-019 section 2 + CR-ES-019 section 2
+      - Authored by Emmanuel A. Otchere (cardinal author rule, 2026-09-24)

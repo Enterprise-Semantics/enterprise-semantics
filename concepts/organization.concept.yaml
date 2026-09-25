@@ -1,0 +1,103 @@
+# concepts/organization.concept.yaml ; Organization canonical concept
+
+# Per ADR-ES-022 + CR-ES-022 ; Organization is a foundational
+# concept in Enterprise-Semantics. This file establishes the
+# canonical grounding that ADR-ES-020 (Agentic Organization)
+# specializes. Per CR-ES-022 section 3.
+
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:organization
+canonical_name: Organization
+status: Candidate
+version: 1.9.1
+concept_type: organization
+governance: enterprise-semantics
+definition: |
+  An Organization is a coordinated boundary of Actors (human and
+  non-human), Roles, Responsibilities, Authority, Resources, and
+  Activities that an Enterprise or organizational unit establishes
+  to pursue Organizational Intent within defined Authority, Policy,
+  Constraints, Governance, and Accountability, and that produces
+  Organizational Outcomes. Per ADR-ES-022 section 1 + CR-ES-022
+  section 3.
+
+relationships:
+  - predicate: pursues
+    object: external:concept:organizational-intent
+    provenance: ADR-ES-022 section 4
+  - predicate: coordinates
+    object: external:concept:actor
+    provenance: ADR-ES-022 section 4
+  - predicate: allocates
+    object: external:concept:role
+    provenance: ADR-ES-022 section 4
+  - predicate: allocates
+    object: external:concept:responsibility
+    provenance: ADR-ES-022 section 4
+  - predicate: delegates
+    object: external:concept:authority
+    provenance: ADR-ES-022 section 4
+  - predicate: marshals
+    object: external:concept:resource
+    provenance: ADR-ES-022 section 4
+  - predicate: undertakes
+    object: external:concept:activity
+    provenance: ADR-ES-022 section 4
+  - predicate: operates-within
+    object: external:concept:authority
+    provenance: ADR-ES-022 section 4
+  - predicate: governed-by
+    object: external:concept:policy
+    provenance: ADR-ES-022 section 4
+  - predicate: constrained-by
+    object: external:concept:constraint
+    provenance: ADR-ES-022 section 4
+  - predicate: operates-under
+    object: external:concept:governance
+    provenance: ADR-ES-022 section 4
+  - predicate: accountable-under
+    object: external:concept:accountability
+    provenance: ADR-ES-022 section 4
+  - predicate: produces
+    object: external:concept:organizational-outcome
+    provenance: ADR-ES-022 section 4
+  - predicate: escalates-through
+    object: external:concept:escalation-boundary
+    provenance: ADR-ES-022 section 4
+
+properties:
+  organizational_intent: string
+  actor_scope: string
+  role_scope: string
+  responsibility_scope: string
+  authority_context: string
+  resource_scope: string
+  activity_scope: string
+  policy_context: string
+  constraint_context: string
+  governance_context: string
+  accountability_context: string
+  organizational_outcome_scope: string
+  escalation_boundary: string
+
+specializations:
+  - specialization: agentic-organization
+    adr: ADR-ES-020
+    cr: CR-ES-020
+    resolved_status: documented ; awaiting CR-ES-022 for resolution
+
+provenance:
+  source:
+    - ADR-ES-001
+    - ADR-ES-004
+    - ADR-ES-007
+    - ADR-ES-010
+    - ADR-ES-011
+    - ADR-ES-020
+  decision:
+    - ADR-ES-022
+  implementation:
+    - CR-ES-022
+
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)

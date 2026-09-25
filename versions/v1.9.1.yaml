@@ -1,0 +1,63 @@
+# versions/v1.9.1.yaml ; v1.9.1 ; Enterprise-Semantics v1.9.1 release pointer
+#
+# Per ADR-ES-022 section 15 + CR-ES-022 section 17 ; this release
+# establishes the canonical Organization concept and unblocks
+# ADR-ES-020.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+release: v1.9.1
+date: 2026-09-25
+status: established
+governance: enterprise-semantics
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+included_releases:
+  - v1.0.0
+  - v1.1.0
+  - v1.2.0
+  - v1.3.0
+  - v1.4.0
+  - v1.5.0
+  - v1.6.0
+  - v1.7.0
+  - v1.8.0
+  - v1.8.1
+  - v1.9.0
+  - v1.9.1
+
+canonical_concepts:
+  - capability
+  - agentic-capability
+  - autonomous-capability
+  - product
+  - agentic-product
+  - autonomous-product
+  - service
+  - agentic-service
+  - autonomous-service
+  - offering
+  - agentic-offering
+  - autonomous-offering
+  - organization ; NEW ; canonical grounding per ADR-ES-022 + CR-ES-022
+  - agentic-organization ; per ADR-ES-020 + CR-ES-020 (now solidly grounded)
+
+foundational_dependency_resolution:
+  - dependency: Organization canonical grounding
+    prior_status: documented ; blocked by missing parent concept
+    resolution_status: resolved ; ADR-ES-022 + CR-ES-022 Accepted
+    adr: ADR-ES-022
+    cr: CR-ES-022
+
+provenance:
+  source:
+    - ADR-ES-001
+    - ADR-ES-004
+    - ADR-ES-007
+    - ADR-ES-010
+    - ADR-ES-011
+    - ADR-ES-020
+  decision:
+    - ADR-ES-022
+  implementation:
+    - CR-ES-022

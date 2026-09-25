@@ -1,0 +1,85 @@
+# registry/profiles/agentic-product.profile.yaml ;; Agentic Product Profile
+#
+# Per CR-ES-016 §7, profile record for Agentic Product Profile
+# (ES:PROFILE:agentic-product).
+#
+# Per CR-ES-016 §7, the profile shall identify the semantic scope of
+# Agentic Product. The profile shall NOT imply that every scoped
+# concept is a subtype of Product.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:agentic-product
+canonical_name: Agentic Product Profile
+profile_type: agentic-product
+status: candidate
+version: 1.0.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+scope:
+  - Product
+  - Agentic Product
+  - Agent
+  - Intent
+  - Authority
+  - Policy
+  - Constraint
+  - Context
+  - Outcome
+  - Agentic Workflow
+  - Capability
+  - Service
+  - Value
+description: |
+  The Agentic Product Profile aggregates the canonical concepts that
+  participate in or support Agentic Product realization. The profile
+  enables discoverability and grouping. It does NOT imply that every
+  scoped concept is a subtype of Product.
+scope_assertions:
+  - id: APROD-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: APROD-PROF-SCOPE-002
+    description: Profile does NOT make Service a subtype of Product.
+  - id: APROD-PROF-SCOPE-003
+    description: Profile does NOT make Capability a subtype of Product.
+  - id: APROD-PROF-SCOPE-004
+    description: Profile does NOT make Agent a subtype of Product.
+  - id: APROD-PROF-SCOPE-005
+    description: Profile does NOT make Workflow a subtype of Product.
+materiality_invariants:
+  - id: APROD-PROF-MAT-001
+    description: Material agentic realization required per ADR-ES-016 §6.
+  - id: APROD-PROF-MAT-002
+    description: AI NOT required per ADR-ES-016 §13.
+  - id: APROD-PROF-MAT-003
+    description: Automation NOT sufficient per ADR-ES-016 §14.
+  - id: APROD-PROF-MAT-004
+    description: Human participation remains valid per ADR-ES-016 §15.
+boundary_invariants:
+  - id: APROD-PROF-BND-001
+    description: Agentic Product is NOT an Agent per APROD-NEG-001.
+  - id: APROD-PROF-BND-002
+    description: Agentic Product is NOT Agentic Capability per APROD-NEG-002.
+  - id: APROD-PROF-BND-003
+    description: Agentic Product is NOT Agentic Service per APROD-NEG-003.
+  - id: APROD-PROF-BND-004
+    description: Agentic Product is NOT Agentic Workflow per APROD-NEG-004.
+  - id: APROD-PROF-BND-005
+    description: Agentic Product is NOT Agentic Operations per APROD-NEG-005.
+  - id: APROD-PROF-BND-006
+    description: Agentic Product is NOT Agentic Value Stream per APROD-NEG-006.
+  - id: APROD-PROF-BND-007
+    description: Agentic Product is NOT Autonomous Product per APROD-NEG-011.
+  - id: APROD-PROF-BND-008
+    description: Agentic Product is NOT AI Product per APROD-NEG-007.
+  - id: APROD-PROF-BND-009
+    description: Agentic Product is NOT Automated Product per APROD-NEG-009.
+  - id: APROD-PROF-BND-010
+    description: Agentic Product is NOT Agentic Enterprise per APROD-NEG-016.
+provenance:
+  - source: CR-ES-016 §7
+  - source: ADR-ES-016 §7
+  - source: ADR-ES-016 §3
+  - source: CR-ES-016 §28
+release_target: v1.5.0

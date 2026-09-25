@@ -1,0 +1,297 @@
+# concepts/agentic-product.concept.yaml ;; Agentic Product (ES:CONCEPT:agentic-product) ;; per CR-ES-016 §3 + ADR-ES-016 §1
+#
+# Per CR-ES-016 §3 + ADR-ES-016 §1:
+#   An Agentic Product is a Product whose material realization,
+#   interaction, configuration, adaptation, or fulfillment incorporates
+#   agentic behavior in interpreting intent, selecting or coordinating
+#   actions, or adapting product behavior toward an intended outcome
+#   within defined authority, policy, and contextual boundaries.
+#
+# Specialisation of Product (not replacement ;; not parallel construct).
+# Per CR-ES-016 §3, the Agentic Product schema shall preserve the
+# mandatory Product semantics.
+#
+# Per ADR-ES-016 §19 + CR-ES-016 §2, this record does NOT establish
+# Autonomous Product, AI Product, Product maturity, Product autonomy
+# levels, Autonomous Offering, Agentic Offering, Agentic Portfolio,
+# Autonomous Portfolio, Product Agent, Autonomous Agent, Agentic
+# Ecosystem, Autonomous Ecosystem. Those concepts are explicitly deferred
+# to separate governance decisions.
+#
+# Per ADR-ES-016 §20 + §31 + CR-ES-016 §26, the implementation shall
+# reject Agentic Product -> Agent, Agentic Capability, Agentic Service,
+# Agentic Workflow, Agentic Operations, Agentic Value Stream, or
+# Autonomous Product inheritance. AI is NOT required, automation is
+# NOT sufficient, human participation remains valid.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:agentic-product
+canonical_name: Agentic Product
+definition: |
+  A Product whose material realization, interaction, configuration,
+  adaptation, or fulfillment incorporates agentic behavior in
+  interpreting intent, selecting or coordinating actions, or adapting
+  product behavior toward an intended outcome within defined authority,
+  policy, and contextual boundaries.
+  The Product concept remains the universal foundational type per
+  ADR-ES-002 ; Agentic Product is a contextual specialization, not a
+  replacement or narrowing of Product. Agentic behavior must be material
+  to product realization ; AI, automation, Agent participation, machine
+  learning, API usage, conversational interaction, recommendation
+  functionality, or dynamic software behavior alone do not establish
+  Agentic Product.
+status: Candidate
+version: 1.5.0
+concept_type: agentic-product
+specializes:
+  - canonical_id: external:product:Product
+    relationship: specialization-of
+    rationale: |
+      Agentic Product is a contextual specialization of the
+      universal Product concept. The semantic distinction remains:
+      Product describes something intentionally offered to a
+      stakeholder or consumer for the realization of intended value ;
+      Agentic Product additionally describes how that product is
+      realized through material agentic behavior within defined
+      authority, policy, and contextual boundaries.
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Product
+    relationship: references
+    note: |
+      Agentic Product inherits the WSF Product grounding via its
+      parent Product concept.
+profile_bindings:
+  - profile_id: ES:PROFILE:agentic-product
+    profile_type: agentic-product
+    active: true
+    note: |
+      Active binding established by VS-D2c slice per CR-ES-016 §7.
+      Profile canonicalised at
+      registry/profiles/agentic-product.profile.yaml.
+relationships:
+  - subject: ES:CONCEPT:agentic-product
+    predicate: specialization-of
+    object: external:product:Product
+    qualification: contextual-specialization
+    status: proposed
+    provenance: ADR-ES-016 §1 ; CR-ES-016 §3
+    rationale: |
+      Agentic Product is a contextual specialization of Product,
+      not a new foundational type of product.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: engages
+    object: ES:CONCEPT:agent
+    qualification: agent-engagement
+    status: proposed
+    provenance: ADR-ES-016 §7 ; CR-ES-016 §8
+    rationale: |
+      Agentic Product may engage an Agent (optional, not required).
+  - subject: ES:CONCEPT:agentic-product
+    predicate: interprets
+    object: external:concept:intent
+    qualification: intent-interpretation
+    status: proposed
+    provenance: ADR-ES-016 §7 ; CR-ES-016 §8 ; APROD-CON-005
+    rationale: Agentic Product may interpret delegated or contextual intent.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: operates-within
+    object: external:concept:authority
+    qualification: authority-bounded
+    status: proposed
+    provenance: ADR-ES-016 §7 ; CR-ES-016 §8 ; APROD-CON-010
+    rationale: Agentic Product operates within defined Authority.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: governed-by
+    object: external:policy:Policy
+    qualification: policy-compliance
+    status: proposed
+    provenance: ADR-ES-016 §7 ; CR-ES-016 §8 ; APROD-CON-011
+    rationale: Agentic Product is governed by applicable Policy.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: constrained-by
+    object: external:concept:constraint
+    qualification: constraint-compliance
+    status: proposed
+    provenance: ADR-ES-016 §7 ; CR-ES-016 §8 ; APROD-CON-011
+    rationale: Agentic Product is bounded by defined Constraints.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    qualification: agentic-workflow-usage
+    status: proposed
+    provenance: ADR-ES-016 §7 ; CR-ES-016 §8 ; APROD-CON-013
+    rationale: Agentic Product may use an Agentic Workflow.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: produces
+    object: external:outcome:Outcome
+    qualification: outcome-production
+    status: proposed
+    provenance: ADR-ES-016 §7 ; CR-ES-016 §8 ; APROD-CON-004
+    rationale: Agentic Product produces intended Outcomes.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: adapts-to
+    object: external:concept:context
+    qualification: contextual-adaptation
+    status: proposed
+    provenance: ADR-ES-016 §7 ; CR-ES-016 §8 ; APROD-CON-009
+    rationale: Agentic Product adapts to Product Context.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: supports
+    object: ES:CONCEPT:capability
+    qualification: capability-support
+    status: proposed
+    provenance: ADR-ES-016 §7 ; CR-ES-016 §8 ; APROD-CON-015
+    rationale: Agentic Product may support Capability realization.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: delivered-through
+    object: external:concept:service
+    qualification: service-delivery
+    status: proposed
+    provenance: ADR-ES-016 §7 ; CR-ES-016 §8
+    rationale: Agentic Product may be delivered through a Service.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: contributes-to
+    object: external:concept:value
+    qualification: value-contribution
+    status: proposed
+    provenance: ADR-ES-016 §7 ; CR-ES-016 §8 ; APROD-CON-016
+    rationale: Agentic Product contributes to intended Value.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: distinct-from
+    object: ES:CONCEPT:agent
+    qualification: product-vs-agent
+    status: proposed
+    provenance: ADR-ES-016 §5 + §17 ; CR-ES-016 §26 ; APROD-NEG-001
+    rationale: Agentic Product is NOT an Agent.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: distinct-from
+    object: ES:CONCEPT:agentic-capability
+    qualification: product-vs-capability
+    status: proposed
+    provenance: ADR-ES-016 §5 + §10 + §17 ; CR-ES-016 §14 ; APROD-NEG-002
+    rationale: Agentic Product is NOT Agentic Capability.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: distinct-from
+    object: external:concept:agentic-service
+    qualification: product-vs-service
+    status: proposed
+    provenance: ADR-ES-016 §5 + §9 + §17 ; CR-ES-016 §13 ; APROD-NEG-003
+    rationale: Agentic Product is NOT Agentic Service.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: distinct-from
+    object: ES:CONCEPT:agentic-workflow
+    qualification: product-vs-workflow
+    status: proposed
+    provenance: ADR-ES-016 §5 + §17 ; CR-ES-016 §16 ; APROD-NEG-004
+    rationale: Agentic Product is NOT Agentic Workflow.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: distinct-from
+    object: ES:CONCEPT:agentic-operations
+    qualification: product-vs-operations
+    status: proposed
+    provenance: ADR-ES-016 §5 + §17 ; CR-ES-016 §17 ; APROD-NEG-005
+    rationale: Agentic Product is NOT Agentic Operations.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: distinct-from
+    object: ES:CONCEPT:agentic-value-stream
+    qualification: product-vs-value-stream
+    status: proposed
+    provenance: ADR-ES-016 §5 + §11 + §17 ; CR-ES-016 §15 ; APROD-NEG-006
+    rationale: Agentic Product is NOT Agentic Value Stream.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: distinct-from
+    object: external:concept:autonomous-product
+    qualification: orthogonality
+    status: proposed
+    provenance: ADR-ES-016 §12 + §17 ; CR-ES-016 §9 ; APROD-NEG-011
+    rationale: Agentic Product is NOT Autonomous Product.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: distinct-from
+    object: external:concept:ai-product
+    qualification: ai-not-required
+    status: proposed
+    provenance: ADR-ES-016 §5 + §13 + §17 ; CR-ES-016 §10 ; APROD-NEG-007 + APROD-NEG-008
+    rationale: Agentic Product is NOT AI Product.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: distinct-from
+    object: external:concept:automated-product
+    qualification: automation-not-sufficient
+    status: proposed
+    provenance: ADR-ES-016 §5 + §14 + §17 ; CR-ES-016 §11 ; APROD-NEG-009
+    rationale: Agentic Product is NOT Automated Product.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: distinct-from
+    object: external:concept:agentic-enterprise
+    qualification: product-vs-enterprise
+    status: proposed
+    provenance: ADR-ES-016 §5 + §17 ; CR-ES-016 §26 ; APROD-NEG-016
+    rationale: Agentic Product is NOT Agentic Enterprise.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: not-implies
+    object: external:concept:ai-product
+    qualification: ai-not-required
+    status: proposed
+    provenance: ADR-ES-016 §13 ; CR-ES-016 §10 ; APROD-CON-017 + APROD-NEG-007
+    rationale: Agentic Product does NOT require AI.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: not-implies
+    object: external:concept:automated-product
+    qualification: automation-not-sufficient
+    status: proposed
+    provenance: ADR-ES-016 §14 ; CR-ES-016 §11 ; APROD-CON-018 + APROD-NEG-009
+    rationale: Agentic Product does NOT require Automation.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: not-implies
+    object: external:concept:autonomous-product
+    qualification: orthogonality
+    status: proposed
+    provenance: ADR-ES-016 §12 ; CR-ES-016 §9 ; APROD-CON-019 + APROD-NEG-011
+    rationale: Agentic Product does NOT imply Autonomous Product.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: materiality-required
+    object: external:concept:material-agentic-realization
+    qualification: agentic-materiality
+    status: proposed
+    provenance: ADR-ES-016 §6 ; CR-ES-016 §5 + §27 ; APROD-CON-003
+    rationale: Material agentic realization required.
+  - subject: ES:CONCEPT:agentic-product
+    predicate: permits
+    object: external:concept:human-participation
+    qualification: human-participation-valid
+    status: proposed
+    provenance: ADR-ES-016 §15 ; CR-ES-016 §12 ; APROD-CON-012
+    rationale: Agentic Product permits human participation (in-loop, on-loop, over-loop).
+governance: enterprise-semantics
+provenance:
+  - source: ADR-ES-003
+    note: "Value Stream lineage."
+  - source: ADR-ES-004
+    note: "Agentic semantic grounding."
+  - source: ADR-ES-005
+    note: "Agentic Value Stream lineage."
+  - source: ADR-ES-006
+    note: "Agentic Workflow lineage."
+  - source: ADR-ES-007
+    note: "Agentic Operations lineage."
+  - source: ADR-ES-012
+    note: "Agentic Capability lineage."
+  - source: ADR-ES-014
+    note: "Agentic Service lineage."
+  - source: ADR-ES-015
+    note: "Autonomous Service lineage ; orthogonal autonomy dimension."
+  - source: ADR-ES-016
+    note: "Foundational specialization decision ; v1.5.0 release target."
+  - source: CR-ES-016
+    note: "Implementation specification."
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Product
+    relationship: references
+    note: "Inherits WSF Product grounding via parent Product concept."
+  - authority: opendea
+    target_id: external:opendea:Product
+    relationship: references
+    note: "References OpenDEA Product semantics."
+created: 2026-09-25
+updated: 2026-09-25

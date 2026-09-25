@@ -75,3 +75,12 @@ profile_types:
     governance: enterprise-semantics
     status: Established
     created: 2026-09-23
+  - id: agentic-product
+    canonical_name: Agentic Product
+    definition: |
+      A profile_type family for the Agentic Product Profile per CR-ES-016
+      §7 + ADR-ES-016 §7. Aggregates Product ;; Agentic Product ;;
+      Agent ;; Intent ;; Authority ;; Policy ;; Constraint ;; Context ;;
+      Outcome ;; Agentic Workflow ;; Capability ;; Service ;; Value for
+      discoverability and grouping. Does not imply inheritance.
+    governance: enterprise-semantics

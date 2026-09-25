@@ -1,0 +1,309 @@
+# concepts/autonomous-product.concept.yaml ;; Autonomous Product (ES:CONCEPT:autonomous-product) ;; per CR-ES-017 §2 + ADR-ES-017 §1
+#
+# Per CR-ES-017 §2 + ADR-ES-017 §1:
+#   An Autonomous Product is a Product whose realization,
+#   interaction, configuration, fulfillment, or adaptation is
+#   capable of progressing through defined decisions, actions,
+#   coordination, and adaptation within specified product
+#   objectives, authority, policies, constraints, and governance
+#   boundaries without requiring human intervention for every
+#   product decision or action.
+#
+# Specialisation of Product (not replacement ;; not parallel
+# construct). Per CR-ES-017 §2, the Autonomous Product schema
+# shall preserve the mandatory Product semantics.
+#
+# Per ADR-ES-017 §14 + CR-ES-017 §2, this record does NOT establish
+# Autonomous Offering, Product autonomy maturity, autonomy levels,
+# Autonomous Portfolio, Autonomous Agent, Autonomous Product Agent,
+# Autonomous Ecosystem. Those concepts are explicitly deferred to
+# separate governance decisions.
+#
+# Per ADR-ES-017 §5 + §9 + §10 + CR-ES-017 §8, the implementation
+# shall reject Autonomous Product -> Agentic Product, Autonomous
+# Service, Autonomous Capability, Autonomous Workflow, Autonomous
+# Operations, Autonomous Value Stream, Autonomous Enterprise, or
+# AI Product inheritance. AI is NOT required, automation is NOT
+# sufficient, human participation remains compatible with autonomy.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:autonomous-product
+canonical_name: Autonomous Product
+definition: |
+  A Product whose realization, interaction, configuration,
+  fulfillment, or adaptation is capable of progressing through
+  defined decisions, actions, coordination, and adaptation within
+  specified product objectives, authority, policies, constraints,
+  and governance boundaries without requiring human intervention
+  for every product decision or action.
+  The Product concept remains the universal foundational type per
+  ADR-ES-002 ; Autonomous Product is a contextual specialization,
+  not a replacement or narrowing of Product. Autonomy must be
+  material to product realization ; AI, automation, Agent
+  participation, autonomous system usage, machine learning, event-
+  driven execution, software, or APIs alone do not establish
+  Autonomous Product.
+status: Candidate
+version: 1.6.0
+concept_type: autonomous-product
+specializes:
+  - canonical_id: external:product:Product
+    relationship: specialization-of
+    rationale: |
+      Autonomous Product is a contextual specialization of the
+      universal Product concept. The semantic distinction remains:
+      Product describes something intentionally offered to a
+      stakeholder or consumer for the realization of intended value ;
+      Autonomous Product additionally describes how that product can
+      be realized with bounded independent progression within
+      product objectives, authority, policies, constraints, and
+      governance boundaries.
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Product
+    relationship: references
+    note: |
+      Autonomous Product inherits the WSF Product grounding via its
+      parent Product concept.
+profile_bindings:
+  - profile_id: ES:PROFILE:autonomous-product
+    profile_type: autonomous-product
+    active: true
+    note: |
+      Active binding established by VS-D2c slice per CR-ES-017 §5.
+      Profile canonicalised at
+      registry/profiles/autonomous-product.profile.yaml.
+relationships:
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: specialization-of
+    object: external:product:Product
+    qualification: contextual-specialization
+    status: proposed
+    provenance: ADR-ES-017 §1 ; CR-ES-017 §2
+    rationale: |
+      Autonomous Product is a contextual specialization of Product,
+      not a new foundational type of product.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: operates-within
+    object: external:concept:authority
+    qualification: authority-bounded
+    status: proposed
+    provenance: ADR-ES-017 §4 ; CR-ES-017 §6 ; APROD-AUTO-CON-007
+    rationale: Autonomous Product operates within defined Authority.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: governed-by
+    object: external:policy:Policy
+    qualification: policy-compliance
+    status: proposed
+    provenance: ADR-ES-017 §4 ; CR-ES-017 §6 ; APROD-AUTO-CON-008
+    rationale: Autonomous Product is governed by applicable Policy.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: constrained-by
+    object: external:concept:constraint
+    qualification: constraint-compliance
+    status: proposed
+    provenance: ADR-ES-017 §4 ; CR-ES-017 §6 ; APROD-AUTO-CON-009
+    rationale: Autonomous Product is bounded by defined Constraints.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: pursues
+    object: external:concept:objective
+    qualification: objective-directed
+    status: proposed
+    provenance: ADR-ES-017 §4 ; CR-ES-017 §3 ; APROD-AUTO-CON-004
+    rationale: Autonomous Product pursues a defined Product Objective.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: responds-to
+    object: external:concept:context
+    qualification: context-responsive
+    status: proposed
+    provenance: ADR-ES-017 §4 ; CR-ES-017 §6
+    rationale: Autonomous Product responds to Product Context.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: produces
+    object: external:outcome:Outcome
+    qualification: outcome-production
+    status: proposed
+    provenance: ADR-ES-017 §4 ; CR-ES-017 §6 ; APROD-AUTO-CON-011
+    rationale: Autonomous Product observes product Outcomes.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: adapts-to
+    object: external:concept:context
+    qualification: adaptive-realization
+    status: proposed
+    provenance: ADR-ES-017 §4 ; CR-ES-017 §6 ; APROD-AUTO-CON-012
+    rationale: Autonomous Product adapts within defined scope.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: uses
+    object: ES:CONCEPT:workflow
+    qualification: workflow-usage
+    status: proposed
+    provenance: ADR-ES-017 §7 ; CR-ES-017 §6 ; APROD-AUTO-CON-017
+    rationale: Autonomous Product may use a Workflow.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    qualification: agentic-workflow-usage
+    status: proposed
+    provenance: ADR-ES-017 §7 ; CR-ES-017 §6 ; APROD-AUTO-CON-018
+    rationale: Autonomous Product may use an Agentic Workflow.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: supported-by
+    object: external:concept:autonomous-operations
+    qualification: operational-support
+    status: proposed
+    provenance: ADR-ES-017 §7 ; CR-ES-017 §6 ; APROD-AUTO-CON-019
+    rationale: Autonomous Product may be supported by Autonomous Operations.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: supports
+    object: ES:CONCEPT:capability
+    qualification: capability-support
+    status: proposed
+    provenance: ADR-ES-017 §7 ; CR-ES-017 §6
+    rationale: Autonomous Product supports Capability realization.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: delivered-through
+    object: external:concept:service
+    qualification: service-delivery
+    status: proposed
+    provenance: ADR-ES-017 §7 ; CR-ES-017 §6
+    rationale: Autonomous Product may be delivered through a Service.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: contributes-to
+    object: external:concept:value
+    qualification: value-contribution
+    status: proposed
+    provenance: ADR-ES-017 §7 ; CR-ES-017 §6
+    rationale: Autonomous Product contributes to Value.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: distinct-from
+    object: external:concept:agentic-product
+    qualification: orthogonality
+    status: proposed
+    provenance: ADR-ES-017 §2 + §3 + §8 ; CR-ES-017 §7 ; APROD-AUTO-NEG-001
+    rationale: Autonomous Product is NOT Agentic Product.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: distinct-from
+    object: external:concept:autonomous-service
+    qualification: product-vs-service
+    status: proposed
+    provenance: ADR-ES-017 §11 ; CR-ES-017 §7 ; APROD-AUTO-NEG-002
+    rationale: Autonomous Product is NOT Autonomous Service.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: distinct-from
+    object: external:concept:autonomous-capability
+    qualification: product-vs-capability
+    status: proposed
+    provenance: ADR-ES-017 §11 ; CR-ES-017 §7 ; APROD-AUTO-NEG-003
+    rationale: Autonomous Product is NOT Autonomous Capability.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: distinct-from
+    object: external:concept:autonomous-operations
+    qualification: product-vs-operations
+    status: proposed
+    provenance: ADR-ES-017 §11 ; CR-ES-017 §7 ; APROD-AUTO-NEG-004
+    rationale: Autonomous Product is NOT Autonomous Operations.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: distinct-from
+    object: external:concept:autonomous-value-stream
+    qualification: product-vs-value-stream
+    status: proposed
+    provenance: ADR-ES-017 §11 ; CR-ES-017 §7 ; APROD-AUTO-NEG-005
+    rationale: Autonomous Product is NOT Autonomous Value Stream.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: distinct-from
+    object: external:concept:autonomous-workflow
+    qualification: product-vs-workflow
+    status: proposed
+    provenance: ADR-ES-017 §13 ; CR-ES-017 §7
+    rationale: Autonomous Product is NOT Autonomous Workflow.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: distinct-from
+    object: external:concept:autonomous-enterprise
+    qualification: product-vs-enterprise
+    status: proposed
+    provenance: ADR-ES-017 §13 ; CR-ES-017 §7 ; APROD-AUTO-NEG-015
+    rationale: Autonomous Product is NOT Autonomous Enterprise.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: distinct-from
+    object: external:concept:ai-product
+    qualification: ai-not-required
+    status: proposed
+    provenance: ADR-ES-017 §9 ; CR-ES-017 §7 ; APROD-AUTO-NEG-006
+    rationale: Autonomous Product is NOT AI Product.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: distinct-from
+    object: external:concept:automated-product
+    qualification: automation-not-sufficient
+    status: proposed
+    provenance: ADR-ES-017 §10 ; CR-ES-017 §7 ; APROD-AUTO-NEG-008
+    rationale: Autonomous Product is NOT Automated Product.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: not-implies
+    object: external:concept:ai-product
+    qualification: ai-not-required
+    status: proposed
+    provenance: ADR-ES-017 §9 ; CR-ES-017 §10 ; APROD-AUTO-CON-015
+    rationale: Autonomous Product does NOT require AI.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: not-implies
+    object: external:concept:automated-product
+    qualification: automation-not-sufficient
+    status: proposed
+    provenance: ADR-ES-017 §10 ; CR-ES-017 §10 ; APROD-AUTO-CON-016
+    rationale: Autonomous Product does NOT require Automation.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: not-implies
+    object: external:concept:agentic-product
+    qualification: orthogonality
+    status: proposed
+    provenance: ADR-ES-017 §2 + §3 + §8 ; CR-ES-017 §7 ; APROD-AUTO-CON-020
+    rationale: Autonomous Product does NOT imply Agentic Product.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: materiality-required
+    object: external:concept:material-independent-progression
+    qualification: autonomy-materiality
+    status: proposed
+    provenance: ADR-ES-017 §5 ; CR-ES-017 §8 ; APROD-AUTO-CON-003
+    rationale: Material autonomous progression required.
+  - subject: ES:CONCEPT:autonomous-product
+    predicate: permits
+    object: external:concept:human-participation
+    qualification: human-participation-compatible
+    status: proposed
+    provenance: ADR-ES-017 §6 ; CR-ES-017 §10 ; APROD-AUTO-CON-014
+    rationale: Autonomous Product permits human participation (in-loop, on-loop, over-loop).
+governance: enterprise-semantics
+provenance:
+  - source: ADR-ES-003
+    note: "Value Stream lineage."
+  - source: ADR-ES-004
+    note: "Agentic semantic grounding."
+  - source: ADR-ES-007
+    note: "Agentic Operations lineage."
+  - source: ADR-ES-008
+    note: "Autonomous Operations lineage."
+  - source: ADR-ES-009
+    note: "Autonomous Value Stream lineage."
+  - source: ADR-ES-011
+    note: "Autonomous Enterprise lineage."
+  - source: ADR-ES-014
+    note: "Agentic Service lineage ; orthogonal autonomy dimension."
+  - source: ADR-ES-015
+    note: "Autonomous Service lineage ; Service 2x2 matrix complete."
+  - source: ADR-ES-016
+    note: "Agentic Product lineage ; Product 2x2 matrix established."
+  - source: ADR-ES-017
+    note: "Foundational specialization decision ; v1.6.0 release target."
+  - source: CR-ES-017
+    note: "Implementation specification."
+mappings:
+  - authority: wsf
+    target_id: external:wsf:Product
+    relationship: references
+    note: "Inherits WSF Product grounding via parent Product concept."
+  - authority: opendea
+    target_id: external:opendea:Product
+    relationship: references
+    note: "References OpenDEA Product semantics."
+created: 2026-09-25
+updated: 2026-09-25

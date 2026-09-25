@@ -75,3 +75,14 @@ profile_types:
     governance: enterprise-semantics
     status: Established
     created: 2026-09-23
+  - id: autonomous-product
+    canonical_name: Autonomous Product
+    definition: |
+      A profile_type family for the Autonomous Product Profile per
+      CR-ES-017 §5 + ADR-ES-017 §7. Aggregates Product ;; Autonomous
+      Product ;; Authority ;; Policy ;; Constraint ;; Governance ;;
+      Objective ;; Context ;; Outcome ;; Workflow ;; Agentic
+      Workflow ;; Autonomous Operations ;; Capability ;; Service ;;
+      Value for discoverability and grouping. Does not imply
+      inheritance.
+    governance: enterprise-semantics

@@ -1,0 +1,87 @@
+# registry/profiles/autonomous-product.profile.yaml ;; Autonomous Product Profile
+#
+# Per CR-ES-017 §5, profile record for Autonomous Product Profile
+# (ES:PROFILE:autonomous-product).
+#
+# Per CR-ES-017 §5, the profile shall identify the semantic scope of
+# Autonomous Product. The profile shall NOT imply that every scoped
+# concept is a subtype of Product.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:autonomous-product
+canonical_name: Autonomous Product Profile
+profile_type: autonomous-product
+status: candidate
+version: 1.0.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+scope:
+  - Product
+  - Autonomous Product
+  - Authority
+  - Policy
+  - Constraint
+  - Governance
+  - Objective
+  - Context
+  - Outcome
+  - Workflow
+  - Agentic Workflow
+  - Autonomous Operations
+  - Capability
+  - Service
+  - Value
+description: |
+  The Autonomous Product Profile aggregates the canonical concepts
+  that participate in or support Autonomous Product realization.
+  The profile enables discoverability and grouping. It does NOT
+  imply that every scoped concept is a subtype of Product.
+scope_assertions:
+  - id: APROD-AUTO-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: APROD-AUTO-PROF-SCOPE-002
+    description: Profile does NOT make Service a subtype of Product.
+  - id: APROD-AUTO-PROF-SCOPE-003
+    description: Profile does NOT make Capability a subtype of Product.
+  - id: APROD-AUTO-PROF-SCOPE-004
+    description: Profile does NOT make Workflow a subtype of Product.
+  - id: APROD-AUTO-PROF-SCOPE-005
+    description: Profile does NOT make Autonomous Operations a subtype of Product.
+material_autonomy_invariants:
+  - id: APROD-AUTO-PROF-MAT-001
+    description: Material autonomous progression required per ADR-ES-017 §5.
+  - id: APROD-AUTO-PROF-MAT-002
+    description: AI NOT required per ADR-ES-017 §9.
+  - id: APROD-AUTO-PROF-MAT-003
+    description: Automation NOT sufficient per ADR-ES-017 §10.
+  - id: APROD-AUTO-PROF-MAT-004
+    description: Human participation remains compatible per ADR-ES-017 §6.
+  - id: APROD-AUTO-PROF-MAT-005
+    description: Bounded by 6 fences per ADR-ES-017 §4.
+boundary_invariants:
+  - id: APROD-AUTO-PROF-BND-001
+    description: Autonomous Product is NOT Agentic Product per APROD-AUTO-NEG-001.
+  - id: APROD-AUTO-PROF-BND-002
+    description: Autonomous Product is NOT Autonomous Service per APROD-AUTO-NEG-002.
+  - id: APROD-AUTO-PROF-BND-003
+    description: Autonomous Product is NOT Autonomous Capability per APROD-AUTO-NEG-003.
+  - id: APROD-AUTO-PROF-BND-004
+    description: Autonomous Product is NOT Autonomous Operations per APROD-AUTO-NEG-004.
+  - id: APROD-AUTO-PROF-BND-005
+    description: Autonomous Product is NOT Autonomous Value Stream per APROD-AUTO-NEG-005.
+  - id: APROD-AUTO-PROF-BND-006
+    description: Autonomous Product is NOT Autonomous Enterprise per APROD-AUTO-NEG-015.
+  - id: APROD-AUTO-PROF-BND-007
+    description: Autonomous Product is NOT AI Product per APROD-AUTO-NEG-006.
+  - id: APROD-AUTO-PROF-BND-008
+    description: Autonomous Product is NOT Automated Product per APROD-AUTO-NEG-008.
+  - id: APROD-AUTO-PROF-BND-009
+    description: Autonomous Product is NOT Autonomous Workflow per APROD-AUTO-NEG-016.
+provenance:
+  - source: CR-ES-017 §5
+  - source: ADR-ES-017 §7
+  - source: ADR-ES-017 §3
+  - source: CR-ES-017 §15
+release_target: v1.6.0

@@ -1,0 +1,99 @@
+# registry/profiles/semantic-integrity.profile.yaml ; Semantic Integrity Profile
+#
+# Per CR-ES-022 ; profile record for the Semantic Integrity and
+# Coverage Model Profile (ES:PROFILE:SEMANTIC_INTEGRITY).
+#
+# This profile aggregates the canonical concepts participating in
+# the Agentic/Autonomous semantic family, the cross-cutting
+# vocabulary, the coverage registry, and the candidate register.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:SEMANTIC_INTEGRITY
+canonical_name: Semantic Integrity Profile
+profile_type: semantic-integrity
+status: established
+version: 2.0.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+scope:
+  - Capability
+  - Agentic Capability
+  - Autonomous Capability
+  - Value Stream
+  - Agentic Value Stream
+  - Autonomous Value Stream
+  - Service
+  - Agentic Service
+  - Autonomous Service
+  - Product
+  - Agentic Product
+  - Autonomous Product
+  - Offering
+  - Agentic Offering
+  - Autonomous Offering
+  - Operations
+  - Agentic Operations
+  - Autonomous Operations
+  - Organization
+  - Agentic Organization
+  - Autonomous Organization
+  - Enterprise
+  - Agentic Enterprise
+  - Autonomous Enterprise
+  - Workflow
+  - Agentic Workflow
+  - intent
+  - objective
+  - context
+  - authority
+  - policy
+  - constraint
+  - governance
+  - accountability
+  - delegation
+  - decision
+  - action
+  - coordination
+  - adaptation
+  - intervention
+  - escalation
+  - observation
+  - outcome
+
+description: |
+  The Semantic Integrity Profile aggregates the canonical
+  concepts participating in the Agentic/Autonomous semantic
+  family, the cross-cutting vocabulary, the coverage registry,
+  and the candidate register. The profile enables discoverability
+  and governance of the semantic integrity model. It does NOT
+  imply that every scoped concept is a subtype of any other.
+
+scope_assertions:
+  - id: AAI-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: AAI-PROF-SCOPE-002
+    description: Profile does NOT make Workflow a subtype of Capability.
+  - id: AAI-PROF-SCOPE-003
+    description: Profile does NOT make cross-cutting concepts subtypes of base concepts.
+
+boundary_invariants:
+  - id: AAI-PROF-BND-001
+    description: Agentic SHALL NOT imply Autonomous per ADR-ES-022 section 3 + section 5.
+  - id: AAI-PROF-BND-002
+    description: Agentic SHALL NOT imply AI per ADR-ES-022 section 3.
+  - id: AAI-PROF-BND-003
+    description: Autonomous SHALL NOT imply AI per ADR-ES-022 section 3.
+  - id: AAI-PROF-BND-004
+    description: Autonomous SHALL NOT imply Automation per ADR-ES-022 section 3.
+  - id: AAI-PROF-BND-005
+    description: Agentic SHALL NOT imply Automation per ADR-ES-022 section 3.
+
+provenance:
+  - source: CR-ES-022 section 2 + section 6 + section 8
+  - source: ADR-ES-022
+  - source: CR-ES-022
+
+release_target: v2.0.0

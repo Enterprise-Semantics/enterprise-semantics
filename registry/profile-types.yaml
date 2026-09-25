@@ -75,3 +75,17 @@ profile_types:
     governance: enterprise-semantics
     status: Established
     created: 2026-09-23
+  - id: semantic-integrity
+    canonical_name: Semantic Integrity
+    definition: |
+      A profile_type family for the Semantic Integrity and
+      Coverage Model Profile per CR-ES-022 + ADR-ES-022.
+      Aggregates the Agentic/Autonomous semantic family
+      (Capability, Value Stream, Service, Product, Offering,
+      Operations, Organization, Enterprise, Workflow) and
+      the cross-cutting vocabulary (intent, objective, context,
+      authority, policy, constraint, governance, accountability,
+      delegation, decision, action, coordination, adaptation,
+      intervention, escalation, observation, outcome) for
+      discoverability and governance. Does not imply inheritance.
+    governance: enterprise-semantics

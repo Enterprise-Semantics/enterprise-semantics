@@ -1,0 +1,37 @@
+# versions/v2.2.0.yaml ; v2.2.0 ; Enterprise-Semantics v2.2.0 release pointer
+#
+# Per ADR-ES-024 section 11 + CR-ES-024 section 13 ; this release
+# establishes the Autonomous Culture specialization, conditional on
+# Culture being canonical (resolved per ADR-ES-026 + CR-ES-026).
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+release: v2.2.0
+date: 2026-09-25
+status: established
+governance: enterprise-semantics
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+included_releases:
+  - v2.1.0
+  - v2.2.0
+
+canonical_concepts:
+  - culture
+  - agentic-culture
+  - autonomous-culture ; NEW ; per ADR-ES-024 + CR-ES-024
+
+orthogonality:
+  boundary: Culture
+  agentic: true ; v2.1.0
+  autonomous: true ; v2.2.0
+
+provenance:
+  source:
+    - ADR-ES-022
+    - ADR-ES-024
+    - ADR-ES-026
+  decision:
+    - ADR-ES-024
+  implementation:
+    - CR-ES-024

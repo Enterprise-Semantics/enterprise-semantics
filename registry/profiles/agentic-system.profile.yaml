@@ -1,0 +1,99 @@
+# registry/profiles/agentic-system.profile.yaml ; Agentic System Profile
+#
+# Per CR-ES-025 section 5 ; profile record for Agentic System
+# Profile (ES:PROFILE:AGENTIC_SYSTEM).
+#
+# Per CR-ES-025 section 5, the profile must NOT infer:
+# AGENTIC_SYSTEM -> AUTONOMOUS_SYSTEM
+# AGENTIC_SYSTEM -> AGENT
+# AGENTIC_SYSTEM -> AGENTIC_WORKFLOW
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:AGENTIC_SYSTEM
+canonical_name: Agentic System Profile
+profile_type: agentic-system
+status: established
+version: 2.3.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+scope:
+  - System
+  - Agentic System
+  - Agent
+  - Intent
+  - Authority
+  - Policy
+  - Constraint
+  - Context
+  - Action
+  - Outcome
+  - Agentic Workflow
+  - Capability
+  - Service
+  - Value
+
+description: |
+  The Agentic System Profile aggregates the canonical concepts
+  that participate in or support Agentic System realization.
+  The profile enables discoverability and grouping. It does NOT
+  imply that every scoped concept is a subtype of System.
+
+scope_assertions:
+  - id: ASYS-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: ASYS-PROF-SCOPE-002
+    description: Profile does NOT make Agent a subtype of System.
+  - id: ASYS-PROF-SCOPE-003
+    description: Profile does NOT make Intent a subtype of System.
+  - id: ASYS-PROF-SCOPE-004
+    description: Profile does NOT make Action a subtype of System.
+  - id: ASYS-PROF-SCOPE-005
+    description: Profile does NOT make Outcome a subtype of System.
+  - id: ASYS-PROF-SCOPE-006
+    description: Profile does NOT make Capability a subtype of System.
+  - id: ASYS-PROF-SCOPE-007
+    description: Profile does NOT make Service a subtype of System.
+
+materiality_invariants:
+  - id: ASYS-PROF-MAT-001
+    description: Material agentic behavior required per ADR-ES-025 section 3 + CR-ES-025 section 4.
+  - id: ASYS-PROF-MAT-002
+    description: AI NOT required per ADR-ES-025 section 3.
+  - id: ASYS-PROF-MAT-003
+    description: Automation NOT sufficient per ADR-ES-025 section 3.
+  - id: ASYS-PROF-MAT-004
+    description: Agent presence alone NOT sufficient per ADR-ES-025 section 3.
+
+boundary_invariants:
+  - id: ASYS-PROF-BND-001
+    description: Agentic System is NOT Agent per ADR-ES-025 section 5 + ASYS-NEG-006.
+  - id: ASYS-PROF-BND-002
+    description: Agentic System is NOT Agentic Workflow per ADR-ES-025 section 6 + ASYS-NEG-007.
+  - id: ASYS-PROF-BND-003
+    description: Agentic System is NOT Agentic Operations per ADR-ES-025 section 7 + ASYS-NEG-008.
+  - id: ASYS-PROF-BND-004
+    description: Agentic System is NOT Agentic Service per ADR-ES-025 section 11 + ASYS-NEG-009.
+  - id: ASYS-PROF-BND-005
+    description: Agentic System is NOT Agentic Organization per ADR-ES-025 section 11 + ASYS-NEG-010.
+  - id: ASYS-PROF-BND-006
+    description: Agentic System is NOT Agentic Enterprise per ADR-ES-025 section 11 + ASYS-NEG-011.
+  - id: ASYS-PROF-BND-007
+    description: Agentic System is NOT Autonomous System per ADR-ES-022 section 13 + ADR-ES-025 section 13 + ASYS-NEG-012.
+  - id: ASYS-PROF-BND-008
+    description: AI NOT required per ADR-ES-025 section 3 + ASYS-NEG-013.
+  - id: ASYS-PROF-BND-009
+    description: Automation NOT sufficient per ADR-ES-025 section 3.
+  - id: ASYS-PROF-BND-010
+    description: Agent presence alone NOT sufficient per ADR-ES-025 section 3 + ASYS-NEG-003.
+
+provenance:
+  - source: CR-ES-025 section 5
+  - source: ADR-ES-025
+  - source: ADR-ES-022 section 13
+  - source: CR-ES-025 section 9
+  - source: USER-DIRECTIVE-1553040695345025105
+
+release_target: v2.3.0

@@ -1,0 +1,106 @@
+# concepts/culture.concept.yaml ; Culture WSF Reference (corrective demotion)
+#
+# CORRECTIVE per WSF-ES-ALIGN-01 + CR-ES-038 section 2.
+#
+# The prior filing (slot 0030 ADR-ES-026) treated this as an
+# authoritative local foundational concept. Per the new
+# alignment chain, Enterprise-Semantics must NOT independently
+# redefine Culture ; the semantic authority belongs to WSF
+# (WSF-ADR-ES-026).
+#
+# This file is demoted to a WSF DEPENDENCY REFERENCE. It does
+# NOT contain an independent semantic definition. The semantic
+# authority is WSF per WSF-ADR-ES-026 section 2:
+#
+# "Culture is a socially situated pattern of shared meanings,
+# values, norms, practices, and expectations that influences
+# how a collective interprets, evaluates, and conducts behavior
+# within a context."
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:culture
+canonical_name: Culture (WSF Reference)
+concept_type: culture-wsf-reference
+status: Deprecated
+canonical: false
+supersedes_status_canonical: false
+version: 2.6.0
+date: 2026-09-26
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+# Per WSF-ES-ALIGN-01 + ES-CR-038 section 2: this record is a
+# dependency reference, NOT an independent semantic definition.
+foundation_authority: WSF
+dependency_type: foundational
+source_decision: WSF-ADR-ES-026
+source_definition_url: wsf://WSF-ADR-ES-026/section-2
+supersedes_prior_local_filing: true
+prior_local_filing_slot: "0030"
+
+definition: |
+  Reference record for the WSF Culture concept. Per
+  WSF-ADR-ES-026 section 2, Culture is a socially situated
+  pattern of shared meanings, values, norms, practices, and
+  expectations that influences how a collective interprets,
+  evaluates, and conducts behavior within a context.
+
+  This record is a dependency reference, NOT an independent
+  semantic definition. The semantic authority is WSF
+  (WSF-ADR-ES-026).
+
+# WSF-side relationships (per WSF-ADR-ES-026 section 7):
+wsf_relationships:
+  - subject: WSF:Collective
+    predicate: exhibits
+    object: WSF:Culture
+    qualification: foundational
+  - subject: WSF:Culture
+    predicate: expresses
+    object: WSF:Value
+    qualification: foundational
+  - subject: WSF:Culture
+    predicate: expresses
+    object: WSF:Norm
+    qualification: foundational
+  - subject: WSF:Culture
+    predicate: shapes
+    object: WSF:Interpretation
+    qualification: foundational
+  - subject: WSF:Culture
+    predicate: influences
+    object: WSF:Behavior
+    qualification: foundational
+  - subject: WSF:Culture
+    predicate: situated-in
+    object: WSF:Context
+    qualification: foundational
+  - subject: WSF:Culture
+    predicate: evolves-through
+    object: WSF:Event
+    qualification: foundational
+
+# ES-side specializations (per ES-CR-038 section 4)
+es_specializations:
+  - id: ES:CONCEPT:agentic-culture
+    base_concept: WSF:CULTURE
+    specialization: agentic
+    per: ES-ADR-028 + CR-ES-038 section 4
+  - id: ES:CONCEPT:autonomous-culture
+    base_concept: WSF:CULTURE
+    specialization: autonomous
+    per: ES-ADR-028 + CR-ES-038 section 4
+
+provenance:
+  - source: WSF-ADR-ES-026
+  - source: ES-ADR-028
+  - source: CR-ES-038
+  - source: USER-DIRECTIVE-1553249359905165444
+  - source: "WSF-ES-ALIGN-01 corrective demotion"
+
+cardinal_rules:
+  - "Per WSF-ES-ALIGN-01 + ES-CR-038 section 2 ; this record is a dependency reference, NOT an independent semantic definition"
+  - "Semantic authority is WSF (WSF-ADR-ES-026)"
+  - "Enterprise-Semantics Culture specializations (Agentic Culture, Autonomous Culture) must identify WSF:CULTURE as base_concept"
+  - "This record supersedes the prior foundational local filing in slot 0030"

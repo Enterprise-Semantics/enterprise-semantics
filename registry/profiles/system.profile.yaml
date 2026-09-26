@@ -1,0 +1,93 @@
+# registry/profiles/system.profile.yaml ; System Profile
+#
+# Per CR-ES-027 section 4 ; profile record for System Profile
+# (ES:PROFILE:SYSTEM).
+#
+# Per CR-ES-027 section 4, the profile must NOT imply inheritance
+# from Entity, Organization, Service, Resource, Process, or Workflow.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:SYSTEM
+canonical_name: System Profile
+profile_type: system
+status: established
+version: 2.5.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+scope:
+  - Entity
+  - System
+  - Element
+  - Boundary
+  - Context
+  - Function
+  - Purpose
+  - Outcome
+  - Behavior
+  - Capability
+  - Service
+  - Workflow
+  - Agent
+
+description: |
+  The System Profile aggregates the foundational concept System
+  and the concepts System contains, has, operates-within,
+  realizes, produces, exhibits, supports, implements,
+  participates-in, or engages. The profile enables
+  discoverability and grouping. It does NOT imply that every
+  scoped concept is a subtype of System.
+
+scope_assertions:
+  - id: SYS-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: SYS-PROF-SCOPE-002
+    description: Profile does NOT make Capability a subtype of System.
+  - id: SYS-PROF-SCOPE-003
+    description: Profile does NOT make Service a subtype of System.
+  - id: SYS-PROF-SCOPE-004
+    description: Profile does NOT make Workflow a subtype of System.
+  - id: SYS-PROF-SCOPE-005
+    description: Profile does NOT make Agent a subtype of System.
+  - id: SYS-PROF-SCOPE-006
+    description: Profile does NOT make Element a subtype of System.
+
+materiality_invariants:
+  - id: SYS-PROF-MAT-001
+    description: Material element organization + behavioral coherence required per ADR-ES-027 section 4 + Recon-ES-004.
+  - id: SYS-PROF-MAT-002
+    description: AI NOT required per ADR-ES-027 section 6.
+  - id: SYS-PROF-MAT-003
+    description: Technology NOT required per ADR-ES-027 section 6.
+  - id: SYS-PROF-MAT-004
+    description: Agent presence alone NOT sufficient per ADR-ES-027 section 4.
+
+boundary_invariants:
+  - id: SYS-PROF-BND-001
+    description: System is NOT Entity per ADR-ES-027 section 6 + SYS-NEG-001.
+  - id: SYS-PROF-BND-002
+    description: System is NOT Organization per ADR-ES-027 section 6 + SYS-NEG-002.
+  - id: SYS-PROF-BND-003
+    description: System is NOT Service per ADR-ES-027 section 6 + SYS-NEG-003.
+  - id: SYS-PROF-BND-004
+    description: System is NOT Resource per ADR-ES-027 section 6 + SYS-NEG-004.
+  - id: SYS-PROF-BND-005
+    description: System is NOT Process per ADR-ES-027 section 6 + SYS-NEG-005.
+  - id: SYS-PROF-BND-006
+    description: System is NOT Workflow per ADR-ES-027 section 6 + SYS-NEG-006.
+  - id: SYS-PROF-BND-007
+    description: System is NOT Capability per ADR-ES-027 section 6 + SYS-NEG-007.
+  - id: SYS-PROF-BND-008
+    description: System is NOT IT system specifically per ADR-ES-027 section 2 + Recon-ES-004 + SYS-NEG-008.
+  - id: SYS-PROF-BND-009
+    description: Autonomous System remains deferred per ADR-ES-022 section 13 + ADR-ES-027 section 8 + SYS-NEG-013.
+
+provenance:
+  - source: CR-ES-027 section 4
+  - source: ADR-ES-027
+  - source: Recon-ES-004
+  - source: USER-DIRECTIVE-1553040695345025105
+
+release_target: v2.5.0

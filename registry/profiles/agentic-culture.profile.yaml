@@ -1,0 +1,92 @@
+# registry/profiles/agentic-culture.profile.yaml ; Agentic Culture Profile
+#
+# Per CR-ES-023 section 8 ; profile record for Agentic Culture
+# Profile (ES:PROFILE:AGENTIC_CULTURE).
+#
+# The profile shall NOT imply that every scoped concept is a
+# subtype of Culture.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:AGENTIC_CULTURE
+canonical_name: Agentic Culture Profile
+profile_type: agentic-culture
+status: established
+version: 2.1.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+scope:
+  - Culture
+  - Agentic Culture
+  - Agentic Organization
+  - Agentic Operations
+  - Agentic Workflow
+  - Agent
+  - Organizational Context
+  - Organizational Outcome
+  - Delegation Practice
+  - Authority Practice
+  - Accountability Practice
+  - Collaboration Practice
+  - Decision Practice
+
+description: |
+  The Agentic Culture Profile aggregates the canonical concepts
+  that participate in or support Agentic Culture realization.
+  The profile enables discoverability and grouping. It does NOT
+  imply that every scoped concept is a subtype of Culture.
+
+scope_assertions:
+  - id: ACULT-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: ACULT-PROF-SCOPE-002
+    description: Profile does NOT make Agent a subtype of Culture.
+  - id: ACULT-PROF-SCOPE-003
+    description: Profile does NOT make Delegation Practice a subtype of Culture.
+  - id: ACULT-PROF-SCOPE-004
+    description: Profile does NOT make Authority Practice a subtype of Culture.
+  - id: ACULT-PROF-SCOPE-005
+    description: Profile does NOT make Accountability Practice a subtype of Culture.
+
+materiality_invariants:
+  - id: ACULT-PROF-MAT-001
+    description: Material cultural patterns required per ADR-ES-023 section 5.
+  - id: ACULT-PROF-MAT-002
+    description: AI NOT required per ADR-ES-023 section 12.
+  - id: ACULT-PROF-MAT-003
+    description: Automation NOT sufficient per ADR-ES-023 section 12.
+  - id: ACULT-PROF-MAT-004
+    description: Agent presence alone NOT sufficient per ADR-ES-023 section 5.
+
+orthogonality_invariants:
+  - id: ACULT-PROF-ORTH-001
+    description: Agentic Culture is NOT Autonomous Culture per ADR-ES-023 section 10 + ADR-ES-022 section 5.
+
+boundary_invariants:
+  - id: ACULT-PROF-BND-001
+    description: Agentic Culture is NOT Agentic Organization per ADR-ES-023 section 8 + ACULT-NEG-001.
+  - id: ACULT-PROF-BND-002
+    description: Agentic Culture is NOT Agentic Enterprise per ADR-ES-023 section 9 + ACULT-NEG-002.
+  - id: ACULT-PROF-BND-003
+    description: Agentic Culture is NOT Agentic Operations per ADR-ES-023 section 7 + ACULT-NEG-003.
+  - id: ACULT-PROF-BND-004
+    description: Agentic Culture is NOT Agentic Workflow per ADR-ES-023 section 7 + ACULT-NEG-004.
+  - id: ACULT-PROF-BND-005
+    description: Agentic Culture is NOT Autonomous Culture per ADR-ES-023 section 10 + ACULT-NEG-005.
+  - id: ACULT-PROF-BND-006
+    description: Agentic Culture is NOT AI Culture per ADR-ES-023 section 4 + ACULT-NEG-006.
+  - id: ACULT-PROF-BND-007
+    description: Agentic Culture is NOT Automated Culture per ADR-ES-023 section 4 + ACULT-NEG-007.
+  - id: ACULT-PROF-BND-008
+    description: Human participation remains valid per ADR-ES-023 section 11 + ACULT-NEG-012.
+
+provenance:
+  - source: CR-ES-023 section 8
+  - source: ADR-ES-023 section 12
+  - source: ADR-ES-023 section 10 + ADR-ES-022 section 5
+  - source: CR-ES-023 section 14
+  - source: USER-DIRECTIVE-1553040695345025105
+
+release_target: v2.1.0

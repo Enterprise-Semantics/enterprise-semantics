@@ -1,0 +1,113 @@
+# registry/profiles/autonomous-system.profile.yaml
+# Per CR-ES-028 + ES-ADR-028. 20th profile.
+
+id: autonomous-system
+canonical_name: Autonomous System
+version: 2.4.0
+status: established
+date: 2026-09-26
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+base_concept: WSF:SYSTEM
+authority: WSF
+source_decision: WSF-ADR-SYSTEM-001 (provisional, per LOCKED-PICKS v9)
+es_integration: ES-ADR-028 + CR-ES-028
+
+profile_type: autonomous-system
+
+dimension: autonomous
+applies_to_concept: ES:CONCEPT:autonomous-system
+
+canonical_definitions:
+  autonomous_system: |
+    An Autonomous System is a System capable of independently
+    progressing through decisions, actions, coordination, and
+    adaptation toward defined objectives within specified
+    authority, policies, constraints, and governance boundaries,
+    without requiring human intervention for every system
+    decision or action.
+
+properties_required:
+  - system_objective
+  - autonomy_scope
+  - decision_scope
+  - action_scope
+  - coordination_scope
+  - adaptation_scope
+  - authority_context
+  - policy_context
+  - constraint_context
+  - governance_context
+  - intervention_model
+  - escalation_boundary
+  - observation_scope
+
+properties_recommended:
+  - coordination_boundaries
+  - intervention_thresholds
+  - learning_loop_scope
+
+agentic_autonomous_independence:
+  agentic_system_does_not_imply_autonomous_system: true
+  autonomous_system_does_not_imply_agentic_system: true
+
+materiality_requirements:
+  - independent_decision_progression
+  - independent_action_progression
+  - independent_coordination
+  - adaptive_behavior
+
+boundary_assertions:
+  - id: autonomous-system-bnd-001
+    description: Autonomous System SHALL NOT require AI per ES-ADR-028 section 6
+  - id: autonomous-system-bnd-002
+    description: Automation alone does NOT establish Autonomous System per ES-ADR-028 section 6 + 7
+  - id: autonomous-system-bnd-003
+    description: AI presence alone does NOT establish Autonomous System per ES-ADR-028 section 6 + 7
+  - id: autonomous-system-bnd-004
+    description: Agent presence alone does NOT establish Autonomous System per ES-ADR-028 section 10
+  - id: autonomous-system-bnd-005
+    description: Scheduled execution alone does NOT establish Autonomous System per ES-ADR-028 section 7
+  - id: autonomous-system-bnd-006
+    description: Predefined rules alone do NOT establish Autonomous System per ES-ADR-028 section 7
+  - id: autonomous-system-bnd-007
+    description: Autonomous System SHALL remain distinct from Autonomous Operations per ES-ADR-028 section 10
+  - id: autonomous-system-bnd-008
+    description: Autonomous System SHALL remain distinct from Agent per ES-ADR-028 section 10
+  - id: autonomous-system-bnd-009
+    description: Autonomous System SHALL remain distinct from Agentic System per ES-ADR-028 section 5 + 10
+
+conformance_tests:
+  positive:
+    - autonomous_system_specializes_wsf_system
+    - autonomous_system_has_independent_semantic_definition
+    - independent_decision_progression_is_material
+    - independent_action_progression_is_material
+    - authority_and_constraint_boundaries_exist
+    - human_intervention_may_remain_exception_based
+    - autonomous_system_does_not_require_ai
+    - autonomous_system_does_not_require_agentic_behavior
+  negative:
+    - automation_only_evidence_rejected
+    - ai_only_evidence_rejected
+    - unattended_execution_only_evidence_rejected
+    - agent_merely_present_rejected
+    - scheduled_execution_only_rejected
+    - predefined_rules_only_rejected
+    - agentic_behavior_not_sufficient_for_autonomy
+  four_state_integrity:
+    - system
+    - agentic_system
+    - autonomous_system
+    - agentic_plus_autonomous_system
+
+provenance:
+  source:
+    - ES-FOUND-001
+    - WSF-ADR-SYSTEM-001 (provisional, per LOCKED-PICKS v9)
+    - ES-ADR-027
+  decision:
+    - ES-ADR-028
+  implementation:
+    - CR-ES-028

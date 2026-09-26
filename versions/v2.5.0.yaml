@@ -1,0 +1,39 @@
+# versions/v2.5.0.yaml ; v2.5.0 ; Enterprise-Semantics v2.5.0 release pointer
+#
+# Per ADR-ES-027 section 9 + CR-ES-027 section 12 ; this release
+# establishes the System foundational concept, enabling ES-025
+# (Agentic System).
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+release: v2.5.0
+date: 2026-09-25
+status: established
+governance: enterprise-semantics
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+included_releases:
+  - v2.2.0
+  - v2.3.0
+  - v2.4.0
+  - v2.5.0
+
+canonical_concepts:
+  - culture
+  - agentic-culture
+  - autonomous-culture
+  - system ; NEW ; per ADR-ES-027 + CR-ES-027 ; FOUNDATIONAL
+
+dependency_resolution:
+  - dependency: ES-025 (Agentic System)
+    blocker_resolved: true
+    resolution: System foundational concept now canonical on origin/main
+
+provenance:
+  source:
+    - ADR-ES-022
+    - Recon-ES-004
+  decision:
+    - ADR-ES-027
+  implementation:
+    - CR-ES-027

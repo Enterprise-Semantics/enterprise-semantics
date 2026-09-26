@@ -18,7 +18,7 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 0.9.0
+  version: 2.5.0
   status: candidate ;;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
@@ -638,3 +638,12 @@ change_history:
       for value-stage (precedes, stage-realized-through, requires,
       stage-produces, contributes-to). Version bumped to v0.2.0. Status:
       candidate (awaiting ADR-ES-003 acceptance).
+  - date: 2026-09-25
+    version: 2.5.0
+    change: |
+      Added System foundational concept predicates per
+      ADR-ES-027 section 5 + CR-ES-027 section 5.
+      Establishes v2.5.0 minor release. Foundational
+      System concept enables ES-025 (Agentic System).
+    author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+    governing: ADR-ES-027

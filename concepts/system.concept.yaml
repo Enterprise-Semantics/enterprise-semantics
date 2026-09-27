@@ -1,0 +1,92 @@
+# concepts/system.concept.yaml ; System WSF Reference (corrective demotion)
+#
+# CORRECTIVE per WSF-ES-ALIGN-01 + CR-ES-039 section 2.
+#
+# The prior filing (slot 0031 ADR-ES-027) treated this as an
+# authoritative local foundational concept. Per the new
+# alignment chain, Enterprise-Semantics must NOT independently
+# redefine System ; the semantic authority belongs to WSF
+# (WSF-ADR-ES-027).
+#
+# This file is demoted to a WSF DEPENDENCY REFERENCE. It does
+# NOT contain an independent semantic definition. The semantic
+# authority is WSF per WSF-ADR-ES-027 section 2:
+#
+# "A System is an organized whole of interacting elements
+# whose relationships and behavior enable one or more intended
+# functions, purposes, or outcomes within a defined boundary
+# and context."
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:system
+canonical_name: System (WSF Reference)
+concept_type: system-wsf-reference
+status: Deprecated
+canonical: false
+supersedes_status_canonical: false
+version: 2.7.0
+date: 2026-09-26
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+# Per WSF-ES-ALIGN-01 + ES-CR-039 section 2: this record is a
+# dependency reference, NOT an independent semantic definition.
+foundation_authority: WSF
+dependency_type: foundational
+source_decision: WSF-ADR-ES-027
+source_definition_url: wsf://WSF-ADR-ES-027/section-2
+supersedes_prior_local_filing: true
+prior_local_filing_slot: "0031"
+
+definition: |
+  Reference record for the WSF System concept. Per
+  WSF-ADR-ES-027 section 2, a System is an organized whole
+  of interacting elements whose relationships and behavior
+  enable one or more intended functions, purposes, or
+  outcomes within a defined boundary and context.
+
+  This record is a dependency reference, NOT an independent
+  semantic definition. The semantic authority is WSF
+  (WSF-ADR-ES-027).
+
+# WSF-side relationships (per WSF-ADR-ES-027 section 6)
+wsf_relationships:
+  - subject: WSF:System
+    predicate: contains
+    object: WSF:Element
+    qualification: foundational
+  - subject: WSF:System
+    predicate: interacts-with
+    object: WSF:System
+    qualification: foundational
+  - subject: WSF:System
+    predicate: operates-within
+    object: WSF:Context
+    qualification: foundational
+
+# ES-side specializations (per ES-CR-039 section 4)
+es_specializations:
+  - id: ES:CONCEPT:agentic-system
+    base_concept: WSF:SYSTEM
+    specialization: agentic
+    per: ES-ADR-029 + CR-ES-039 section 4
+
+# Nested systems support (per WSF-ADR-ES-027 section 6)
+nested_systems_supported: true
+system_of_systems_concept: false
+per: WSF-ADR-ES-027 section 6
+
+provenance:
+  - source: WSF-ADR-ES-027
+  - source: ES-ADR-029
+  - source: CR-ES-039
+  - source: USER-DIRECTIVE-1553249359905165444
+  - source: "WSF-ES-ALIGN-01 corrective demotion"
+
+cardinal_rules:
+  - "Per WSF-ES-ALIGN-01 + ES-CR-039 section 2 ; this record is a dependency reference, NOT an independent semantic definition"
+  - "Semantic authority is WSF (WSF-ADR-ES-027)"
+  - "Enterprise-Semantics System specializations (Agentic System) must identify WSF:SYSTEM as base_concept"
+  - "Autonomous System remains deferred per ADR-ES-022 section 13 + ADR-ES-025 section 13"
+  - "This record supersedes the prior foundational local filing in slot 0031"

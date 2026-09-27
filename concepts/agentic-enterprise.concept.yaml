@@ -1,61 +1,232 @@
+# concepts/agentic-enterprise.concept.yaml ;; Agentic Enterprise (ES:CONCEPT:agentic-enterprise) ;; per CR-ES-010 §2 + ADR-ES-010 §1
+#
+# Per CR-ES-010 §2 + §3 + §4 + ADR-ES-010 §1 + §3:
+#   An Agentic Enterprise is an Enterprise in which material aspects of
+#   enterprise value realization , operational coordination , 
+#   decision-making , or execution are performed through agentic
+#   behavior within defined intent , authority , policy , and
+#   governance boundaries. Agentic Enterprise is a specialisation of
+#   Enterprise ;; NOT of Agent ;; Agentic Operations ;; Agentic Value
+#   Stream ;; or Agentic Workflow. The Agentic Enterprise describes an
+#   enterprise-level operating condition in which agentic behavior is
+#   materially embedded in enterprise value realisation and / or
+#   operation.
+#
+# This record supersedes the prior Profile hypothesis
+# (FND-ES-AG-005 + ADR-ES-AG-001 §3.3 ;; canonical identity
+# ES:CONCEPT:agentic-enterprise preserved) with the specialisation
+# hypothesis established by CR-ES-010 + ADR-ES-010. The prior record
+# used predicate `profile-of` with profile_bindings to
+# ES:PROFILE:agentic-execution across eight enterprise areas. The new
+# record uses `specializes` with no profile_bindings ;; the enterprise
+# condition is structural rather than profile-classification per
+# ADR-ES-010 §1 + §8 + CR-ES-010 §2.
+#
+# Inbound cross-reference audit (per the architectural-conflict triage
+# in PLAN-CHANGELOG [3.1.27] R1): zero inbound references to the
+# ES:CONCEPT:agentic-enterprise id exist outside this file ;; the only
+# external mention is a historical CHANGELOG.md line 466 entry ;; that
+# entry is preserved as historical provenance ;; not mutated.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
 id: ES:CONCEPT:agentic-enterprise
 canonical_name: Agentic Enterprise
-definition: |
-  An Agentic Enterprise is an Enterprise whose operating model systematically
-  incorporates agent-augmented decision-making, adaptive operating configuration,
-  goal-directed execution under bounded autonomy, and human governance rather
-  than human execution ;;; across its Strategy, Governance, Capability, Value
-  Creation, Operations, Decision, Work, and Culture. Per FND-ES-AG-005 ;;;
-  ADR-ES-AG-001 §3.3.
-status: Candidate
-version: 0.1.0
+status: Proposed
+version: 0.9.0
 concept_type: agentic-enterprise
+
+definition: |
+  An Agentic Enterprise is an Enterprise in which material aspects of
+  enterprise value realisation ;; operational coordination , 
+  decision-making ;; or execution are performed through agentic
+  behavior within defined intent ;; authority ;; policy ;; and
+  governance boundaries.
+
+# Per CR-ES-010 §2 + ADR-ES-010 §1 + §3: Agentic Enterprise
+# specialises Enterprise ;; not Agent ;; not Agentic Operations ;; not
+# Agentic Value Stream ;; not Agentic Workflow.
+
+specializes:
+  - ES:CONCEPT:enterprise
+
+# Per CR-ES-010 §4 + ADR-ES-010 §5 + §14 + §15 + §16 + §17:
+# 10 canonical relationships.
+
+relationships:
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: specializes
+    object: ES:CONCEPT:enterprise
+    qualification: enterprise-specialisation
+    status: established
+    provenance: CR-ES-010 §2 + ADR-ES-010 §1 + §3
+    rationale: |
+      Agentic Enterprise is a direct specialisation of Enterprise per
+      CR-ES-010 §2 + ADR-ES-010 §1. The prior profile-of hypothesis
+      (FND-ES-AG-005) is superseded ;; the canonical identity is
+      preserved.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: engages
+    object: ES:CONCEPT:agent
+    qualification: enterprise-agent-engagement
+    status: proposed
+    provenance: CR-ES-010 §4 + ADR-ES-010 §5
+    rationale: |
+      Agentic Enterprise engages Agents as a material participation
+      mechanism per ADR-ES-010 §5. The predicate is established for
+      Agent relationships (CR-ES-007 + ADR-ES-007);; the Enterprise
+      subject-type usage is governed by CR-ES-010 §4. Note: the
+      relationship does NOT imply Agentic Enterprise = an enterprise
+      containing Agents (per ADR-ES-010 §1 + AE-NEG-007).
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: external:rel:enterprise-realizes-through
+    object: ES:CONCEPT:agentic-value-stream
+    qualification: enterprise-realisation-via-value-stream
+    status: proposed
+    provenance: CR-ES-010 §4 + ADR-ES-010 §14
+    rationale: |
+      Agentic Enterprise realises value through Agentic Value Streams.
+      The predicate `enterprise-realizes-through` is a subject-types-
+      namespaced predicate to be registered in VS-B ;; it disambiguates
+      from `value-stream-realized-through` (subject_type: value-stream
+      ;; CR-ES-003 §10.4) and `capability-realized-through`
+      (subject_type: capability ;; CR-ES-002). The external:
+      prefix marks this predicate as a VS-B forward reference per
+      the canonical naming convention.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: external:rel:enterprise-operates-through
+    object: ES:CONCEPT:agentic-operations
+    qualification: enterprise-operation-mechanism
+    status: proposed
+    provenance: CR-ES-010 §4 + ADR-ES-010 §15
+    rationale: |
+      Agentic Enterprise operates through Agentic Operations as an
+      important realisation mechanism per ADR-ES-010 §15. The
+      predicate `enterprise-operates-through` is a subject-types-
+      namespaced predicate to be registered in VS-B ;; it does NOT
+      imply Agentic Enterprise = Agentic Operations (per
+      AE-NEG-011).
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    qualification: enterprise-execution-mechanism
+    status: proposed
+    provenance: CR-ES-010 §4 + ADR-ES-010 §16
+    rationale: |
+      Agentic Enterprise may use Agentic Workflows as an execution
+      mechanism per ADR-ES-010 §16. Does NOT imply Agentic Enterprise
+      = an enterprise containing Agentic Workflows (per AE-NEG-013).
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: operates-within
+    object: ES:CONCEPT:authority
+    qualification: authority-bound
+    status: established
+    provenance: CR-ES-010 §4 + ADR-ES-010 §17 + AE-CON-007
+    rationale: |
+      Agentic Enterprise operates within defined authority ;; per
+      AE-CON-007. Authority is bounded ;; authority = unrestricted
+      fails conformance (analogous to AE-AUTO-CON bound).
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: governed-by
+    object: external:concept:policy
+    qualification: governance-bound
+    status: proposed
+    provenance: CR-ES-010 §4 + ADR-ES-010 §17 + AE-CON-008
+    rationale: |
+      Agentic Enterprise is governed by policies ;; constraints ;;
+      accountability ;; and escalation mechanisms per ADR-ES-010 §17.
+      Policy is referenced as external:concept:policy ;; a canonical
+      Policy concept is not yet on main ;; the forward reference is
+      recorded in the mapping layer per CR-ES-010 §4.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: pursues
+    object: external:concept:enterprise-objective
+    qualification: intent-bound
+    status: proposed
+    provenance: CR-ES-010 §4 + ADR-ES-010 §6 + §7
+    rationale: |
+      Agentic Enterprise pursues enterprise-level objectives within
+      the operating pattern (ADR-ES-010 §7). Enterprise Objective is
+      referenced as external:concept:enterprise-objective ;; a
+      canonical Enterprise Objective concept is not yet on main ;;
+      the forward reference is recorded.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: produces
+    object: external:concept:enterprise-outcome
+    qualification: outcome-oriented
+    status: established
+    provenance: CR-ES-010 §4 + ADR-ES-010 §6 + AE-CON-016
+    rationale: |
+      Agentic Enterprise produces enterprise-level outcomes ;; per
+      AE-CON-016. Enterprise Outcome is referenced as
+      external:concept:enterprise-outcome ;; a canonical Enterprise
+      Outcome concept is not yet on main ;; the forward reference is
+      recorded.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: adapts-to
+    object: external:concept:enterprise-context
+    qualification: adaptive
+    status: proposed
+    provenance: CR-ES-010 §4 + ADR-ES-010 §6.5
+    rationale: |
+      Agentic Enterprise adapts selected behavior in response to
+      changing context ;; demand ;; operational conditions ;;
+      stakeholder conditions ;; exceptions ;; outcomes ;; and
+      environmental signals per ADR-ES-010 §6.5. Enterprise Context
+      is referenced as external:concept:enterprise-context ;; a
+      canonical Enterprise Context concept is not yet on main ;;
+      the forward reference is recorded.
+
+governance: enterprise-semantics
+
+provenance:
+  - source: CR-ES-010
+    note: "Agentic Enterprise Semantic Grounding implementation ;; slot 0018"
+  - source: ADR-ES-010
+    note: "Agentic Enterprise Semantic Grounding decision ;; slot 0012"
+  - source: docs/finding/0005-agentic-enterprise-semantic-grounding.md
+    note: "Finding that motivated the semantic specialisation decision"
+  - source: FND-ES-AG-005
+    note: "Prior Profile hypothesis ;; superseded by CR-ES-010 specialisation hypothesis ;; canonical identity preserved"
+  - source: ADR-ES-AG-001 §3.3
+    note: "Prior Profile pattern ;; superseded by ADR-ES-010 §1"
+  - source: docs/finding/0001-agentic-semantic-grounding-grounding-result.md
+    note: "WSF live baseline alignment as one of the four strongest candidates"
+
 wsf_grounding:
   - wsf_concept_id: external:wsf:Entity
-    relationship: references
+    relationship: specialises
     note: |
-      Agentic Enterprise inherits the WSF Entity grounding via its profiled
-      Enterprise. The Profile does not introduce a new semantic kind.
-profile_bindings:
-  - profile_id: ES:PROFILE:agentic-execution
-    profile_type: agentic-execution
-    active: true
-relationships:
-  - subject: ES:CONCEPT:agentic-enterprise
-    predicate: profile-of
-    object: ES:CONCEPT:enterprise
-    qualification: agentic-execution-profile
-    status: proposed
-    provenance: FND-ES-AG-005 ;;; ADR-ES-AG-001 §3
-    rationale: Agentic Enterprise is a Profile of Enterprise under agent-augmented operating-model conditions.
-  - subject: ES:CONCEPT:agentic-enterprise
-    predicate: operates-through
-    object: ES:CONCEPT:agentic-operations
-    qualification: operating-model-anchored
-    status: provisional
-    provenance: FND-ES-000 §15 ;;; FND-ES-AG-004
-    rationale: Agentic Enterprise operates through Agentic Operations.
-  - subject: ES:CONCEPT:agentic-enterprise
-    predicate: realizes
-    object: ES:CONCEPT:agentic-value-stream
-    qualification: enterprise-realization
-    status: provisional
-    provenance: FND-ES-000 §15 ;;; FND-ES-AG-002
-    rationale: Agentic Enterprise realizes Agentic Value Streams.
-governance: enterprise-semantics
-provenance:
-  - source: FND-ES-AG-005
-    note: Profile of Enterprise across eight enterprise areas.
-  - source: ADR-ES-AG-001
-    note: Profile pattern generalized.
-  - source: docs/finding/0001-agentic-semantic-grounding-grounding-result.md
-    note: WSF live baseline alignment ;;; identified as one of the four strongest candidates.
-  - source: https://github.com/World-Semantic-Foundation
-    note: WSF Entity grounding inherited via Enterprise.
-mappings:
-  - authority: wsf
-    target_id: external:wsf:Entity
-    relationship: references
-    note: Inherits Entity grounding via Enterprise.
-created: 2026-09-02
-updated: 2026-09-02
+      Agentic Enterprise is a specialisation of Enterprise per
+      CR-ES-010 §2 + ADR-ES-010 §1 + §3. Enterprise itself inherits
+      the WSF Entity grounding ;; the Agentic Enterprise
+      specialisation does not introduce a new WSF semantic kind ;; it
+      profiles the WSF Entity grounding via the Enterprise profile.
+      WSF modification is NOT authorised by CR-ES-010 (per CR-ES-010
+      §24).
+
+supersedes:
+  - canonical_id: "ES:CONCEPT:agentic-enterprise"
+    hypothesis_prior: >
+        Profile-of-Enterprise via profile_bindings to
+        ES:PROFILE:agentic-execution across eight enterprise areas ;;
+        predicate profile-of ;; status Candidate ;; v0.1.0.
+    hypothesis_new: >
+        Specialisation-of-Enterprise via predicate specializes ;; no
+        profile_bindings ;; status Proposed ;; v0.9.0.
+    note: >
+        Hypothetical supersession ;; canonical identity preserved ;;
+        hypothesis updated per CR-ES-010 §2 + ADR-ES-010 §1.
+
+created: 2026-09-24
+updated: 2026-09-24

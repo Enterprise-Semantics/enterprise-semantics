@@ -4,7 +4,7 @@
 #         from CR-ES-003 §9 + §10.
 #         Backed by ADR-ES-003 (Proposed, slot 0005).
 #
-# Inverse predicate map , v1.0.0 , 13 Value Stream inverse pairs + 9 Capability inverse pairs + 11 Agentic inverse pairs + 3 Agentic Value Stream inverse pairs + 2 Agentic Workflow inverse pairs + 2 Agentic Operations inverse pairs + 1 Autonomous Operations inverse pair + 1 Autonomous Value Stream inverse pair + 4 namespaced inverses + 1 cross-tranche namespaced inverse + 2 Enterprise-subject namespaced inverse pairs (enterprise-realizes-through -> realizes-via ;; enterprise-operates-through -> operates-via) per CR-ES-010 §4
+# Inverse predicate map , v1.0.0 , 13 Value Stream inverse pairs + 9 Capability inverse pairs + 11 Agentic inverse pairs + 3 Agentic Value Stream inverse pairs + 2 Agentic Workflow inverse pairs + 2 Agentic Operations inverse pairs + 1 Autonomous Operations inverse pair + 1 Autonomous Value Stream inverse pair + 4 namespaced inverses + 1 cross-tranche namespaced inverse + 2 Enterprise-subject namespaced inverse pairs (enterprise-realizes-through -> realizes-via ;; enterprise-operates-through -> operates-via) per CR-ES-010 §4 + 2 Autonomous Enterprise-subject namespaced inverse pairs (autonomous-enterprise-realizes-through -> realizes-via ;; autonomous-enterprise-operates-through -> operates-via) per CR-ES-011 §5
 #
 # Per CR-ES-001 §8 and ADR-ES-001 §13, every predicate that has an inverse
 # must declare it explicitly here. This file is populated by VS-B with the
@@ -12,7 +12,7 @@
 # relationships/vocabulary.yaml v0.2.0.
 
 inverse:
-  version: 1.0.0
+  version: 1.1.0
   status: candidate , awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_inverses:
 
@@ -340,6 +340,23 @@ inverse:
       subject_type: ES:CONCEPT:agentic-enterprise
       object_type: ES:CONCEPT:agentic-operations
       provenance: CR-ES-010 §4 + ADR-ES-010 §5 + §15
+
+    # ===== Autonomous Enterprise ;; Subject inverses (CR-ES-011 §5 + ADR-ES-011 §11-§15) =====
+
+    - forward: ES:REL:autonomous-enterprise-realizes-through
+      forward_canonical: realizes-through
+      inverse: realizes-via
+      subject_type: ES:CONCEPT:autonomous-enterprise
+      object_type: ES:CONCEPT:autonomous-value-stream
+      provenance: CR-ES-011 §5 + ADR-ES-011 §11 + §13
+
+    - forward: ES:REL:autonomous-enterprise-operates-through
+      forward_canonical: operates-through
+      inverse: operates-via
+      subject_type: ES:CONCEPT:autonomous-enterprise
+      object_type: ES:CONCEPT:autonomous-operations
+      provenance: CR-ES-011 §5 + ADR-ES-011 §11 + §12
+
 governance:
   adr: ADR-ES-010
   cr: CR-ES-010

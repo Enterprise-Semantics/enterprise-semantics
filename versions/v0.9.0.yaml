@@ -1,0 +1,178 @@
+# versions/v0.9.0.yaml , Agentic Enterprise semantic establishment
+#
+# Per CR-ES-010 §23 + ADR-ES-010. This version indicates semantic
+# establishment of the Agentic Enterprise ;; a specialisation of
+# Enterprise. Per CR-ES-010 §23 the version bump rationale is:
+#
+#   * CR-ES-009 introduced the autonomous-value-realization Autonomous
+#     Value Stream specialisation
+#   * CR-ES-010 introduces the material-agentic-participation Agentic
+#     Enterprise specialisation
+#   * Agentic Enterprise becomes a parallel Enterprise-level semantic
+#     dimension ;; not a specialisation of Agent ;; Agentic Operations ;;
+#     Agentic Value Stream ;; or Agentic Workflow
+#   * the release adds a new canonical concept and associated mappings,
+#     profiles, examples, documentation, and conformance artefacts
+#
+# Per CR-ES-011 §34 ;; v1.0.0 will be the FIRST MAJOR semantic release
+# boundary , it is NOT established by this version ;; v1.0.0 release is
+# gated on the full ADR-ES-001 -> ADR-ES-011 chain acceptance per
+# CR-ES-011 §38. This v0.9.0 is the cumulative Agentic Enterprise semantic
+# establishment version.
+#
+# No WSF or OpenDEA version increment is implied by this CR.
+
+id: ES:VERSION:v0.9.0
+canonical_name: v0.9.0
+status: Candidate
+date: 2026-09-24
+
+# Release summary
+
+release_summary: |
+  Semantic establishment of the Agentic Enterprise concept ;; a
+  specialisation of Enterprise ;; with 10 canonical relationships ;;
+  16 properties ;; 5 enterprise-level characteristics ;; 22
+  invariants ;; and 0 modifications to WSF or OpenDEA. The release
+  adds:
+    - 1 concept record (ES:CONCEPT:agentic-enterprise ;; rewritten in
+      place ;; canonical identity preserved per CR-ES-010 §2)
+    - 2 governed predicates (enterprise-realizes-through ;;
+      enterprise-operates-through) , subject-type namespaced ;; the
+      vocabulary internal version bumps from v0.9.0 to v1.0.0
+    - 2 inverse pairs (enterprise-realizes-through -> realizes-via ;;
+      enterprise-operates-through -> operates-via)
+    - 1 new Profile (ES:PROFILE:agentic-enterprise)
+    - 1 new profile_type registration (agentic-enterprise)
+    - the Agentic Enterprise is explicitly NOT a specialisation of
+      Agentic Enterprise (CR-ES-011 §11 + ADR-ES-011 §11 establish
+      the orthogonal relationship) ;; Agentic Enterprise is a
+      specialisation of Enterprise
+    - the substitution of prior Profile-of-Enterprise hypothesis
+      (FND-ES-AG-005 + ADR-ES-AG-001 §3.3) with the new
+      Specialisation-of-Enterprise hypothesis (CR-ES-010 §2 +
+      ADR-ES-010 §1) is documented in the supersedes block of the
+      concept record ;; canonical identity preserved
+
+# Predicates introduced by this version (governance decisions)
+
+predicates_introduced:
+  - id: ES:REL:enterprise-realizes-through
+    subject_type: ES:CONCEPT:agentic-enterprise
+    object_type: ES:CONCEPT:agentic-value-stream
+    provenance: CR-ES-010 §4 + ADR-ES-010 §5 + §14
+  - id: ES:REL:enterprise-operates-through
+    subject_type: ES:CONCEPT:agentic-enterprise
+    object_type: ES:CONCEPT:agentic-operations
+    provenance: CR-ES-010 §4 + ADR-ES-010 §5 + §15
+
+# Inverse pairs introduced
+
+inverses_introduced:
+  - forward: ES:REL:enterprise-realizes-through
+    inverse: realizes-via
+  - forward: ES:REL:enterprise-operates-through
+    inverse: operates-via
+
+# Concept records introduced or rewritten
+
+concepts_introduced_or_rewritten:
+  - id: ES:CONCEPT:agentic-enterprise
+    action: rewritten-in-place
+    prior_status: Candidate
+    new_status: Proposed
+    prior_version: 0.1.0
+    new_version: 0.9.0
+    prior_hypothesis: Profile-of-Enterprise via profile_bindings to
+                     ES:PROFILE:agentic-execution across eight
+                     enterprise areas
+    new_hypothesis: Specialisation-of-Enterprise via predicate
+                    specializes
+    canonical_identity_preserved: true
+    provenance: CR-ES-010 §2 + ADR-ES-010 §1
+
+# Profile records introduced
+
+profiles_introduced:
+  - id: ES:PROFILE:agentic-enterprise
+    profile_type: agentic-enterprise
+    applies_to:
+      - enterprise
+    characteristics_count: 5
+    provenance: CR-ES-010 §6 + ADR-ES-010 §6
+
+# Profile type registrations introduced
+
+profile_types_introduced:
+  - id: agentic-enterprise
+    status: Proposed
+    provenance: CR-ES-010 §6
+
+# Out of scope (per CR-ES-010 §24)
+
+out_of_scope:
+  - modification of WSF
+  - modification of OpenDEA
+  - Autonomous Enterprise concept (held for CR-ES-011 ;; v1.0.0
+    release boundary)
+  - Agentic Capability ;; Agentic Organization ;; Agentic Culture ;;
+    Agentic Ecosystem
+  - Agentic AI ;; AI Agent
+  - Enterprise agentic maturity levels
+  - Autonomous Workflow ;; Autonomous Agent ;; Autonomous Capability ;;
+    Autonomous Organization ;; Autonomous Culture ;; Autonomous
+    Ecosystem ;; Autonomous Network ;; Enterprise Autonomy Levels ;;
+    Enterprise Autonomy Maturity Model ;; AI-Native Enterprise ;;
+    Self-Governing Enterprise (each requires a separate ADR/CR)
+
+# Cardinal rules verified
+
+cardinal_rules:
+  author: Emmanuel A. Otchere
+  dash_rule_d004: clean , no en-dash ;; no em-dash ;; no U+2E3B
+  vendor_specific_embargo: clean , zero hits across the
+    TMForum-adjacent term list (per the universal vendor-specific
+    embargo)
+  profile_type_registration: present , profile_type
+    agentic-enterprise registered in registry/profile-types.yaml
+  governance_field: enterprise-semantics , top-level field
+    present on every concept record
+
+# Authorities
+
+governance:
+  adr: ADR-ES-010
+  cr: CR-ES-010
+  finding: FND-ES-AG-008
+
+# Lifecycle state vocabulary
+
+lifecycle_states:
+  - PROPOSED
+  - CANDIDATE
+  - ESTABLISHED
+  - CANONICAL
+  - REJECTED
+  - SUPERSEDED
+  - DEPRECATED
+
+provenance:
+  source: ES
+  research: FND-ES-AG-001-Grounding-Result ;; FND-ES-AG-005
+  decision: ADR-ES-010 section 1 + section 3
+  implementation: CR-ES-010 section 2 + section 3 + section 4
+  mapping: null
+
+change_history:
+  - date: 2026-09-24
+    by: CR-ES-010 + ADR-ES-010
+    change: |
+      v0.9.0 semantic establishment version pointer created per
+      CR-ES-010 §23 + ADR-ES-010. Cumulative governed-predicate count
+      goes from 42 (end of CR-ES-009 VS-B) to 44 (with the two
+      enterprise-subject namespaced predicates). Inverse pair count
+      goes from 42 to 44. Profile count goes from 5 to 6. Concept
+      record count remains 21 , the agentic-enterprise concept is
+      rewritten in place per the architectural-conflict triage in
+      PLAN-CHANGELOG [3.1.27] R1. Status: candidate (awaiting
+      ADR-ES-010 acceptance).

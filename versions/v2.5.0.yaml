@@ -1,0 +1,18 @@
+# versions/v2.5.0.yaml ; ES-029 Agentic Ecosystem release pointer
+version: 2.5.0
+date: 2026-09-26
+status: established
+authority: Enterprise-Semantics
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+contains:
+  - ES-029 ; Agentic Ecosystem Semantic Grounding
+  - base_concept: WSF:ECOSYSTEM (ADR-WSF-28, Baseline)
+
+prior_release: v2.4.0
+ecosystem_dependency: ADR-WSF-28 (Baseline per PR #14, 2026-09-26)
+
+provenance:
+  source: [ES-ADR-022, ADR-WSF-28]
+  decision: [ES-ADR-029]
+  implementation: [CR-ES-029]

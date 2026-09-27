@@ -18,7 +18,7 @@
 # the Value Stream predicate set.
 
 vocabulary:
-  version: 2.1.0
+  version: 0.9.0
   status: candidate ;; awaiting ADR-ES-002 + ADR-ES-003 + ADR-ES-004 acceptance
   governed_predicates:
 
@@ -602,91 +602,6 @@ vocabulary:
       lifecycle_status: established
       provenance: ADR-ES-009 §18 + CR-ES-009 §8
 
-
-    # ===== Enterprise ;; Subject predicates (CR-ES-010 + CR-ES-011 ;; restored 2026-09-26 after held-branch merge wave clobbered them) =====
-
-    - id: ES:REL:enterprise-realizes-through
-      canonical_name: realizes-through
-      inverse: realizes-via
-      subject_type: ES:CONCEPT:agentic-enterprise
-      object_type: ES:CONCEPT:agentic-value-stream
-      definition: |
-        An Agentic Enterprise realizes value through Agentic Value
-        Streams ;; per CR-ES-010 §4 + ADR-ES-010 §5 + §14. The
-        predicate is subject-type namespaced
-        (enterprise-realizes-through) to disambiguate from
-        value-stream-realized-through (subject_type:
-        ES:CONCEPT:value-stream ;; CR-ES-003 §10.4) and
-        capability-realized-through (subject_type:
-        ES:CONCEPT:capability ;; CR-ES-002 §4). The predicate
-        does NOT imply Agentic Enterprise = an enterprise
-        containing value-streamrealisations ;; per CR-ES-010 §22 (the
-        qualification is enterprise-realisation-via-value-stream).
-        Enterprise-level realisation requires material
-        enterprise-level evidence ;; not every value stream must
-        be Agentic ;; per CR-ES-010 §22 (Agentic Enterprise does
-        not require every Value Stream to be Agentic).
-      lifecycle_status: proposed
-      provenance: CR-ES-010 §4 + ADR-ES-010 §5 + §14
-
-    - id: ES:REL:enterprise-operates-through
-      canonical_name: operates-through
-      inverse: operates-via
-      subject_type: ES:CONCEPT:agentic-enterprise
-      object_type: ES:CONCEPT:agentic-operations
-      definition: |
-        An Agentic Enterprise operates through Agentic
-        Operations ;; per CR-ES-010 §4 + ADR-ES-010 §5 + §15. The
-        predicate is subject-type namespaced
-        (enterprise-operates-through) to disambiguate from the
-        broader operates-through family. The predicate does NOT
-        imply Agentic Enterprise = Agentic Operations ;; per
-        CR-ES-010 §22 + AE-NEG-011 (the qualification is
-        enterprise-operation-mechanism). Agentic Operations are
-        an important realisation mechanism , Agentic Enterprise
-        is the enterprise-level operating condition.
-      lifecycle_status: proposed
-      provenance: CR-ES-010 §4 + ADR-ES-010 §5 + §15
-
-    - id: ES:REL:autonomous-enterprise-realizes-through
-      canonical_name: realizes-through
-      inverse: realizes-via
-      subject_type: ES:CONCEPT:autonomous-enterprise
-      object_type: ES:CONCEPT:autonomous-value-stream
-      definition: |
-        An Autonomous Enterprise realizes value through Autonomous
-        Value Streams per CR-ES-011 §5 + ADR-ES-011 §11 + §13. The
-        predicate is subject-type namespaced
-        (autonomous-enterprise-realizes-through) to disambiguate from
-        enterprise-realizes-through (subject_type:
-        ES:CONCEPT:agentic-enterprise per CR-ES-010 §4) and
-        value-stream-realized-through (subject_type:
-        ES:CONCEPT:value-stream per CR-ES-003 §10.4). The predicate
-        does NOT imply Autonomous Enterprise = Autonomous Value
-        Stream per CR-ES-011 §23 + AE-AUTO-NEG-018.
-      lifecycle_status: established
-      provenance: CR-ES-011 §5 + ADR-ES-011 §11 + §13
-
-    - id: ES:REL:autonomous-enterprise-operates-through
-      canonical_name: operates-through
-      inverse: operates-via
-      subject_type: ES:CONCEPT:autonomous-enterprise
-      object_type: ES:CONCEPT:autonomous-operations
-      definition: |
-        An Autonomous Enterprise operates through Autonomous
-        Operations per CR-ES-011 §5 + ADR-ES-011 §11 + §12. The
-        predicate is subject-type namespaced
-        (autonomous-enterprise-operates-through) to disambiguate from
-        enterprise-operates-through (subject_type:
-        ES:CONCEPT:agentic-enterprise per CR-ES-010 §4) and other
-        operates-through family members. The predicate does NOT
-        imply Autonomous Enterprise = Autonomous Operations per
-        CR-ES-011 §23 + AE-AUTO-NEG-017, and Autonomous Operations
-        do NOT automatically establish Autonomous Enterprise per
-        CR-ES-011 §11 + AE-AUTO-CON-015.
-      lifecycle_status: established
-      provenance: CR-ES-011 §5 + ADR-ES-011 §11 + §12
-
 governance:
   adr: ADR-ES-003
   cr: CR-ES-003
@@ -723,17 +638,15 @@ change_history:
       for value-stage (precedes, stage-realized-through, requires,
       stage-produces, contributes-to). Version bumped to v0.2.0. Status:
       candidate (awaiting ADR-ES-003 acceptance).
-  - date: 2026-09-25
-    version: 2.1.0
-    change: |
-      Added Agentic Culture specialization predicates
-      (specializes Culture, supports Agentic Organization,
-      supports Agentic Operations, supports Agentic Workflow,
-      engages-with Agent, responds-to Organizational Context,
-      contributes-to Organizational Outcome, shapes Delegation
-      Practice, shapes Authority Practice, shapes Accountability
-      Practice, shapes Collaboration Practice, shapes Decision
-      Practice) per ADR-ES-023 section 7 + CR-ES-023 section 6.
-      Establishes v2.1.0 minor release.
-    author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
-    governing: ADR-ES-023
+
+# ES-029 Agentic Ecosystem predicates (target v2.5.0) ; per ES-ADR-029 section 9
+agentic_ecosystem_predicates:
+  - specializes
+  - engages
+  - operates-within
+  - governed-by
+  - coordinates
+  - produces
+  - adapts-to
+agentic_ecosystem_release_target: "2.5.0"
+agentic_ecosystem_base_concept: WSF:ECOSYSTEM

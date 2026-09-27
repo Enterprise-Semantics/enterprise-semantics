@@ -1,0 +1,56 @@
+# registry/profiles/agentic-ecosystem.profile.yaml ; ES-029 ; 21st profile
+id: agentic-ecosystem
+canonical_name: Agentic Ecosystem
+version: 2.5.0
+status: established
+date: 2026-09-26
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+base_concept: WSF:ECOSYSTEM
+authority: WSF
+source_decision: ADR-WSF-28
+es_integration: ES-ADR-029 + CR-ES-029
+
+profile_type: agentic-ecosystem
+dimension: agentic
+applies_to_concept: ES:CONCEPT:agentic-ecosystem
+
+canonical_definitions:
+  agentic_ecosystem: |
+    An Agentic Ecosystem is an Ecosystem in which material
+    interactions, coordination, adaptation, or value-realization
+    behavior among participating entities incorporates agentic
+    behavior within defined intents, authorities, policies, and
+    contextual boundaries.
+
+boundary_assertions:
+  - agentic_ecosystem_distinct_from_agent: true
+  - agentic_ecosystem_distinct_from_agentic_system: true
+  - agentic_ecosystem_distinct_from_agentic_operations: true
+  - agentic_ecosystem_distinct_from_agentic_organization: true
+  - agentic_ecosystem_distinct_from_agentic_enterprise: true
+  - agentic_ecosystem_does_not_require_ai: true
+  - agentic_ecosystem_requires_ecosystem_level_materiality: true
+
+conformance_tests:
+  positive:
+    - foundational_ecosystem_is_canonical
+    - agentic_ecosystem_specializes_it
+    - agentic_behavior_material_at_ecosystem_level
+    - multiple_participating_entities
+    - authority_boundaries_representable
+    - human_participants_may_remain_active
+    - ai_not_required
+  negative:
+    - ecosystem_merely_containing_ai_rejected
+    - ecosystem_merely_containing_agent_rejected
+    - ecosystem_merely_using_automation_rejected
+    - single_system_behavior_rejected
+    - agentic_system_not_agentic_ecosystem
+    - agentic_organization_not_agentic_ecosystem
+
+provenance:
+  source: [ES-ADR-022, ADR-WSF-28]
+  decision: [ES-ADR-029]
+  implementation: [CR-ES-029]

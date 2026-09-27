@@ -1,0 +1,32 @@
+# concepts/product.concept.yaml ; base Product as WSF reference
+#
+# Per ES-ADR-032 + CR-ES-032.
+# WSF owns foundational meaning per ADR-WSF-36 (Baseline).
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:product
+canonical_name: Product
+concept_type: base-reference
+status: Candidate
+version: 1.0.0
+date: 2026-09-26
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+base_concept: WSF:PRODUCT
+authority: WSF
+source_decision: ADR-WSF-36 (Baseline, WSF PR #16 MERGED 2026-09-26)
+es_integration: ES-ADR-032 + CR-ES-032
+
+definition: |
+  A coherent, governable bundle of Functions and Services offered by an Entity for exchange, consumption, or value realization by other Entities.
+  Per ADR-WSF-36 section 2.1 (canonical definition, WSF authority).
+  Enterprise-Semantics does not redefine this foundation locally.
+
+provenance:
+  source:
+    - ADR-WSF-36
+  decision:
+    - ES-ADR-032
+  implementation:
+    - CR-ES-032

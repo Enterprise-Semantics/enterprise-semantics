@@ -1,0 +1,146 @@
+# concepts/autonomous-culture.concept.yaml ; Autonomous Culture Specialization
+#
+# Per CR-ES-024 section 2 + ADR-ES-024 section 1. Autonomous Culture
+# specializes Culture (canonical per ADR-ES-026 + CR-ES-026 Accepted).
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:autonomous-culture
+canonical_name: Autonomous Culture
+definition: |
+  A Culture in which organizational norms, values, practices,
+  and expectations materially support independent decision-making,
+  delegated action, adaptive behavior, and reduced reliance on
+  human intervention within defined objectives, authority,
+  policies, constraints, accountability, and governance boundaries.
+concept_type: autonomous-culture
+status: Candidate
+version: 2.2.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+specializes:
+  - ES:CONCEPT:culture
+
+relationships:
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: supports
+    object: external:organization:AutonomousOrganization
+    qualification: cultural-support
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: supports
+    object: external:organization:AgenticOrganization
+    qualification: cultural-support
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: supports
+    object: external:operations:AutonomousOperations
+    qualification: cultural-support
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: supports
+    object: ES:CONCEPT:agentic-operations
+    qualification: cultural-support
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: engages-with
+    object: ES:CONCEPT:agent
+    qualification: cultural-engagement
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: responds-to
+    object: external:organization:OrganizationalContext
+    qualification: cultural-response
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: contributes-to
+    object: external:organization:OrganizationalOutcome
+    qualification: cultural-contribution
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: shapes
+    object: external:culture:DelegationPractice
+    qualification: cultural-shape
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: shapes
+    object: external:culture:AuthorityPractice
+    qualification: cultural-shape
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: shapes
+    object: external:culture:AccountabilityPractice
+    qualification: cultural-shape
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: shapes
+    object: external:culture:InterventionPractice
+    qualification: cultural-shape
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: shapes
+    object: external:culture:EscalationPractice
+    qualification: cultural-shape
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: shapes
+    object: external:culture:DecisionPractice
+    qualification: cultural-shape
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+  - subject: ES:CONCEPT:autonomous-culture
+    predicate: shapes
+    object: external:culture:AdaptationPractice
+    qualification: cultural-shape
+    status: established
+    provenance: ADR-ES-024 section 7 + CR-ES-024 section 5
+
+properties:
+  autonomy_scope: required
+  cultural_context: required
+  objective_norms: required
+  delegation_norms: required
+  authority_norms: required
+  decision_norms: required
+  action_norms: required
+  adaptation_norms: required
+  intervention_norms: required
+  escalation_norms: required
+  accountability_norms: required
+  trust_norms: required
+  governance_context: required
+  observation_norms: required
+  realization_mode: required
+
+provenance:
+  - source: ADR-ES-024 section 1
+  - source: CR-ES-024 section 2
+  - source: ADR-ES-026 section 1
+  - source: CR-ES-026 section 2
+
+cardinal_rules:
+  - "Autonomous Culture is a specialization of Culture (canonical per ADR-ES-026 + CR-ES-026 Accepted)"
+  - "Autonomous Culture is orthogonal to Agentic Culture per ADR-ES-022 section 5"
+  - "Autonomous Culture is NOT Autonomous Organization per ADR-ES-024 section 8"
+  - "Autonomous Culture is NOT Autonomous Enterprise per ADR-ES-024 section 8"
+  - "Autonomous Culture is NOT Autonomous Operations per ADR-ES-024 section 8"
+  - "Autonomous Culture is NOT Autonomous Workflow per ADR-ES-024 section 8"
+  - "Autonomous Culture is NOT Agentic Culture per ADR-ES-024 section 5 + ADR-ES-022 section 5"
+  - "Autonomous Culture is NOT AI Culture per ADR-ES-024 section 2"
+  - "Autonomous Culture is NOT Automated Culture per ADR-ES-024 section 2"
+  - "AI NOT required per ADR-ES-024 section 6"
+  - "Automation NOT sufficient per ADR-ES-024 section 6"

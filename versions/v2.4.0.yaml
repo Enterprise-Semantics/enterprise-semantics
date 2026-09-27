@@ -1,67 +1,43 @@
-# versions/v2.4.0.yaml ; v2.4.0 ; Enterprise-Semantics v2.4.0 release pointer
+# versions/v2.4.0.yaml ; ES-028 Autonomous System release pointer
 #
-# Per ADR-ES-026 section 9 + CR-ES-026 section 12 ; this release
-# establishes the Culture foundational concept, enabling ES-023
-# (Agentic Culture) and ES-024 (Autonomous Culture).
-#
-# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+# Per ES-CR-028 section 23: Autonomous System lands in v2.4.0.
+# This file establishes the release pointer.
 
-release: v2.4.0
-date: 2026-09-25
+version: 2.4.0
+date: 2026-09-26
 status: established
-governance: enterprise-semantics
+authority: Enterprise-Semantics
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 
-included_releases:
-  - v1.0.0
-  - v1.1.0
-  - v1.2.0
-  - v1.3.0
-  - v1.4.0
-  - v1.5.0
-  - v1.6.0
-  - v1.7.0
-  - v1.8.0
-  - v1.8.1
-  - v1.9.0
-  - v1.9.1
-  - v2.0.0
-  - v2.1.0
-  - v2.2.0
-  - v2.3.0
-  - v2.4.0
+contains:
+  - ES-028 ; Autonomous System Semantic Grounding
+  - ES-ADR-028 + ES-CR-028 ; 9-of-9 boundary dimension matrix complete
 
-canonical_concepts:
-  - capability
-  - agentic-capability
-  - autonomous-capability
-  - product
-  - agentic-product
-  - autonomous-product
-  - service
-  - agentic-service
-  - autonomous-service
-  - offering
-  - agentic-offering
-  - autonomous-offering
-  - organization
-  - agentic-organization
-  - autonomous-organization
-  - culture ; NEW ; per ADR-ES-026 + CR-ES-026 ; FOUNDATIONAL
+prior_release: v2.3.0
+next_release: v2.5.0
 
-dependency_resolution:
-  - dependency: ES-023 (Agentic Culture)
-    blocker_resolved: true
-    resolution: Culture foundational concept now canonical on origin/main
-  - dependency: ES-024 (Autonomous Culture)
-    blocker_resolved: true
-    resolution: Culture foundational concept now canonical on origin/main
+boundary_dimension_matrix:
+  capability: [agentic, autonomous]
+  service: [agentic, autonomous]
+  product: [agentic, autonomous]
+  offering: [agentic, autonomous]
+  organization: [agentic, autonomous]
+  value_stream: [agentic, autonomous]
+  workflow: [agentic]
+  operations: [agentic, autonomous]
+  enterprise: [agentic, autonomous]
+  culture: [agentic, autonomous]
+  system: [agentic, autonomous]
+
+foundational_dependencies:
+  - WSF-ADR-CULTURE-001 (provisional)
+  - WSF-ADR-SYSTEM-001 (provisional)
 
 provenance:
   source:
-    - ADR-ES-022
-    - Recon-ES-003
+    - ES-022
+    - ES-FOUND-001
   decision:
-    - ADR-ES-026
+    - ES-ADR-028
   implementation:
-    - CR-ES-026
+    - CR-ES-028

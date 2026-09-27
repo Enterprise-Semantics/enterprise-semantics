@@ -1,0 +1,170 @@
+# concepts/autonomous-system.concept.yaml ; Autonomous System specialization
+#
+# Per ES-ADR-028 + CR-ES-028 (slots 0034 + 0038).
+# Per WSF-ES-ALIGN-01: Autonomous System specializes WSF System (not
+# redefines it). Semantic authority is WSF (WSF-ADR-SYSTEM-001 provisional).
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:autonomous-system
+canonical_name: Autonomous System
+concept_type: autonomous-system-specialization
+status: Candidate
+version: 2.4.0
+date: 2026-09-26
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+# Base concept: WSF System (per WSF-ES-ALIGN-01)
+base_concept: WSF:SYSTEM
+authority: WSF
+source_decision: WSF-ADR-SYSTEM-001 (provisional, per LOCKED-PICKS v9)
+es_integration: ES-ADR-028 + CR-ES-028 section 16
+
+definition: |
+  An Autonomous System is a System capable of independently
+  progressing through decisions, actions, coordination, and
+  adaptation toward defined objectives within specified
+  authority, policies, constraints, and governance boundaries,
+  without requiring human intervention for every system
+  decision or action.
+
+  Per ES-ADR-028 section 2 (canonical definition).
+
+# Required validator fields
+canonical_name: Autonomous System
+concept_type: autonomous-system-specialization
+
+# Properties (per CR-ES-028 section 15)
+properties:
+  - system_objective
+  - autonomy_scope
+  - decision_scope
+  - action_scope
+  - coordination_scope
+  - adaptation_scope
+  - authority_context
+  - policy_context
+  - constraint_context
+  - governance_context
+  - intervention_model
+  - escalation_boundary
+  - observation_scope
+
+# Relationships (per CR-ES-028 section 17)
+relationships:
+  - subject: ES:CONCEPT:autonomous-system
+    predicate: specializes
+    object: external:concept:WSF:SYSTEM
+    status: established
+    provenance: ES-ADR-028 + CR-ES-028 section 17
+  - subject: ES:CONCEPT:autonomous-system
+    predicate: pursues
+    object: external:concept:objective
+    status: candidate
+    provenance: ES-ADR-028 section 9
+  - subject: ES:CONCEPT:autonomous-system
+    predicate: operates-within
+    object: external:concept:authority
+    status: candidate
+    provenance: ES-ADR-028 section 9
+  - subject: ES:CONCEPT:autonomous-system
+    predicate: governed-by
+    object: external:concept:policy
+    status: candidate
+    provenance: ES-ADR-028 section 9
+  - subject: ES:CONCEPT:autonomous-system
+    predicate: constrained-by
+    object: external:concept:constraint
+    status: candidate
+    provenance: ES-ADR-028 section 9
+  - subject: ES:CONCEPT:autonomous-system
+    predicate: responds-to
+    object: external:concept:context
+    status: candidate
+    provenance: ES-ADR-028 section 9
+  - subject: ES:CONCEPT:autonomous-system
+    predicate: produces
+    object: external:concept:outcome
+    status: candidate
+    provenance: ES-ADR-028 section 9
+  - subject: ES:CONCEPT:autonomous-system
+    predicate: adapts-to
+    object: external:concept:context
+    status: candidate
+    provenance: ES-ADR-028 section 9
+  - subject: ES:CONCEPT:autonomous-system
+    predicate: engages
+    object: external:concept:agent
+    status: candidate
+    provenance: ES-ADR-028 section 9
+  - subject: ES:CONCEPT:autonomous-system
+    predicate: supports
+    object: external:concept:capability
+    status: candidate
+    provenance: ES-ADR-028 section 9
+
+# Agentic/Autonomous independence (per ES-ADR-028 section 5)
+agentic_autonomous_independence:
+  agentic_system_does_not_imply_autonomous_system: true
+  autonomous_system_does_not_imply_agentic_system: true
+  four_state_matrix:
+    - state: System
+      agentic: no
+      autonomous: no
+    - state: Agentic System
+      agentic: yes
+      autonomous: no
+    - state: Autonomous System
+      agentic: no
+      autonomous: yes
+    - state: Agentic + Autonomous System
+      agentic: yes
+      autonomous: yes
+
+# AI/Automation boundary (per ES-ADR-028 section 6)
+ai_automation_boundary:
+  autonomous_system_requires_ai: false
+  autonomous_system_requires_automation: false
+  ai_plus_automation_implies_autonomous: false
+  automation_equals_autonomy: false
+  ai_equals_autonomy: false
+
+# Materiality test (per ES-ADR-028 section 7)
+materiality_test:
+  not_sufficient_evidence:
+    - executes_automatically
+    - contains_ai_model
+    - contains_agent
+    - performs_scheduled_actions
+    - exposes_apis
+    - uses_machine_learning
+    - follows_predefined_rules
+    - performs_unattended_execution
+  sufficient_evidence:
+    - independent_decision_progression
+    - independent_action_progression
+    - independent_coordination
+    - adaptive_behavior
+
+# Boundary with related concepts (per ES-ADR-028 section 10)
+boundary_distinctions:
+  - autonomous_system_vs_autonomous_operations: distinct
+  - autonomous_system_vs_agent: distinct
+  - autonomous_system_vs_agentic_system: independent_dimensions
+
+provenance:
+  source:
+    - ES-FOUND-001
+    - WSF-ADR-SYSTEM-001 (provisional, per LOCKED-PICKS v9)
+    - ES-ADR-027
+  decision:
+    - ES-ADR-028
+  implementation:
+    - CR-ES-028
+
+cardinal_rules:
+  - "Per ES-ADR-028 section 1: Autonomous System specializes WSF System"
+  - "Per ES-ADR-028 section 6: Autonomous System does NOT require AI"
+  - "Per ES-ADR-028 section 7: Material evidence of independent progression is required"
+  - "Per WSF-ES-ALIGN-01: semantic authority is WSF ; ES specializes via integration"

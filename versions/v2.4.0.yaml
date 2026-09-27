@@ -1,0 +1,43 @@
+# versions/v2.4.0.yaml ; ES-028 Autonomous System release pointer
+#
+# Per ES-CR-028 section 23: Autonomous System lands in v2.4.0.
+# This file establishes the release pointer.
+
+version: 2.4.0
+date: 2026-09-26
+status: established
+authority: Enterprise-Semantics
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+contains:
+  - ES-028 ; Autonomous System Semantic Grounding
+  - ES-ADR-028 + ES-CR-028 ; 9-of-9 boundary dimension matrix complete
+
+prior_release: v2.3.0
+next_release: v2.5.0
+
+boundary_dimension_matrix:
+  capability: [agentic, autonomous]
+  service: [agentic, autonomous]
+  product: [agentic, autonomous]
+  offering: [agentic, autonomous]
+  organization: [agentic, autonomous]
+  value_stream: [agentic, autonomous]
+  workflow: [agentic]
+  operations: [agentic, autonomous]
+  enterprise: [agentic, autonomous]
+  culture: [agentic, autonomous]
+  system: [agentic, autonomous]
+
+foundational_dependencies:
+  - WSF-ADR-CULTURE-001 (provisional)
+  - WSF-ADR-SYSTEM-001 (provisional)
+
+provenance:
+  source:
+    - ES-022
+    - ES-FOUND-001
+  decision:
+    - ES-ADR-028
+  implementation:
+    - CR-ES-028

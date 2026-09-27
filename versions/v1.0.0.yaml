@@ -1,0 +1,144 @@
+# versions/v1.0.0.yaml ; v1.0.0 first major release boundary
+#
+# Per CR-ES-011 §38 + ADR-ES-011 §38: this version pointer establishes
+# the v1.0.0 first major release boundary. v1.0.0 is gated on the
+# full ADR-ES-001 -> ADR-ES-011 chain acceptance.
+#
+# Per ADR-ES-001 §10-§11: v1.0.0 release metadata identifies the
+# cumulative semantic baseline through the latest accepted tranche.
+#
+# Cardinal rules:
+# - Author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24).
+# - D-004: zero en-dash, zero em-dash, zero U+2E3B. Comma separators
+#   used for sentence-internal punctuation per user directive 2026-09-24.
+# - Vendor-specific embargo: zero references to material from
+#   embargoed sources.
+
+version: 1.0.0
+status: pending-promotion
+
+target_release: v1.0.0
+release_type: major
+
+# This release is gated on the cumulative acceptance of
+# ADR-ES-001 through ADR-ES-011 per CR-ES-011 §38.
+
+gate:
+  required_accepted_chain:
+    - ADR-ES-001
+    - ADR-ES-002
+    - ADR-ES-003
+    - ADR-ES-004
+    - ADR-ES-005
+    - ADR-ES-006
+    - ADR-ES-007
+    - ADR-ES-008
+    - ADR-ES-009
+    - ADR-ES-010
+    - ADR-ES-011
+  current_status:
+    ADR-ES-001: Accepted
+    ADR-ES-002: Accepted
+    ADR-ES-003: Accepted
+    ADR-ES-004: Accepted
+    ADR-ES-005: Accepted
+    ADR-ES-006: Accepted
+    ADR-ES-007: Accepted
+    ADR-ES-008: Accepted
+    ADR-ES-009: Accepted
+    ADR-ES-010: Accepted 2026-09-24
+    ADR-ES-011: Proposed  ; held for v1.0.0 release boundary
+  blocking: ADR-ES-011
+
+established_concepts:
+  - id: ES:CONCEPT:enterprise
+    accepted_in: ADR-ES-002
+  - id: ES:CONCEPT:agent
+    accepted_in: ADR-ES-004
+  - id: ES:CONCEPT:agentic
+    accepted_in: ADR-ES-004
+  - id: ES:CONCEPT:intent
+    accepted_in: ADR-ES-004
+  - id: ES:CONCEPT:authority
+    accepted_in: ADR-ES-004
+  - id: ES:CONCEPT:action
+    accepted_in: ADR-ES-004
+  - id: ES:CONCEPT:value-stream
+    accepted_in: ADR-ES-003
+  - id: ES:CONCEPT:value-stage
+    accepted_in: ADR-ES-003
+  - id: ES:CONCEPT:capability
+    accepted_in: ADR-ES-002
+  - id: ES:CONCEPT:workflow
+    accepted_in: ADR-ES-002
+  - id: ES:CONCEPT:operations
+    accepted_in: ADR-ES-002
+  - id: ES:CONCEPT:process
+    accepted_in: ADR-ES-003
+  - id: ES:CONCEPT:agentic-value-stream
+    accepted_in: ADR-ES-005
+  - id: ES:CONCEPT:agentic-workflow
+    accepted_in: ADR-ES-006
+  - id: ES:CONCEPT:agentic-operations
+    accepted_in: ADR-ES-007
+  - id: ES:CONCEPT:autonomous-operations
+    accepted_in: ADR-ES-008
+  - id: ES:CONCEPT:autonomous-value-stream
+    accepted_in: ADR-ES-009
+  - id: ES:CONCEPT:agentic-enterprise
+    accepted_in: ADR-ES-010
+    accepted_date: 2026-09-24
+  - id: ES:CONCEPT:autonomous-enterprise
+    accepted_in: ADR-ES-011
+    accepted_date: pending-promotion
+
+established_profiles:
+  - id: ES:PROFILE:AGENTIC
+    accepted_in: ADR-ES-004
+  - id: ES:PROFILE:agentic-value-realization
+    accepted_in: ADR-ES-005
+  - id: ES:PROFILE:agentic-operations
+    accepted_in: ADR-ES-007
+  - id: ES:PROFILE:autonomous-operations
+    accepted_in: ADR-ES-008
+  - id: ES:PROFILE:autonomous-value-realization
+    accepted_in: ADR-ES-009
+  - id: ES:PROFILE:agentic-enterprise
+    accepted_in: ADR-ES-010
+    accepted_date: 2026-09-24
+  - id: ES:PROFILE:autonomous-enterprise
+    accepted_in: ADR-ES-011
+    accepted_date: pending-promotion
+
+vocabulary_summary:
+  version: 1.1.0
+  governed_predicates: 46
+  governed_inverses: 46
+  recent_additions:
+    - id: ES:REL:enterprise-realizes-through
+      subject_type: ES:CONCEPT:agentic-enterprise
+      added_in: CR-ES-010
+    - id: ES:REL:enterprise-operates-through
+      subject_type: ES:CONCEPT:agentic-enterprise
+      added_in: CR-ES-010
+    - id: ES:REL:autonomous-enterprise-realizes-through
+      subject_type: ES:CONCEPT:autonomous-enterprise
+      added_in: CR-ES-011
+    - id: ES:REL:autonomous-enterprise-operates-through
+      subject_type: ES:CONCEPT:autonomous-enterprise
+      added_in: CR-ES-011
+
+governance:
+  adr: ADR-ES-011
+  cr: CR-ES-011
+  release_authority: enterprise-semantics
+  promotion_ritual: ADR-ES-001 §10-§11
+
+provenance:
+  - source: CR-ES-011 §38
+    note: "Release gate ; v1.0.0 release metadata identifies the cumulative Enterprise-Semantics semantic baseline through the latest accepted tranche"
+  - source: ADR-ES-011 §38
+    note: "First major release boundary ; v1.0.0 establishes the agentic/autonomous enterprise model as the foundational Enterprise-Semantics baseline"
+
+created: 2026-09-24
+updated: 2026-09-24

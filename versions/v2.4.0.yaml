@@ -1,0 +1,67 @@
+# versions/v2.4.0.yaml ; v2.4.0 ; Enterprise-Semantics v2.4.0 release pointer
+#
+# Per ADR-ES-026 section 9 + CR-ES-026 section 12 ; this release
+# establishes the Culture foundational concept, enabling ES-023
+# (Agentic Culture) and ES-024 (Autonomous Culture).
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+release: v2.4.0
+date: 2026-09-25
+status: established
+governance: enterprise-semantics
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+included_releases:
+  - v1.0.0
+  - v1.1.0
+  - v1.2.0
+  - v1.3.0
+  - v1.4.0
+  - v1.5.0
+  - v1.6.0
+  - v1.7.0
+  - v1.8.0
+  - v1.8.1
+  - v1.9.0
+  - v1.9.1
+  - v2.0.0
+  - v2.1.0
+  - v2.2.0
+  - v2.3.0
+  - v2.4.0
+
+canonical_concepts:
+  - capability
+  - agentic-capability
+  - autonomous-capability
+  - product
+  - agentic-product
+  - autonomous-product
+  - service
+  - agentic-service
+  - autonomous-service
+  - offering
+  - agentic-offering
+  - autonomous-offering
+  - organization
+  - agentic-organization
+  - autonomous-organization
+  - culture ; NEW ; per ADR-ES-026 + CR-ES-026 ; FOUNDATIONAL
+
+dependency_resolution:
+  - dependency: ES-023 (Agentic Culture)
+    blocker_resolved: true
+    resolution: Culture foundational concept now canonical on origin/main
+  - dependency: ES-024 (Autonomous Culture)
+    blocker_resolved: true
+    resolution: Culture foundational concept now canonical on origin/main
+
+provenance:
+  source:
+    - ADR-ES-022
+    - Recon-ES-003
+  decision:
+    - ADR-ES-026
+  implementation:
+    - CR-ES-026

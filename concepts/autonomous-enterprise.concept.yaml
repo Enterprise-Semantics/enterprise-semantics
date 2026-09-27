@@ -1,0 +1,274 @@
+# concepts/autonomous-enterprise.concept.yaml ; Autonomous Enterprise (ES:CONCEPT:autonomous-enterprise) ; per CR-ES-011 §2 + ADR-ES-011 §1
+#
+# Per CR-ES-011 §2 + §3 + §5 + ADR-ES-011 §1 + §3 + §11:
+#   An Autonomous Enterprise is an Enterprise in which material
+#   aspects of enterprise value realisation, operational coordination,
+#   decision-making, execution, or adaptation are capable of
+#   progressing independently within defined objectives, authority,
+#   policies, constraints, and governance boundaries, without requiring
+#   human intervention for every enterprise decision or action.
+#   Autonomous Enterprise specialises Enterprise; it does NOT
+#   specialise Agentic Enterprise. Autonomous Enterprise and Agentic
+#   Enterprise are orthogonal semantic dimensions per ADR-ES-011 §11
+#   (not a hierarchy).
+#
+# Per CR-ES-011 §3: Autonomous Enterprise is classified as Semantic
+# Concept, Enterprise Specialisation, Autonomy-bearing Enterprise
+# Condition. It is NOT classified as Technology, AI capability,
+# Automation mechanism, Workflow, Process, Agent, Agentic Enterprise,
+# Autonomous Operations, or Autonomous Value Stream.
+#
+# Per CR-ES-011 §38 + ADR-ES-011 §38: this concept is gated on the
+# full ADR-ES-001 -> ADR-ES-011 chain acceptance and targets the
+# v1.0.0 first major release boundary.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:autonomous-enterprise
+canonical_name: Autonomous Enterprise
+status: Proposed
+version: 1.0.0
+concept_type: autonomous-enterprise
+
+definition: |
+  An Autonomous Enterprise is an Enterprise in which material aspects
+  of enterprise value realisation, operational coordination,
+  decision-making, execution, or adaptation are capable of progressing
+  independently within defined objectives, authority, policies,
+  constraints, and governance boundaries, without requiring human
+  intervention for every enterprise decision or action.
+
+# Per CR-ES-011 §2 + ADR-ES-011 §1 + §11: Autonomous Enterprise
+# specialises Enterprise; it does NOT specialise Agentic Enterprise.
+
+specializes:
+  - ES:CONCEPT:enterprise
+
+# Per CR-ES-011 §5 + ADR-ES-011 §11 + §12 + §13 + §14 + §15:
+# 14 canonical relationships covering autonomous enterprise
+# participation in value realisation, operations, workflows, and
+# governance.
+
+relationships:
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: specializes
+    object: ES:CONCEPT:enterprise
+    qualification: enterprise-specialisation
+    status: established
+    provenance: CR-ES-011 §2 + ADR-ES-011 §1 + §11
+    rationale: |
+      Autonomous Enterprise is a direct specialisation of Enterprise
+      per CR-ES-011 §2 + ADR-ES-011 §1. It does NOT specialise
+      Agentic Enterprise (per AE-AUTO-CON-013); the two are
+      orthogonal semantic dimensions per ADR-ES-011 §11.
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: pursues
+    object: external:concept:enterprise-objective
+    qualification: objective-bound
+    status: proposed
+    provenance: CR-ES-011 §5 + ADR-ES-011 §7 + §8
+    rationale: |
+      Autonomous Enterprise pursues enterprise-level objectives within
+      the operating pattern (ADR-ES-011 §8). Enterprise Objective is
+      referenced as external:concept:enterprise-objective; the
+      canonical Enterprise Objective concept is not yet on main; the
+      forward reference is recorded in the mapping layer.
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: operates-within
+    object: ES:CONCEPT:authority
+    qualification: authority-bound
+    status: established
+    provenance: CR-ES-011 §10 + §14 + AE-AUTO-CON-005
+    rationale: |
+      Autonomous Enterprise operates within defined authority per
+      AE-AUTO-CON-005. Authority is bounded; authority = unrestricted
+      fails conformance (per AE-AUTO-CON-018).
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: governed-by
+    object: external:concept:policy
+    qualification: governance-bound
+    status: proposed
+    provenance: CR-ES-011 §10 + §15 + AE-AUTO-CON-006
+    rationale: |
+      Autonomous Enterprise is governed by policies, constraints,
+      escalation, accountability, and oversight per ADR-ES-011 §15 +
+      AE-AUTO-CON-006. Policy is referenced as external:concept:policy;
+      the canonical Policy concept is not yet on main; the forward
+      reference is recorded.
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: constrained-by
+    object: external:concept:constraint
+    qualification: constraint-bound
+    status: proposed
+    provenance: CR-ES-011 §15 + AE-AUTO-CON-006
+    rationale: |
+      Autonomous Enterprise operates under defined constraints per
+      ADR-ES-011 §15. Constraint is referenced as
+      external:concept:constraint; the canonical Constraint concept
+      is not yet on main; the forward reference is recorded.
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: responds-to
+    object: external:concept:enterprise-context
+    qualification: context-aware
+    status: proposed
+    provenance: CR-ES-011 §8 + AE-AUTO-CON-002
+    rationale: |
+      Autonomous Enterprise responds to enterprise context (sense
+      and interpret) per ADR-ES-011 §8. Enterprise Context is
+      referenced as external:concept:enterprise-context.
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: produces
+    object: external:concept:enterprise-outcome
+    qualification: outcome-oriented
+    status: established
+    provenance: CR-ES-011 §8 + AE-AUTO-CON-002
+    rationale: |
+      Autonomous Enterprise produces enterprise-level outcomes per
+      AE-AUTO-CON-002. Enterprise Outcome is referenced as
+      external:concept:enterprise-outcome.
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: adapts-to
+    object: external:concept:enterprise-context
+    qualification: adaptive
+    status: proposed
+    provenance: CR-ES-011 §7.4 + ADR-ES-011 §7
+    rationale: |
+      Autonomous Enterprise adapts to enterprise context in response
+      to environmental conditions, stakeholder conditions, operational
+      conditions, demand, resource availability, exceptions, and
+      observed outcomes per ADR-ES-011 §7.4.
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: external:rel:enterprise-realizes-through
+    object: ES:CONCEPT:autonomous-value-stream
+    qualification: enterprise-realisation-via-value-stream
+    status: proposed
+    provenance: CR-ES-011 §5 + ADR-ES-011 §13
+    rationale: |
+      Autonomous Enterprise may realise value through Autonomous
+      Value Streams per ADR-ES-011 §13. The predicate
+      `enterprise-realizes-through` is a subject-type-namespaced
+      predicate registered in VS-A/VS-B vocabulary of the prior
+      CR-ES-010 tranche; the external: prefix marks it as a
+      forward reference in the autonomous context. The relationship
+      does NOT imply Autonomous Enterprise = Autonomous Value Stream
+      (per AE-AUTO-NEG-018).
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: uses
+    object: ES:CONCEPT:autonomous-operations
+    qualification: enterprise-operation-mechanism
+    status: proposed
+    provenance: CR-ES-011 §5 + ADR-ES-011 §12
+    rationale: |
+      Autonomous Enterprise may use Autonomous Operations as an
+      important realisation mechanism per ADR-ES-011 §12. The
+      relationship does NOT imply Autonomous Enterprise = Autonomous
+      Operations (per AE-AUTO-NEG-017); it does NOT automatically
+      establish Autonomous Enterprise (per AE-AUTO-CON-015).
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: uses
+    object: ES:CONCEPT:agentic-operations
+    qualification: mixed-realisation-mode
+    status: proposed
+    provenance: CR-ES-011 §14 + ADR-ES-011 §14
+    rationale: |
+      Autonomous Enterprise may use Agentic Operations as part of
+      a mixed realisation mode per ADR-ES-011 §14. The relationship
+      does NOT establish Agentic as a prerequisite for autonomy
+      (per AE-AUTO-CON-013 + ADR-ES-011 §11).
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: external:rel:enterprise-realizes-through
+    object: ES:CONCEPT:agentic-value-stream
+    qualification: mixed-realisation-mode
+    status: proposed
+    provenance: CR-ES-011 §14 + ADR-ES-011 §14
+    rationale: |
+      Autonomous Enterprise may realise value through Agentic Value
+      Streams as part of a mixed realisation mode per ADR-ES-011
+      §14. Agentic is one valid realisation mechanism alongside
+      autonomous and conventional.
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: uses
+    object: external:concept:workflow
+    qualification: execution-mechanism
+    status: proposed
+    provenance: CR-ES-011 §15 + ADR-ES-011 §15
+    rationale: |
+      Autonomous Enterprise may use Workflow as an execution
+      mechanism per ADR-ES-011 §15. Workflow is referenced as
+      external:concept:workflow (Agentic Workflow and Autonomous
+      Workflow are not yet canonical concepts; see CR-ES-011 §27
+      future-deferred list).
+
+  - subject: ES:CONCEPT:autonomous-enterprise
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    qualification: execution-mechanism
+    status: proposed
+    provenance: CR-ES-011 §15 + ADR-ES-011 §15
+    rationale: |
+      Autonomous Enterprise may use Agentic Workflow as an execution
+      mechanism per ADR-ES-011 §15. Agentic Workflow is a canonical
+      concept from CR-ES-006 + ADR-ES-006. Autonomous Workflow is
+      held as a future concept per CR-ES-011 §27.
+
+governance: enterprise-semantics
+
+provenance:
+  - source: CR-ES-011
+    note: "Autonomous Enterprise Semantic Grounding implementation; slot 0019"
+  - source: ADR-ES-011
+    note: "Autonomous Enterprise Semantic Grounding decision; slot 0013"
+  - source: ADR-ES-010
+    note: "Agentic Enterprise Semantic Grounding decision (parallel Enterprise specialisation); slot 0012; establishes the orthogonality invariant AE-AUTO-CON-013"
+  - source: ADR-ES-009
+    note: "Autonomous Value Stream Semantic Grounding decision; the value-realisation relationship target for Autonomous Enterprise"
+  - source: ADR-ES-008
+    note: "Autonomous Operations Semantic Grounding decision; the operations-mechanism relationship target"
+  - source: docs/finding/0001-agentic-semantic-grounding-grounding-result.md
+    note: "WSF live baseline alignment; Autonomous Enterprise inherits the WSF Entity grounding via Enterprise (no new WSF concept required)"
+
+wsf_grounding:
+  - wsf_concept_id: external:wsf:Entity
+    relationship: specialises
+    note: |
+      Autonomous Enterprise is a specialisation of Enterprise per
+      CR-ES-011 §2 + ADR-ES-011 §1 + §11. Enterprise itself
+      inherits the WSF Entity grounding; the Autonomous Enterprise
+      specialisation does not introduce a new WSF semantic kind; it
+      profiles the WSF Entity grounding via the Enterprise profile.
+      WSF modification is NOT authorised by CR-ES-011 (per CR-ES-011
+      §30).
+
+supersedes:
+  - canonical_id: "ES:CONCEPT:autonomous-enterprise"
+    hypothesis_prior: |
+      No prior hypothesis; this is a fresh canonical concept
+      introduced by ADR-ES-011 §1 + §3.1. The Autonomous Enterprise
+      concept is the enterprise-level counterpart to Autonomous
+      Operations (ADR-ES-008) and Autonomous Value Stream
+      (ADR-ES-009), and the orthogonal counterpart to Agentic
+      Enterprise (ADR-ES-010).
+    hypothesis_new: |
+      Specialisation-of-Enterprise via predicate specializes; no
+      profile_bindings; status Proposed; v1.0.0.
+    note: |
+      Fresh canonical concept per ADR-ES-011 §1 + §3.1. Not in
+      conflict with prior concepts; introduces the Autonomous
+      Enterprise semantic at the enterprise boundary as a parallel
+      specialisation to Agentic Enterprise (per ADR-ES-011 §11).
+
+created: 2026-09-24
+updated: 2026-09-24

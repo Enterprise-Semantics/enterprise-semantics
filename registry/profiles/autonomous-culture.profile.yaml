@@ -1,0 +1,104 @@
+# registry/profiles/autonomous-culture.profile.yaml ; Autonomous Culture Profile
+#
+# Per CR-ES-024 section 4 ; profile record for Autonomous Culture
+# Profile (ES:PROFILE:AUTONOMOUS_CULTURE).
+#
+# The profile shall NOT imply inheritance from AGENTIC_CULTURE.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:PROFILE:AUTONOMOUS_CULTURE
+canonical_name: Autonomous Culture Profile
+profile_type: autonomous-culture
+status: established
+version: 2.1.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+scope:
+  - Culture
+  - Autonomous Culture
+  - Autonomous Organization
+  - Agentic Organization
+  - Autonomous Operations
+  - Agentic Operations
+  - Agent
+  - Organizational Context
+  - Organizational Outcome
+  - Delegation Practice
+  - Authority Practice
+  - Accountability Practice
+  - Intervention Practice
+  - Escalation Practice
+  - Decision Practice
+  - Adaptation Practice
+
+description: |
+  The Autonomous Culture Profile aggregates the canonical concepts
+  that participate in or support Autonomous Culture realization.
+  The profile enables discoverability and grouping. It does NOT
+  imply that every scoped concept is a subtype of Culture.
+
+scope_assertions:
+  - id: ACULT-AUTO-PROF-SCOPE-001
+    description: Profile scope is for discoverability, not inheritance.
+  - id: ACULT-AUTO-PROF-SCOPE-002
+    description: Profile does NOT make Agent a subtype of Culture.
+  - id: ACULT-AUTO-PROF-SCOPE-003
+    description: Profile does NOT make Delegation Practice a subtype of Culture.
+  - id: ACULT-AUTO-PROF-SCOPE-004
+    description: Profile does NOT make Authority Practice a subtype of Culture.
+
+materiality_invariants:
+  - id: ACULT-AUTO-PROF-MAT-001
+    description: Material cultural autonomy required per ADR-ES-024 section 3.
+  - id: ACULT-AUTO-PROF-MAT-002
+    description: AI NOT required per ADR-ES-024 section 6.
+  - id: ACULT-AUTO-PROF-MAT-003
+    description: Automation NOT sufficient per ADR-ES-024 section 6.
+  - id: ACULT-AUTO-PROF-MAT-004
+    description: Autonomous components alone NOT sufficient per ADR-ES-024 section 3.
+
+orthogonality_invariants:
+  - id: ACULT-AUTO-PROF-ORTH-001
+    description: Autonomous Culture is NOT Agentic Culture per ADR-ES-024 section 5 + ADR-ES-022 section 5.
+  - id: ACULT-AUTO-PROF-ORTH-002
+    description: Agentic Culture is NOT Autonomous Culture per ADR-ES-024 section 5 + ADR-ES-022 section 5.
+
+boundary_invariants:
+  - id: ACULT-AUTO-PROF-BND-001
+    description: Autonomous Culture is NOT Autonomous Organization per ADR-ES-024 section 8 + ACULT-AUTO-NEG-002.
+  - id: ACULT-AUTO-PROF-BND-002
+    description: Autonomous Culture is NOT Autonomous Enterprise per ADR-ES-024 section 8 + ACULT-AUTO-NEG-002.
+  - id: ACULT-AUTO-PROF-BND-003
+    description: Autonomous Culture is NOT Autonomous Operations per ADR-ES-024 section 8 + ACULT-AUTO-NEG-003.
+  - id: ACULT-AUTO-PROF-BND-004
+    description: Autonomous Culture is NOT Autonomous Workflow per ADR-ES-024 section 8 + ACULT-AUTO-NEG-014.
+  - id: ACULT-AUTO-PROF-BND-005
+    description: Autonomous Culture is NOT Autonomous Service per ADR-ES-024 section 8.
+  - id: ACULT-AUTO-PROF-BND-006
+    description: Autonomous Culture is NOT Autonomous Product per ADR-ES-024 section 8.
+  - id: ACULT-AUTO-PROF-BND-007
+    description: Autonomous Culture is NOT Autonomous Offering per ADR-ES-024 section 8 + ACULT-AUTO-NEG-013.
+  - id: ACULT-AUTO-PROF-BND-008
+    description: Autonomous Culture is NOT Agentic Culture per ADR-ES-024 section 5 + ACULT-AUTO-NEG-001.
+  - id: ACULT-AUTO-PROF-BND-009
+    description: AI not required per ADR-ES-024 section 6 + ACULT-AUTO-NEG-006.
+  - id: ACULT-AUTO-PROF-BND-010
+    description: Automation not sufficient per ADR-ES-024 section 6 + ACULT-AUTO-NEG-007.
+  - id: ACULT-AUTO-PROF-BND-011
+    description: Human participation remains valid per ADR-ES-024 section 6 + ACULT-AUTO-NEG-008.
+  - id: ACULT-AUTO-PROF-BND-012
+    description: Bounded authority per ADR-ES-024 section 12 + ACULT-AUTO-NEG-009.
+  - id: ACULT-AUTO-PROF-BND-013
+    description: Governance retained per ADR-ES-024 section 12 + ACULT-AUTO-NEG-010.
+
+provenance:
+  - source: CR-ES-024 section 4
+  - source: ADR-ES-024 section 12
+  - source: ADR-ES-024 section 5 + ADR-ES-022 section 5
+  - source: CR-ES-024 section 12
+  - source: USER-DIRECTIVE-1553040695345025105
+
+release_target: v2.1.0

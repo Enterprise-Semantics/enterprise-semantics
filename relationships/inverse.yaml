@@ -324,6 +324,37 @@ inverse:
 
 
 
+
+    # ===== Enterprise inverses (CR-ES-010 + CR-ES-011 ;; restored 2026-09-26) =====
+
+    - forward: ES:REL:enterprise-realizes-through
+      forward_canonical: realizes-through
+      inverse: realizes-via
+      subject_type: ES:CONCEPT:agentic-enterprise
+      object_type: ES:CONCEPT:agentic-value-stream
+      provenance: CR-ES-010 §4 + ADR-ES-010 §5 + §14
+
+    - forward: ES:REL:enterprise-operates-through
+      forward_canonical: operates-through
+      inverse: operates-via
+      subject_type: ES:CONCEPT:agentic-enterprise
+      object_type: ES:CONCEPT:agentic-operations
+      provenance: CR-ES-010 §4 + ADR-ES-010 §5 + §15
+
+    - forward: ES:REL:autonomous-enterprise-realizes-through
+      forward_canonical: realizes-through
+      inverse: realizes-via
+      subject_type: ES:CONCEPT:autonomous-enterprise
+      object_type: ES:CONCEPT:autonomous-value-stream
+      provenance: CR-ES-011 §5 + ADR-ES-011 §11 + §13
+
+    - forward: ES:REL:autonomous-enterprise-operates-through
+      forward_canonical: operates-through
+      inverse: operates-via
+      subject_type: ES:CONCEPT:autonomous-enterprise
+      object_type: ES:CONCEPT:autonomous-operations
+      provenance: CR-ES-011 §5 + ADR-ES-011 §11 + §12
+
 governance:
   adr: ADR-ES-003
   cr: CR-ES-003

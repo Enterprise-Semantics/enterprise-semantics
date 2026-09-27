@@ -602,6 +602,91 @@ vocabulary:
       lifecycle_status: established
       provenance: ADR-ES-009 §18 + CR-ES-009 §8
 
+
+    # ===== Enterprise ;; Subject predicates (CR-ES-010 + CR-ES-011 ;; restored 2026-09-26 after held-branch merge wave clobbered them) =====
+
+    - id: ES:REL:enterprise-realizes-through
+      canonical_name: realizes-through
+      inverse: realizes-via
+      subject_type: ES:CONCEPT:agentic-enterprise
+      object_type: ES:CONCEPT:agentic-value-stream
+      definition: |
+        An Agentic Enterprise realizes value through Agentic Value
+        Streams ;; per CR-ES-010 §4 + ADR-ES-010 §5 + §14. The
+        predicate is subject-type namespaced
+        (enterprise-realizes-through) to disambiguate from
+        value-stream-realized-through (subject_type:
+        ES:CONCEPT:value-stream ;; CR-ES-003 §10.4) and
+        capability-realized-through (subject_type:
+        ES:CONCEPT:capability ;; CR-ES-002 §4). The predicate
+        does NOT imply Agentic Enterprise = an enterprise
+        containing value-streamrealisations ;; per CR-ES-010 §22 (the
+        qualification is enterprise-realisation-via-value-stream).
+        Enterprise-level realisation requires material
+        enterprise-level evidence ;; not every value stream must
+        be Agentic ;; per CR-ES-010 §22 (Agentic Enterprise does
+        not require every Value Stream to be Agentic).
+      lifecycle_status: proposed
+      provenance: CR-ES-010 §4 + ADR-ES-010 §5 + §14
+
+    - id: ES:REL:enterprise-operates-through
+      canonical_name: operates-through
+      inverse: operates-via
+      subject_type: ES:CONCEPT:agentic-enterprise
+      object_type: ES:CONCEPT:agentic-operations
+      definition: |
+        An Agentic Enterprise operates through Agentic
+        Operations ;; per CR-ES-010 §4 + ADR-ES-010 §5 + §15. The
+        predicate is subject-type namespaced
+        (enterprise-operates-through) to disambiguate from the
+        broader operates-through family. The predicate does NOT
+        imply Agentic Enterprise = Agentic Operations ;; per
+        CR-ES-010 §22 + AE-NEG-011 (the qualification is
+        enterprise-operation-mechanism). Agentic Operations are
+        an important realisation mechanism , Agentic Enterprise
+        is the enterprise-level operating condition.
+      lifecycle_status: proposed
+      provenance: CR-ES-010 §4 + ADR-ES-010 §5 + §15
+
+    - id: ES:REL:autonomous-enterprise-realizes-through
+      canonical_name: realizes-through
+      inverse: realizes-via
+      subject_type: ES:CONCEPT:autonomous-enterprise
+      object_type: ES:CONCEPT:autonomous-value-stream
+      definition: |
+        An Autonomous Enterprise realizes value through Autonomous
+        Value Streams per CR-ES-011 §5 + ADR-ES-011 §11 + §13. The
+        predicate is subject-type namespaced
+        (autonomous-enterprise-realizes-through) to disambiguate from
+        enterprise-realizes-through (subject_type:
+        ES:CONCEPT:agentic-enterprise per CR-ES-010 §4) and
+        value-stream-realized-through (subject_type:
+        ES:CONCEPT:value-stream per CR-ES-003 §10.4). The predicate
+        does NOT imply Autonomous Enterprise = Autonomous Value
+        Stream per CR-ES-011 §23 + AE-AUTO-NEG-018.
+      lifecycle_status: established
+      provenance: CR-ES-011 §5 + ADR-ES-011 §11 + §13
+
+    - id: ES:REL:autonomous-enterprise-operates-through
+      canonical_name: operates-through
+      inverse: operates-via
+      subject_type: ES:CONCEPT:autonomous-enterprise
+      object_type: ES:CONCEPT:autonomous-operations
+      definition: |
+        An Autonomous Enterprise operates through Autonomous
+        Operations per CR-ES-011 §5 + ADR-ES-011 §11 + §12. The
+        predicate is subject-type namespaced
+        (autonomous-enterprise-operates-through) to disambiguate from
+        enterprise-operates-through (subject_type:
+        ES:CONCEPT:agentic-enterprise per CR-ES-010 §4) and other
+        operates-through family members. The predicate does NOT
+        imply Autonomous Enterprise = Autonomous Operations per
+        CR-ES-011 §23 + AE-AUTO-NEG-017, and Autonomous Operations
+        do NOT automatically establish Autonomous Enterprise per
+        CR-ES-011 §11 + AE-AUTO-CON-015.
+      lifecycle_status: established
+      provenance: CR-ES-011 §5 + ADR-ES-011 §11 + §12
+
 governance:
   adr: ADR-ES-003
   cr: CR-ES-003

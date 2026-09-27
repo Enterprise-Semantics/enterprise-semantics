@@ -638,3 +638,15 @@ change_history:
       for value-stage (precedes, stage-realized-through, requires,
       stage-produces, contributes-to). Version bumped to v0.2.0. Status:
       candidate (awaiting ADR-ES-003 acceptance).
+
+# ES-029 Agentic Ecosystem predicates (target v2.5.0) ; per ES-ADR-029 section 9
+agentic_ecosystem_predicates:
+  - specializes
+  - engages
+  - operates-within
+  - governed-by
+  - coordinates
+  - produces
+  - adapts-to
+agentic_ecosystem_release_target: "2.5.0"
+agentic_ecosystem_base_concept: WSF:ECOSYSTEM

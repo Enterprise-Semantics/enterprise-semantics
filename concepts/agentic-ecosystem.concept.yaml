@@ -1,0 +1,152 @@
+# concepts/agentic-ecosystem.concept.yaml ; Agentic Ecosystem specialization
+#
+# Per ES-ADR-029 + CR-ES-029 (slots 0035 + 0039).
+# Base concept: WSF:ECOSYSTEM (wsf:Ecosystem at Baseline per ADR-WSF-28).
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:agentic-ecosystem
+canonical_name: Agentic Ecosystem
+concept_type: agentic-ecosystem-specialization
+status: Candidate
+version: 2.5.0
+date: 2026-09-26
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+base_concept: WSF:ECOSYSTEM
+authority: WSF
+source_decision: ADR-WSF-28 (Baseline, PR #14 MERGED 2026-09-26)
+es_integration: ES-ADR-029 + CR-ES-029
+
+definition: |
+  An Agentic Ecosystem is an Ecosystem in which material interactions,
+  coordination, adaptation, or value-realization behavior among
+  participating entities incorporates agentic behavior within defined
+  intents, authorities, policies, and contextual boundaries.
+
+  Per ES-ADR-029 section 2 (canonical definition). The Ecosystem
+  foundation is wsf:Ecosystem per ADR-WSF-28 section 2.1.
+
+properties:
+  - ecosystem_intent
+  - ecosystem_scope
+  - agentic_scope
+  - delegated_intent
+  - authority_context
+  - interaction_scope
+  - coordination_scope
+  - adaptation_scope
+  - intervention_model
+  - escalation_boundary
+  - outcome_scope
+
+relationships:
+  - subject: ES:CONCEPT:agentic-ecosystem
+    predicate: specializes
+    object: external:concept:WSF:ECOSYSTEM
+    status: established
+    provenance: ES-ADR-029 + CR-ES-029 section 16
+  - subject: ES:CONCEPT:agentic-ecosystem
+    predicate: engages
+    object: external:concept:entity
+    status: candidate
+    provenance: ES-ADR-029 section 9
+  - subject: ES:CONCEPT:agentic-ecosystem
+    predicate: engages
+    object: external:concept:agent
+    status: candidate
+    provenance: ES-ADR-029 section 9
+  - subject: ES:CONCEPT:agentic-ecosystem
+    predicate: operates-within
+    object: external:concept:context
+    status: candidate
+    provenance: ES-ADR-029 section 9
+  - subject: ES:CONCEPT:agentic-ecosystem
+    predicate: operates-within
+    object: external:concept:authority
+    status: candidate
+    provenance: ES-ADR-029 section 9
+  - subject: ES:CONCEPT:agentic-ecosystem
+    predicate: governed-by
+    object: external:concept:policy
+    status: candidate
+    provenance: ES-ADR-029 section 9
+  - subject: ES:CONCEPT:agentic-ecosystem
+    predicate: coordinates
+    object: external:concept:entity
+    status: candidate
+    provenance: ES-ADR-029 section 9
+  - subject: ES:CONCEPT:agentic-ecosystem
+    predicate: coordinates
+    object: external:concept:action
+    status: candidate
+    provenance: ES-ADR-029 section 9
+  - subject: ES:CONCEPT:agentic-ecosystem
+    predicate: produces
+    object: external:concept:outcome
+    status: candidate
+    provenance: ES-ADR-029 section 9
+  - subject: ES:CONCEPT:agentic-ecosystem
+    predicate: adapts-to
+    object: external:concept:context
+    status: candidate
+    provenance: ES-ADR-029 section 9
+
+agentic_autonomous_independence:
+  agentic_ecosystem_does_not_imply_autonomous_ecosystem: true
+  four_state_matrix:
+    - state: Ecosystem
+      agentic: no
+      autonomous: no
+    - state: Agentic Ecosystem
+      agentic: yes
+      autonomous: no
+    - state: Autonomous Ecosystem
+      agentic: no
+      autonomous: yes
+    - state: Agentic + Autonomous Ecosystem
+      agentic: yes
+      autonomous: yes
+
+ai_boundary:
+  agentic_ecosystem_requires_ai: false
+  ai_ecosystem_equals_agentic_ecosystem: false
+  automated_ecosystem_equals_agentic_ecosystem: false
+
+materiality_test:
+  not_sufficient_evidence:
+    - ecosystem_merely_containing_ai
+    - ecosystem_merely_containing_agent
+    - ecosystem_merely_using_automation
+    - single_system_behavior
+  sufficient_evidence:
+    - agentic_coordination_across_organizational_boundaries
+    - delegated_decisions_affecting_multiple_participants
+    - adaptive_interaction_among_participating_entities
+    - agent_mediated_service_or_value_coordination
+
+scope_integrity:
+  related_but_distinct:
+    - Agent
+    - Agentic System
+    - Agentic Operations
+    - Agentic Organization
+    - Agentic Enterprise
+  note: |
+    These are related semantic contexts, not a mandatory
+    inheritance hierarchy (per ES-CR-029 section 19).
+
+provenance:
+  source:
+    - ES-ADR-022
+    - ADR-WSF-28
+  decision:
+    - ES-ADR-029
+  implementation:
+    - CR-ES-029
+
+cardinal_rules:
+  - "Per ES-ADR-029 section 1: Agentic Ecosystem specializes WSF:ECOSYSTEM"
+  - "Per ES-ADR-029 section 10: AI is NOT required"
+  - "Per ES-ADR-029 section 5: material agentic behavior at ecosystem level required"
+  - "Per ES-CR-029 section 14: no local Ecosystem definition created"

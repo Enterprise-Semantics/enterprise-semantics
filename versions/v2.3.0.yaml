@@ -1,0 +1,36 @@
+# versions/v2.3.0.yaml ; v2.3.0 ; Enterprise-Semantics v2.3.0 release pointer
+#
+# Per ADR-ES-025 section 14 + CR-ES-025 section 14 ; this release
+# establishes the Agentic System specialization, conditional on
+# System being canonical (resolved per ADR-ES-027 + CR-ES-027).
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+release: v2.3.0
+date: 2026-09-25
+status: established
+governance: enterprise-semantics
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+included_releases:
+  - v2.2.0
+  - v2.3.0
+
+canonical_concepts:
+  - system
+  - agentic-system ; NEW ; per ADR-ES-025 + CR-ES-025 ; conditional on System
+
+orthogonality:
+  boundary: System
+  agentic: true ; v2.3.0
+  autonomous: deferred ; per ADR-ES-022 section 13 + ADR-ES-025 section 13
+
+provenance:
+  source:
+    - ADR-ES-022
+    - ADR-ES-025
+    - ADR-ES-027
+  decision:
+    - ADR-ES-025
+  implementation:
+    - CR-ES-025

@@ -1,0 +1,185 @@
+# coverage/candidate-register.yaml ;;; per CR-ES-022 section 4
+#
+# Semantic analysis of the 17-candidate register.
+# Each candidate has a disposition + rationale + dependency notes.
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+register_version: 1.0.0
+date: 2026-09-26
+authority: enterprise-semantics
+governing: CR-ES-022 section 4
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+candidates:
+
+  - name: Agentic Culture
+    disposition: canonical
+    status: DONE
+    resolution: ES-ADR-023 + CR-ES-023 ; Final (2026-09-26) ; base WSF:CULTURE
+    concept_repo: Enterprise-Semantics/concept-agentic-culture
+
+  - name: Autonomous Culture
+    disposition: canonical
+    status: DONE
+    resolution: ES-ADR-024 + CR-ES-024 ; Final (2026-09-26) ; base WSF:CULTURE
+    concept_repo: Enterprise-Semantics/concept-autonomous-culture
+
+  - name: Agentic System
+    disposition: canonical
+    status: DONE
+    resolution: ES-ADR-025 + CR-ES-025 ; Final ; base WSF:SYSTEM
+    concept_repo: Enterprise-Semantics/concept-agentic-system
+
+  - name: Autonomous System
+    disposition: canonical
+    status: DONE
+    resolution: ES-ADR-028 + CR-ES-028 ; Final ; base WSF:SYSTEM
+    concept_repo: Enterprise-Semantics/concept-autonomous-system
+
+  - name: Agentic Ecosystem
+    disposition: canonical
+    status: DONE
+    resolution: ES-ADR-029 + CR-ES-029 ; Final ; base WSF:ECOSYSTEM
+    concept_repo: Enterprise-Semantics/concept-agentic-ecosystem
+
+  - name: Autonomous Ecosystem
+    disposition: investigate
+    status: OPEN
+    rationale: |
+      Natural pair-completion of Agentic Ecosystem. Per ES-ADR-029
+      section 8, autonomy at ecosystem level requires separate semantic
+      justification (delegated authority across organizational boundaries
+      with no per-decision human involvement). Dependency: wsf:Ecosystem
+      is Baseline (ADR-WSF-28), so the foundation gate is already
+      satisfied. Next step: semantic grounding ADR/CR (ES-033 candidate).
+    dependencies: [ADR-WSF-28 (Baseline)]
+
+  - name: Agentic Network
+    disposition: investigate
+    status: OPEN
+    rationale: |
+      Requires a Network foundation. No wsf:Network declaration exists
+      in the WSF vocabulary (audited 2026-09-26) and no ES base Network
+      record exists. Same foundation-gap pattern as Service/Product
+      (Recon-ES-006). If pursued, needs a Recon + WSF foundation ADR
+      first. Question to resolve: is Network a distinct boundary or a
+      deployment topology attribute of System?
+    dependencies: [Recon-ES-007 (Network foundation) if pursued]
+
+  - name: Autonomous Network
+    disposition: investigate
+    status: OPEN
+    rationale: |
+      Blocked on the same Network foundation question as Agentic
+      Network. Additionally requires the autonomy justification per the
+      ES-ADR-028 pattern. Do not pursue before Agentic Network
+      disposition resolves.
+    dependencies: [Agentic Network disposition, Network foundation]
+
+  - name: Loop Engineering
+    disposition: profile
+    status: OPEN
+    rationale: |
+      An engineering discipline/practice (designing, operating, and
+      improving closed-loop systems), not a semantic concept in the ES
+      taxonomy. Best realized as a profile family over Closed Loop +
+      Operations + Capability, not a new canonical concept.
+    dependencies: [Closed Loop disposition]
+
+  - name: Closed Loop
+    disposition: investigate
+    status: OPEN
+    rationale: |
+      Control-theory concept (sense-decide-act-learn cycle with feedback).
+      Candidate canonical concept: it is semantically distinct from
+      Workflow (no feedback requirement) and Operations (no loop
+      requirement). Foundation question: does WSF need a wsf:ClosedLoop,
+      or is Closed Loop an ES-native pattern concept over
+      System + Feedback? Recommend Recon before grounding.
+    dependencies: [Recon-ES-008 (Closed Loop grounding) if pursued]
+
+  - name: Autonomous Closed Loop
+    disposition: investigate
+    status: OPEN
+    rationale: |
+      Specialization of Closed Loop. Blocked on Closed Loop
+      canonicalization. A closed loop that operates without human
+      intervention per cycle is close to the Autonomous System
+      definition scoped to loop behavior ; may collapse into Autonomous
+      System specialization rather than a distinct concept.
+    dependencies: [Closed Loop canonical]
+
+  - name: AI Closed Loop
+    disposition: investigate
+    status: OPEN
+    rationale: |
+      AI-qualified variant. Per the cardinal AI boundary rule (AI is
+      implementation technology, not semantic definition), an "AI Closed
+      Loop" is a Closed Loop realized with AI ; that is an example/profile
+      concern, not a new concept. Recommend disposition: reject as
+      canonical ; realize as example.
+    dependencies: [Closed Loop canonical]
+
+  - name: AI Agent
+    disposition: canonical
+    status: DONE
+    resolution: ai-agent.concept.yaml on main (pre-register era) ; concept repo concept-ai-agent
+    concept_repo: Enterprise-Semantics/concept-ai-agent
+
+  - name: Agentic AI
+    disposition: profile
+    status: OPEN
+    rationale: |
+      Describes AI systems exhibiting agentic behavior. Under the AI
+      boundary rule, this is a realization-quality statement about AI
+      systems, not a semantic concept distinct from Agent + AI Agent.
+      Best realized as a profile over AI Agent. Reject as canonical.
+    dependencies: []
+
+  - name: AIOps
+    disposition: profile
+    status: OPEN
+    rationale: |
+      Industry operational discipline (AI-assisted IT operations). A
+      practice/domain label, not a semantic concept. Realize as a profile
+      or example over Operations + AI realization. Vendor-neutral
+      treatment required per content rules.
+    dependencies: []
+
+  - name: MLOps
+    disposition: profile
+    status: OPEN
+    rationale: |
+      Industry discipline (ML lifecycle operations). Same reasoning as
+      AIOps: practice label, not a semantic concept. Profile or example.
+    dependencies: []
+
+  - name: AI-Native Operations
+    disposition: investigate
+    status: OPEN
+    rationale: |
+      Candidate specialization of Operations where AI is the native
+      operating substrate. Tension with the AI boundary rule: "AI-Native"
+      names implementation technology in the concept identity. Requires
+      semantic analysis of whether AI-native-ness is a semantic property
+      (changes what Operations IS) or a realization property (changes HOW
+      operations are implemented). If realization: reject as canonical,
+      realize as profile. If semantic: file grounding ADR/CR with
+      explicit AI-boundary justification.
+    dependencies: [Operations canonical (exists)]
+
+summary:
+  total: 17
+  canonical_done: 6
+  canonical_open: 0
+  investigate: 7
+  profile: 4
+  notes: |
+    6 of 17 resolved by the Culture/System/Ecosystem era tranches.
+    7 need investigation (Autonomous Ecosystem, Agentic Network,
+    Autonomous Network, Closed Loop, Autonomous Closed Loop,
+    AI Closed Loop, AI-Native Operations).
+    4 are practice/realization labels best served as profiles or
+    examples (Loop Engineering, Agentic AI, AIOps, MLOps).
+    Two new Recons identified if pursued: Recon-ES-007 (Network
+    foundation), Recon-ES-008 (Closed Loop grounding).

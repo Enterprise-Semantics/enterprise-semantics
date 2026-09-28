@@ -1,0 +1,13 @@
+# versions/v2.7.0.yaml ; ES-Network release pointer
+version: 2.7.0
+date: 2026-09-27
+status: established
+authority: Enterprise-Semantics
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+contains:
+  - Network Integration
+prior_release: v2.6.0
+provenance:
+  source: [ADR-WSF-37]
+  decision: [ES-ADR-034]
+  implementation: [CR-ES-034]

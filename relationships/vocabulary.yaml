@@ -759,3 +759,21 @@ autonomous_ecosystem_predicates:
   - produces
 autonomous_ecosystem_release_target: "2.6.0"
 autonomous_ecosystem_base_concept: WSF:ECOSYSTEM
+
+# ES-034 Network predicates (target v2.7.0) ; per ES-ADR-034 section 3
+network_predicates:
+  - specializes
+  - structural-property-of
+  - topology-distinct-from
+network_release_target: "2.7.0"
+network_base_concept: WSF:NETWORK
+
+# ES-035 Closed Loop predicates (target v2.8.0) ; per ES-ADR-035 section 3
+closed_loop_predicates:
+  - specializes
+  - distinct-from-workflow
+  - distinct-from-operations
+  - has-stage
+  - has-feedback
+closed_loop_release_target: "2.8.0"
+closed_loop_base_concept: WSF:CLOSED_LOOP

@@ -1,0 +1,48 @@
+# concepts/closed-loop.concept.yaml ; ES-035 ; base WSF:CLOSED_LOOP
+id: ES:CONCEPT:closed-loop
+canonical_name: Closed Loop
+concept_type: foundational-reference
+status: established
+version: 2.8.0
+date: 2026-09-27
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+base_concept: WSF:CLOSED_LOOP
+authority: WSF
+source_decision: ADR-WSF-38 (Baseline, WSF PR #19 MERGED 2026-09-27)
+es_integration: ES-ADR-035 + CR-ES-035
+definition: |
+  A Closed Loop is a control structure with four stages (sense, decide,
+  act, learn) connected by feedback such that the output of act influences
+  subsequent sense iterations. Per ADR-WSF-38 section 2.
+properties:
+  - sense_stage
+  - decide_stage
+  - act_stage
+  - learn_stage
+  - feedback_connection
+  - target_state
+  - policy
+relationships:
+  - subject: ES:CONCEPT:closed-loop
+    predicate: specializes
+    object: external:concept:WSF:CLOSED_LOOP
+    status: established
+  - subject: ES:CONCEPT:closed-loop
+    predicate: distinct-from-workflow
+    object: external:concept:workflow
+    status: established
+  - subject: ES:CONCEPT:closed-loop
+    predicate: distinct-from-operations
+    object: external:concept:operations
+    status: established
+agentic_autonomous_independence:
+  closed_loop_does_not_imply_autonomous_closed_loop: true
+ai_boundary:
+  not_required: true
+  ai_closed_loop_is_canonical_reject: true
+  ai_closed_loop_realized_as_example: true
+provenance:
+  source: [ADR-WSF-38]
+  decision: [ES-ADR-035]
+  implementation: [CR-ES-035]

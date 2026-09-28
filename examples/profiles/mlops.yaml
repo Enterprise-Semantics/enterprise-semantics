@@ -1,0 +1,10 @@
+id: ES:EXAMPLE:mlops
+canonical_name: MLOps Profile Example
+status: Established
+version: 1.0.0
+date: 2026-09-27
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+applies_to_profile: mlops
+base_concept: ES:CONCEPT:operations
+disposition: profile (canonical-reject per AI boundary rule)
+vendor_neutral: true

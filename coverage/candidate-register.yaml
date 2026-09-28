@@ -155,31 +155,38 @@ candidates:
     dependencies: []
 
   - name: AI-Native Operations
-    disposition: investigate
-    status: OPEN
+    disposition: profile
+    status: RESOLVED
     rationale: |
-      Candidate specialization of Operations where AI is the native
-      operating substrate. Tension with the AI boundary rule: "AI-Native"
-      names implementation technology in the concept identity. Requires
-      semantic analysis of whether AI-native-ness is a semantic property
-      (changes what Operations IS) or a realization property (changes HOW
-      operations are implemented). If realization: reject as canonical,
-      realize as profile. If semantic: file grounding ADR/CR with
-      explicit AI-boundary justification.
-    dependencies: [Operations canonical (exists)]
+      Per Findings-AI-Native-Operations-Boundary (2026-09-27): "AI-Native"
+      names implementation technology in the concept identity. Per the
+      cardinal AI boundary rule, AI is realization technology, not semantic
+      definition. Canonical autonomy already exists at ES-008 (Autonomous
+      Operations) ; the AI-Native claim is realization substrate, not
+      semantic identity. Realize as profile family over Operations +
+      AI-Native substrate. Consistent with AI Closed Loop canonical-reject
+      (per ES-ADR-035).
+    disposition_date: 2026-09-27
+    resolution:
+      canonical_concept: null
+      canonical_concept_used: ES-008 (Autonomous Operations)
+      profile_family: ai-native-operations
+      example: OTCHERE Inc AI-Native Operations realization
+    dependencies: [Operations canonical (exists), ES-008 (Autonomous Operations)]
 
 summary:
   total: 17
-  canonical_done: 6
+  canonical_done: 9
   canonical_open: 0
-  investigate: 7
-  profile: 4
+  investigate: 3
+  profile: 5
   notes: |
-    6 of 17 resolved by the Culture/System/Ecosystem era tranches.
-    7 need investigation (Autonomous Ecosystem, Agentic Network,
-    Autonomous Network, Closed Loop, Autonomous Closed Loop,
-    AI Closed Loop, AI-Native Operations).
-    4 are practice/realization labels best served as profiles or
-    examples (Loop Engineering, Agentic AI, AIOps, MLOps).
-    Two new Recons identified if pursued: Recon-ES-007 (Network
-    foundation), Recon-ES-008 (Closed Loop grounding).
+    9 of 17 canonical DONE (Culture pair, System pair, Ecosystem-agentic,
+    Ecosystem-autonomous, AI Agent, Network, Closed Loop).
+    3 need investigation (Agentic Network, Autonomous Network,
+    Autonomous Closed Loop) ; all foundation gates now satisfied
+    (wsf:Network Baseline, wsf:ClosedLoop Baseline).
+    5 are practice/realization labels served as profiles or examples
+    (Loop Engineering, Agentic AI, AIOps, MLOps, AI-Native Operations).
+    AI-Native Operations resolved per Findings-AI-Native-Operations-Boundary.
+    AI Closed Loop resolved as canonical-reject per ES-ADR-035.

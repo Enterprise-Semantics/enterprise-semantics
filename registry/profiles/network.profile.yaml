@@ -1,0 +1,29 @@
+# registry/profiles/network.profile.yaml ;;; Network ;;; ES-034
+id: network
+canonical_name: Network
+version: 2.7.0
+status: established
+date: 2026-09-27
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+base_concept: WSF:NETWORK
+authority: WSF
+source_decision: ADR-WSF-37
+es_integration: ES-ADR-034 + CR-ES-034
+profile_type: network
+applies_to_concept: ES:CONCEPT:network
+canonical_definitions:
+  network: |
+    Per ADR-WSF-37 section 2.
+boundary_assertions:
+  - foundational_reference_to_wsf: true
+conformance_tests:
+  positive:
+    - foundational_canonical_in_wsf
+    - es_specialization_references_wsf
+  negative:
+    - es_redefines_wsf_rejected
+provenance:
+  source: [ADR-WSF-37]
+  decision: [ES-ADR-034]
+  implementation: [CR-ES-034]

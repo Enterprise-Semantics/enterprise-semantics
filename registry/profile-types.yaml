@@ -173,3 +173,14 @@ profile_types:
     governance: enterprise-semantics
     base_concept: WSF:ECOSYSTEM
     source_decision: ES-ADR-033
+  - id: network
+    name: Network
+    governance: enterprise-semantics
+    base_concept: WSF:NETWORK
+    source_decision: ES-ADR-034
+
+  - id: closed-loop
+    name: Closed Loop
+    governance: enterprise-semantics
+    base_concept: WSF:CLOSED_LOOP
+    source_decision: ES-ADR-035

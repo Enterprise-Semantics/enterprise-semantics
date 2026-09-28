@@ -860,3 +860,26 @@ autonomous_closed_loop_predicates:
 autonomous_closed_loop_release_target: "2.11.0"
 autonomous_closed_loop_semantic_kind: behavioral_pattern_specialization
 autonomous_closed_loop_base_concept: ES:CONCEPT:closed-loop
+
+
+# Disposition Recon profile predicates (canonical-reject candidates) ;;; per ES-036..041
+disposition_recon_predicates:
+  ai-closed-loop:
+    - closed-loop-with-ai-realization
+    - realization-substrate-not-semantic-identity
+  ai-agent:
+    - ai-implements-interpretation
+    - ai-implements-decision-selection
+    - ai-implements-action-selection
+  agentic-ai:
+    - ai-with-agentic-behavior
+    - realization-substrate-not-semantic-identity
+  aiops:
+    - ai-assisted-operations
+    - vendor-neutral
+  mlops:
+    - ml-lifecycle
+    - vendor-neutral
+  ai-native-operations:
+    - ai-native-substrate
+    - realization-substrate-not-semantic-identity

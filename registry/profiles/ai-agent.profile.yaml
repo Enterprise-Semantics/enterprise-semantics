@@ -1,21 +1,21 @@
-# registry/profiles/mlops.profile.yaml ;;; MLOps ;;; ES-040
-id: mlops
-canonical_name: MLOps
+# registry/profiles/ai-agent.profile.yaml ;;; AI Agent ;;; ES-037
+id: ai-agent
+canonical_name: AI Agent
 version: 1.0.0
 status: Established
 date: 2026-09-28
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
-base_concept: ES:CONCEPT:operations
+base_concept: ES:CONCEPT:agent
 authority: ES
-profile_type: mlops
-applies_to_concept: ES:CONCEPT:operations
-disposition: engineering/operations discipline ;;; profile family over Operations + ML lifecycle realization (ES-040 Disposition Recon)
-realization_substrate: ml-lifecycle
+profile_type: ai-agent
+applies_to_concept: ES:CONCEPT:ai-agent
+disposition: technology-qualified Agent ;;; implementation specialization profile (ES-037 Disposition Recon)
+realization_substrate: ai
 canonical_definition: |
-    Profile family over Operations where ML lifecycle (training, deployment, monitoring) is the realization substrate. Per ES-ADR-040: MLOps != Operations, MLOps != AIOps. Vendor-neutral.
+    Profile family over Agent with AI as the interpretation/decision/action-selection realization substrate. Per the AI boundary rule, this is implementation technology, not semantic definition.
 rationale: |
-    Per ES-ADR-040. Engineering discipline.
+    Per ES-ADR-037 section 1. Agentic != AI. Agent != AI Agent.
 boundary_assertions:
   - profile_not_canonical: true
   - consistent_with_ai_boundary_rule: true
@@ -32,5 +32,5 @@ conformance_tests:
     - canonical_ai_term_rejected
 provenance:
   source: [Findings-AI-Native-Operations-Boundary, ES-022 register analysis]
-  decision: [ES-ADR-040]
-  implementation: [ES-CR-040]
+  decision: [ES-ADR-037]
+  implementation: [ES-CR-037]

@@ -1,0 +1,11 @@
+id: ES:EXAMPLE:ai-closed-loop
+canonical_name: OTCHERE Inc ;;; AI Closed Loop Profile (canonical-reject)
+status: Established
+version: 1.0.0
+date: 2026-09-28
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+applies_to_profile: ai-closed-loop
+base_concept: ES:CONCEPT:closed-loop
+realization_substrate: ai-realization
+disposition: profile (canonical-reject per AI boundary rule)

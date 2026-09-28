@@ -2,7 +2,7 @@
 id: closed-loop
 canonical_name: Closed Loop
 version: 2.8.0
-status: established
+status: Baseline
 date: 2026-09-27
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics

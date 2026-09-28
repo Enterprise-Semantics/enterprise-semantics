@@ -750,7 +750,7 @@ agentic_ecosystem_predicates:
 agentic_ecosystem_release_target: "2.5.0"
 agentic_ecosystem_base_concept: WSF:ECOSYSTEM
 
-# ES-033 Autonomous Ecosystem predicates (target v2.6.0) ; per ES-ADR-033 section 5
+# ES-030 Autonomous Ecosystem predicates (target v2.6.0) ; per ES-ADR-030 section 5
 autonomous_ecosystem_predicates:
   - specializes
   - governed-by

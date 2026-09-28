@@ -1,6 +1,6 @@
 # concepts/autonomous-ecosystem.concept.yaml ; Autonomous Ecosystem specialization
 #
-# Per ES-ADR-033 + CR-ES-033 (slots 0039 + 0043).
+# Per ES-ADR-030 + CR-ES-030 (slots 0039 + 0043).
 # Base concept: WSF:ECOSYSTEM (wsf:Ecosystem at Baseline per ADR-WSF-28).
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 
@@ -16,7 +16,7 @@ governance: enterprise-semantics
 base_concept: WSF:ECOSYSTEM
 authority: WSF
 source_decision: ADR-WSF-28 (Baseline, PR #14 MERGED 2026-09-26)
-es_integration: ES-ADR-033 + CR-ES-033
+es_integration: ES-ADR-030 + CR-ES-030
 
 definition: |
   An Autonomous Ecosystem is an Ecosystem in which coordination,
@@ -25,7 +25,7 @@ definition: |
   declared policy boundaries, authority delegations, and escalation
   paths.
 
-  Per ES-ADR-033 section 2 (canonical definition). Autonomy pattern
+  Per ES-ADR-030 section 2 (canonical definition). Autonomy pattern
   per ES-ADR-028 (Autonomous System) scoped to ecosystem level.
 
 properties:
@@ -44,27 +44,27 @@ relationships:
     predicate: specializes
     object: external:concept:WSF:ECOSYSTEM
     status: established
-    provenance: ES-ADR-033
+    provenance: ES-ADR-030
   - subject: ES:CONCEPT:autonomous-ecosystem
     predicate: governed-by
     object: external:concept:policy
     status: candidate
-    provenance: ES-ADR-033 section 5
+    provenance: ES-ADR-030 section 5
   - subject: ES:CONCEPT:autonomous-ecosystem
     predicate: coordinates
     object: external:concept:entity
     status: candidate
-    provenance: ES-ADR-033 section 5
+    provenance: ES-ADR-030 section 5
   - subject: ES:CONCEPT:autonomous-ecosystem
     predicate: adapts-to
     object: external:concept:context
     status: candidate
-    provenance: ES-ADR-033 section 5
+    provenance: ES-ADR-030 section 5
   - subject: ES:CONCEPT:autonomous-ecosystem
     predicate: produces
     object: external:concept:outcome
     status: candidate
-    provenance: ES-ADR-033 section 5
+    provenance: ES-ADR-030 section 5
 
 agentic_autonomous_independence:
   autonomous_ecosystem_does_not_imply_agentic_ecosystem: true
@@ -109,6 +109,6 @@ provenance:
     - ES-ADR-022
     - ADR-WSF-28
   decision:
-    - ES-ADR-033
+    - ES-ADR-030
   implementation:
-    - CR-ES-033
+    - CR-ES-030

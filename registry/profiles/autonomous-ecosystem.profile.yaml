@@ -1,4 +1,4 @@
-# registry/profiles/autonomous-ecosystem.profile.yaml ; ES-033 ; 22nd profile
+# registry/profiles/autonomous-ecosystem.profile.yaml ; ES-030 ; 22nd profile
 id: autonomous-ecosystem
 canonical_name: Autonomous Ecosystem
 version: 2.6.0
@@ -10,7 +10,7 @@ governance: enterprise-semantics
 base_concept: WSF:ECOSYSTEM
 authority: WSF
 source_decision: ADR-WSF-28
-es_integration: ES-ADR-033 + CR-ES-033
+es_integration: ES-ADR-030 + CR-ES-030
 
 profile_type: autonomous-ecosystem
 dimension: autonomous
@@ -47,5 +47,5 @@ conformance_tests:
 
 provenance:
   source: [ES-ADR-022, ADR-WSF-28]
-  decision: [ES-ADR-033]
-  implementation: [CR-ES-033]
+  decision: [ES-ADR-030]
+  implementation: [CR-ES-030]

@@ -1,4 +1,4 @@
-# versions/v2.6.0.yaml ; ES-033 Autonomous Ecosystem release pointer
+# versions/v2.6.0.yaml ; ES-030 Autonomous Ecosystem release pointer
 version: 2.6.0
 date: 2026-09-27
 status: established
@@ -6,12 +6,12 @@ authority: Enterprise-Semantics
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 
 contains:
-  - ES-033 ; Autonomous Ecosystem Semantic Grounding
+  - ES-030 ; Autonomous Ecosystem Semantic Grounding
   - base_concept: WSF:ECOSYSTEM (ADR-WSF-28, Baseline)
 
 prior_release: v2.5.0
 
 provenance:
   source: [ES-ADR-022, ADR-WSF-28]
-  decision: [ES-ADR-033]
-  implementation: [CR-ES-033]
+  decision: [ES-ADR-030]
+  implementation: [CR-ES-030]

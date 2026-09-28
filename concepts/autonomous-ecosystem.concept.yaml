@@ -1,0 +1,114 @@
+# concepts/autonomous-ecosystem.concept.yaml ; Autonomous Ecosystem specialization
+#
+# Per ES-ADR-033 + CR-ES-033 (slots 0039 + 0043).
+# Base concept: WSF:ECOSYSTEM (wsf:Ecosystem at Baseline per ADR-WSF-28).
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:CONCEPT:autonomous-ecosystem
+canonical_name: Autonomous Ecosystem
+concept_type: autonomous-ecosystem-specialization
+status: Candidate
+version: 2.6.0
+date: 2026-09-27
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+base_concept: WSF:ECOSYSTEM
+authority: WSF
+source_decision: ADR-WSF-28 (Baseline, PR #14 MERGED 2026-09-26)
+es_integration: ES-ADR-033 + CR-ES-033
+
+definition: |
+  An Autonomous Ecosystem is an Ecosystem in which coordination,
+  adaptation, or value-realization behavior among participating
+  entities operates without per-decision human involvement, within
+  declared policy boundaries, authority delegations, and escalation
+  paths.
+
+  Per ES-ADR-033 section 2 (canonical definition). Autonomy pattern
+  per ES-ADR-028 (Autonomous System) scoped to ecosystem level.
+
+properties:
+  - ecosystem_intent
+  - ecosystem_scope
+  - autonomy_scope
+  - policy_boundaries
+  - authority_delegations
+  - escalation_paths
+  - coordination_scope
+  - adaptation_scope
+  - outcome_scope
+
+relationships:
+  - subject: ES:CONCEPT:autonomous-ecosystem
+    predicate: specializes
+    object: external:concept:WSF:ECOSYSTEM
+    status: established
+    provenance: ES-ADR-033
+  - subject: ES:CONCEPT:autonomous-ecosystem
+    predicate: governed-by
+    object: external:concept:policy
+    status: candidate
+    provenance: ES-ADR-033 section 5
+  - subject: ES:CONCEPT:autonomous-ecosystem
+    predicate: coordinates
+    object: external:concept:entity
+    status: candidate
+    provenance: ES-ADR-033 section 5
+  - subject: ES:CONCEPT:autonomous-ecosystem
+    predicate: adapts-to
+    object: external:concept:context
+    status: candidate
+    provenance: ES-ADR-033 section 5
+  - subject: ES:CONCEPT:autonomous-ecosystem
+    predicate: produces
+    object: external:concept:outcome
+    status: candidate
+    provenance: ES-ADR-033 section 5
+
+agentic_autonomous_independence:
+  autonomous_ecosystem_does_not_imply_agentic_ecosystem: true
+  four_state_matrix:
+    - state: Ecosystem
+      agentic: no
+      autonomous: no
+    - state: Agentic Ecosystem
+      agentic: yes
+      autonomous: no
+    - state: Autonomous Ecosystem
+      agentic: no
+      autonomous: yes
+    - state: Agentic + Autonomous Ecosystem
+      agentic: yes
+      autonomous: yes
+
+ai_boundary:
+  autonomous_ecosystem_requires_ai: false
+  ai_ecosystem_equals_autonomous_ecosystem: false
+  automated_ecosystem_equals_autonomous_ecosystem: false
+
+materiality_test:
+  not_sufficient_evidence:
+    - ecosystem_merely_containing_automation
+    - ecosystem_merely_containing_autonomous_systems
+    - ecosystem_level_monitoring_without_autonomous_action
+  sufficient_evidence:
+    - autonomous_coordination_decisions_affecting_multiple_participants
+    - policy_boundary_adaptation_without_per_decision_human_approval
+    - autonomous_value_realization_rebalancing_among_participants
+
+scope_integrity:
+  related_but_distinct:
+    - Autonomous System
+    - Autonomous Organization
+    - Autonomous Operations
+    - Agentic Ecosystem
+
+provenance:
+  source:
+    - ES-ADR-022
+    - ADR-WSF-28
+  decision:
+    - ES-ADR-033
+  implementation:
+    - CR-ES-033

@@ -167,3 +167,9 @@ profile_types:
     governance: enterprise-semantics
     base_concept: WSF:ECOSYSTEM
     source_decision: ES-ADR-029
+
+  - id: autonomous-ecosystem
+    name: Autonomous Ecosystem
+    governance: enterprise-semantics
+    base_concept: WSF:ECOSYSTEM
+    source_decision: ES-ADR-033

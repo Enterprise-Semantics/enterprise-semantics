@@ -1,0 +1,82 @@
+# concepts/loop-engineering.concept.yaml ;;; Loop Engineering ;;; ES-033
+#
+# Per ES-ADR-033 + CR-ES-033.
+# semantic_kind: engineering_practice (NOT a specialization of any concept).
+# Status: Established.
+
+id: ES:CONCEPT:loop-engineering
+canonical_name: Loop Engineering
+concept_type: engineering-practice
+status: Established
+version: 2.9.0
+date: 2026-09-28
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+base_concept: null
+note_no_specialization: |
+  Loop Engineering is an engineering_practice (ES-ADR-033 section 1).
+  It is NOT a specialization of System, Process, Workflow, Operation,
+  or Loop. It represents an engineering discipline/practice concerned
+  with creating and governing feedback-driven behavior.
+source_decision: ES-ADR-033
+es_integration: ES-ADR-033 + CR-ES-033
+definition: |
+  Loop Engineering is the disciplined design and continuous
+  improvement of sensing, interpretation, decision, action, outcome
+  observation, and adaptation loops that enable a system, operation,
+  service, process, network, or other bounded context to respond to
+  changing conditions and pursue intended outcomes.
+
+  Per ES-ADR-033 section 2.
+properties:
+  - objective
+  - context
+  - observation_scope
+  - decision_scope
+  - action_scope
+  - feedback_scope
+  - adaptation_scope
+  - intervention_model
+  - escalation_boundary
+  - measurement_model
+  - governance_context
+  - constraint_context
+relationships:
+  - subject: ES:CONCEPT:loop-engineering
+    predicate: designs
+    object: external:concept:closed-loop
+    status: established
+    provenance: ES-ADR-033 section 5 ; ES-ADR-034 section 9
+  - subject: ES:CONCEPT:loop-engineering
+    predicate: improves
+    object: external:concept:closed-loop
+    status: established
+    provenance: ES-ADR-033 section 5 ; ES-ADR-034 section 9
+  - subject: ES:CONCEPT:loop-engineering
+    predicate: evaluates
+    object: external:concept:outcome
+    status: established
+    provenance: CR-ES-033 section 3
+  - subject: ES:CONCEPT:loop-engineering
+    predicate: uses
+    object: external:concept:context
+    status: established
+    provenance: CR-ES-033 section 3
+  - subject: ES:CONCEPT:loop-engineering
+    predicate: defines
+    object: external:concept:objective
+    status: established
+    provenance: CR-ES-033 section 3
+agentic_autonomous_independence:
+  loop_engineering_does_not_imply_agentic: true
+  loop_engineering_does_not_imply_autonomous: true
+  agentic_loop_engineering: uses agentic behavior in loop design or execution
+  autonomous_loop_engineering: engineers independent loop progression
+  agentic_autonomous_loop_engineering: combines both
+ai_boundary:
+  loop_engineering_requires_ai: false
+  loop_engineering_requires_automation: false
+provenance:
+  source: [ES-ADR-022]
+  decision: [ES-ADR-033]
+  implementation: [CR-ES-033]

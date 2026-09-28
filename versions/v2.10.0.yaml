@@ -1,0 +1,16 @@
+# versions/v2.10.0.yaml ;;; ES-034 release pointer
+version: 2.10.0
+date: 2026-09-28
+status: established
+authority: Enterprise-Semantics
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+contains:
+  - ES-034 ;;; Closed Loop
+  - decision: ES-ADR-034
+
+prior_release: v2.9.0
+
+provenance:
+  source: [ADR-WSF-37, ADR-WSF-38]
+  decision: [ES-ADR-034]

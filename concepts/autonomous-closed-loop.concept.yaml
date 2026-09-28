@@ -1,0 +1,98 @@
+# concepts/autonomous-closed-loop.concept.yaml ;;; Autonomous Closed Loop ;;; ES-035
+#
+# Per ES-ADR-035 + CR-ES-035.
+# semantic_kind: behavioral_pattern_specialization of ES-034 (Closed Loop behavioral_pattern).
+# Status: Established.
+
+id: ES:CONCEPT:autonomous-closed-loop
+canonical_name: Autonomous Closed Loop
+concept_type: behavioral-pattern-specialization
+status: Established
+version: 2.11.0
+date: 2026-09-28
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+base_concept: ES:CONCEPT:closed-loop
+source_decision: ES-ADR-035
+es_integration: ES-ADR-035 + CR-ES-035
+definition: |
+  An Autonomous Closed Loop is a Closed Loop capable of independently
+  progressing through observation, interpretation, decision, action,
+  outcome evaluation, and adaptation toward defined objectives within
+  specified authority, policies, constraints, and governance boundaries,
+  without requiring human intervention for every loop decision or action.
+
+  Per ES-ADR-035 section 2.
+properties:
+  - objective
+  - autonomy_scope
+  - decision_scope
+  - action_scope
+  - adaptation_scope
+  - authority_context
+  - policy_context
+  - constraint_context
+  - governance_context
+  - intervention_model
+  - escalation_boundary
+  - observation_scope
+  - feedback_scope
+  - outcome_scope
+relationships:
+  - subject: ES:CONCEPT:autonomous-closed-loop
+    predicate: specializes
+    object: external:concept:closed-loop
+    status: established
+    provenance: ES-ADR-035 section 3
+  - subject: ES:CONCEPT:autonomous-closed-loop
+    predicate: pursues
+    object: external:concept:objective
+    status: established
+    provenance: ES-ADR-035 section 9
+  - subject: ES:CONCEPT:autonomous-closed-loop
+    predicate: operates-within
+    object: external:concept:authority
+    status: established
+    provenance: ES-ADR-035 section 9
+  - subject: ES:CONCEPT:autonomous-closed-loop
+    predicate: governed-by
+    object: external:concept:policy
+    status: established
+    provenance: ES-ADR-035 section 9
+  - subject: ES:CONCEPT:autonomous-closed-loop
+    predicate: constrained-by
+    object: external:concept:constraint
+    status: established
+    provenance: ES-ADR-035 section 9
+  - subject: ES:CONCEPT:autonomous-closed-loop
+    predicate: adapts-to
+    object: external:concept:context
+    status: established
+    provenance: ES-ADR-035 section 9
+  - subject: ES:CONCEPT:autonomous-closed-loop
+    predicate: produces
+    object: external:concept:outcome
+    status: established
+    provenance: ES-ADR-035 section 9
+agentic_autonomous_independence:
+  autonomous_closed_loop_does_not_imply_agentic_closed_loop: true
+  agentic_closed_loop_does_not_imply_autonomous_closed_loop: true
+  four_state_characterization:
+    - conventional
+    - agentic_closed_loop_deferred
+    - autonomous_closed_loop
+    - agentic_autonomous_closed_loop_deferred
+ai_boundary:
+  autonomous_closed_loop_requires_ai: false
+  implementation_modes:
+    - deterministic_control
+    - optimization
+    - rules
+    - machine_learning
+    - ai
+    - agents
+    - hybrid
+provenance:
+  source: [ES-ADR-022, ES-ADR-034]
+  decision: [ES-ADR-035]
+  implementation: [CR-ES-035]

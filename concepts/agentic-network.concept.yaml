@@ -1,0 +1,112 @@
+# concepts/agentic-network.concept.yaml ;; Agentic Network ;; ES-031
+#
+# Per ES-ADR-031 + CR-ES-031.
+# Specializes canonical Network (wsf:Network Tier 3 Baseline per ADR-WSF-37).
+# Status: Established (validator-accepted lifecycle vocabulary).
+
+id: ES:CONCEPT:agentic-network
+canonical_name: Agentic Network
+concept_type: canonical-specialization
+status: Established
+version: 2.7.0
+date: 2026-09-28
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+base_concept: WSF:NETWORK
+authority: WSF
+source_decision: ADR-WSF-37 (Baseline, WSF PR #19 MERGED 2026-09-27)
+es_integration: ES-ADR-031 + CR-ES-031
+definition: |
+  An Agentic Network is a Network in which material interaction,
+  coordination, decision-making, routing, adaptation, or execution
+  incorporates agentic behavior to interpret delegated intent, select
+  or coordinate actions, or adapt behavior toward intended outcomes
+  within defined authority, policy, and contextual boundaries.
+  Per ES-ADR-031 section 2.
+properties:
+  - network_intent
+  - network_scope
+  - agentic_scope
+  - delegated_intent
+  - authority_context
+  - interaction_scope
+  - decision_scope
+  - coordination_scope
+  - routing_scope
+  - adaptation_scope
+  - intervention_model
+  - escalation_boundary
+  - observation_scope
+  - outcome_scope
+relationships:
+  - subject: ES:CONCEPT:agentic-network
+    predicate: specializes
+    object: external:concept:WSF:NETWORK
+    status: established
+    provenance: ES-ADR-031
+  - subject: ES:CONCEPT:agentic-network
+    predicate: engages
+    object: external:concept:entity
+    status: established
+    provenance: ES-ADR-031 section 6
+  - subject: ES:CONCEPT:agentic-network
+    predicate: engages
+    object: external:concept:agent
+    status: established
+    provenance: ES-ADR-031 section 6
+  - subject: ES:CONCEPT:agentic-network
+    predicate: interprets
+    object: external:concept:intent
+    status: established
+    provenance: ES-ADR-031 section 6
+  - subject: ES:CONCEPT:agentic-network
+    predicate: coordinates
+    object: external:concept:action
+    status: established
+    provenance: ES-ADR-031 section 6
+  - subject: ES:CONCEPT:agentic-network
+    predicate: adapts-to
+    object: external:concept:context
+    status: established
+    provenance: ES-ADR-031 section 6
+  - subject: ES:CONCEPT:agentic-network
+    predicate: produces
+    object: external:concept:outcome
+    status: established
+    provenance: ES-ADR-031 section 6
+agentic_autonomous_independence:
+  agentic_network_does_not_imply_autonomous_network: true
+  four_state_matrix:
+    - state: Network
+      agentic: no
+      autonomous: no
+    - state: Agentic Network
+      agentic: yes
+      autonomous: no
+    - state: Autonomous Network
+      agentic: no
+      autonomous: yes
+    - state: Agentic + Autonomous Network
+      agentic: yes
+      autonomous: yes
+ai_boundary:
+  agentic_network_requires_ai: false
+  ai_network_equals_agentic_network: false
+  automated_network_equals_agentic_network: false
+materiality_test:
+  not_sufficient:
+    - one_participant_contains_agent
+    - one_node_is_agentic_system
+    - one_service_is_agentic
+    - network_merely_exposes_apis
+    - network_merely_automates_routing
+  sufficient:
+    - agentic_behavior_materially_affects_network_interaction
+    - agentic_decision_making_at_network_level
+    - agentic_coordination_at_network_level
+    - agentic_routing_at_network_level
+    - agentic_adaptation_at_network_level
+provenance:
+  source: [ES-ADR-022, ADR-WSF-37]
+  decision: [ES-ADR-031]
+  implementation: [CR-ES-031]

@@ -184,3 +184,14 @@ profile_types:
     governance: enterprise-semantics
     base_concept: WSF:CLOSED_LOOP
     source_decision: ES-ADR-035
+  - id: loop-engineering
+    name: Loop Engineering
+    governance: enterprise-semantics
+    disposition: profile (canonical-reject)
+    base_concept: WSF:CLOSED_LOOP
+
+  - id: ai-native-operations
+    name: AI-Native Operations
+    governance: enterprise-semantics
+    disposition: profile (canonical-reject per AI boundary rule)
+    base_concept: ES:CONCEPT:operations

@@ -777,3 +777,26 @@ closed_loop_predicates:
   - has-feedback
 closed_loop_release_target: "2.8.0"
 closed_loop_base_concept: WSF:CLOSED_LOOP
+
+
+# Profile family predicates (canonical-reject candidates) ;;; per profile-disposition-batch 2026-09-27
+profile_family_predicates:
+  loop-engineering:
+    - designs
+    - operates
+    - improves
+    - realizes-closed-loop
+    - applies-capability
+    - improves-operations
+  agentic-ai:
+    - realizes-agentic-behavior
+    - specialization-of-ai-agent
+  aiops:
+    - ai-assisted-operations
+    - vendor-neutral
+  mlops:
+    - ml-lifecycle
+    - vendor-neutral
+  ai-native-operations:
+    - ai-native-substrate
+    - realization-not-semantic-identity

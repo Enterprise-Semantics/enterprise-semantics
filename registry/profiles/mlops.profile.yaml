@@ -1,0 +1,33 @@
+# registry/profiles/mlops.profile.yaml ;;; MLOps ;;; canonical-reject per AI boundary rule
+id: mlops
+canonical_name: MLOps
+version: 1.0.0
+status: Established
+date: 2026-09-27
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+base_concept: ES:CONCEPT:operations
+authority: WSF/ES
+profile_type: mlops
+applies_to_concept: ES:CONCEPT:operations
+disposition: profile (canonical-reject per AI boundary rule)
+canonical_definition: |
+    A profile for ML lifecycle operations (vendor-neutral). Practice/realization label, not a semantic concept.
+rationale: |
+    Per Findings-AI-Native-Operations-Boundary
+boundary_assertions:
+  - practice_or_realization_label_not_canonical: true
+  - consistent_with_ai_boundary_rule: true
+conformance_tests:
+  positive:
+    - applies_to_canonical_base
+    - vendor_neutral_treatment
+    - realization_substrate_not_semantic_identity
+  negative:
+    - canonical_concept_creation_rejected
+    - vendor_lock_in_rejected
+    - ai_boundary_violation_rejected
+provenance:
+  source: [Findings-AI-Native-Operations-Boundary]
+  decision: [candidate register CR-ES-022 section 4, disposition analysis]
+  implementation: [profile-disposition-batch 2026-09-27]

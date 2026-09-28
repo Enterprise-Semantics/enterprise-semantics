@@ -176,10 +176,12 @@ candidates:
 
 summary:
   total: 17
-  canonical_done: 9
+  canonical_done: 14
   canonical_open: 0
-  investigate: 3
+  investigate: 0
   profile: 5
+  network_pair: 2 (Agentic Network + Autonomous Network ;;; ES-031 + ES-032 Final)
+  loop_stack: 3 (Loop Engineering + Closed Loop + Autonomous Closed Loop ;;; ES-033 + ES-034 + ES-035 Final)
   notes: |
     9 of 17 canonical DONE (Culture pair, System pair, Ecosystem-agentic,
     Ecosystem-autonomous, AI Agent, Network, Closed Loop).

@@ -1,0 +1,126 @@
+# concepts/autonomous-network.concept.yaml ;; Autonomous Network ;; ES-032
+#
+# Per ES-ADR-032 + CR-ES-032.
+# Specializes canonical Network (wsf:Network Tier 3 Baseline per ADR-WSF-37).
+# Status: Established.
+
+id: ES:CONCEPT:autonomous-network
+canonical_name: Autonomous Network
+concept_type: canonical-specialization
+status: Established
+version: 2.8.0
+date: 2026-09-28
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+base_concept: WSF:NETWORK
+authority: WSF
+source_decision: ADR-WSF-37 (Baseline, WSF PR #19 MERGED 2026-09-27)
+es_integration: ES-ADR-032 + CR-ES-032
+definition: |
+  An Autonomous Network is a Network capable of independently
+  progressing through decisions, coordination, routing, actions,
+  and adaptation toward defined objectives within specified
+  authority, policies, constraints, and governance boundaries,
+  without requiring human intervention for every network-level
+  decision or action.
+  Per ES-ADR-032 section 2.
+properties:
+  - network_objective
+  - network_scope
+  - autonomy_scope
+  - decision_scope
+  - action_scope
+  - coordination_scope
+  - routing_scope
+  - adaptation_scope
+  - authority_context
+  - policy_context
+  - constraint_context
+  - governance_context
+  - intervention_model
+  - escalation_boundary
+  - observation_scope
+  - outcome_scope
+relationships:
+  - subject: ES:CONCEPT:autonomous-network
+    predicate: specializes
+    object: external:concept:WSF:NETWORK
+    status: established
+    provenance: ES-ADR-032
+  - subject: ES:CONCEPT:autonomous-network
+    predicate: pursues
+    object: external:concept:objective
+    status: established
+    provenance: ES-ADR-032 section 9
+  - subject: ES:CONCEPT:autonomous-network
+    predicate: operates-within
+    object: external:concept:authority
+    status: established
+    provenance: ES-ADR-032 section 9
+  - subject: ES:CONCEPT:autonomous-network
+    predicate: governed-by
+    object: external:concept:policy
+    status: established
+    provenance: ES-ADR-032 section 9
+  - subject: ES:CONCEPT:autonomous-network
+    predicate: constrained-by
+    object: external:concept:constraint
+    status: established
+    provenance: ES-ADR-032 section 9
+  - subject: ES:CONCEPT:autonomous-network
+    predicate: engages
+    object: external:concept:entity
+    status: established
+    provenance: ES-ADR-032 section 9
+  - subject: ES:CONCEPT:autonomous-network
+    predicate: coordinates
+    object: external:concept:action
+    status: established
+    provenance: ES-ADR-032 section 9
+  - subject: ES:CONCEPT:autonomous-network
+    predicate: produces
+    object: external:concept:outcome
+    status: established
+    provenance: ES-ADR-032 section 9
+  - subject: ES:CONCEPT:autonomous-network
+    predicate: adapts-to
+    object: external:concept:context
+    status: established
+    provenance: ES-ADR-032 section 9
+agentic_autonomous_independence:
+  autonomous_network_does_not_imply_agentic_network: true
+  four_state_matrix:
+    - state: Network
+      agentic: no
+      autonomous: no
+    - state: Agentic Network
+      agentic: yes
+      autonomous: no
+    - state: Autonomous Network
+      agentic: no
+      autonomous: yes
+    - state: Agentic + Autonomous Network
+      agentic: yes
+      autonomous: yes
+ai_boundary:
+  autonomous_network_requires_ai: false
+  ai_equals_autonomy: false
+  automation_equals_autonomy: false
+  self_healing_equals_autonomy: false
+materiality_test:
+  not_sufficient:
+    - automated_alone
+    - ai_alone
+    - contains_autonomous_systems
+    - contains_autonomous_organizations
+    - self_healing_mechanisms
+    - unattended_operations
+  sufficient:
+    - autonomous_network_level_decision_progression
+    - autonomous_coordination_materially_at_network_level
+    - autonomous_routing_materially_at_network_level
+    - autonomous_adaptation_within_defined_constraints
+provenance:
+  source: [ES-ADR-022, ES-ADR-031, ADR-WSF-37]
+  decision: [ES-ADR-032]
+  implementation: [CR-ES-032]

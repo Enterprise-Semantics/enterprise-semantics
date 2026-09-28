@@ -1,52 +1,81 @@
-# concepts/closed-loop.concept.yaml ;;; REFERENCE STUB (deprecated)
+# concepts/closed-loop.concept.yaml ;;; Closed Loop ;;; ES-034
 #
-# Closed Loop canonical concept is established via the ES-034 + ES-035 pair per the
-# user-authoritative model (2026-09-28):
-#   - ES-034: Closed Loop (semantic_kind: behavioral_pattern)
-#   - ES-035: Autonomous Closed Loop (semantic_kind: behavioral_pattern_specialization)
-#
-# Per user ES-ADR-034, Closed Loop is NOT a WSF-level specialization nor a subclass of
-# Process ;;; it is a behavioral pattern instantiable across Process, Workflow, Service,
-# System, Operations, Network, Ecosystem, Enterprise.
-#
-# The WSF turtle vocabulary declaration wsf:ClosedLoop (Tier 3 Baseline, parent
-# wsf:Process) remains declared per ADR-WSF-38, but ES-034 supersedes the integration
-# framing.
-#
-# status: Deprecated ;;; reference stub
-# superseded_by: ES-034 (Closed Loop behavioral_pattern) + ES-035 (Autonomous Closed Loop specialization)
-# supersedes: ES-ADR-035 (voided ;;; was WSF Closed Loop integration pair)
+# Per ES-ADR-034 + CR-ES-034.
+# semantic_kind: behavioral_pattern (NOT a specialization of Process; NOT a WSF-level canonical concept).
+# Foundation reference: wsf:ClosedLoop (Tier 3 Baseline, ADR-WSF-38).
+# Status: Established.
+# Supersedes: prior Deprecated stub (replaced 2026-09-28 per user-authoritative model).
 
 id: ES:CONCEPT:closed-loop
 canonical_name: Closed Loop
-concept_type: behavioral-pattern-stub
-status: Deprecated
-version: 2.8.0
+concept_type: behavioral-pattern
+status: Established
+version: 2.10.0
 date: 2026-09-28
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 base_concept: WSF:CLOSED_LOOP
 authority: WSF
 source_decision: ADR-WSF-38 (Baseline, WSF PR #19 MERGED 2026-09-27)
-supersedes: ES-ADR-035 (voided 2026-09-28 ;;; was WSF Closed Loop integration)
-superseding:
-  - ES-ADR-034 (Closed Loop behavioral_pattern ;;; pending filing)
-  - ES-ADR-035 (Autonomous Closed Loop specialization ;;; pending filing)
-wsf_reference: wsf:ClosedLoop (Tier 3 Baseline, parent wsf:Process)
-deprecation_reason: Closed Loop now established as behavioral_pattern per ES-034
-deprecation_date: 2026-09-28
-semantic_kind: behavioral_pattern (per ES-034, pending)
+es_integration: ES-ADR-034 + CR-ES-034
+supersedes: prior Deprecated stub (2026-09-28 ;;; was WSF Closed Loop integration framing)
 definition: |
-  A Closed Loop is a bounded behavioral cycle in which observations of
-  conditions or outcomes are fed back into subsequent interpretation,
-  decision, action, or adaptation toward an intended objective or outcome.
-  Per ES-ADR-034 (pending filing) section 2. Feedback is the defining
-  criterion ; Closed Loop does not imply Agentic or Autonomous behavior.
-four_state_characterization:
-  - Conventional Closed Loop
-  - Agentic Closed Loop  (deferred per ES-ADR-034 section 8)
-  - Autonomous Closed Loop  (per ES-035, pending)
-  - Agentic + Autonomous Closed Loop  (deferred per ES-ADR-034 section 8)
+  A Closed Loop is a bounded behavioral cycle in which observations
+  of conditions or outcomes are fed back into subsequent
+  interpretation, decision, action, or adaptation toward an intended
+  objective or outcome.
+
+  Per ES-ADR-034 section 2.
+properties:
+  - objective
+  - observation
+  - interpretation
+  - decision
+  - action
+  - outcome
+  - feedback
+  - adaptation
+  - intervention
+  - escalation
+  - context
+relationships:
+  - subject: ES:CONCEPT:closed-loop
+    predicate: foundation-anchored-to
+    object: external:concept:WSF:CLOSED_LOOP
+    status: established
+    provenance: ES-ADR-034 section 2 ; ADR-WSF-38
+  - subject: ES:CONCEPT:closed-loop
+    predicate: uses-feedback-from
+    object: external:concept:outcome
+    status: established
+    provenance: CR-ES-034 section 4
+  - subject: ES:CONCEPT:closed-loop
+    predicate: influences
+    object: external:concept:subsequent_behavior
+    status: established
+    provenance: CR-ES-034 section 4
+  - subject: ES:CONCEPT:closed-loop
+    predicate: designed-by
+    object: external:concept:loop-engineering
+    status: established
+    provenance: ES-ADR-033 section 5 ; ES-ADR-034 section 9
+  - subject: ES:CONCEPT:closed-loop
+    predicate: improved-by
+    object: external:concept:loop-engineering
+    status: established
+    provenance: ES-ADR-033 section 5 ; ES-ADR-034 section 9
+agentic_autonomous_independence:
+  closed_loop_does_not_imply_agentic: true
+  closed_loop_does_not_imply_autonomous: true
+  four_state_characterization:
+    - conventional
+    - agentic_closed_loop_deferred
+    - autonomous_closed_loop_per_ES-035
+    - agentic_autonomous_closed_loop_deferred
+ai_boundary:
+  closed_loop_requires_ai: false
+  ai_closed_loop_is_canonical_reject: true
+  ai_closed_loop_realized_as_example: true
 cross_context_instantiation:
   - Process
   - Workflow
@@ -56,11 +85,12 @@ cross_context_instantiation:
   - Network
   - Ecosystem
   - Enterprise
-note: |
-  This concept record is a reference stub. The full canonical definition
-  has moved to ES-034 + ES-035 pair per the user-authoritative model
-  (semantic_kind: behavioral_pattern, not WSF-level specialization).
+semantic_kind_note: |
+  Closed Loop is a behavioral_pattern (per ES-ADR-034 section 1).
+  It is not a WSF-level specialization nor a subclass of Process.
+  It is a behavioral pattern instantiable across Process, Workflow,
+  Service, System, Operations, Network, Ecosystem, Enterprise.
 provenance:
-  source: [ADR-WSF-38]
-  superseded_decision: [ES-ADR-035]
-  active_decisions: [ES-ADR-034, ES-ADR-035]
+  source: [ES-ADR-033, ADR-WSF-38]
+  decision: [ES-ADR-034]
+  implementation: [CR-ES-034]

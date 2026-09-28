@@ -1,0 +1,51 @@
+# registry/profiles/autonomous-ecosystem.profile.yaml ; ES-033 ; 22nd profile
+id: autonomous-ecosystem
+canonical_name: Autonomous Ecosystem
+version: 2.6.0
+status: established
+date: 2026-09-27
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+base_concept: WSF:ECOSYSTEM
+authority: WSF
+source_decision: ADR-WSF-28
+es_integration: ES-ADR-033 + CR-ES-033
+
+profile_type: autonomous-ecosystem
+dimension: autonomous
+applies_to_concept: ES:CONCEPT:autonomous-ecosystem
+
+canonical_definitions:
+  autonomous_ecosystem: |
+    An Autonomous Ecosystem is an Ecosystem in which coordination,
+    adaptation, or value-realization behavior among participating
+    entities operates without per-decision human involvement, within
+    declared policy boundaries, authority delegations, and escalation
+    paths.
+
+boundary_assertions:
+  - autonomous_ecosystem_distinct_from_autonomous_system: true
+  - autonomous_ecosystem_distinct_from_autonomous_organization: true
+  - autonomous_ecosystem_distinct_from_agentic_ecosystem: true
+  - autonomous_ecosystem_does_not_require_ai: true
+  - autonomy_requires_policy_boundaries_and_escalation: true
+
+conformance_tests:
+  positive:
+    - foundational_ecosystem_is_canonical
+    - autonomous_ecosystem_specializes_it
+    - autonomous_behavior_material_at_ecosystem_level
+    - policy_boundaries_declared
+    - escalation_paths_declared
+    - ai_not_required
+  negative:
+    - ecosystem_merely_containing_automation_rejected
+    - ecosystem_merely_containing_autonomous_systems_rejected
+    - monitoring_without_autonomous_action_rejected
+    - autonomous_system_not_autonomous_ecosystem
+
+provenance:
+  source: [ES-ADR-022, ADR-WSF-28]
+  decision: [ES-ADR-033]
+  implementation: [CR-ES-033]

@@ -51,7 +51,7 @@ candidates:
       justification (delegated authority across organizational boundaries
       with no per-decision human involvement). Dependency: wsf:Ecosystem
       is Baseline (ADR-WSF-28), so the foundation gate is already
-      satisfied. Next step: semantic grounding ADR/CR (ES-033 candidate).
+      satisfied. Next step: semantic grounding ADR/CR (ES-030 candidate).
     dependencies: [ADR-WSF-28 (Baseline)]
 
   - name: Agentic Network

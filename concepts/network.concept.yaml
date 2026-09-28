@@ -1,44 +1,54 @@
-# concepts/network.concept.yaml ; ES-034 ; base WSF:NETWORK
+# concepts/network.concept.yaml ;;; REFERENCE STUB (deprecated)
+#
+# Network canonical concept is established via the ES-031 + ES-032 specialization pair
+# (Agentic Network + Autonomous Network) per the user-authoritative model (2026-09-28).
+# This file is retained as a reference pointer ;;; its full definition has been moved to the
+# specialization ADRs.
+#
+# The WSF turtle vocabulary declaration wsf:Network (Tier 3 Baseline, parent wsf:System)
+# remains authoritative per ADR-WSF-37.
+#
+# status: Deprecated ;;; reference stub
+# superseded_by: ES-031 (Agentic Network) + ES-032 (Autonomous Network)
+# supersedes: ES-ADR-034 (voided ;;; was WSF Network integration pair)
+
 id: ES:CONCEPT:network
 canonical_name: Network
-concept_type: foundational-reference
-status: Established
+concept_type: foundational-reference-stub
+status: Deprecated
 version: 2.7.0
-date: 2026-09-27
+date: 2026-09-28
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 base_concept: WSF:NETWORK
 authority: WSF
 source_decision: ADR-WSF-37 (Baseline, WSF PR #19 MERGED 2026-09-27)
-es_integration: ES-ADR-034 + CR-ES-034
+supersedes: ES-ADR-034 (voided 2026-09-28 ;;; was WSF Network integration)
+superseding:
+  - ES-ADR-031 (Agentic Network ;;; pending filing)
+  - ES-ADR-032 (Autonomous Network ;;; pending filing)
+wsf_reference: wsf:Network (Tier 3 Baseline, parent wsf:System)
+deprecation_reason: Network canonical concept now established via ES-031 + ES-032 specialization pair
+deprecation_date: 2026-09-28
 definition: |
   A Network is a structural topology of interconnected entities, nodes,
   and links whose identity is defined by the connection structure.
   Per ADR-WSF-37 section 2. Network has connection-identity distinct
   from System (bounded-identity) and Ecosystem (context-sharing-emergent).
-properties:
-  - nodes
-  - links
-  - topology
-  - identity_by_structure
-relationships:
-  - subject: ES:CONCEPT:network
-    predicate: specializes
-    object: external:concept:WSF:NETWORK
-    status: established
-  - subject: ES:CONCEPT:network
-    predicate: structural-property-of
-    object: external:concept:WSF:SYSTEM
-    status: established
-  - subject: ES:CONCEPT:network
-    predicate: topology-distinct-from
-    object: external:concept:WSF:ECOSYSTEM
-    status: established
-agentic_autonomous_independence:
-  network_does_not_imply_agentic_network: true
-ai_boundary:
-  not_required: true
+canonical_definition: |
+  A Network is a structural topology of interconnected entities, nodes,
+  and links whose identity is defined by the connection structure.
+  Per ADR-WSF-37 section 2. Network has connection-identity distinct
+  from System (bounded-identity) and Ecosystem (context-sharing-emergent).
+note: |
+  This concept record is a reference stub. The full canonical definition
+  has moved to ES-031 + ES-032 specialization pair. Specializations
+  established there preserve the four-state matrix:
+    Network
+    Agentic Network
+    Autonomous Network
+    Agentic + Autonomous Network
 provenance:
   source: [ADR-WSF-37]
-  decision: [ES-ADR-034]
-  implementation: [CR-ES-034]
+  superseded_decision: [ES-ADR-034]
+  active_decisions: [ES-ADR-031, ES-ADR-032]

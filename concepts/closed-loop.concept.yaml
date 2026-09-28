@@ -1,48 +1,66 @@
-# concepts/closed-loop.concept.yaml ; ES-035 ; base WSF:CLOSED_LOOP
+# concepts/closed-loop.concept.yaml ;;; REFERENCE STUB (deprecated)
+#
+# Closed Loop canonical concept is established via the ES-034 + ES-035 pair per the
+# user-authoritative model (2026-09-28):
+#   - ES-034: Closed Loop (semantic_kind: behavioral_pattern)
+#   - ES-035: Autonomous Closed Loop (semantic_kind: behavioral_pattern_specialization)
+#
+# Per user ES-ADR-034, Closed Loop is NOT a WSF-level specialization nor a subclass of
+# Process ;;; it is a behavioral pattern instantiable across Process, Workflow, Service,
+# System, Operations, Network, Ecosystem, Enterprise.
+#
+# The WSF turtle vocabulary declaration wsf:ClosedLoop (Tier 3 Baseline, parent
+# wsf:Process) remains declared per ADR-WSF-38, but ES-034 supersedes the integration
+# framing.
+#
+# status: Deprecated ;;; reference stub
+# superseded_by: ES-034 (Closed Loop behavioral_pattern) + ES-035 (Autonomous Closed Loop specialization)
+# supersedes: ES-ADR-035 (voided ;;; was WSF Closed Loop integration pair)
+
 id: ES:CONCEPT:closed-loop
 canonical_name: Closed Loop
-concept_type: foundational-reference
-status: Established
+concept_type: behavioral-pattern-stub
+status: Deprecated
 version: 2.8.0
-date: 2026-09-27
+date: 2026-09-28
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 base_concept: WSF:CLOSED_LOOP
 authority: WSF
 source_decision: ADR-WSF-38 (Baseline, WSF PR #19 MERGED 2026-09-27)
-es_integration: ES-ADR-035 + CR-ES-035
+supersedes: ES-ADR-035 (voided 2026-09-28 ;;; was WSF Closed Loop integration)
+superseding:
+  - ES-ADR-034 (Closed Loop behavioral_pattern ;;; pending filing)
+  - ES-ADR-035 (Autonomous Closed Loop specialization ;;; pending filing)
+wsf_reference: wsf:ClosedLoop (Tier 3 Baseline, parent wsf:Process)
+deprecation_reason: Closed Loop now established as behavioral_pattern per ES-034
+deprecation_date: 2026-09-28
+semantic_kind: behavioral_pattern (per ES-034, pending)
 definition: |
-  A Closed Loop is a control structure with four stages (sense, decide,
-  act, learn) connected by feedback such that the output of act influences
-  subsequent sense iterations. Per ADR-WSF-38 section 2.
-properties:
-  - sense_stage
-  - decide_stage
-  - act_stage
-  - learn_stage
-  - feedback_connection
-  - target_state
-  - policy
-relationships:
-  - subject: ES:CONCEPT:closed-loop
-    predicate: specializes
-    object: external:concept:WSF:CLOSED_LOOP
-    status: established
-  - subject: ES:CONCEPT:closed-loop
-    predicate: distinct-from-workflow
-    object: external:concept:workflow
-    status: established
-  - subject: ES:CONCEPT:closed-loop
-    predicate: distinct-from-operations
-    object: external:concept:operations
-    status: established
-agentic_autonomous_independence:
-  closed_loop_does_not_imply_autonomous_closed_loop: true
-ai_boundary:
-  not_required: true
-  ai_closed_loop_is_canonical_reject: true
-  ai_closed_loop_realized_as_example: true
+  A Closed Loop is a bounded behavioral cycle in which observations of
+  conditions or outcomes are fed back into subsequent interpretation,
+  decision, action, or adaptation toward an intended objective or outcome.
+  Per ES-ADR-034 (pending filing) section 2. Feedback is the defining
+  criterion ; Closed Loop does not imply Agentic or Autonomous behavior.
+four_state_characterization:
+  - Conventional Closed Loop
+  - Agentic Closed Loop  (deferred per ES-ADR-034 section 8)
+  - Autonomous Closed Loop  (per ES-035, pending)
+  - Agentic + Autonomous Closed Loop  (deferred per ES-ADR-034 section 8)
+cross_context_instantiation:
+  - Process
+  - Workflow
+  - Service
+  - System
+  - Operations
+  - Network
+  - Ecosystem
+  - Enterprise
+note: |
+  This concept record is a reference stub. The full canonical definition
+  has moved to ES-034 + ES-035 pair per the user-authoritative model
+  (semantic_kind: behavioral_pattern, not WSF-level specialization).
 provenance:
   source: [ADR-WSF-38]
-  decision: [ES-ADR-035]
-  implementation: [CR-ES-035]
+  superseded_decision: [ES-ADR-035]
+  active_decisions: [ES-ADR-034, ES-ADR-035]

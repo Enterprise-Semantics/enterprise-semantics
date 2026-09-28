@@ -1,33 +1,36 @@
-# registry/profiles/agentic-ai.profile.yaml ;;; Agentic AI ;;; canonical-reject per AI boundary rule
+# registry/profiles/agentic-ai.profile.yaml ;;; Agentic AI ;;; ES-038
 id: agentic-ai
 canonical_name: Agentic AI
 version: 1.0.0
 status: Established
-date: 2026-09-27
+date: 2026-09-28
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 base_concept: ES:CONCEPT:ai-agent
-authority: WSF/ES
+authority: ES
 profile_type: agentic-ai
 applies_to_concept: ES:CONCEPT:ai-agent
-disposition: profile (canonical-reject per AI boundary rule)
+disposition: canonical-reject ;;; realized as profile over AI Agent (ES-038 Disposition Recon)
+realization_substrate: agentic_behavior_over_ai
 canonical_definition: |
-    A profile describing AI systems exhibiting agentic behavior. Under the AI boundary rule, this is a realization-quality statement, not a distinct semantic concept.
+    Profile family over AI Agent where the agent exhibits agentic behavior. Per ES-ADR-038 section 2: Agentic AI != Agentic. Agentic AI != AI Agent. Agentic AI != Autonomous AI.
 rationale: |
-    Per Findings-AI-Native-Operations-Boundary ;;; consistent with Agentic Organization + Agentic System composition
+    Per ES-ADR-038 section 1. The presence of an AI model alone does not satisfy Agentic semantics.
 boundary_assertions:
-  - practice_or_realization_label_not_canonical: true
+  - profile_not_canonical: true
   - consistent_with_ai_boundary_rule: true
+  - four_state_independence_preserved: true
 conformance_tests:
   positive:
     - applies_to_canonical_base
-    - vendor_neutral_treatment
     - realization_substrate_not_semantic_identity
+    - vendor_neutral_treatment
   negative:
     - canonical_concept_creation_rejected
     - vendor_lock_in_rejected
     - ai_boundary_violation_rejected
+    - canonical_ai_term_rejected
 provenance:
-  source: [Findings-AI-Native-Operations-Boundary]
-  decision: [candidate register CR-ES-022 section 4, disposition analysis]
-  implementation: [profile-disposition-batch 2026-09-27]
+  source: [Findings-AI-Native-Operations-Boundary, ES-022 register analysis]
+  decision: [ES-ADR-038]
+  implementation: [ES-CR-038]

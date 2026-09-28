@@ -1,33 +1,36 @@
-# registry/profiles/aiops.profile.yaml ;;; AIOps ;;; canonical-reject per AI boundary rule
+# registry/profiles/aiops.profile.yaml ;;; AIOps ;;; ES-039
 id: aiops
 canonical_name: AIOps
 version: 1.0.0
 status: Established
-date: 2026-09-27
+date: 2026-09-28
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 base_concept: ES:CONCEPT:operations
-authority: WSF/ES
+authority: ES
 profile_type: aiops
 applies_to_concept: ES:CONCEPT:operations
-disposition: profile (canonical-reject per AI boundary rule)
+disposition: operational discipline ;;; profile family over Operations + AI realization (ES-039 Disposition Recon)
+realization_substrate: ai-assisted-operations
 canonical_definition: |
-    A profile for AI-assisted IT operations (vendor-neutral). Practice/realization label, not a semantic concept.
+    Profile family over Operations where AI assists IT operations. Per ES-ADR-039: AIOps != Operations, AIOps != Autonomous Operations. Vendor-neutral treatment per content rules.
 rationale: |
-    Per Findings-AI-Native-Operations-Boundary ;;; vendor-neutral treatment per content rules
+    Per ES-ADR-039. Operational discipline/practice. Vendor-neutral.
 boundary_assertions:
-  - practice_or_realization_label_not_canonical: true
+  - profile_not_canonical: true
   - consistent_with_ai_boundary_rule: true
+  - four_state_independence_preserved: true
 conformance_tests:
   positive:
     - applies_to_canonical_base
-    - vendor_neutral_treatment
     - realization_substrate_not_semantic_identity
+    - vendor_neutral_treatment
   negative:
     - canonical_concept_creation_rejected
     - vendor_lock_in_rejected
     - ai_boundary_violation_rejected
+    - canonical_ai_term_rejected
 provenance:
-  source: [Findings-AI-Native-Operations-Boundary]
-  decision: [candidate register CR-ES-022 section 4, disposition analysis]
-  implementation: [profile-disposition-batch 2026-09-27]
+  source: [Findings-AI-Native-Operations-Boundary, ES-022 register analysis]
+  decision: [ES-ADR-039]
+  implementation: [ES-CR-039]

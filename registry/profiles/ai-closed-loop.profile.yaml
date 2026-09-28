@@ -1,21 +1,21 @@
-# registry/profiles/mlops.profile.yaml ;;; MLOps ;;; ES-040
-id: mlops
-canonical_name: MLOps
+# registry/profiles/ai-closed-loop.profile.yaml ;;; AI Closed Loop ;;; ES-036
+id: ai-closed-loop
+canonical_name: AI Closed Loop
 version: 1.0.0
 status: Established
 date: 2026-09-28
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
-base_concept: ES:CONCEPT:operations
+base_concept: ES:CONCEPT:closed-loop
 authority: ES
-profile_type: mlops
-applies_to_concept: ES:CONCEPT:operations
-disposition: engineering/operations discipline ;;; profile family over Operations + ML lifecycle realization (ES-040 Disposition Recon)
-realization_substrate: ml-lifecycle
+profile_type: ai-closed-loop
+applies_to_concept: ES:CONCEPT:closed-loop
+disposition: canonical-reject ;;; realized as profile family (ES-036 Disposition Recon)
+realization_substrate: ai
 canonical_definition: |
-    Profile family over Operations where ML lifecycle (training, deployment, monitoring) is the realization substrate. Per ES-ADR-040: MLOps != Operations, MLOps != AIOps. Vendor-neutral.
+    Profile family over Closed Loop with AI as the realization substrate. Per the AI boundary rule, this is realization technology, not semantic identity. Canonical Closed Loop lives at ES-034.
 rationale: |
-    Per ES-ADR-040. Engineering discipline.
+    Per ES-ADR-036 section 1. The presence of AI does not change the essential semantics of a Closed Loop.
 boundary_assertions:
   - profile_not_canonical: true
   - consistent_with_ai_boundary_rule: true
@@ -32,5 +32,5 @@ conformance_tests:
     - canonical_ai_term_rejected
 provenance:
   source: [Findings-AI-Native-Operations-Boundary, ES-022 register analysis]
-  decision: [ES-ADR-040]
-  implementation: [ES-CR-040]
+  decision: [ES-ADR-036]
+  implementation: [ES-CR-036]

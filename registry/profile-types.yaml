@@ -195,3 +195,37 @@ profile_types:
     governance: enterprise-semantics
     disposition: profile (canonical-reject per AI boundary rule)
     base_concept: ES:CONCEPT:operations
+  - id: ai-closed-loop
+    name: AI Closed Loop
+    governance: enterprise-semantics
+    disposition: profile
+    base_concept: ES:CONCEPT:closed-loop
+    source_decision: ES-036
+
+  - id: ai-agent
+    name: AI Agent
+    governance: enterprise-semantics
+    disposition: profile
+    base_concept: ES:CONCEPT:agent
+    source_decision: ES-037
+
+  - id: agentic-ai
+    name: Agentic AI
+    governance: enterprise-semantics
+    disposition: profile
+    base_concept: ES:CONCEPT:ai-agent
+    source_decision: ES-038
+
+  - id: aiops
+    name: AIOps
+    governance: enterprise-semantics
+    disposition: profile
+    base_concept: ES:CONCEPT:operations
+    source_decision: ES-039
+
+  - id: mlops
+    name: MLOps
+    governance: enterprise-semantics
+    disposition: profile
+    base_concept: ES:CONCEPT:operations
+    source_decision: ES-040

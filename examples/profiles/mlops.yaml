@@ -1,10 +1,11 @@
 id: ES:EXAMPLE:mlops
-canonical_name: MLOps Profile Example
+canonical_name: OTCHERE Inc ;;; MLOps Profile (vendor-neutral)
 status: Established
 version: 1.0.0
-date: 2026-09-27
+date: 2026-09-28
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
 applies_to_profile: mlops
 base_concept: ES:CONCEPT:operations
+realization_substrate: ml-lifecycle
 disposition: profile (canonical-reject per AI boundary rule)
-vendor_neutral: true

@@ -1,4 +1,4 @@
-# registry/profiles/ai-native-operations.profile.yaml ;;; AI-Native Operations ;;; ES-041
+# registry/profiles/ai-native-operations.profile.yaml, AI-Native Operations, and ES-041
 id: ai-native-operations
 canonical_name: AI-Native Operations
 version: 1.0.0
@@ -10,7 +10,7 @@ base_concept: ES:CONCEPT:operations
 authority: ES
 profile_type: ai-native-operations
 applies_to_concept: ES:CONCEPT:operations
-disposition: operating-model characteristic ;;; profile family over Operations + AI-Native substrate (ES-041 Disposition Recon)
+disposition: operating-model characteristic, profile family over Operations + AI-Native substrate (ES-041 Disposition Recon)
 realization_substrate: ai-native-substrate
 canonical_definition: |
     Profile family over Operations where AI is the native operating substrate. Per ES-ADR-041 + Findings-AI-Native-Operations-Boundary: AI-Native Operations != Autonomous Operations. Canonical autonomy remains at ES-008 (Autonomous Operations).

@@ -1,4 +1,4 @@
-# registry/profiles/ai-closed-loop.profile.yaml ;;; AI Closed Loop ;;; ES-036
+# registry/profiles/ai-closed-loop.profile.yaml, AI Closed Loop, and ES-036
 id: ai-closed-loop
 canonical_name: AI Closed Loop
 version: 1.0.0
@@ -10,7 +10,7 @@ base_concept: ES:CONCEPT:closed-loop
 authority: ES
 profile_type: ai-closed-loop
 applies_to_concept: ES:CONCEPT:closed-loop
-disposition: canonical-reject ;;; realized as profile family (ES-036 Disposition Recon)
+disposition: canonical-reject, realized as profile family (ES-036 Disposition Recon)
 realization_substrate: ai
 canonical_definition: |
     Profile family over Closed Loop with AI as the realization substrate. Per the AI boundary rule, this is realization technology, not semantic identity. Canonical Closed Loop lives at ES-034.

@@ -1,4 +1,4 @@
-# concepts/loop-engineering.concept.yaml ;;; Loop Engineering ;;; ES-033
+# concepts/loop-engineering.concept.yaml, Loop Engineering, and ES-033
 #
 # Per ES-ADR-033 + CR-ES-033.
 # semantic_kind: engineering_practice (NOT a specialization of any concept).

@@ -1,16 +1,16 @@
-# concepts/network.concept.yaml ;;; REFERENCE STUB (deprecated)
+# concepts/network.concept.yaml, and REFERENCE STUB (deprecated)
 #
 # Network canonical concept is established via the ES-031 + ES-032 specialization pair
 # (Agentic Network + Autonomous Network) per the user-authoritative model (2026-09-28).
-# This file is retained as a reference pointer ;;; its full definition has been moved to the
+# This file is retained as a reference pointer, its full definition has been moved to the
 # specialization ADRs.
 #
 # The WSF turtle vocabulary declaration wsf:Network (Tier 3 Baseline, parent wsf:System)
 # remains authoritative per ADR-WSF-37.
 #
-# status: Deprecated ;;; reference stub
+# status: Deprecated, reference stub
 # superseded_by: ES-031 (Agentic Network) + ES-032 (Autonomous Network)
-# supersedes: ES-ADR-034 (voided ;;; was WSF Network integration pair)
+# supersedes: ES-ADR-034 (voided, was WSF Network integration pair)
 
 id: ES:CONCEPT:network
 canonical_name: Network
@@ -23,10 +23,10 @@ governance: enterprise-semantics
 base_concept: WSF:NETWORK
 authority: WSF
 source_decision: ADR-WSF-37 (Baseline, WSF PR #19 MERGED 2026-09-27)
-supersedes: ES-ADR-034 (voided 2026-09-28 ;;; was WSF Network integration)
+supersedes: ES-ADR-034 (voided 2026-09-28, was WSF Network integration)
 superseding:
-  - ES-ADR-031 (Agentic Network ;;; pending filing)
-  - ES-ADR-032 (Autonomous Network ;;; pending filing)
+- ES-ADR-031 (Agentic Network, pending filing)
+- ES-ADR-032 (Autonomous Network, pending filing)
 wsf_reference: wsf:Network (Tier 3 Baseline, parent wsf:System)
 deprecation_reason: Network canonical concept now established via ES-031 + ES-032 specialization pair
 deprecation_date: 2026-09-28

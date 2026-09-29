@@ -1,4 +1,4 @@
-# registry/profiles/closed-loop.profile.yaml ;;; Closed Loop ;;; ES-035
+# registry/profiles/closed-loop.profile.yaml, Closed Loop, and ES-035
 id: closed-loop
 canonical_name: Closed Loop
 version: 2.8.0

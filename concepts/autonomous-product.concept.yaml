@@ -1,0 +1,27 @@
+# concepts/autonomous-product.concept.yaml ; Autonomous Product ; ES:CONCEPT:autonomous-product
+#
+# Per ES-ADR-049 + CR-ES-049 (Test Kit Completion slice, 2026-09-30).
+# Status: Established (validator-accepted lifecycle vocabulary).
+
+id: ES:CONCEPT:autonomous-product
+canonical_name: Autonomous Product
+status: Established
+version: '1.0.0'
+date: '2026-09-30'
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+specializes: [ES:CONCEPT:product]
+base_concept: WSF:PRODUCT
+definition: >
+  A Autonomous Product is a product in which material aspects of value realization, operational coordination, decision-making, or execution are performed through autonomous behavior within defined intent, authority, policy, and governance boundaries. Per ES-ADR-049 and CR-ES-049 (Test Kit Completion slice, 2026-09-30). Authored as canonical concept record to support per-concept repo self-containment.
+
+provenance:
+  - source: ES-ADR-049
+    note: Per-Concept Repo Self-Containment decision (2026-09-30)
+  - source: CR-ES-049
+    note: Per-Concept Repo Self-Containment implementation (2026-09-30)
+  - source: Test Kit Completion slice
+    note: Concept record authored to support 10 conformance tests authored 2026-09-30.
+
+created: '2026-09-30'
+updated: '2026-09-30'

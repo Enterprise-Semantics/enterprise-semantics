@@ -106,3 +106,25 @@ Enterprise-Semantics (canonical specializations)
 ### Author
 
 Emmanuel A. Otchere (cardinal user-authoritative model, 2026-09-28)
+
+## WSF ID Reconciliation ; Cross-Program Pointer ; 2026-09-28
+
+WSF governance documents a formal reconciliation between canonical sequential IDs (ADR-WSF-NNN) and subject-namespace aliases (WSF-ADR-<SUBJECT>-<LOCAL>).
+
+- See: World-Semantic-Foundation/wsf-governance/blob/main/ID-RECONCILIATION.md
+- See: World-Semantic-Foundation/wsf-governance/blob/main/id-aliases.yaml
+
+Subject-namespace aliases used in this document and other ES artefacts:
+
+| Alias | Canonical | Status | Notes |
+|-------|-----------|--------|-------|
+| WSF-ADR-CULTURE-001 | ADR-WSF-33 | Baseline | ES-026 integration |
+| WSF-ADR-SYSTEM-001 | ADR-WSF-34 | Baseline | ES-027 integration |
+| WSF-ADR-SERVICE-001 | ADR-WSF-35 | Baseline | ES-031-SVC integration (compound) |
+| WSF-ADR-PRODUCT-001 | ADR-WSF-36 | Baseline | ES-032-PRD integration (compound) |
+| WSF-ADR-NETWORK-001 | ADR-WSF-37 | Deprecated 2026-09-28 | ES-031 + ES-032 (ES-side canonical) |
+| WSF-ADR-CLOSED-LOOP-001 | ADR-WSF-38 | Deprecated 2026-09-28 | ES-034 + ES-035 (ES-side canonical) |
+
+### Author
+
+Emmanuel A. Otchere (cardinal user-authoritative model, 2026-09-28)

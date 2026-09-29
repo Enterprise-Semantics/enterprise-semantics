@@ -1,4 +1,4 @@
-# concepts/closed-loop.concept.yaml ;;; Closed Loop ;;; ES-034
+# concepts/closed-loop.concept.yaml, Closed Loop, and ES-034
 #
 # Per ES-ADR-034 + CR-ES-034.
 # semantic_kind: behavioral_pattern (NOT a specialization of Process; NOT a WSF-level canonical concept).
@@ -18,7 +18,7 @@ base_concept: WSF:CLOSED_LOOP
 authority: WSF
 source_decision: ADR-WSF-38 (Baseline, WSF PR #19 MERGED 2026-09-27)
 es_integration: ES-ADR-034 + CR-ES-034
-supersedes: prior Deprecated stub (2026-09-28 ;;; was WSF Closed Loop integration framing)
+supersedes: prior Deprecated stub (2026-09-28, was WSF Closed Loop integration framing)
 definition: |
   A Closed Loop is a bounded behavioral cycle in which observations
   of conditions or outcomes are fed back into subsequent

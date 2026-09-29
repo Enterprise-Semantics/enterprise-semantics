@@ -1,4 +1,4 @@
-# registry/profiles/agentic-ai.profile.yaml ;;; Agentic AI ;;; ES-038
+# registry/profiles/agentic-ai.profile.yaml, Agentic AI, and ES-038
 id: agentic-ai
 canonical_name: Agentic AI
 version: 1.0.0
@@ -10,7 +10,7 @@ base_concept: ES:CONCEPT:ai-agent
 authority: ES
 profile_type: agentic-ai
 applies_to_concept: ES:CONCEPT:ai-agent
-disposition: canonical-reject ;;; realized as profile over AI Agent (ES-038 Disposition Recon)
+disposition: canonical-reject, realized as profile over AI Agent (ES-038 Disposition Recon)
 realization_substrate: agentic_behavior_over_ai
 canonical_definition: |
     Profile family over AI Agent where the agent exhibits agentic behavior. Per ES-ADR-038 section 2: Agentic AI != Agentic. Agentic AI != AI Agent. Agentic AI != Autonomous AI.

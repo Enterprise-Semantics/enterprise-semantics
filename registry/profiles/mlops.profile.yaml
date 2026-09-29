@@ -1,4 +1,4 @@
-# registry/profiles/mlops.profile.yaml ;;; MLOps ;;; ES-040
+# registry/profiles/mlops.profile.yaml, MLOps, and ES-040
 id: mlops
 canonical_name: MLOps
 version: 1.0.0
@@ -10,7 +10,7 @@ base_concept: ES:CONCEPT:operations
 authority: ES
 profile_type: mlops
 applies_to_concept: ES:CONCEPT:operations
-disposition: engineering/operations discipline ;;; profile family over Operations + ML lifecycle realization (ES-040 Disposition Recon)
+disposition: engineering/operations discipline. Profile family over Operations + ML lifecycle realization (ES-040 Disposition Recon)
 realization_substrate: ml-lifecycle
 canonical_definition: |
     Profile family over Operations where ML lifecycle (training, deployment, monitoring) is the realization substrate. Per ES-ADR-040: MLOps != Operations, MLOps != AIOps. Vendor-neutral.

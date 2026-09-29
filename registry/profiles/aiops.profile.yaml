@@ -1,4 +1,4 @@
-# registry/profiles/aiops.profile.yaml ;;; AIOps ;;; ES-039
+# registry/profiles/aiops.profile.yaml, AIOps, and ES-039
 id: aiops
 canonical_name: AIOps
 version: 1.0.0
@@ -10,7 +10,7 @@ base_concept: ES:CONCEPT:operations
 authority: ES
 profile_type: aiops
 applies_to_concept: ES:CONCEPT:operations
-disposition: operational discipline ;;; profile family over Operations + AI realization (ES-039 Disposition Recon)
+disposition: operational discipline, profile family over Operations + AI realization (ES-039 Disposition Recon)
 realization_substrate: ai-assisted-operations
 canonical_definition: |
     Profile family over Operations where AI assists IT operations. Per ES-ADR-039: AIOps != Operations, AIOps != Autonomous Operations. Vendor-neutral treatment per content rules.

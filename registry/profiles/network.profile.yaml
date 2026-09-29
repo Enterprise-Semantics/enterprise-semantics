@@ -1,4 +1,4 @@
-# registry/profiles/network.profile.yaml ;;; Network ;;; ES-034
+# registry/profiles/network.profile.yaml, Network, and ES-034
 id: network
 canonical_name: Network
 version: 2.7.0

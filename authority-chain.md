@@ -88,19 +88,19 @@ Per user-authoritative model (2026-09-28):
 
 ```
 WSF (Tier 1 kernel + Tier 3 foundational entities)
-  wsf:Entity       ;;; generic foundation
-  wsf:System       ;;; generic (Network removed 2026-09-28)
-  wsf:Process      ;;; generic (ClosedLoop removed 2026-09-28)
-  wsf:Culture      ;;; Tier 3 Baseline (cross-program anchor for ES-026)
-  wsf:Ecosystem    ;;; Tier 3 Baseline (cross-program anchor for ES-029/030)
-  wsf:Service      ;;; Tier 3 Baseline (cross-program anchor for ES-031-SVC)
-  wsf:Product      ;;; Tier 3 Baseline (cross-program anchor for ES-032-PRD)
+  wsf:Entity       : generic foundation
+  wsf:System       : generic (Network removed 2026-09-28)
+  wsf:Process      : generic (ClosedLoop removed 2026-09-28)
+  wsf:Culture      : Tier 3 Baseline (cross-program anchor for ES-026)
+  wsf:Ecosystem    : Tier 3 Baseline (cross-program anchor for ES-029/030)
+  wsf:Service      : Tier 3 Baseline (cross-program anchor for ES-031-SVC)
+  wsf:Product      : Tier 3 Baseline (cross-program anchor for ES-032-PRD)
       |
       v
 Enterprise-Semantics (canonical specializations)
-  ES-031 + ES-032   ;;; Network pair (Agentic + Autonomous)
-  ES-034 + ES-035   ;;; Closed Loop stack (behavioral_pattern + behavioral_pattern_specialization)
-  ES-033            ;;; Loop Engineering (engineering_practice)
+  ES-031 + ES-032   : Network pair (Agentic + Autonomous)
+  ES-034 + ES-035   : Closed Loop stack (behavioral_pattern + behavioral_pattern_specialization)
+  ES-033            : Loop Engineering (engineering_practice)
 ```
 
 ### Author

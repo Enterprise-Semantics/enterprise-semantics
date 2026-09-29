@@ -779,7 +779,7 @@ closed_loop_release_target: "2.8.0"
 closed_loop_base_concept: WSF:CLOSED_LOOP
 
 
-# Profile family predicates (canonical-reject candidates) ;;; per profile-disposition-batch 2026-09-27
+# Profile family predicates (canonical-reject candidates), per profile-disposition-batch 2026-09-27
 profile_family_predicates:
   loop-engineering:
     - designs
@@ -800,7 +800,7 @@ profile_family_predicates:
   ai-native-operations:
     - ai-native-substrate
     - realization-not-semantic-identity
-# ES-031 Agentic Network predicates (target v2.7.0) ;;; per ES-ADR-031 section 6
+# ES-031 Agentic Network predicates (target v2.7.0), per ES-ADR-031 section 6
 agentic_network_predicates:
   - specializes
   - engages
@@ -813,7 +813,7 @@ agentic_network_predicates:
 agentic_network_release_target: "2.7.0"
 agentic_network_base_concept: WSF:NETWORK
 
-# ES-032 Autonomous Network predicates (target v2.8.0) ;;; per ES-ADR-032 section 9
+# ES-032 Autonomous Network predicates (target v2.8.0), per ES-ADR-032 section 9
 autonomous_network_predicates:
   - specializes
   - pursues
@@ -827,7 +827,7 @@ autonomous_network_predicates:
 autonomous_network_release_target: "2.8.0"
 autonomous_network_base_concept: WSF:NETWORK
 
-# ES-033 Loop Engineering predicates (target v2.9.0) ;;; per ES-ADR-033 section 5 + 7
+# ES-033 Loop Engineering predicates (target v2.9.0), per ES-ADR-033 section 5 + 7
 loop_engineering_predicates:
   - designs
   - improves
@@ -837,7 +837,7 @@ loop_engineering_predicates:
 loop_engineering_release_target: "2.9.0"
 loop_engineering_semantic_kind: engineering_practice
 
-# ES-034 Closed Loop predicates (target v2.10.0) ;;; per ES-ADR-034 + CR-ES-034
+# ES-034 Closed Loop predicates (target v2.10.0), per ES-ADR-034 + CR-ES-034
 closed_loop_predicates:
   - uses-feedback-from
   - influences
@@ -848,7 +848,7 @@ closed_loop_release_target: "2.10.0"
 closed_loop_semantic_kind: behavioral_pattern
 closed_loop_base_reference: WSF:CLOSED_LOOP
 
-# ES-035 Autonomous Closed Loop predicates (target v2.11.0) ;;; per ES-ADR-035 section 3 + 9
+# ES-035 Autonomous Closed Loop predicates (target v2.11.0), per ES-ADR-035 section 3 + 9
 autonomous_closed_loop_predicates:
   - specializes
   - pursues
@@ -862,7 +862,7 @@ autonomous_closed_loop_semantic_kind: behavioral_pattern_specialization
 autonomous_closed_loop_base_concept: ES:CONCEPT:closed-loop
 
 
-# Disposition Recon profile predicates (canonical-reject candidates) ;;; per ES-036..041
+# Disposition Recon profile predicates (canonical-reject candidates), per ES-036..041
 disposition_recon_predicates:
   ai-closed-loop:
     - closed-loop-with-ai-realization

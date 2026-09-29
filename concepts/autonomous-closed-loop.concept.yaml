@@ -1,4 +1,4 @@
-# concepts/autonomous-closed-loop.concept.yaml ;;; Autonomous Closed Loop ;;; ES-035
+# concepts/autonomous-closed-loop.concept.yaml, Autonomous Closed Loop, and ES-035
 #
 # Per ES-ADR-035 + CR-ES-035.
 # semantic_kind: behavioral_pattern_specialization of ES-034 (Closed Loop behavioral_pattern).

@@ -30,6 +30,27 @@ conformance_tests:
     - vendor_lock_in_rejected
     - ai_boundary_violation_rejected
     - canonical_ai_term_rejected
+disposition_note: |
+  This profile family is the canonical place for AI Agent semantics
+  per ES-ADR-037 (Dispositon Recon Accepted 2026-09-28). The previous
+  ai-agent.concept.yaml was demoted to a Deprecated reference stub
+  on 2026-09-28 ;;; AI Agent is a technology-qualified Agent
+  realization substrate (interpretation, decision selection, or
+  action selection), not a semantic concept in its own right.
+
+  Per ES-ADR-037 section 2: "Agent is the semantic concept. AI Agent
+  describes an Agent whose interpretation, decision, action selection,
+  or coordination capability is materially implemented through
+  artificial intelligence."
+
+  Per ES-ADR-037 section 5: AI Agent SHALL NOT replace or redefine Agent.
+
+historical_concept_record:
+  deprecated: 2026-09-28
+  path: concepts/ai-agent.concept.yaml
+  concept_repo: Enterprise-Semantics/concept-ai-agent (now profile reference repo)
+  historical_grounding: FND-ES-AG-007 (2026-09-03)
+
 provenance:
   source: [Findings-AI-Native-Operations-Boundary, ES-022 register analysis]
   decision: [ES-ADR-037]

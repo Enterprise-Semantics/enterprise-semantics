@@ -1,103 +1,113 @@
+# concepts/ai-agent.concept.yaml ;;; REFERENCE STUB (deprecated)
+#
+# Per ES-ADR-037 (AI Agent Semantic Disposition Recon, slot 0046) ;;; the
+# AI Agent Disposition Recon's expected disposition is:
+# "Technology-qualified Agent / implementation specialization. A final decision
+#  SHALL determine whether AI Agent belongs in the canonical registry or is
+#  better represented as a technology realization/profile. It SHALL NOT
+#  replace or redefine Agent."
+#
+# Per ES-CR-037, the AI Agent canonical concept is superseded by the
+# ai-agent profile family (registry/profiles/ai-agent.profile.yaml, ES-037).
+#
+# This file is now a reference stub ;;; it documents the historical
+# FND-ES-AG-007 grounding but is NOT a canonical Enterprise-Semantics
+# concept. AI Agent is realized as a profile family over ES:CONCEPT:agent
+# with AI as the realization substrate (interpretation / decision /
+# action-selection).
+#
+# Status: Deprecated ;;; reference stub
+# disposition: profile (canonical-reject per ES-ADR-037 disposition recon)
+# disposition_date: 2026-09-28
+# disposition_authority: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+#
+# historical_grounding: FND-ES-AG-007 (10-step Grounding Result §13)
+# historical_decision: ADR-ES-AG-001 (Profile pattern does NOT apply ;;; it is Distinct, not a Profile)
+# superseded_by:
+#   - registry/profiles/ai-agent.profile.yaml (ES-037 Accepted 2026-09-28)
+#   - concept repo: Enterprise-Semantics/concept-ai-agent (now a profile reference repo)
+
 id: ES:CONCEPT:ai-agent
-canonical_name: AI Agent
-definition: |
-  An AI Agent is an Entity that bears AI-grounded capabilities, exhibits
-  goal-directed behavior under governed policy, makes decisions under varying
-  degrees of autonomy, and produces observable evidence of its operation ;;
-  all within an enterprise semantic context. Per FND-ES-AG-007 ;; ADR-ES-AG-001 §3.
-status: Candidate
-version: 0.1.0
-concept_type: ai-agent
-wsf_grounding:
-  - wsf_concept_id: external:wsf:Entity
-    relationship: specializes
-    note: |
-      AI Agent specializes WSF Entity (Tier 1). If WSF adds an Agent concept
-      later, the grounding can be tightened.
-  - wsf_concept_id: external:wsf:Capability
-    relationship: references
-    note: AI Agent bears AI-grounded Capabilities (per FND-ES-AG-007 §3.2).
-profile_bindings: []
-relationships:
-  - subject: ES:CONCEPT:ai-agent
-    predicate: specializes
-    object: ES:CONCEPT:agent
-    qualification: ai-bearing-specialization
-    status: proposed
-    provenance: FND-ES-AG-007 §3.5
-    rationale: AI Agent is an AI-bearing specialization of the generic Agent.
-  - subject: ES:CONCEPT:ai-agent
-    predicate: bears
-    object: external:wsf:Capability
-    qualification: capability-bearer
-    status: proposed
-    provenance: FND-ES-AG-007 §3.2
-    rationale: AI Agent bears Capabilities (AI-grounded).
-  - subject: ES:CONCEPT:ai-agent
-    predicate: produces
-    object: external:wsf:Event
-    qualification: evidence-production
-    status: proposed
-    provenance: FND-ES-AG-007 §3.3 #5
-    rationale: AI Agent produces observable evidence (events).
-  - subject: ES:CONCEPT:ai-agent
-    predicate: makes
-    object: external:concept:decision
-    qualification: decision-making-capacity
-    status: proposed
-    provenance: FND-ES-AG-007 §3.3 #4
-    rationale: AI Agent makes decisions under varying degrees of autonomy.
-  - subject: ES:CONCEPT:ai-agent
-    predicate: distinct-from
-    object: external:concept:human-agent
-    qualification: ai-bearing-vs-human
-    status: proposed
-    provenance: FND-ES-AG-007 §3.7
-    rationale: AI Agent is AI-bearing ;; Human Agent is human-bearing.
-  - subject: ES:CONCEPT:ai-agent
-    predicate: grounding-target-for
-    object: external:concept:agentic-agent
-    qualification: agentic-agent-pending
-    status: conditional
-    provenance: FND-ES-AG-006 §3
-    rationale: |
-      AI Agent is the grounding target for any future decision on Agentic
-      Agent (per FND-ES-AG-006 scrutiny). The relationship is conditional
-      on FND-ES-AG-006 outcome.
-  - subject: ES:CONCEPT:ai-agent
-    predicate: used-by
-    object: ES:CONCEPT:agentic-workflow
-    qualification: workflow-bearer
-    status: proposed
-    provenance: FND-ES-AG-007 §3.6
-    rationale: Agentic Workflows use AI Agents.
-  - subject: ES:CONCEPT:ai-agent
-    predicate: used-by
-    object: ES:CONCEPT:agentic-value-stream
-    qualification: value-stream-bearer
-    status: proposed
-    provenance: FND-ES-AG-007 §3.6
-    rationale: Agentic Value Streams use AI Agents.
+canonical_name: AI Agent (deprecated reference)
+concept_type: profile-reference-stub
+status: Deprecated
+version: 0.1.0-stub
+date: 2026-09-28
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
+
+definition: |
+  Historical reference stub ;;; the canonical AI Agent concept has
+  been demoted per ES-ADR-037 (AI Agent Semantic Disposition Recon,
+  Accepted 2026-09-28). AI Agent is realized as the ai-agent profile
+  family over ES:CONCEPT:agent with AI as the realization substrate
+  for interpretation, decision selection, or action selection.
+  The historical grounding (FND-ES-AG-007 §3) is preserved below as
+  a reference record.
+
+base_concept: ES:CONCEPT:agent
+authority: ES
+disposition: profile (canonical-reject per ES-ADR-037 disposition recon)
+disposition_date: 2026-09-28
+
+# Historical content preserved as a reference record. The full canonical
+# definition has moved to ES-ADR-037 + the ai-agent profile family.
+
+historical_grounding_reference: |
+  AI Agent (historical FND-ES-AG-007 concept record) was an Entity that
+  bears AI-grounded capabilities, exhibits goal-directed behavior under
+  governed policy, makes decisions under varying degrees of autonomy, and
+  produces observable evidence of its operation ;;; all within an enterprise
+  semantic context.
+
+  Per ES-ADR-037 section 2, the canonical concept is replaced by the
+  ai-agent profile family over ES:CONCEPT:agent. AI Agent is the
+  technology-qualified specialization of Agent where AI is the realization
+  substrate for interpretation, decision selection, or action selection.
+
+# Critical boundary tests per ES-ADR-037 section 4
+critical_tests:
+  Agent_without_AI: Valid
+  AI_without_Agent_behavior: Valid
+  AI_Agent_without_autonomy: Valid
+  AI_Agent_with_autonomy: Valid
+  Agentic_Agent_without_AI: Valid
+  Autonomous_Agent_without_AI: Valid
+  AI_Agent_Agentic: Valid
+  AI_Agent_Autonomous: Valid
+  AI_Agent_Agentic_Autonomous: Valid
+
+# ES-022 orthogonality preserved per ES-ADR-037 section 4
+agentic_autonomous_independence:
+  ai_agent_does_not_imply_agentic: true
+  ai_agent_does_not_imply_autonomous: true
+  agentic_equals_ai: false
+  autonomous_equals_ai: false
+
+ai_boundary:
+  ai_agent_is_realization_substrate_not_semantic_identity: true
+  ai_equals_agentic: false
+  ai_equals_autonomous: false
+  automated_agent_equals_ai_agent: false
+
+note: |
+  This concept record is a reference stub. The full canonical disposition
+  is established by ES-ADR-037 (Dispositon Recon Accepted 2026-09-28) and
+  the ai-agent profile family (registry/profiles/ai-agent.profile.yaml).
+  No new AI Agent canonical concept is introduced. AI Agent is realized
+  as a profile over ES:CONCEPT:agent with AI as the realization substrate.
+
 provenance:
-  - source: FND-ES-AG-007
-    note: AI Agent semantic grounding (10-step template from Grounding Result §13).
-  - source: FND-ES-AG-001-Grounding-Result §3 + §12
-    note: AI Agent identified as a strong candidate, distinct from Agentic Agent scrutiny.
-  - source: ADR-ES-AG-001
-    note: Profile pattern does NOT apply to AI Agent (it is Distinct, not a Profile).
-  - source: FND-ES-AG-006
-    note: AI Agent is the grounding target for any future Agentic Agent decision.
-  - source: https://github.com/World-Semantic-Foundation
-    note: WSF Entity + WSF Capability grounding inherited.
-mappings:
-  - authority: wsf
-    target_id: external:wsf:Entity
-    relationship: specializes
-    note: AI Agent specializes WSF Entity.
-  - authority: wsf
-    target_id: external:wsf:Capability
-    relationship: references
-    note: AI Agent bears WSF Capability.
-created: 2026-09-03
-updated: 2026-09-03
+  historical:
+    - FND-ES-AG-007 (10-step Grounding Result §13, 2026-09-03)
+    - FND-ES-AG-001-Grounding-Result §3 + §12
+    - ADR-ES-AG-001 (Profile pattern does NOT apply ;;; it is Distinct, not a Profile)
+    - FND-ES-AG-006 (Agentic Agent scrutiny)
+  disposition:
+    decision: [ES-ADR-037]
+    implementation: [CR-ES-037]
+    disposition_date: 2026-09-28
+    disposition_authority: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+  superseded_by:
+    - ai-agent profile family (registry/profiles/ai-agent.profile.yaml)
+    - ai-agent concept repo (Enterprise-Semantics/concept-ai-agent) now a profile reference repo

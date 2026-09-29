@@ -121,10 +121,27 @@ candidates:
     dependencies: [Closed Loop canonical]
 
   - name: AI Agent
-    disposition: canonical
-    status: DONE
-    resolution: ai-agent.concept.yaml on main (pre-register era) ; concept repo concept-ai-agent
-    concept_repo: Enterprise-Semantics/concept-ai-agent
+    disposition: profile (canonical-reject)
+    status: RESOLVED
+    rationale: |
+      Per ES-ADR-037 (AI Agent Semantic Disposition Recon, Accepted
+      2026-09-28) ;;; the critical question was whether AI Agent is a
+      canonical specialization of Agent or a technology characterization.
+      The expected disposition is: Technology-qualified Agent /
+      implementation specialization. It SHALL NOT replace or redefine
+      Agent. Realized as the ai-agent profile family over
+      ES:CONCEPT:agent with AI as the realization substrate for
+      interpretation, decision selection, or action selection.
+      Per ES-CR-037. Cardinal author rule preserved.
+    disposition_date: 2026-09-28
+    resolution:
+      canonical_concept: null
+      canonical_concept_used: ES:CONCEPT:agent (the generic Agent remains the canonical concept)
+      profile_name: ai-agent
+      profile_record: registry/profiles/ai-agent.profile.yaml
+      concept_repo: Enterprise-Semantics/concept-ai-agent (now a profile reference repo, not a canonical concept repo)
+    dependencies: [Agent canonical (exists), ES-ADR-037]
+    historical_resolution: ai-agent.concept.yaml on main (pre-register era) ; superseded by ES-037 disposition 2026-09-28
 
   - name: Agentic AI
     disposition: profile

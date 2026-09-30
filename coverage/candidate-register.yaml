@@ -16,31 +16,31 @@ candidates:
     disposition: canonical
     status: DONE
     resolution: ES-ADR-023 + CR-ES-023 ; Final (2026-09-26) ; base WSF:CULTURE
-    concept_repo: Enterprise-Semantics/concept-agentic-culture
+    concept_repo: Enterprise-Semantics/agentic-culture
 
   - name: Autonomous Culture
     disposition: canonical
     status: DONE
     resolution: ES-ADR-024 + CR-ES-024 ; Final (2026-09-26) ; base WSF:CULTURE
-    concept_repo: Enterprise-Semantics/concept-autonomous-culture
+    concept_repo: Enterprise-Semantics/autonomous-culture
 
   - name: Agentic System
     disposition: canonical
     status: DONE
     resolution: ES-ADR-025 + CR-ES-025 ; Final ; base WSF:SYSTEM
-    concept_repo: Enterprise-Semantics/concept-agentic-system
+    concept_repo: Enterprise-Semantics/agentic-system
 
   - name: Autonomous System
     disposition: canonical
     status: DONE
     resolution: ES-ADR-028 + CR-ES-028 ; Final ; base WSF:SYSTEM
-    concept_repo: Enterprise-Semantics/concept-autonomous-system
+    concept_repo: Enterprise-Semantics/autonomous-system
 
   - name: Agentic Ecosystem
     disposition: canonical
     status: DONE
     resolution: ES-ADR-029 + CR-ES-029 ; Final ; base WSF:ECOSYSTEM
-    concept_repo: Enterprise-Semantics/concept-agentic-ecosystem
+    concept_repo: Enterprise-Semantics/agentic-ecosystem
 
   - name: Autonomous Ecosystem
     disposition: investigate
@@ -139,7 +139,7 @@ candidates:
       canonical_concept_used: ES:CONCEPT:agent (the generic Agent remains the canonical concept)
       profile_name: ai-agent
       profile_record: registry/profiles/ai-agent.profile.yaml
-      concept_repo: Enterprise-Semantics/concept-ai-agent (now a profile reference repo, not a canonical concept repo)
+      concept_repo: Enterprise-Semantics/ai-agent (now a profile reference repo, not a canonical concept repo)
     dependencies: [Agent canonical (exists), ES-ADR-037]
     historical_resolution: ai-agent.concept.yaml on main (pre-register era) ; superseded by ES-037 disposition 2026-09-28
 

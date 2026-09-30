@@ -25,7 +25,7 @@
 # historical_decision: ADR-ES-AG-001 (Profile pattern does NOT apply ;;; it is Distinct, not a Profile)
 # superseded_by:
 #   - registry/profiles/ai-agent.profile.yaml (ES-037 Accepted 2026-09-28)
-#   - concept repo: Enterprise-Semantics/concept-ai-agent (now a profile reference repo)
+#   - concept repo: Enterprise-Semantics/ai-agent (now a profile reference repo)
 
 id: ES:CONCEPT:ai-agent
 canonical_name: AI Agent (deprecated reference)
@@ -110,4 +110,4 @@ provenance:
     disposition_authority: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
   superseded_by:
     - ai-agent profile family (registry/profiles/ai-agent.profile.yaml)
-    - ai-agent concept repo (Enterprise-Semantics/concept-ai-agent) now a profile reference repo
+    - ai-agent concept repo (Enterprise-Semantics/ai-agent) now a profile reference repo

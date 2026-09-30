@@ -48,7 +48,7 @@ disposition_note: |
 historical_concept_record:
   deprecated: 2026-09-28
   path: concepts/ai-agent.concept.yaml
-  concept_repo: Enterprise-Semantics/concept-ai-agent (now profile reference repo)
+  concept_repo: Enterprise-Semantics/ai-agent (now profile reference repo)
   historical_grounding: FND-ES-AG-007 (2026-09-03)
 
 provenance:

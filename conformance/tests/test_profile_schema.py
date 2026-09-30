@@ -1,5 +1,5 @@
 """
-test_profile_schema.py ;;; tests for the Profile conformance harness.
+test_profile_schema.py, tests for the Profile conformance harness.
 
 Per CR-ES-AG-001 §3.6.
 
@@ -12,7 +12,7 @@ harness detects:
   - invalid profile_type fails (not registered)
   - duplicate ids fail
 
-They are NOT pytest-dependent ;;; they use a tiny harness around the
+They are NOT pytest-dependent, they use a tiny harness around the
 check module's validation logic. To run:
   python3 conformance/tests/test_profile_schema.py
 """

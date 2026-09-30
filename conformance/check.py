@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-check.py ;;; Enterprise-Semantics Profile conformance harness.
+check.py, Enterprise-Semantics Profile conformance harness.
 
 Reads every YAML record in registry/profiles/, validates against
 schema/profile.schema.json, and checks registry invariants:
@@ -12,9 +12,9 @@ schema/profile.schema.json, and checks registry invariants:
   - lifecycle status must be valid (per ADR-ES-002 §13)
 
 Exit codes:
-  0 ;;; all checks pass
-  1 ;;; one or more checks failed
-  2 ;;; harness error (missing file, JSON parse error, etc.)
+  0, all checks pass
+  1, one or more checks failed
+  2, harness error (missing file, JSON parse error, etc.)
 
 Usage:
   python3 conformance/check.py

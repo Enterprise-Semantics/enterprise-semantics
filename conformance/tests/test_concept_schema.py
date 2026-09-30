@@ -1,5 +1,5 @@
 """
-test_concept_schema.py ;;; tests for the Concept conformance harness.
+test_concept_schema.py, tests for the Concept conformance harness.
 
 Per CR-ES-AG-003 §3 (conformance harness extension).
 

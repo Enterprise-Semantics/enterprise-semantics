@@ -1,4 +1,4 @@
-# versions/v2.11.0.yaml ;;; ES-035 release pointer
+# versions/v2.11.0.yaml, ES-035 release pointer
 version: 2.11.0
 date: 2026-09-28
 status: established
@@ -6,7 +6,7 @@ authority: Enterprise-Semantics
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 
 contains:
-  - ES-035 ;;; Autonomous Closed Loop
+  - ES-035, Autonomous Closed Loop
   - decision: ES-ADR-035
 
 prior_release: v2.10.0

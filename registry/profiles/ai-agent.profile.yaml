@@ -1,4 +1,4 @@
-# registry/profiles/ai-agent.profile.yaml ;;; AI Agent ;;; ES-037
+# registry/profiles/ai-agent.profile.yaml, AI Agent, and ES-037
 id: ai-agent
 canonical_name: AI Agent
 version: 1.0.0
@@ -10,7 +10,7 @@ base_concept: ES:CONCEPT:agent
 authority: ES
 profile_type: ai-agent
 applies_to_concept: ES:CONCEPT:ai-agent
-disposition: technology-qualified Agent ;;; implementation specialization profile (ES-037 Disposition Recon)
+disposition: technology-qualified Agent, implementation specialization profile (ES-037 Disposition Recon)
 realization_substrate: ai
 canonical_definition: |
     Profile family over Agent with AI as the interpretation/decision/action-selection realization substrate. Per the AI boundary rule, this is implementation technology, not semantic definition.
@@ -34,7 +34,7 @@ disposition_note: |
   This profile family is the canonical place for AI Agent semantics
   per ES-ADR-037 (Dispositon Recon Accepted 2026-09-28). The previous
   ai-agent.concept.yaml was demoted to a Deprecated reference stub
-  on 2026-09-28 ;;; AI Agent is a technology-qualified Agent
+  on 2026-09-28, AI Agent is a technology-qualified Agent
   realization substrate (interpretation, decision selection, or
   action selection), not a semantic concept in its own right.
 

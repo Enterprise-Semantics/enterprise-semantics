@@ -1,4 +1,4 @@
-# registry/profiles/loop-engineering.profile.yaml ;;; Loop Engineering ;;; canonical-reject per AI boundary rule
+# registry/profiles/loop-engineering.profile.yaml, Loop Engineering, and canonical-reject per AI boundary rule
 id: loop-engineering
 canonical_name: Loop Engineering
 version: 1.0.0
@@ -14,7 +14,7 @@ disposition: profile (canonical-reject per AI boundary rule)
 canonical_definition: |
     An engineering discipline for designing, operating, and improving closed-loop systems. Realized as a profile family over Closed Loop + Capability + Operations.
 rationale: |
-    Per Findings-AI-Native-Operations-Boundary (profile section) ;;; candidate register CR-ES-022 section 4 disposition
+    Per Findings-AI-Native-Operations-Boundary (profile section), candidate register CR-ES-022 section 4 disposition
 boundary_assertions:
   - practice_or_realization_label_not_canonical: true
   - consistent_with_ai_boundary_rule: true

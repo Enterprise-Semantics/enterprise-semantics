@@ -1,6 +1,6 @@
-# concepts/ai-agent.concept.yaml ;;; REFERENCE STUB (deprecated)
+# concepts/ai-agent.concept.yaml, REFERENCE STUB (deprecated)
 #
-# Per ES-ADR-037 (AI Agent Semantic Disposition Recon, slot 0046) ;;; the
+# Per ES-ADR-037 (AI Agent Semantic Disposition Recon, slot 0046), the
 # AI Agent Disposition Recon's expected disposition is:
 # "Technology-qualified Agent / implementation specialization. A final decision
 #  SHALL determine whether AI Agent belongs in the canonical registry or is
@@ -10,19 +10,19 @@
 # Per ES-CR-037, the AI Agent canonical concept is superseded by the
 # ai-agent profile family (registry/profiles/ai-agent.profile.yaml, ES-037).
 #
-# This file is now a reference stub ;;; it documents the historical
+# This file is now a reference stub, it documents the historical
 # FND-ES-AG-007 grounding but is NOT a canonical Enterprise-Semantics
 # concept. AI Agent is realized as a profile family over ES:CONCEPT:agent
 # with AI as the realization substrate (interpretation / decision /
 # action-selection).
 #
-# Status: Deprecated ;;; reference stub
+# Status: Deprecated, reference stub
 # disposition: profile (canonical-reject per ES-ADR-037 disposition recon)
 # disposition_date: 2026-09-28
 # disposition_authority: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 #
 # historical_grounding: FND-ES-AG-007 (10-step Grounding Result §13)
-# historical_decision: ADR-ES-AG-001 (Profile pattern does NOT apply ;;; it is Distinct, not a Profile)
+# historical_decision: ADR-ES-AG-001 (Profile pattern does NOT apply, it is Distinct, not a Profile)
 # superseded_by:
 #   - registry/profiles/ai-agent.profile.yaml (ES-037 Accepted 2026-09-28)
 #   - concept repo: Enterprise-Semantics/ai-agent (now a profile reference repo)
@@ -37,7 +37,7 @@ author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 
 definition: |
-  Historical reference stub ;;; the canonical AI Agent concept has
+  Historical reference stub, the canonical AI Agent concept has
   been demoted per ES-ADR-037 (AI Agent Semantic Disposition Recon,
   Accepted 2026-09-28). AI Agent is realized as the ai-agent profile
   family over ES:CONCEPT:agent with AI as the realization substrate
@@ -57,7 +57,7 @@ historical_grounding_reference: |
   AI Agent (historical FND-ES-AG-007 concept record) was an Entity that
   bears AI-grounded capabilities, exhibits goal-directed behavior under
   governed policy, makes decisions under varying degrees of autonomy, and
-  produces observable evidence of its operation ;;; all within an enterprise
+  produces observable evidence of its operation, all within an enterprise
   semantic context.
 
   Per ES-ADR-037 section 2, the canonical concept is replaced by the
@@ -101,7 +101,7 @@ provenance:
   historical:
     - FND-ES-AG-007 (10-step Grounding Result §13, 2026-09-03)
     - FND-ES-AG-001-Grounding-Result §3 + §12
-    - ADR-ES-AG-001 (Profile pattern does NOT apply ;;; it is Distinct, not a Profile)
+    - ADR-ES-AG-001 (Profile pattern does NOT apply, it is Distinct, not a Profile)
     - FND-ES-AG-006 (Agentic Agent scrutiny)
   disposition:
     decision: [ES-ADR-037]

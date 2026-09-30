@@ -1,4 +1,4 @@
-# coverage/candidate-register.yaml ;;; per CR-ES-022 section 4
+# coverage/candidate-register.yaml, per CR-ES-022 section 4
 #
 # Semantic analysis of the 17-candidate register.
 # Each candidate has a disposition + rationale + dependency notes.
@@ -125,7 +125,7 @@ candidates:
     status: RESOLVED
     rationale: |
       Per ES-ADR-037 (AI Agent Semantic Disposition Recon, Accepted
-      2026-09-28) ;;; the critical question was whether AI Agent is a
+      2026-09-28), the critical question was whether AI Agent is a
       canonical specialization of Agent or a technology characterization.
       The expected disposition is: Technology-qualified Agent /
       implementation specialization. It SHALL NOT replace or redefine
@@ -197,8 +197,8 @@ summary:
   canonical_open: 0
   investigate: 0
   profile: 5
-  network_pair: 2 (Agentic Network + Autonomous Network ;;; ES-031 + ES-032 Final)
-  loop_stack: 3 (Loop Engineering + Closed Loop + Autonomous Closed Loop ;;; ES-033 + ES-034 + ES-035 Final)
+  network_pair: 2 (Agentic Network + Autonomous Network, ES-031 + ES-032 Final)
+  loop_stack: 3 (Loop Engineering + Closed Loop + Autonomous Closed Loop, ES-033 + ES-034 + ES-035 Final)
   notes: |
     9 of 17 canonical DONE (Culture pair, System pair, Ecosystem-agentic,
     Ecosystem-autonomous, AI Agent, Network, Closed Loop).

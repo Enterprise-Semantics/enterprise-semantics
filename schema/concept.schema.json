@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Enterprise-Semantics/enterprise-semantics/schema/concept.schema.json",
   "title": "Enterprise-Semantics Concept",
-  "description": "Concept record per ADR-ES-002 \u00a77. A Concept is the semantic identity ;;; a Concept record declares its canonical name, definition, WSF grounding, Profile bindings, and governed relationships.",
+  "description": "Concept record per ADR-ES-002 \u00a77. A Concept is the semantic identity, a Concept record declares its canonical name, definition, WSF grounding, Profile bindings, and governed relationships.",
   "type": "object",
   "required": [
     "id",
@@ -55,7 +55,7 @@
     },
     "wsf_grounding": {
       "type": "array",
-      "description": "WSF concepts that this concept specializes or profiles. Per FND-ES-AG-001-Grounding-Result ;;; ES must specialize WSF, not duplicate.",
+      "description": "WSF concepts that this concept specializes or profiles. Per FND-ES-AG-001-Grounding-Result, ES must specialize WSF, not duplicate.",
       "items": {
         "type": "object",
         "required": [
@@ -85,7 +85,7 @@
     },
     "profile_bindings": {
       "type": "array",
-      "description": "Profiles that this Concept carries. Per ADR-ES-AG-001 \u00a73 ;;; a Profile adds a governed configuration overlay.",
+      "description": "Profiles that this Concept carries. Per ADR-ES-AG-001 \u00a73, a Profile adds a governed configuration overlay.",
       "items": {
         "type": "object",
         "required": [

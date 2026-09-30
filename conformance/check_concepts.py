@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """
-check_concepts.py ;;; Enterprise-Semantics Concept conformance harness.
+check_concepts.py, Enterprise-Semantics Concept conformance harness.
 
 Reads every YAML record in concepts/, validates against
 schema/concept.schema.json, and checks registry invariants:
 
   - unique Concept ids across all records
   - WSF grounding must be present for Agentic concepts (per FND-ES-AG-001
-    Grounding Result ;;; ES must specialize WSF, not duplicate).
+    Grounding Result, ES must specialize WSF, not duplicate).
   - profile_bindings must reference existing Profile records.
   - relationship subjects/objects must be either registered Concept ids or
     external references (prefixed with 'external:').
   - lifecycle status must be valid (per ADR-ES-002 §13).
 
 Exit codes:
-  0 ;;; all checks pass
-  1 ;;; one or more checks failed
-  2 ;;; harness error
+  0, all checks pass
+  1, one or more checks failed
+  2, harness error
 
 Usage:
   python3 conformance/check_concepts.py
@@ -126,7 +126,7 @@ def validate_concept_file(
     if status is not None and status not in LIFECYCLE_STATES:
         errors.append(f"{rel}: status '{status}' is not a valid lifecycle state")
 
-    # FND-ES-AG-001-Grounding-Result ;;; WSF grounding is mandatory for Agentic
+    # FND-ES-AG-001-Grounding-Result, WSF grounding is mandatory for Agentic
     # concepts. We enforce this only for Concepts with profile_bindings to a
     # Profile of profile_type=agentic-execution.
     pbs = record.get("profile_bindings") or []
@@ -142,7 +142,7 @@ def validate_concept_file(
                 f"(per FND-ES-AG-001-Grounding-Result)"
             )
 
-    # profile_bindings ;;; each profile_id must reference an existing Profile
+    # profile_bindings, each profile_id must reference an existing Profile
     for i, pb in enumerate(pbs):
         if not isinstance(pb, dict):
             errors.append(f"{rel}: profile_bindings[{i}] must be a mapping")
@@ -154,7 +154,7 @@ def validate_concept_file(
                 f"reference an existing Profile record"
             )
 
-    # relationships ;;; subject/object must be Concept ids or external references
+    # relationships, subject/object must be Concept ids or external references
     rels = record.get("relationships") or []
     for i, rel_obj in enumerate(rels):
         if not isinstance(rel_obj, dict):
@@ -182,7 +182,7 @@ def validate_concept_file(
 
 def main() -> int:
     if not CONCEPTS_DIR.exists():
-        # No concepts yet ;;; report but don't fail.
+        # No concepts yet, report but don't fail.
         print("NO_DRIFT (0 Concept record(s) validated)")
         return 0
     if not SCHEMA_PATH.exists():

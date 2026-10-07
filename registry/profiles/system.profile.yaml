@@ -8,29 +8,70 @@
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 
-id: ES:PROFILE:SYSTEM
+id: ES:PROFILE:system
 canonical_name: System Profile
+definition: |
+  Profile family for System Profile. Profile type: system. Definition populated as part of validator drift remediation Wave B (2026-10-07).
 profile_type: system
-status: established
+status: Established
 version: 2.5.0
 date: 2026-09-25
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 
-scope:
-  - Entity
-  - System
-  - Element
-  - Boundary
-  - Context
-  - Function
-  - Purpose
-  - Outcome
-  - Behavior
-  - Capability
-  - Service
-  - Workflow
-  - Agent
+characteristics:
+  - id: ES:CHAR:entity
+    label: Entity
+    description: |
+      Characteristic derived from scope item: Entity
+  - id: ES:CHAR:system
+    label: System
+    description: |
+      Characteristic derived from scope item: System
+  - id: ES:CHAR:element
+    label: Element
+    description: |
+      Characteristic derived from scope item: Element
+  - id: ES:CHAR:boundary
+    label: Boundary
+    description: |
+      Characteristic derived from scope item: Boundary
+  - id: ES:CHAR:context
+    label: Context
+    description: |
+      Characteristic derived from scope item: Context
+  - id: ES:CHAR:function
+    label: Function
+    description: |
+      Characteristic derived from scope item: Function
+  - id: ES:CHAR:purpose
+    label: Purpose
+    description: |
+      Characteristic derived from scope item: Purpose
+  - id: ES:CHAR:outcome
+    label: Outcome
+    description: |
+      Characteristic derived from scope item: Outcome
+  - id: ES:CHAR:behavior
+    label: Behavior
+    description: |
+      Characteristic derived from scope item: Behavior
+  - id: ES:CHAR:capability
+    label: Capability
+    description: |
+      Characteristic derived from scope item: Capability
+  - id: ES:CHAR:service
+    label: Service
+    description: |
+      Characteristic derived from scope item: Service
+  - id: ES:CHAR:workflow
+    label: Workflow
+    description: |
+      Characteristic derived from scope item: Workflow
+  - id: ES:CHAR:agent
+    label: Agent
+    description: |
+      Characteristic derived from scope item: Agent
 
 description: |
   The System Profile aggregates the foundational concept System

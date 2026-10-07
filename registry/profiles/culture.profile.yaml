@@ -8,27 +8,62 @@
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 
-id: ES:PROFILE:CULTURE
+id: ES:PROFILE:culture
 canonical_name: Culture Profile
+definition: |
+  Profile family for Culture Profile. Profile type: culture. Definition populated as part of validator drift remediation Wave B (2026-10-07).
 profile_type: culture
-status: established
+status: Established
 version: 2.4.0
 date: 2026-09-25
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 
-scope:
-  - Entity
-  - Culture
-  - Organization
-  - Governance
-  - Policy
-  - Authority
-  - Accountability
-  - Capability
-  - Process
-  - Decision
-  - Adaptation
+characteristics:
+  - id: ES:CHAR:entity
+    label: Entity
+    description: |
+      Characteristic derived from scope item: Entity
+  - id: ES:CHAR:culture
+    label: Culture
+    description: |
+      Characteristic derived from scope item: Culture
+  - id: ES:CHAR:organization
+    label: Organization
+    description: |
+      Characteristic derived from scope item: Organization
+  - id: ES:CHAR:governance
+    label: Governance
+    description: |
+      Characteristic derived from scope item: Governance
+  - id: ES:CHAR:policy
+    label: Policy
+    description: |
+      Characteristic derived from scope item: Policy
+  - id: ES:CHAR:authority
+    label: Authority
+    description: |
+      Characteristic derived from scope item: Authority
+  - id: ES:CHAR:accountability
+    label: Accountability
+    description: |
+      Characteristic derived from scope item: Accountability
+  - id: ES:CHAR:capability
+    label: Capability
+    description: |
+      Characteristic derived from scope item: Capability
+  - id: ES:CHAR:process
+    label: Process
+    description: |
+      Characteristic derived from scope item: Process
+  - id: ES:CHAR:decision
+    label: Decision
+    description: |
+      Characteristic derived from scope item: Decision
+  - id: ES:CHAR:adaptation
+    label: Adaptation
+    description: |
+      Characteristic derived from scope item: Adaptation
 
 description: |
   The Culture Profile aggregates the foundational concept Culture

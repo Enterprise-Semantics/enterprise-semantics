@@ -7,32 +7,82 @@
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 
-id: ES:PROFILE:AUTONOMOUS_CULTURE
+id: ES:PROFILE:autonomous-culture
 canonical_name: Autonomous Culture Profile
+definition: |
+  Profile family for Autonomous Culture Profile. Profile type: autonomous-culture. Definition populated as part of validator drift remediation Wave B (2026-10-07).
 profile_type: autonomous-culture
-status: established
+status: Established
 version: 2.1.0
 date: 2026-09-25
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 
-scope:
-  - Culture
-  - Autonomous Culture
-  - Autonomous Organization
-  - Agentic Organization
-  - Autonomous Operations
-  - Agentic Operations
-  - Agent
-  - Organizational Context
-  - Organizational Outcome
-  - Delegation Practice
-  - Authority Practice
-  - Accountability Practice
-  - Intervention Practice
-  - Escalation Practice
-  - Decision Practice
-  - Adaptation Practice
+characteristics:
+  - id: ES:CHAR:culture
+    label: Culture
+    description: |
+      Characteristic derived from scope item: Culture
+  - id: ES:CHAR:autonomous-culture
+    label: Autonomous Culture
+    description: |
+      Characteristic derived from scope item: Autonomous Culture
+  - id: ES:CHAR:autonomous-organization
+    label: Autonomous Organization
+    description: |
+      Characteristic derived from scope item: Autonomous Organization
+  - id: ES:CHAR:agentic-organization
+    label: Agentic Organization
+    description: |
+      Characteristic derived from scope item: Agentic Organization
+  - id: ES:CHAR:autonomous-operations
+    label: Autonomous Operations
+    description: |
+      Characteristic derived from scope item: Autonomous Operations
+  - id: ES:CHAR:agentic-operations
+    label: Agentic Operations
+    description: |
+      Characteristic derived from scope item: Agentic Operations
+  - id: ES:CHAR:agent
+    label: Agent
+    description: |
+      Characteristic derived from scope item: Agent
+  - id: ES:CHAR:organizational-context
+    label: Organizational Context
+    description: |
+      Characteristic derived from scope item: Organizational Context
+  - id: ES:CHAR:organizational-outcome
+    label: Organizational Outcome
+    description: |
+      Characteristic derived from scope item: Organizational Outcome
+  - id: ES:CHAR:delegation-practice
+    label: Delegation Practice
+    description: |
+      Characteristic derived from scope item: Delegation Practice
+  - id: ES:CHAR:authority-practice
+    label: Authority Practice
+    description: |
+      Characteristic derived from scope item: Authority Practice
+  - id: ES:CHAR:accountability-practice
+    label: Accountability Practice
+    description: |
+      Characteristic derived from scope item: Accountability Practice
+  - id: ES:CHAR:intervention-practice
+    label: Intervention Practice
+    description: |
+      Characteristic derived from scope item: Intervention Practice
+  - id: ES:CHAR:escalation-practice
+    label: Escalation Practice
+    description: |
+      Characteristic derived from scope item: Escalation Practice
+  - id: ES:CHAR:decision-practice
+    label: Decision Practice
+    description: |
+      Characteristic derived from scope item: Decision Practice
+  - id: ES:CHAR:adaptation-practice
+    label: Adaptation Practice
+    description: |
+      Characteristic derived from scope item: Adaptation Practice
 
 description: |
   The Autonomous Culture Profile aggregates the canonical concepts

@@ -10,30 +10,74 @@
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 
-id: ES:PROFILE:AGENTIC_SYSTEM
+id: ES:PROFILE:agentic-system
 canonical_name: Agentic System Profile
+definition: |
+  Profile family for Agentic System Profile. Profile type: agentic-system. Definition populated as part of validator drift remediation Wave B (2026-10-07).
 profile_type: agentic-system
-status: established
+status: Established
 version: 2.3.0
 date: 2026-09-25
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 
-scope:
-  - System
-  - Agentic System
-  - Agent
-  - Intent
-  - Authority
-  - Policy
-  - Constraint
-  - Context
-  - Action
-  - Outcome
-  - Agentic Workflow
-  - Capability
-  - Service
-  - Value
+characteristics:
+  - id: ES:CHAR:system
+    label: System
+    description: |
+      Characteristic derived from scope item: System
+  - id: ES:CHAR:agentic-system
+    label: Agentic System
+    description: |
+      Characteristic derived from scope item: Agentic System
+  - id: ES:CHAR:agent
+    label: Agent
+    description: |
+      Characteristic derived from scope item: Agent
+  - id: ES:CHAR:intent
+    label: Intent
+    description: |
+      Characteristic derived from scope item: Intent
+  - id: ES:CHAR:authority
+    label: Authority
+    description: |
+      Characteristic derived from scope item: Authority
+  - id: ES:CHAR:policy
+    label: Policy
+    description: |
+      Characteristic derived from scope item: Policy
+  - id: ES:CHAR:constraint
+    label: Constraint
+    description: |
+      Characteristic derived from scope item: Constraint
+  - id: ES:CHAR:context
+    label: Context
+    description: |
+      Characteristic derived from scope item: Context
+  - id: ES:CHAR:action
+    label: Action
+    description: |
+      Characteristic derived from scope item: Action
+  - id: ES:CHAR:outcome
+    label: Outcome
+    description: |
+      Characteristic derived from scope item: Outcome
+  - id: ES:CHAR:agentic-workflow
+    label: Agentic Workflow
+    description: |
+      Characteristic derived from scope item: Agentic Workflow
+  - id: ES:CHAR:capability
+    label: Capability
+    description: |
+      Characteristic derived from scope item: Capability
+  - id: ES:CHAR:service
+    label: Service
+    description: |
+      Characteristic derived from scope item: Service
+  - id: ES:CHAR:value
+    label: Value
+    description: |
+      Characteristic derived from scope item: Value
 
 description: |
   The Agentic System Profile aggregates the canonical concepts

@@ -1,8 +1,10 @@
 # registry/profiles/autonomous-ecosystem.profile.yaml ; ES-030 ; 22nd profile
-id: autonomous-ecosystem
+id: ES:PROFILE:autonomous-ecosystem
 canonical_name: Autonomous Ecosystem
+definition: |
+  Profile family for Autonomous Ecosystem. Profile type: autonomous-ecosystem. Definition populated as part of validator drift remediation Wave B (2026-10-07).
 version: 2.6.0
-status: established
+status: Established
 date: 2026-09-27
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
@@ -25,11 +27,40 @@ canonical_definitions:
     paths.
 
 boundary_assertions:
-  - autonomous_ecosystem_distinct_from_autonomous_system: true
-  - autonomous_ecosystem_distinct_from_autonomous_organization: true
-  - autonomous_ecosystem_distinct_from_agentic_ecosystem: true
-  - autonomous_ecosystem_does_not_require_ai: true
-  - autonomy_requires_policy_boundaries_and_escalation: true
+characteristics:
+  - id: ES:CHAR:profile-not-canonical
+    label: Profile Not Canonical
+    description: |
+      Profile flag indicating profile not canonical.
+  - id: ES:CHAR:consistent-with-ai-boundary-rule
+    label: Consistent With Ai Boundary Rule
+    description: |
+      Profile flag indicating consistent with ai boundary rule.
+  - id: ES:CHAR:four-state-independence-preserved
+    label: Four State Independence Preserved
+    description: |
+      Profile flag indicating four state independence preserved.
+characteristics:
+  - id: ES:CHAR:autonomous-ecosystem-distinct-from-autonomous-system
+    label: Autonomous Ecosystem Distinct From Autonomous System
+    description: |
+      Profile flag indicating autonomous ecosystem distinct from autonomous system.
+  - id: ES:CHAR:autonomous-ecosystem-distinct-from-autonomous-organization
+    label: Autonomous Ecosystem Distinct From Autonomous Organization
+    description: |
+      Profile flag indicating autonomous ecosystem distinct from autonomous organization.
+  - id: ES:CHAR:autonomous-ecosystem-distinct-from-agentic-ecosystem
+    label: Autonomous Ecosystem Distinct From Agentic Ecosystem
+    description: |
+      Profile flag indicating autonomous ecosystem distinct from agentic ecosystem.
+  - id: ES:CHAR:autonomous-ecosystem-does-not-require-ai
+    label: Autonomous Ecosystem Does Not Require Ai
+    description: |
+      Profile flag indicating autonomous ecosystem does not require ai.
+  - id: ES:CHAR:autonomy-requires-policy-boundaries-and-escalation
+    label: Autonomy Requires Policy Boundaries And Escalation
+    description: |
+      Profile flag indicating autonomy requires policy boundaries and escalation.
 
 conformance_tests:
   positive:

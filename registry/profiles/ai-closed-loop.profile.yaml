@@ -1,6 +1,8 @@
 # registry/profiles/ai-closed-loop.profile.yaml, AI Closed Loop, and ES-036
-id: ai-closed-loop
+id: ES:PROFILE:ai-closed-loop
 canonical_name: AI Closed Loop
+definition: |
+    Profile family over Closed Loop with AI as the realization substrate. Per the AI boundary rule, this is realization technology, not semantic identity. Canonical Closed Loop lives at ES-034.
 version: 1.0.0
 status: Established
 date: 2026-09-28
@@ -17,9 +19,19 @@ canonical_definition: |
 rationale: |
     Per ES-ADR-036 section 1. The presence of AI does not change the essential semantics of a Closed Loop.
 boundary_assertions:
-  - profile_not_canonical: true
-  - consistent_with_ai_boundary_rule: true
-  - four_state_independence_preserved: true
+characteristics:
+  - id: ES:CHAR:profile-not-canonical
+    label: Profile Not Canonical
+    description: |
+      Profile flag indicating profile not canonical.
+  - id: ES:CHAR:consistent-with-ai-boundary-rule
+    label: Consistent With Ai Boundary Rule
+    description: |
+      Profile flag indicating consistent with ai boundary rule.
+  - id: ES:CHAR:four-state-independence-preserved
+    label: Four State Independence Preserved
+    description: |
+      Profile flag indicating four state independence preserved.
 conformance_tests:
   positive:
     - applies_to_canonical_base

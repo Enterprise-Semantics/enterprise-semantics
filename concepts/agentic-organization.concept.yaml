@@ -5,6 +5,7 @@
 
 id: ES:CONCEPT:agentic-organization
 canonical_name: Agentic Organization
+concept_type: agentic-organization
 status: Established
 version: '1.0.0'
 date: '2026-09-30'

@@ -5,6 +5,7 @@
 
 id: ES:CONCEPT:autonomous-service
 canonical_name: Autonomous Service
+concept_type: autonomous-service
 status: Established
 version: '1.0.0'
 date: '2026-09-30'

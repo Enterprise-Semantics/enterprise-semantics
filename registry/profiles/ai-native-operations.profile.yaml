@@ -1,6 +1,8 @@
 # registry/profiles/ai-native-operations.profile.yaml, AI-Native Operations, and ES-041
-id: ai-native-operations
+id: ES:PROFILE:ai-native-operations
 canonical_name: AI-Native Operations
+definition: |
+    Profile family over Operations where AI is the native operating substrate. Per ES-ADR-041 + Findings-AI-Native-Operations-Boundary: AI-Native Operations != Autonomous Operations. Canonical autonomy remains at ES-008 (Autonomous Operations).
 version: 1.0.0
 status: Established
 date: 2026-09-28
@@ -17,9 +19,19 @@ canonical_definition: |
 rationale: |
     Per ES-ADR-041 + Findings-AI-Native-Operations-Boundary. Realization substrate characteristic, not semantic identity.
 boundary_assertions:
-  - profile_not_canonical: true
-  - consistent_with_ai_boundary_rule: true
-  - four_state_independence_preserved: true
+characteristics:
+  - id: ES:CHAR:profile-not-canonical
+    label: Profile Not Canonical
+    description: |
+      Profile flag indicating profile not canonical.
+  - id: ES:CHAR:consistent-with-ai-boundary-rule
+    label: Consistent With Ai Boundary Rule
+    description: |
+      Profile flag indicating consistent with ai boundary rule.
+  - id: ES:CHAR:four-state-independence-preserved
+    label: Four State Independence Preserved
+    description: |
+      Profile flag indicating four state independence preserved.
 conformance_tests:
   positive:
     - applies_to_canonical_base

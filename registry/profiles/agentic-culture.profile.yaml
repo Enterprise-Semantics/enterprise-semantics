@@ -8,29 +8,70 @@
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 
-id: ES:PROFILE:AGENTIC_CULTURE
+id: ES:PROFILE:agentic-culture
 canonical_name: Agentic Culture Profile
+definition: |
+  Profile family for Agentic Culture Profile. Profile type: agentic-culture. Definition populated as part of validator drift remediation Wave B (2026-10-07).
 profile_type: agentic-culture
-status: established
+status: Established
 version: 2.1.0
 date: 2026-09-25
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 
-scope:
-  - Culture
-  - Agentic Culture
-  - Agentic Organization
-  - Agentic Operations
-  - Agentic Workflow
-  - Agent
-  - Organizational Context
-  - Organizational Outcome
-  - Delegation Practice
-  - Authority Practice
-  - Accountability Practice
-  - Collaboration Practice
-  - Decision Practice
+characteristics:
+  - id: ES:CHAR:culture
+    label: Culture
+    description: |
+      Characteristic derived from scope item: Culture
+  - id: ES:CHAR:agentic-culture
+    label: Agentic Culture
+    description: |
+      Characteristic derived from scope item: Agentic Culture
+  - id: ES:CHAR:agentic-organization
+    label: Agentic Organization
+    description: |
+      Characteristic derived from scope item: Agentic Organization
+  - id: ES:CHAR:agentic-operations
+    label: Agentic Operations
+    description: |
+      Characteristic derived from scope item: Agentic Operations
+  - id: ES:CHAR:agentic-workflow
+    label: Agentic Workflow
+    description: |
+      Characteristic derived from scope item: Agentic Workflow
+  - id: ES:CHAR:agent
+    label: Agent
+    description: |
+      Characteristic derived from scope item: Agent
+  - id: ES:CHAR:organizational-context
+    label: Organizational Context
+    description: |
+      Characteristic derived from scope item: Organizational Context
+  - id: ES:CHAR:organizational-outcome
+    label: Organizational Outcome
+    description: |
+      Characteristic derived from scope item: Organizational Outcome
+  - id: ES:CHAR:delegation-practice
+    label: Delegation Practice
+    description: |
+      Characteristic derived from scope item: Delegation Practice
+  - id: ES:CHAR:authority-practice
+    label: Authority Practice
+    description: |
+      Characteristic derived from scope item: Authority Practice
+  - id: ES:CHAR:accountability-practice
+    label: Accountability Practice
+    description: |
+      Characteristic derived from scope item: Accountability Practice
+  - id: ES:CHAR:collaboration-practice
+    label: Collaboration Practice
+    description: |
+      Characteristic derived from scope item: Collaboration Practice
+  - id: ES:CHAR:decision-practice
+    label: Decision Practice
+    description: |
+      Characteristic derived from scope item: Decision Practice
 
 description: |
   The Agentic Culture Profile aggregates the canonical concepts

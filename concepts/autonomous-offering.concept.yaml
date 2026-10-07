@@ -5,6 +5,7 @@
 
 id: ES:CONCEPT:autonomous-offering
 canonical_name: Autonomous Offering
+concept_type: autonomous-offering
 status: Established
 version: '1.0.0'
 date: '2026-09-30'

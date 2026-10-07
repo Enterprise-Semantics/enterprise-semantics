@@ -1,6 +1,8 @@
 # registry/profiles/mlops.profile.yaml, MLOps, and ES-040
-id: mlops
+id: ES:PROFILE:mlops
 canonical_name: MLOps
+definition: |
+    Profile family over Operations where ML lifecycle (training, deployment, monitoring) is the realization substrate. Per ES-ADR-040: MLOps != Operations, MLOps != AIOps. Vendor-neutral.
 version: 1.0.0
 status: Established
 date: 2026-09-28
@@ -17,9 +19,19 @@ canonical_definition: |
 rationale: |
     Per ES-ADR-040. Engineering discipline.
 boundary_assertions:
-  - profile_not_canonical: true
-  - consistent_with_ai_boundary_rule: true
-  - four_state_independence_preserved: true
+characteristics:
+  - id: ES:CHAR:profile-not-canonical
+    label: Profile Not Canonical
+    description: |
+      Profile flag indicating profile not canonical.
+  - id: ES:CHAR:consistent-with-ai-boundary-rule
+    label: Consistent With Ai Boundary Rule
+    description: |
+      Profile flag indicating consistent with ai boundary rule.
+  - id: ES:CHAR:four-state-independence-preserved
+    label: Four State Independence Preserved
+    description: |
+      Profile flag indicating four state independence preserved.
 conformance_tests:
   positive:
     - applies_to_canonical_base

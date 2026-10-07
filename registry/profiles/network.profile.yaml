@@ -1,8 +1,10 @@
 # registry/profiles/network.profile.yaml, Network, and ES-034
-id: network
+id: ES:PROFILE:network
 canonical_name: Network
+definition: |
+  Profile family for Network. Profile type: network. Definition populated as part of validator drift remediation Wave B (2026-10-07).
 version: 2.7.0
-status: Baseline
+status: Established
 date: 2026-09-27
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
@@ -16,7 +18,24 @@ canonical_definitions:
   network: |
     Per ADR-WSF-37 section 2.
 boundary_assertions:
-  - foundational_reference_to_wsf: true
+characteristics:
+  - id: ES:CHAR:profile-not-canonical
+    label: Profile Not Canonical
+    description: |
+      Profile flag indicating profile not canonical.
+  - id: ES:CHAR:consistent-with-ai-boundary-rule
+    label: Consistent With Ai Boundary Rule
+    description: |
+      Profile flag indicating consistent with ai boundary rule.
+  - id: ES:CHAR:four-state-independence-preserved
+    label: Four State Independence Preserved
+    description: |
+      Profile flag indicating four state independence preserved.
+characteristics:
+  - id: ES:CHAR:foundational-reference-to-wsf
+    label: Foundational Reference To Wsf
+    description: |
+      Profile flag indicating foundational reference to wsf.
 conformance_tests:
   positive:
     - foundational_canonical_in_wsf

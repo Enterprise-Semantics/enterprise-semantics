@@ -229,3 +229,13 @@ profile_types:
     disposition: profile
     base_concept: ES:CONCEPT:operations
     source_decision: ES-040
+
+  - id: autonomous-enterprise
+    canonical_name: Autonomous Enterprise
+    definition: |
+      A profile_type family for the Autonomous Enterprise Profile per
+      CR-ES-029 + ADR-ES-029. Aggregates Autonomous Enterprise ;;
+      Autonomous Operations ;; Autonomous Culture ;; Agentic Enterprise ;;
+      Agentic Operations ;; Agentic Culture for discoverability and
+      grouping. Does not imply inheritance.
+    governance: enterprise-semantics

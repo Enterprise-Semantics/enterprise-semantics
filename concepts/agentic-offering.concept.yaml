@@ -5,6 +5,7 @@
 
 id: ES:CONCEPT:agentic-offering
 canonical_name: Agentic Offering
+concept_type: agentic-offering
 status: Established
 version: '1.0.0'
 date: '2026-09-30'

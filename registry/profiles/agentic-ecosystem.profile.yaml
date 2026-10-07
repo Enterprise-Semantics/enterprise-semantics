@@ -1,8 +1,10 @@
 # registry/profiles/agentic-ecosystem.profile.yaml ; ES-029 ; 21st profile
-id: agentic-ecosystem
+id: ES:PROFILE:agentic-ecosystem
 canonical_name: Agentic Ecosystem
+definition: |
+  Profile family for Agentic Ecosystem. Profile type: agentic-ecosystem. Definition populated as part of validator drift remediation Wave B (2026-10-07).
 version: 2.5.0
-status: established
+status: Established
 date: 2026-09-26
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
@@ -25,13 +27,48 @@ canonical_definitions:
     contextual boundaries.
 
 boundary_assertions:
-  - agentic_ecosystem_distinct_from_agent: true
-  - agentic_ecosystem_distinct_from_agentic_system: true
-  - agentic_ecosystem_distinct_from_agentic_operations: true
-  - agentic_ecosystem_distinct_from_agentic_organization: true
-  - agentic_ecosystem_distinct_from_agentic_enterprise: true
-  - agentic_ecosystem_does_not_require_ai: true
-  - agentic_ecosystem_requires_ecosystem_level_materiality: true
+characteristics:
+  - id: ES:CHAR:profile-not-canonical
+    label: Profile Not Canonical
+    description: |
+      Profile flag indicating profile not canonical.
+  - id: ES:CHAR:consistent-with-ai-boundary-rule
+    label: Consistent With Ai Boundary Rule
+    description: |
+      Profile flag indicating consistent with ai boundary rule.
+  - id: ES:CHAR:four-state-independence-preserved
+    label: Four State Independence Preserved
+    description: |
+      Profile flag indicating four state independence preserved.
+characteristics:
+  - id: ES:CHAR:agentic-ecosystem-distinct-from-agent
+    label: Agentic Ecosystem Distinct From Agent
+    description: |
+      Profile flag indicating agentic ecosystem distinct from agent.
+  - id: ES:CHAR:agentic-ecosystem-distinct-from-agentic-system
+    label: Agentic Ecosystem Distinct From Agentic System
+    description: |
+      Profile flag indicating agentic ecosystem distinct from agentic system.
+  - id: ES:CHAR:agentic-ecosystem-distinct-from-agentic-operations
+    label: Agentic Ecosystem Distinct From Agentic Operations
+    description: |
+      Profile flag indicating agentic ecosystem distinct from agentic operations.
+  - id: ES:CHAR:agentic-ecosystem-distinct-from-agentic-organization
+    label: Agentic Ecosystem Distinct From Agentic Organization
+    description: |
+      Profile flag indicating agentic ecosystem distinct from agentic organization.
+  - id: ES:CHAR:agentic-ecosystem-distinct-from-agentic-enterprise
+    label: Agentic Ecosystem Distinct From Agentic Enterprise
+    description: |
+      Profile flag indicating agentic ecosystem distinct from agentic enterprise.
+  - id: ES:CHAR:agentic-ecosystem-does-not-require-ai
+    label: Agentic Ecosystem Does Not Require Ai
+    description: |
+      Profile flag indicating agentic ecosystem does not require ai.
+  - id: ES:CHAR:agentic-ecosystem-requires-ecosystem-level-materiality
+    label: Agentic Ecosystem Requires Ecosystem Level Materiality
+    description: |
+      Profile flag indicating agentic ecosystem requires ecosystem level materiality.
 
 conformance_tests:
   positive:

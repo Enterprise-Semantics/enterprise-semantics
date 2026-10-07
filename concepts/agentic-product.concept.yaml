@@ -5,6 +5,7 @@
 
 id: ES:CONCEPT:agentic-product
 canonical_name: Agentic Product
+concept_type: agentic-product
 status: Established
 version: '1.0.0'
 date: '2026-09-30'

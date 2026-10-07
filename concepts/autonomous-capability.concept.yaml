@@ -5,6 +5,7 @@
 
 id: ES:CONCEPT:autonomous-capability
 canonical_name: Autonomous Capability
+concept_type: autonomous-capability
 status: Established
 version: '1.0.0'
 date: '2026-09-30'

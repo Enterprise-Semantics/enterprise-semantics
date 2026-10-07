@@ -5,6 +5,7 @@
 
 id: ES:CONCEPT:autonomous-organization
 canonical_name: Autonomous Organization
+concept_type: autonomous-organization
 status: Established
 version: '1.0.0'
 date: '2026-09-30'

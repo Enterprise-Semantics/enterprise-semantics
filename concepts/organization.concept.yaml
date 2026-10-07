@@ -5,6 +5,7 @@
 
 id: ES:CONCEPT:organization
 canonical_name: Organization
+concept_type: organization
 status: Established
 version: '1.0.0'
 date: '2026-09-30'

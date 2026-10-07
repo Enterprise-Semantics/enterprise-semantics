@@ -1,6 +1,8 @@
 # registry/profiles/ai-agent.profile.yaml, AI Agent, and ES-037
-id: ai-agent
+id: ES:PROFILE:ai-agent
 canonical_name: AI Agent
+definition: |
+    Profile family over Agent with AI as the interpretation/decision/action-selection realization substrate. Per the AI boundary rule, this is implementation technology, not semantic definition.
 version: 1.0.0
 status: Established
 date: 2026-09-28
@@ -17,9 +19,19 @@ canonical_definition: |
 rationale: |
     Per ES-ADR-037 section 1. Agentic != AI. Agent != AI Agent.
 boundary_assertions:
-  - profile_not_canonical: true
-  - consistent_with_ai_boundary_rule: true
-  - four_state_independence_preserved: true
+characteristics:
+  - id: ES:CHAR:profile-not-canonical
+    label: Profile Not Canonical
+    description: |
+      Profile flag indicating profile not canonical.
+  - id: ES:CHAR:consistent-with-ai-boundary-rule
+    label: Consistent With Ai Boundary Rule
+    description: |
+      Profile flag indicating consistent with ai boundary rule.
+  - id: ES:CHAR:four-state-independence-preserved
+    label: Four State Independence Preserved
+    description: |
+      Profile flag indicating four state independence preserved.
 conformance_tests:
   positive:
     - applies_to_canonical_base
